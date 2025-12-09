@@ -1,0 +1,73 @@
+:host {
+  display: block;
+}
+
+/* Instructions en italique */
+:host .instructions {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+/* Permettre aux dropdown de déborder verticalement */
+:host .slds-scrollable_x {
+  overflow-x: auto;
+  overflow-y: visible !important;
+}
+
+/* Lignes un peu plus hautes */
+:host table tr {
+  height: 3rem;
+}
+
+/* Bordures verticales et horizontales */
+:host table.slds-table_col-bordered td,
+:host table.slds-table_col-bordered th {
+  border-right: 1px solid var(--lwc-colorBorder, #d8dde6);
+  border-bottom: 1px solid var(--lwc-colorBorder, #d8dde6);
+}
+:host table.slds-table_col-bordered td:last-child,
+:host table.slds-table_col-bordered th:last-child {
+  border-right: none;
+}
+:host table.slds-table_col-bordered tr:last-child td {
+  border-bottom: none;
+}
+
+/* Étend la zone cliquable sur toute la cellule */
+:host .cell-view-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0.25rem 0.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Placeholder pour texte vide */
+:host .cell-text {
+  color: #999;
+}
+
+/* Icône crayon cachée par défaut */
+:host .cell-view-wrapper lightning-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+/* Icône visible au hover */
+:host .cell-view-wrapper:hover lightning-icon {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Minimum width pour combobox */
+:host lightning-combobox {
+  min-width: 10rem;
+}

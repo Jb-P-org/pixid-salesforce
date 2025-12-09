@@ -1,0 +1,18 @@
+<template>
+    <lightning-combobox
+        name="controller"
+        label={labelController}
+        value={controllerValue}
+        options={controllerOptions}
+        onchange={handleControllerChange}>
+    </lightning-combobox>
+
+    <lightning-combobox
+        name="dependent"
+        label={labelDependent}
+        value={dependentValue}
+        options={filteredDependentOptions}
+        onchange={handleDependentChange}
+        disabled={isDependentDisabled}>
+    </lightning-combobox>
+</template>

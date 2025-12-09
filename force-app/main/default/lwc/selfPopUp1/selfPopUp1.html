@@ -1,0 +1,18 @@
+<template>
+    <template if:true={isVisible}>
+        <div class="popup-container">
+            <button class="close-button" onclick={handleClose}>&times;</button>
+            <h1><b>🎉 Bienvenue sur votre nouvel espace d’accompagnement SELF !</b></h1>
+            <p>✅ Une navigation <strong>plus fluide, rapide et intuitive</strong></p>
+            <p>✅ Une expérience de support <strong>enrichie et simplifiée</strong></p>
+
+            <div class="popup-box">
+                <h3><b>🔍 Une question ?</b></h3>
+                <p>
+                    Trouvez vos réponses en <b>saisissant des mots-clés</b><br>
+                    dans la barre de recherche !
+                </p>
+            </div>
+        </div>
+    </template>
+</template>

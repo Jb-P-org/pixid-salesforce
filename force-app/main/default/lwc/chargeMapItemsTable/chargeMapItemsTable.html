@@ -1,0 +1,134 @@
+<template>
+  <!-- En‑tête SLDS “Related List” -->
+  <div class="slds-section slds-m-top_medium">
+    <div class="slds-section__title slds-grid slds-grid_vertical-align-center">
+      <lightning-icon 
+        icon-name="standard:related_list" 
+        size="small" 
+        alternative-text="Charge Map Items">
+      </lightning-icon>
+      <h3 class="slds-section__title-text slds-p-left_x-small">
+        <strong>Charge Map Items</strong>
+      </h3>
+    </div>
+  </div>
+
+  <!-- Instructions -->
+  <div class="instructions slds-p-horizontal_medium">
+    You can modify the start date, end date, billing schedule and terms of each product by clicking on the pen.  
+    After that, click the Save button at the bottom right.
+  </div>
+
+  <!-- Spinner -->
+  <template if:true={isLoading}>
+    <div class="slds-p-around_medium slds-align_absolute-center">
+      <lightning-spinner size="medium"></lightning-spinner>
+    </div>
+  </template>
+
+  <!-- Tableau -->
+  <template if:false={isLoading}>
+    <template if:true={hasRows}>
+      <div class="slds-scrollable_x">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+          <thead>
+            <tr>
+              <!-- Colonne # -->
+              <th scope="col" style="width: 3rem">
+                <div class="slds-truncate" title="#">#</div>
+              </th>
+              <template for:each={columnsMeta} for:item="col">
+                <th key={col.apiName} scope="col">
+                  <div class="slds-truncate" title={col.label}>{col.label}</div>
+                </th>
+              </template>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={rows} for:item="row">
+              <tr key={row.id}>
+                <!-- Cellule numéro -->
+                <td>{row.rowNumber}</td>
+                <template for:each={row.cells} for:item="cell">
+                  <td key={cell.apiName}>
+                    <!-- Édition -->
+                    <template if:true={cell.isEditing}>
+                      <template if:true={cell.meta.isPicklist}>
+                        <lightning-combobox
+                          data-id={row.id}
+                          data-field={cell.apiName}
+                          value={cell.value}
+                          options={cell.meta.picklistValues}
+                          onchange={handleFieldChange}
+                          onblur={handleInputBlur}>
+                        </lightning-combobox>
+                      </template>
+                      <template if:true={cell.meta.isCheckbox}>
+                        <lightning-input
+                          type="checkbox"
+                          data-id={row.id}
+                          data-field={cell.apiName}
+                          checked={cell.value}
+                          onchange={handleFieldChange}
+                          onblur={handleInputBlur}>
+                        </lightning-input>
+                      </template>
+                      <template if:false={cell.meta.isPicklist}>
+                        <template if:false={cell.meta.isCheckbox}>
+                          <lightning-input
+                            type={cell.meta.inputType}
+                            data-id={row.id}
+                            data-field={cell.apiName}
+                            value={cell.value}
+                            onchange={handleFieldChange}
+                            onblur={handleInputBlur}>
+                          </lightning-input>
+                        </template>
+                      </template>
+                    </template>
+
+                    <!-- Lecture + crayon au hover -->
+                    <template if:false={cell.isEditing}>
+                      <template if:true={cell.meta.canEdit}>
+                        <div
+                          class="cell-view-wrapper"
+                          data-id={row.id}
+                          data-field={cell.apiName}
+                          onclick={handleEditIconClick}>
+                          <span class="cell-text">{cell.displayValue}</span>
+                          <lightning-icon
+                            icon-name="utility:edit"
+                            size="x-small"
+                            alternative-text="Éditer">
+                          </lightning-icon>
+                        </div>
+                      </template>
+                      <template if:false={cell.meta.canEdit}>
+                        <span>{cell.displayValue}</span>
+                      </template>
+                    </template>
+                  </td>
+                </template>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Bouton Enregistrer aligné à droite -->
+      <div class="slds-m-top_medium slds-grid slds-grid_align-end slds-p-horizontal_medium">
+        <lightning-button
+          label="Update items"
+          variant="brand"
+          onclick={handleSave}
+          disabled={isLoading}>
+        </lightning-button>
+      </div>
+    </template>
+
+    <!-- Aucune ligne -->
+    <template if:false={hasRows}>
+      <div class="slds-p-around_medium">Aucun item à afficher.</div>
+    </template>
+  </template>
+</template>

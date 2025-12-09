@@ -1,0 +1,27 @@
+<template>
+    <template if:true={missingAccountFields.length}>
+        <div class="missing-warning-box">
+            <h2 class="missing-title"><strong>❇️​​ Account
+                
+            </strong></h2>
+            <ul class="missing-list">
+                <template for:each={missingAccountFields} for:item="field">
+                    <li key={field} class="missing-item">• {field} ❌</li>
+                </template>
+            </ul>
+        </div>
+    </template>
+
+    <template if:true={missingChargeMapFields.length}>
+        <div class="missing-warning-box slds-m-top_medium">
+            <h2 class="missing-title"><strong>❇️​ Charge Map
+
+            </strong></h2>
+            <ul class="missing-list">
+                <template for:each={missingChargeMapFields} for:item="field">
+                    <li key={field} class="missing-item">• {field} ❌</li>
+                </template>
+            </ul>
+        </div>
+    </template>
+</template>

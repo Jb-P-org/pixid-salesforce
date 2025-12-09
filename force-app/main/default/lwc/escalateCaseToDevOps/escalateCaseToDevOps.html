@@ -1,0 +1,364 @@
+<template>
+    <div class="slds-p-around_medium slds-box slds-theme_default">
+
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+
+        <template if:false={isLoading}>
+
+            <!-- ÉTAPE 1 : Sélection de l’équipe -->
+            <template if:true={isStepSelectTeam}>
+                <div data-step="selectTeam">
+                    <lightning-radio-group
+                        name="recordTypes"
+                        label={label.Which_team_escalation}
+                        class="slds-m-bottom_medium"
+                        options={recordTypeOptions}
+                        value={selectedRecordTypeName}
+                        type="radio"
+                        onchange={handleRecordTypeChange}
+                        required>
+                    </lightning-radio-group>
+
+                    <div class="slds-text-align_right">
+                        <lightning-button
+                            variant="brand"
+                            class="slds-m-top_medium"
+                            label="Next"
+                            onclick={handleNextFromSelectTeam}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- ÉTAPE 2 : Jira Project / Issue Type / Priority -->
+            <template if:true={isStepJiraFields}>
+                <div data-step="jiraFields">
+                    <lightning-combobox
+                        name="jiraProject"
+                        label={label.Jira_Project}
+                        value={jiraProject}
+                        options={jiraProjectOptions}
+                        onchange={handlePicklistChange}
+                        class="slds-m-bottom_medium"
+                        required>
+                    </lightning-combobox>
+
+                    <lightning-combobox
+                        name="issueType"
+                        label={label.Issue_type}
+                        value={issueType}
+                        options={issueTypeOptions}
+                        onchange={handleIssueTypeChange}
+                        class="slds-m-bottom_medium"
+                        required>
+                    </lightning-combobox>
+
+                    <div class="slds-text-align_right slds-m-top_medium">
+                        <lightning-button
+                            label="Back"
+                            onclick={handleBack}
+                            class="slds-m-right_small">
+                        </lightning-button>
+                        <lightning-button
+                            variant="brand"
+                            label={label.Next}
+                            onclick={handleNextFromJira}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- BUG FIELDS -->
+            <template if:true={isStepBugFields}>
+                <div data-step="bugFields">
+                    <div class="slds-form-element slds-m-bottom_medium">
+                        <div class="slds-form-element__control">
+                            <lightning-textarea
+                                name="currentBehavior"
+                                label={label.Current_behavior}
+                                value={currentBehavior}
+                                onchange={handlePicklistChange}
+                                required>
+                            </lightning-textarea>
+                        </div>
+                    </div>
+
+                    <div class="slds-form-element slds-m-bottom_medium">
+                        <div class="slds-form-element__control">
+                            <lightning-textarea
+                                name="expectedBehavior"
+                                label={label.Expected_behavior}
+                                value={expectedBehavior}
+                                onchange={handlePicklistChange}
+                                required>
+                            </lightning-textarea>
+                        </div>
+                    </div>
+
+                    <lightning-combobox
+                        name="issueScope"
+                        label={label.Issue_scope}
+                        value={issueScope}
+                        options={issueScopeOptions}
+                        onchange={handlePicklistChange}
+                        class="slds-m-bottom_medium"
+                        required>
+                    </lightning-combobox>
+
+                    <lightning-combobox
+                        name="priority"
+                        label={label.Priority}
+                        value={priority}
+                        options={priorityOptions}
+                        onchange={handlePicklistChange}
+                        class="slds-m-bottom_medium">
+                    </lightning-combobox>
+
+                    <lightning-file-upload
+                        label={label.Add_files}
+                        name="fileUploader"
+                        record-id={recordId}
+                        multiple
+                        onuploadfinished={handleUploadFinished}
+                        accept={acceptedFormats}>
+                    </lightning-file-upload>
+
+                    <template if:true={hasUploadedFiles}>
+                        <ul class="slds-m-top_small">
+                            <template for:each={uploadedFiles} for:item="file" for:index="index">
+                                <li key={file.documentId} class="slds-m-bottom_xx-small">
+                                    {file.name}
+                                    <lightning-button-icon icon-name="utility:delete" variant="bare"
+                                        alternative-text="Remove"
+                                        data-index={index}
+                                        onclick={handleRemoveFile}>
+                                    </lightning-button-icon>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+
+                    <div class="slds-text-align_right slds-m-top_medium">
+                        <lightning-button
+                            label="Back"
+                            onclick={handleBack}
+                            class="slds-m-right_small">
+                        </lightning-button>
+                        <lightning-button
+                            variant="brand"
+                            label="Submit"
+                            onclick={handleSubmit}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- STORY FIELDS -->
+            <template if:true={isStepStoryFields}>
+                <div data-step="storyFields">
+                    <div class="slds-form-element slds-m-bottom_medium">
+                        <div class="slds-form-element__control">
+                            <lightning-textarea
+                                name="clientRequest"
+                                label={label.Client_request}
+                                value={clientRequest}
+                                onchange={handlePicklistChange}
+                                required>
+                            </lightning-textarea>
+                        </div>
+                    </div>
+
+                    <lightning-combobox
+                        name="priority"
+                        label={label.Priority}
+                        value={priority}
+                        options={priorityOptions}
+                        onchange={handlePicklistChange}
+                        class="slds-m-bottom_medium">
+                    </lightning-combobox>
+
+                    <lightning-file-upload
+                        label={label.Add_files}
+                        name="fileUploader"
+                        record-id={recordId}
+                        multiple
+                        onuploadfinished={handleUploadFinished}
+                        accept={acceptedFormats}>
+                    </lightning-file-upload>
+
+                    <template if:true={hasUploadedFiles}>
+                        <ul class="slds-m-top_small">
+                            <template for:each={uploadedFiles} for:item="file" for:index="index">
+                                <li key={file.documentId} class="slds-m-bottom_xx-small">
+                                    {file.name}
+                                    <lightning-button-icon icon-name="utility:delete" variant="bare"
+                                        alternative-text="Remove"
+                                        data-index={index}
+                                        onclick={handleRemoveFile}>
+                                    </lightning-button-icon>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+
+                    <div class="slds-text-align_right slds-m-top_medium">
+                        <lightning-button
+                            label="Back"
+                            onclick={handleBack}
+                            class="slds-m-right_small">
+                        </lightning-button>
+                        <lightning-button
+                            variant="brand"
+                            label="Submit"
+                            onclick={handleSubmit}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- TASK FIELDS -->
+            <template if:true={isStepTaskFields}>
+                <div data-step="taskFields">
+                    <lightning-textarea
+                        name="context"
+                        value={context}
+                        label={label.Context}
+                        onchange={handlePicklistChange}
+                        class="slds-m-bottom_medium"
+                        required>
+                    </lightning-textarea>
+
+                    <lightning-textarea
+                        name="actionsRequested"
+                        label={label.Actions_requested}
+                        value={actionsRequested}
+                        onchange={handlePicklistChange}
+                        class="slds-m-bottom_medium"
+                        required>
+                    </lightning-textarea>
+
+                    <lightning-combobox
+                        name="priority"
+                        label={label.Priority}
+                        value={priority}
+                        options={priorityOptions}
+                        onchange={handlePicklistChange}
+                        class="slds-m-bottom_medium">
+                    </lightning-combobox>
+
+                    <lightning-file-upload
+                        label={label.Add_files}
+                        name="fileUploader"
+                        record-id={recordId}
+                        multiple
+                        onuploadfinished={handleUploadFinished}
+                        accept={acceptedFormats}>
+                    </lightning-file-upload>
+
+                    <template if:true={hasUploadedFiles}>
+                        <ul class="slds-m-top_small">
+                            <template for:each={uploadedFiles} for:item="file" for:index="index">
+                                <li key={file.documentId} class="slds-m-bottom_xx-small">
+                                    {file.name}
+                                    <lightning-button-icon icon-name="utility:delete" variant="bare"
+                                        alternative-text="Remove"
+                                        data-index={index}
+                                        onclick={handleRemoveFile}>
+                                    </lightning-button-icon>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+
+                    <div class="slds-text-align_right slds-m-top_medium">
+                        <lightning-button
+                            label="Back"
+                            onclick={handleBack}
+                            class="slds-m-right_small">
+                        </lightning-button>
+                        <lightning-button
+                            variant="brand"
+                            label="Submit"
+                            onclick={handleSubmit}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- OTHER TEAMS -->
+            <template if:true={isStepOtherTeamFields}>
+                <div data-step="otherTeamFields">
+                    <div class="slds-form-element__label">Details</div>
+                    <lightning-input-rich-text
+                        label="Details"
+                        name="comment"
+                        value={comment}
+                        onchange={handlePicklistChange}
+                        class="slds-m-bottom_medium"
+                        required>
+                    </lightning-input-rich-text>
+
+                    <lightning-combobox
+                        name="escalationReason"
+                        label={label.Escalation_reason}
+                        value={escalationReason}
+                        options={reasonOptions}
+                        onchange={handleReasonChange}
+                        class="slds-m-bottom_medium"
+                        required>
+                    </lightning-combobox>
+
+                    <template if:true={showSubreason}>
+                        <lightning-combobox
+                            name="escalationSubreason"
+                            label={label.Escalation_subreason}
+                            value={escalationSubreason}
+                            options={filteredSubreasons}
+                            onchange={handlePicklistChange}
+                            class="slds-m-bottom_medium"
+                            required>
+                        </lightning-combobox>
+                    </template>
+
+                    <div class="slds-text-align_right slds-m-top_medium">
+                        <lightning-button
+                            label="Back"
+                            onclick={handleBack}
+                            class="slds-m-right_small">
+                        </lightning-button>
+                        <lightning-button
+                            variant="brand"
+                            label="Submit"
+                            onclick={handleSubmit}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- CONFIRMATION -->
+            <template if:true={isStepConfirmation}>
+                <div class="slds-text-align_center">
+                    <p class="slds-text-heading_medium">
+                        The case has been escalated to the <strong>{selectedRecordTypeName}</strong> team ✅
+                    </p>
+
+                    <template if:true={uploadedFiles.length}>
+                        <p class="slds-m-top_medium">
+                            🗂️ <strong>Fichiers ajoutés :</strong>
+                        </p>
+                        <ul>
+                            <template for:each={uploadedFiles} for:item="file">
+                                <li key={file.documentId}>{file.name}</li>
+                            </template>
+                        </ul>
+                    </template>
+                </div>
+            </template>
+
+        </template>
+    </div>
+
+    <lightning-flow></lightning-flow>
+</template>

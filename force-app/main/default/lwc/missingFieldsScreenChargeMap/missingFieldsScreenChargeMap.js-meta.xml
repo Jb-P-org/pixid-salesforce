@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+
+            <!-- Account Fields -->
+            <property name="accountRegistrationNumber" type="String" label="Registration Number" />
+            <property name="accountVATNumber" type="String" label="VAT Number" />
+
+            <!-- Charge Map Fields -->
+            <property name="chargeMapBillingContact" type="String" label="Billing Contact" />
+            <property name="chargeMapCashCollectionContact" type="String" label="Cash Collection Contact" />
+            <property name="chargeMapPaymentMethod" type="String" label="Payment Method" />
+            <property name="chargeMapBillingConditions" type="String" label="Billing Conditions" />
+            <property name="chargeMapInvoiceSendingMethod" type="String" label="Invoice Sending Method" />
+            <property name="chargeMapBillingInstructions" type="String" label="Billing Instructions" />
+            <property name="chargeMapContractDurationInYears" type="String" label="Contract Duration (Years)" />
+            <property name="chargeMapSendInvoiceTo" type="String" label="Send Invoice To" />
+            <property name="chargeMapPlatformLink" type="String" label="Platform Link" />
+
+            <!-- PO Fields -->
+            <property name="chargeMapPORequired" type="String" label="PO Required" />
+            <property name="chargeMapPOReference" type="String" label="PO Reference" />
+            <property name="chargeMapPORequestDate" type="String" label="PO Request Date" />
+            <property name="chargeMapPOFrequency" type="String" label="PO Frequency" />
+
+            <!-- JSON Items -->
+            <property name="chargeMapItemsJson" type="String" label="Charge Map Items (JSON)" />
+
+            <!-- ✅ Nouvelle variable -->
+            <property name="pbOnItemsPO" type="Boolean" label="PO is missing on at least one item" />
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

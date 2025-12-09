@@ -1,0 +1,13 @@
+<template>
+    <template if:true={url}>
+      <div class="slds-m-top_medium">
+        <lightning-button 
+          variant="neutral"
+          label={label}
+          icon-name="utility:back"
+          icon-position="left"
+          onclick={handleRedirect}>
+        </lightning-button>
+      </div>
+    </template>
+  </template>

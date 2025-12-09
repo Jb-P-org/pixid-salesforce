@@ -1,0 +1,26 @@
+.missing-warning-box {
+    background: #fffdf3;
+    border: 1px solid #f0c36d;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.missing-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #8a6d3b;
+    margin-bottom: 0.5rem;
+}
+
+.missing-list {
+    margin-left: 1rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.missing-item {
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    color: #333;
+}

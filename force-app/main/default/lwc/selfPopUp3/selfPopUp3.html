@@ -1,0 +1,39 @@
+<template>
+    <template if:true={isVisible}>
+        <div class="popup-container">
+            <button class="close-button" onclick={handleClose}>&times;</button>
+
+            <h1><b>🎉 Welcome to your new SELF support space!</b></h1>
+            <p>✅ <strong>Smoother, faster, and more intuitive</strong> navigation</p>
+            <p>✅ An <strong>enhanced and simplified</strong> support experience</p>
+
+            <div class="popup-box">
+                <h3><b>🔍 Have a question?</b></h3>
+                <p>
+                    Find your answers by entering <b>keywords</b><br>
+                    in the search bar!
+                </p>
+            </div>
+
+            <h2 class="sub-heading">And to go further, access all features from the menu</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <p class="emoji">📁</p>
+                    <p>
+                        <strong>My Tickets</strong><br>
+                        Track the progress of your requests and view the history
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <p class="emoji">💻</p>
+                    <p>
+                        <strong>Contact Support</strong><br>
+                        Create a new request<br>
+                        in just a few clicks
+                    </p>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,129 @@
+<template>
+    <!-- Affichage pour les utilisateurs invités -->
+    <template if:true={isGuest}>
+        <div class="slds-p-around_medium">
+            <p style="color: var(--lwc-colorTextError, red); font-weight: bold;">
+                This form is strictly restricted to logged-in users. Please log in to continue.
+            </p>
+        </div>
+    </template>
+
+    <!-- Formulaire principal (utilisateur connecté uniquement) -->
+    <template if:false={isGuest}>
+        <template if:false={showConfirmation}>
+            <lightning-card title={label.CreateTicket} >
+
+                <!-- Case Reason -->
+                <lightning-combobox
+                    name="reason"
+                    label={label.caseReason}
+                    value={selectedReason}
+                    options={reasonOptions}
+                    onchange={handleReasonChange}
+                    required
+                ></lightning-combobox>
+
+                <!-- Case Subreason -->
+                <lightning-combobox
+                    name="subreason"
+                    label={label.CaseSubreason}
+                    value={selectedSubreason}
+                    options={subreasonOptions}
+                    onchange={handleSubreasonChange}
+                    required
+                ></lightning-combobox>
+
+                <!-- Domaine -->
+                <template if:true={showDomain}>
+                    <lightning-combobox
+                        name="domain"
+                        label={label.Domain}
+                        value={selectedDomain}
+                        options={domainOptions}
+                        onchange={handleDomainChange}
+                        required={isDomainRequired}
+                    ></lightning-combobox>
+                </template>
+
+                <!-- Module -->
+                <template if:true={showModule}>
+                    <lightning-combobox
+                        name="module"
+                        label="Module"
+                        value={selectedModule}
+                        options={moduleOptions}
+                        onchange={handleModuleChange}
+                        required={isModuleRequired}
+                    ></lightning-combobox>
+                </template>
+
+                <!-- Objet de la demande -->
+                <lightning-input
+                    type="text"
+                    label={label.RequestSummary}
+                    value={subject}
+                    onchange={handleSubjectChange}
+                    required
+                ></lightning-input>
+
+                <!-- Description de la demande -->
+                <lightning-textarea
+                    label={label.RequestDesc}
+                    value={description}
+                    onchange={handleDescriptionChange}
+                    required
+                ></lightning-textarea>
+
+                <!-- Upload de fichiers -->
+                <div class="slds-m-top_medium">
+                    <lightning-file-upload
+                        name="fileUploader"
+                        accept={acceptedFormats}
+                        onuploadfinished={handleFileUpload}
+                        multiple
+                        
+                    ></lightning-file-upload>
+                </div>
+
+                <!-- Aperçu fichiers uploadés -->
+<template if:true={hasUploadedFiles}>
+    
+        <p><strong>{uploadedFileCount} file(s) added :</strong></p>
+        
+            <template for:each={uploadedFiles} for:item="file" for:index="index">
+                <div key={file.documentId} >
+                    <span class="slds-truncate">{file.name}</span>
+                    <lightning-button-icon
+                        icon-name="utility:delete"
+                        alternative-text="Supprimer"
+                        title="Supprimer"
+                        data-index={index}
+                        onclick={handleRemoveFile}
+                        class="slds-m-left_x-small"
+                    ></lightning-button-icon>
+                </div>
+            </template>
+        
+</template>
+
+                
+                <!-- Bouton de création -->
+                <div class="slds-m-top_medium">
+                    <lightning-button
+                        variant="brand"
+                        label={label.CreateTicket}
+                        onclick={handleSubmit}
+                        disabled={isSubmitting}
+                    ></lightning-button>
+                </div>
+
+            </lightning-card>
+        </template>
+
+        <template if:true={showConfirmation}>
+            <lightning-card title="Ticket created" icon-name="utility:check">
+                <p class="slds-p-around_medium">Ticket {caseNumber} was successfully created.</p>
+            </lightning-card>
+        </template>
+    </template>
+</template>
