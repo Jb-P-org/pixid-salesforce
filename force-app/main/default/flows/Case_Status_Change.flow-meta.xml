@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send</name>
+        <label>Send</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <stringValue>0MLIV000000uP8c4AE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>Recipient</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>Title</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>BodyNotif</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>AssignOwner_Id_to_Recipients</name>
+        <label>AssignOwner Id to Recipients</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Recipient</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>GetOwner.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Filter_if_Owner_matches</name>
+        <label>Filter if Owner matches</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>AssignOwner_Id_to_Recipients</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Owner_Match</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Owner15</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$User.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Owner Match</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>BodyNotif</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  TEXT({!GetOwner.LanguageLocaleKey}) = &quot;fr&quot;,
+  &quot;Votre ticket &quot;&amp; {!$Record.CaseNumber} &amp;&quot; a changé de statut : &quot;  ,
+  &quot;Your case &quot; &amp;{!$Record.CaseNumber} &amp;&quot; has a new status: &quot;) 
+
+&amp;
+CASE(
+TEXT({!$Record.Status}),
+&quot;New&quot;, $Label.New ,
+&quot;In Progress&quot;, $Label.In_Progress,
+&quot;On Hold&quot;, $Label.On_Hold,
+&quot;Waiting for Information&quot;, $Label.Waiting_for_Information,
+&quot;Closed&quot;, $Label.Closed,
+$Label.In_Progress )</expression>
+    </formulas>
+    <formulas>
+        <name>Owner15</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!GetOwner.Id} , 15)</expression>
+    </formulas>
+    <formulas>
+        <name>RecipientId</name>
+        <dataType>String</dataType>
+        <expression>{!GetOwner.Id}</expression>
+    </formulas>
+    <formulas>
+        <name>Title</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  TEXT({!GetOwner.LanguageLocaleKey}) = &quot;fr&quot;,
+  &quot;Changement de Statut sur votre ticket - &quot; &amp; {!$Record.CaseNumber},
+  &quot;New Status on your Case - &quot; &amp; {!$Record.CaseNumber}
+)</expression>
+    </formulas>
+    <interviewLabel>Case Status Change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>NOTIFICATION - Case Status Change</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>GetOwner</name>
+        <label>GetOwner</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Filter_if_Owner_matches</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetOwner</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>OwnerId</field>
+            <operator>StartsWith</operator>
+            <value>
+                <stringValue>005</stringValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Recipient</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

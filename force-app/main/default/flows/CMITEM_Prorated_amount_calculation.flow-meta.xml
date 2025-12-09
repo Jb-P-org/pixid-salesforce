@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>If the Charge Map is Vector or not a new business, the amount should not be prorated.</description>
+        <name>VectorOrNotNB</name>
+        <label>Vector Or Not NB</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_ProRated_Amount</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Charge_Map.RecordType.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Vector</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Added number of months prorated formula and field.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>forC_ProratedAmount</name>
+        <dataType>Currency</dataType>
+        <expression>({!$Record.Amount__c} / 12) *
+(
+  12 * (YEAR({!$Record.End_Date__c}) - YEAR(
+    IF(
+      DAY({!$Record.StartDateRevRec__c}) &lt;= 7,
+      {!$Record.StartDateRevRec__c},
+      DATE(
+        IF(MONTH({!$Record.StartDateRevRec__c}) = 12, YEAR({!$Record.StartDateRevRec__c}) + 1, YEAR({!$Record.StartDateRevRec__c})),
+        IF(MONTH({!$Record.StartDateRevRec__c}) = 12, 1, MONTH({!$Record.StartDateRevRec__c}) + 1),
+        1
+      )
+    )
+  )) 
+  + 
+  (MONTH({!$Record.End_Date__c}) - MONTH(
+    IF(
+      DAY({!$Record.StartDateRevRec__c}) &lt;= 7,
+      {!$Record.StartDateRevRec__c},
+      DATE(
+        IF(MONTH({!$Record.StartDateRevRec__c}) = 12, YEAR({!$Record.StartDateRevRec__c}) + 1, YEAR({!$Record.StartDateRevRec__c})),
+        IF(MONTH({!$Record.StartDateRevRec__c}) = 12, 1, MONTH({!$Record.StartDateRevRec__c}) + 1),
+        1
+      )
+    )
+  )) + 1
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>forN_NumberOfMonthsProrated</name>
+        <dataType>Number</dataType>
+        <expression>(
+  12 * (YEAR({!$Record.End_Date__c}) - YEAR(
+    IF(
+      DAY({!$Record.StartDateRevRec__c}) &lt;= 7,
+      {!$Record.StartDateRevRec__c},
+      DATE(
+        IF(MONTH({!$Record.StartDateRevRec__c}) = 12, YEAR({!$Record.StartDateRevRec__c}) + 1, YEAR({!$Record.StartDateRevRec__c})),
+        IF(MONTH({!$Record.StartDateRevRec__c}) = 12, 1, MONTH({!$Record.StartDateRevRec__c}) + 1),
+        1
+      )
+    )
+  )) 
+  + 
+  (MONTH({!$Record.End_Date__c}) - MONTH(
+    IF(
+      DAY({!$Record.StartDateRevRec__c}) &lt;= 7,
+      {!$Record.StartDateRevRec__c},
+      DATE(
+        IF(MONTH({!$Record.StartDateRevRec__c}) = 12, YEAR({!$Record.StartDateRevRec__c}) + 1, YEAR({!$Record.StartDateRevRec__c})),
+        IF(MONTH({!$Record.StartDateRevRec__c}) = 12, 1, MONTH({!$Record.StartDateRevRec__c}) + 1),
+        1
+      )
+    )
+  )) + 1
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>CMITEM - Prorated amount calculation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CMITEM - Prorated amount calculation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Charge_Map</name>
+        <label>Get Charge Map</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>VectorOrNotNB</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ChargeMap__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ChargeMap__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_ProRated_Amount</name>
+        <label>Update ProRated Amount</label>
+        <locationX>308</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>NbOfMonthsProrated__c</field>
+            <value>
+                <elementReference>forN_NumberOfMonthsProrated</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ProratedAmount__c</field>
+            <value>
+                <elementReference>forC_ProratedAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Charge_Map</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StartDateRevRec__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Nature__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Usage</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>End_date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>ChargeMapItem__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

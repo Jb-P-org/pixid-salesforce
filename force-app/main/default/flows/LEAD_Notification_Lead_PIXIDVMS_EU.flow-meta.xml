@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_Notification</name>
+        <label>Send Email Notification</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>EmailsList</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
+                <stringValue>communication@pixid.com, a.poiron@pixid.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>communication@pixid.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>TXT_EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>TXT_EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Email_To_List</name>
+        <label>Add Email To List</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>EmailsList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_On_Users.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_On_Users</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Member_To_List</name>
+        <label>Add Member To List</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>MembersIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_On_Members.UserOrGroupId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_On_Members</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_OwnerUser_Email_To_List</name>
+        <label>Add Owner Email To List</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>EmailsList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_Notification</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>International</name>
+        <label>International ?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Record_Type.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>International</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Owner_Is_Queue_Or_User</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Owner_Is_Queue_Or_User</name>
+        <label>Owner Is Queue Or User?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00G</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Queue</targetReference>
+            </connector>
+            <label>Queue</label>
+        </rules>
+        <rules>
+            <name>User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_User</targetReference>
+            </connector>
+            <label>User</label>
+        </rules>
+    </decisions>
+    <description>Added Antoine in CC</description>
+    <environments>Default</environments>
+    <interviewLabel>LEAD - Notification Lead PIXIDVMS EU {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>LEAD - Notification Lead PIXIDVMS EU</label>
+    <loops>
+        <name>Loop_On_Members</name>
+        <label>Loop On Members</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Queue_Members</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Member_To_List</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Users_From_Members</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_On_Users</name>
+        <label>Loop On Users</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Users_From_Members</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Email_To_List</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Send_Email_Notification</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Queue</name>
+        <label>Get Queue</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Queue_Members</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Sales PVMS EUR</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Queue_Members</name>
+        <label>Get Queue Members</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_On_Members</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Queue.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>GroupMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Record_Type</name>
+        <label>Get Record Type</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>International</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.RecordTypeId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_User</name>
+        <label>Get User</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_OwnerUser_Email_To_List</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Users_From_Members</name>
+        <label>Get Users From Members</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_On_Users</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>MembersIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Record_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LeadSource</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Website</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>A contacter</stringValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>TXT_EmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;div&gt;
+&lt;p&gt;Hello team,&lt;br&gt;
+A new request concerning the {!$Record.Demandes__c} offer has come in for the Pixid VMS EU team via the website.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Please find below the details, as well as a link to the lead:&lt;/p&gt;
+&lt;p&gt;{!$Record.Link__c}&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table style=&quot;background-color: #e0f8d3; width: 700px; border-spacing: 0 5px&quot;&gt;
+&lt;tr style=&quot;height: 30px;&quot;&gt;&lt;th style=&quot;text-align:left&quot;&gt;Details submitted on the form&lt;/th&gt;&lt;/tr&gt; 			
+&lt;tr&gt;&lt;td style=&quot;background-color: white; padding-left:20px;&quot;&gt;Offer: {!$Record.Demandes__c}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style=&quot;background-color: white; padding-left:20px;&quot;&gt;Name: {!$Record.FirstName} {!$Record.LastName}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style=&quot;background-color: white; padding-left:20px;&quot;&gt;Company: {!$Record.Company}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style=&quot;background-color: white; padding-left:20px;&quot;&gt;Country: {!$Record.Country}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style=&quot;background-color: white; padding-left:20px;&quot;&gt;Department: {!$Record.D_partement__c}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;height: 30px;&quot;&gt;&lt;th style=&quot;text-align:left&quot;&gt;Message&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style=&quot;background-color: white; padding-left:20px;&quot;&gt;{!$Record.Description}&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Thanks,&lt;/p&gt;
+&lt;p style=&quot;color: #63c729; font-weight: bold;&quot;&gt;Your Communication team&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+		&lt;p&gt; 
+&lt;span style=&quot;color: #63c729; font-weight: bold;&quot;&gt;E&lt;/span&gt; : communication@pixid.com&lt;br&gt;
+&lt;span style=&quot;color: #63c729; font-weight: bold;&quot;&gt;A&lt;/span&gt; : 53/55 rue du Capitaine Guynemer - 92400 Courbevoie (France)
+&lt;p&gt;
+&lt;/div&gt;
+ 
+ 
+	&lt;div&gt;
+&lt;a href=&quot;https://www.pixid.fr/&quot; target=&quot;_blank&quot;&gt;&lt;img src =&quot;https://pixid-crm.file.force.com/file-asset-public/X2024signatureSF?oid=00DAW00000Kl5PI&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+ 
+	
+&lt;div style=&quot;margin-top:10px; margin-left:6px&quot;&gt;
+&lt;a href=&quot;https://www.linkedin.com/company/pixid&quot; target=&quot;_blank&quot;&gt;&lt;img src =&quot;https://pixid-crm.file.force.com/file-asset-public/rslinkedinsf?oid=00DAW00000Kl5PI&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/pixid_group&quot; target=&quot;_blank&quot;&gt;&lt;img src =&quot;https://pixid-crm.file.force.com/file-asset-public/X2024rstwittersf?oid=00DAW00000Kl5PI&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TXT_EmailSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New lead for Pixid VMS EU - {!$Record.LeadSource} - {!$Record.Company}</text>
+    </textTemplates>
+    <variables>
+        <name>EmailsList</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>MembersIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

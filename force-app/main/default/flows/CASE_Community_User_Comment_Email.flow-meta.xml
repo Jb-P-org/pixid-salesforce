@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>FirstTouch</name>
+        <label>First Touch</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Get_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>First_Touch</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>CreatedDateCasePlus10Min</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.FromAddress</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>pixid</stringValue>
+                </rightValue>
+            </conditions>
+            <label>First Touch or From Pixid</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>CleanedText</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+LEFT(
+  SUBSTITUTE({!$Record.TextBody}, 
+    &quot;External email: Be CAUTIOUS, especially with links and attachements.&quot;, 
+    &quot;&quot;
+  ),
+  IF(
+    CONTAINS(
+      SUBSTITUTE({!$Record.TextBody}, 
+        &quot;External email: Be CAUTIOUS, especially with links and attachements.&quot;, 
+        &quot;&quot;
+      ), 
+      &quot;2025 at&quot;
+    ),
+    FIND(
+      &quot;2025 at&quot;, 
+      SUBSTITUTE({!$Record.TextBody}, 
+        &quot;External email: Be CAUTIOUS, especially with links and attachements.&quot;, 
+        &quot;&quot;
+      )
+    ) - 15,
+    IF(
+      CONTAINS(
+        SUBSTITUTE({!$Record.TextBody}, 
+          &quot;External email: Be CAUTIOUS, especially with links and attachements.&quot;, 
+          &quot;&quot;
+        ),
+        &quot;2025 à&quot;
+      ),
+      FIND(
+        &quot;2025 à&quot;, 
+        SUBSTITUTE({!$Record.TextBody}, 
+          &quot;External email: Be CAUTIOUS, especially with links and attachements.&quot;, 
+          &quot;&quot;
+        )
+      ) - 15,
+      LEN(
+        SUBSTITUTE({!$Record.TextBody}, 
+          &quot;External email: Be CAUTIOUS, especially with links and attachements.&quot;, 
+          &quot;&quot;
+        )
+      )
+    )
+  )
+) , 100)</expression>
+    </formulas>
+    <formulas>
+        <name>CreatedDateCasePlus10Min</name>
+        <dataType>DateTime</dataType>
+        <expression>{!$Record.Parent.CreatedDate} + (10/1440)</expression>
+    </formulas>
+    <interviewLabel>CASE - Community User Comment - Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CASE - Community User Comment - Email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Case</name>
+        <label>Get Case</label>
+        <locationX>308</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ParentId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>308</locationX>
+        <locationY>539</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Case.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Customer_Last_Comment_Date_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Customer_Last_Comment__c</field>
+            <value>
+                <elementReference>CleanedText</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>FirstTouch</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Incoming</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>EmailMessage</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
