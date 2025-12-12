@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Registration_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Registration Number label</shortDescription>
+        <value>Registration Number</value>
+    </labels>
+    <labels>
+        <fullName>Registration_Number</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Numéro d'enregistrement</shortDescription>
+        <value>Numéro d’enregistrement</value>
+    </labels>
+    <labels>
+        <fullName>Registration_Number</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Handelsregisternummer</shortDescription>
+        <value>Handelsregisternummer</value>
+    </labels>
+    <labels>
+        <fullName>Registration_Number</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Número de registro</shortDescription>
+        <value>Número de registro</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT Number label</shortDescription>
+        <value>VAT Number</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Number</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Numéro de TVA</shortDescription>
+        <value>Numéro de TVA</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Number</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>USt-IdNr.</shortDescription>
+        <value>USt-IdNr.</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Number</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Número de IVA</shortDescription>
+        <value>Número de IVA</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Contact label</shortDescription>
+        <value>Billing Contact</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Contact</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Contact de facturation</shortDescription>
+        <value>Contact de facturation</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Contact</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Rechnungskontakt</shortDescription>
+        <value>Rechnungskontakt</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Contact</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Contacto de facturación</shortDescription>
+        <value>Contacto de facturación</value>
+    </labels>
+    <labels>
+        <fullName>Cash_Collection_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cash Collection Contact label</shortDescription>
+        <value>Cash Collection Contact</value>
+    </labels>
+    <labels>
+        <fullName>Cash_Collection_Contact</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Contact recouvrement</shortDescription>
+        <value>Contact recouvrement</value>
+    </labels>
+    <labels>
+        <fullName>Cash_Collection_Contact</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Inkasso-Kontakt</shortDescription>
+        <value>Inkasso-Kontakt</value>
+    </labels>
+    <labels>
+        <fullName>Cash_Collection_Contact</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Contacto de cobros</shortDescription>
+        <value>Contacto de cobros</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Method</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payment Method label</shortDescription>
+        <value>Payment Method</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Method</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Mode de paiement</shortDescription>
+        <value>Mode de paiement</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Method</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Zahlungsmethode</shortDescription>
+        <value>Zahlungsmethode</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Method</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Método de pago</shortDescription>
+        <value>Método de pago</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Conditions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Conditions label</shortDescription>
+        <value>Billing Conditions</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Conditions</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Conditions de facturation</shortDescription>
+        <value>Conditions de facturation</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Conditions</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Rechnungsbedingungen</shortDescription>
+        <value>Rechnungsbedingungen</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Conditions</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Condiciones de facturación</shortDescription>
+        <value>Condiciones de facturación</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Sending_Method</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Sending Method label</shortDescription>
+        <value>Invoice Sending Method</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Sending_Method</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Méthode d'envoi de la facture</shortDescription>
+        <value>Méthode d’envoi de la facture</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Sending_Method</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Rechnungsübermittlungsmethode</shortDescription>
+        <value>Rechnungsübermittlungsmethode</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Sending_Method</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Método de envío de factura</shortDescription>
+        <value>Método de envío de factura</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Instructions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Instructions label</shortDescription>
+        <value>Billing Instructions</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Instructions</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Instructions de facturation</shortDescription>
+        <value>Instructions de facturation</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Instructions</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Rechnungsanweisungen</shortDescription>
+        <value>Rechnungsanweisungen</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Instructions</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Instrucciones de facturación</shortDescription>
+        <value>Instrucciones de facturación</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Duration_Years</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contract Duration (Years) label</shortDescription>
+        <value>Contract Duration (Years)</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Duration_Years</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Durée du contrat (années)</shortDescription>
+        <value>Durée du contrat (années)</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Duration_Years</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Vertragslaufzeit (Jahre)</shortDescription>
+        <value>Vertragslaufzeit (Jahre)</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Duration_Years</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Duración del contrato (años)</shortDescription>
+        <value>Duración del contrato (años)</value>
+    </labels>
+    <labels>
+        <fullName>Send_Invoice_To</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send Invoice To label</shortDescription>
+        <value>Send Invoice To</value>
+    </labels>
+    <labels>
+        <fullName>Send_Invoice_To</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Envoyer la facture à</shortDescription>
+        <value>Envoyer la facture à</value>
+    </labels>
+    <labels>
+        <fullName>Send_Invoice_To</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Rechnung senden an</shortDescription>
+        <value>Rechnung senden an</value>
+    </labels>
+    <labels>
+        <fullName>Send_Invoice_To</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Enviar factura a</shortDescription>
+        <value>Enviar factura a</value>
+    </labels>
+    <labels>
+        <fullName>Platform_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Platform Link label</shortDescription>
+        <value>Platform Link</value>
+    </labels>
+    <labels>
+        <fullName>Platform_Link</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Lien plateforme</shortDescription>
+        <value>Lien plateforme</value>
+    </labels>
+    <labels>
+        <fullName>Platform_Link</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>Plattformlink</shortDescription>
+        <value>Plattformlink</value>
+    </labels>
+    <labels>
+        <fullName>Platform_Link</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Enlace de la plataforma</shortDescription>
+        <value>Enlace de la plataforma</value>
+    </labels>
+    <labels>
+        <fullName>PO_Reference_Request_Date_Frequency</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PO Reference / Request Date / Frequency label</shortDescription>
+        <value>PO Reference / Request Date / Frequency</value>
+    </labels>
+    <labels>
+        <fullName>PO_Reference_Request_Date_Frequency</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Référence/Date de demande/Fréquence du BC</shortDescription>
+        <value>Référence/Date de demande/Fréquence du BC</value>
+    </labels>
+    <labels>
+        <fullName>PO_Reference_Request_Date_Frequency</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>PO-Referenz/Anfragedatum/Frequenz</shortDescription>
+        <value>PO-Referenz/Anfragedatum/Frequenz</value>
+    </labels>
+    <labels>
+        <fullName>PO_Reference_Request_Date_Frequency</fullName>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Referencia/Fecha de solicitud/Frecuencia de OC</shortDescription>
+        <value>Referencia/Fecha de solicitud/Frecuencia de OC</value>
+    </labels>
+    <labels>
+        <fullName>Account_Production</fullName>
+        <categories>Case Lightning Layout</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Production</shortDescription>
+        <value>Account Production</value>
+    </labels>
+    <labels>
+        <fullName>Actions_requested</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Actions requested</shortDescription>
+        <value>Actions requested</value>
+    </labels>
+    <labels>
+        <fullName>Add_files</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add files</shortDescription>
+        <value>Add files :</value>
+    </labels>
+    <labels>
+        <fullName>Administrator</fullName>
+        <categories>Case Lightning Layout</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Administrator</shortDescription>
+        <value>Administrator</value>
+    </labels>
+    <labels>
+        <fullName>Case_Form_Logged_out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Form Logged out</shortDescription>
+        <value>This form is strictly restricted to logged-in users. Please log in to continue.</value>
+    </labels>
+    <labels>
+        <fullName>Case_Has_Been_Escalated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Has Been Escalated</shortDescription>
+        <value>The case has been escalated to the team :</value>
+    </labels>
+    <labels>
+        <fullName>Case_form_restricted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case form restricted</shortDescription>
+        <value>This form is strictly restricted to logged-in users. Please log in to continue.</value>
+    </labels>
+    <labels>
+        <fullName>Case_reason</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case reason</shortDescription>
+        <value>Case reason</value>
+    </labels>
+    <labels>
+        <fullName>Case_subreason</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case subreason</shortDescription>
+        <value>Case subreason</value>
+    </labels>
+    <labels>
+        <fullName>Channel_Partner</fullName>
+        <categories>Case Lightning Layout</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Channel Partner</shortDescription>
+        <value>Channel Partner</value>
+    </labels>
+    <labels>
+        <fullName>Client_request</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client request</shortDescription>
+        <value>Client Request</value>
+    </labels>
+    <labels>
+        <fullName>Closed</fullName>
+        <categories>Public Status Values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Closed</shortDescription>
+        <value>Closed</value>
+    </labels>
+    <labels>
+        <fullName>Context</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Context</shortDescription>
+        <value>Context</value>
+    </labels>
+    <labels>
+        <fullName>Create_ticket</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create ticket</shortDescription>
+        <value>Create ticket</value>
+    </labels>
+    <labels>
+        <fullName>Current_behavior</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Current behavior</shortDescription>
+        <value>Current Behavior</value>
+    </labels>
+    <labels>
+        <fullName>Details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>Domain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Domain</shortDescription>
+        <value>Domain</value>
+    </labels>
+    <labels>
+        <fullName>Escalate_Case</fullName>
+        <categories>Case Lightning Layout</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Escalate Case</shortDescription>
+        <value>Escalate Case</value>
+    </labels>
+    <labels>
+        <fullName>Escalation_reason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Escalation reason</shortDescription>
+        <value>Escalation Reason</value>
+    </labels>
+    <labels>
+        <fullName>Escalation_subreason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Escalation subreason</shortDescription>
+        <value>Escalation Subreason</value>
+    </labels>
+    <labels>
+        <fullName>Expected_behavior</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expected behavior</shortDescription>
+        <value>Expected Behavior</value>
+    </labels>
+    <labels>
+        <fullName>Files_added</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Files added</shortDescription>
+        <value>file(s) added</value>
+    </labels>
+    <labels>
+        <fullName>In_Progress</fullName>
+        <categories>Public Status Values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>In Progress</shortDescription>
+        <value>In Progress</value>
+    </labels>
+    <labels>
+        <fullName>Issue_scope</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Issue scope</shortDescription>
+        <value>Issue Scope</value>
+    </labels>
+    <labels>
+        <fullName>Issue_type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Issue type</shortDescription>
+        <value>Issue Type</value>
+    </labels>
+    <labels>
+        <fullName>Jira_Issues</fullName>
+        <categories>Case Lightning Layout</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Jira Issues</shortDescription>
+        <value>Jira Issues</value>
+    </labels>
+    <labels>
+        <fullName>Jira_Project</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Jira Project</shortDescription>
+        <value>Jira Project</value>
+    </labels>
+    <labels>
+        <fullName>Key_Contacts</fullName>
+        <categories>Case Lightning Layout</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Key Contacts</shortDescription>
+        <value>Key Contacts</value>
+    </labels>
+    <labels>
+        <fullName>New</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>Next</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>Offer_Contact_Role</fullName>
+        <categories>Case Lightning Layout</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Offer Contact Role</shortDescription>
+        <value>Offer Contact Role</value>
+    </labels>
+    <labels>
+        <fullName>On_Hold</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>On Hold</shortDescription>
+        <value>On Hold</value>
+    </labels>
+    <labels>
+        <fullName>Other</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other</shortDescription>
+        <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>Priority</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Priority</shortDescription>
+        <value>Priority</value>
+    </labels>
+    <labels>
+        <fullName>Request_description</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request description</shortDescription>
+        <value>Request description</value>
+    </labels>
+    <labels>
+        <fullName>Request_summary</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request summary</shortDescription>
+        <value>Request summary</value>
+    </labels>
+    <labels>
+        <fullName>SELF_Admin</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SELF Admin</shortDescription>
+        <value>Case Creation Enabled + Account Access</value>
+    </labels>
+    <labels>
+        <fullName>SELF_Reader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SELF Reader</shortDescription>
+        <value>Company Cases Read Only</value>
+    </labels>
+    <labels>
+        <fullName>SELF_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SELF User</shortDescription>
+        <value>Case Creation Enabled</value>
+    </labels>
+    <labels>
+        <fullName>SELf_Recommended_Articles</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SELf_Recommended_Articles</shortDescription>
+        <value>Recommended Articles</value>
+    </labels>
+    <labels>
+        <fullName>Support_Type</fullName>
+        <categories>Case Lightning Layout</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Support Type</shortDescription>
+        <value>Support Type</value>
+    </labels>
+    <labels>
+        <fullName>Ticket_Created_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ticket Created Title</shortDescription>
+        <value>Ticket created</value>
+    </labels>
+    <labels>
+        <fullName>Ticket_created</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ticket created</shortDescription>
+        <value>Ticket was successfully created :</value>
+    </labels>
+    <labels>
+        <fullName>Waiting_for_Information</fullName>
+        <categories>Public Status Values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Waiting for Information</shortDescription>
+        <value>En Attente d&apos;Informations</value>
+    </labels>
+    <labels>
+        <fullName>Which_team_escalation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Which team escalation</shortDescription>
+        <value>Which team should handle this case?</value>
+    </labels>
+    <labels>
+        <fullName>ers_CancelButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearFilterAction</fullName>
+        <categories>actions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Filter</shortDescription>
+        <value>Clear Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearFilterButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear All Filters</shortDescription>
+        <value>Clear All Filters</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearSelectionButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Selection</shortDescription>
+        <value>Clear Selection</value>
+    </labels>
+    <labels>
+        <fullName>ers_ColumnHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Column</shortDescription>
+        <value>Column</value>
+    </labels>
+    <labels>
+        <fullName>ers_EmptyTableMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty</shortDescription>
+        <value>This table currently has no data to display</value>
+    </labels>
+    <labels>
+        <fullName>ers_ErrorRequiredEntry</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Required</shortDescription>
+        <value>This is a required entry.  At least 1 row must be selected.</value>
+    </labels>
+    <labels>
+        <fullName>ers_FilterHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Filter</shortDescription>
+        <value>Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_FirstButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First Page</shortDescription>
+        <value>First</value>
+    </labels>
+    <labels>
+        <fullName>ers_LabelHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label</shortDescription>
+        <value>Label</value>
+    </labels>
+    <labels>
+        <fullName>ers_LastButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Page</shortDescription>
+        <value>Last</value>
+    </labels>
+    <labels>
+        <fullName>ers_NextButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next Page</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>ers_PreviousButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous Page</shortDescription>
+        <value>Prev</value>
+    </labels>
+    <labels>
+        <fullName>ers_RecordsPerPage</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Records per Page input label</shortDescription>
+        <value>Records per Page</value>
+    </labels>
+    <labels>
+        <fullName>ers_SaveButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>ers_SearchPlaceholder</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Term</shortDescription>
+        <value>Enter search term ...</value>
+    </labels>
+    <labels>
+        <fullName>ers_SetFilterAction</fullName>
+        <categories>actions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Set Filter</shortDescription>
+        <value>Set Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_ShowingPageMiddle</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Showing Page x of y Pages input label middle</shortDescription>
+        <value>of</value>
+    </labels>
+    <labels>
+        <fullName>ers_ShowingPagePrefix</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Showing Page x of y Pages input label prefix</shortDescription>
+        <value>Showing Page</value>
+    </labels>
+    <labels>
+        <fullName>ers_ShowingPageSuffix</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Showing Page x of y Pages input label suffix</shortDescription>
+        <value>Pages</value>
+    </labels>
+    <labels>
+        <fullName>ers_filterBlankHelpText</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Help Text for Filter Blank Checkbox</shortDescription>
+        <value>Check here if you want to filter rows where the value in this column is blank</value>
+    </labels>
+    <labels>
+        <fullName>ers_filterBlankLabel</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label for Filter Blank Checkbox</shortDescription>
+        <value>Filter Blank Values?</value>
+    </labels>
+    <labels>
+        <fullName>fsc_AccessLevel</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccessLevel</shortDescription>
+        <value>Access Level</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Back</fullName>
+        <categories>Buttons,Filters,Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ButtonIsNotSupportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonIsNotSupportedMessage</shortDescription>
+        <value>Following buttons are note supported:</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ConditionLogicHelpText</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConditionLogicHelpText</shortDescription>
+        <value>Use parentheses, AND, OR, and NOT to customize the logic. For example, if you enter “(1 AND 2 AND 3) OR 4”, the flow evaluates whether the first three conditions are true or only the fourth condition is true.</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Delete</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>fsc_FieldIsNotSupportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldIsNotSupportedMessage</shortDescription>
+        <value>Following fields are not supported:</value>
+    </labels>
+    <labels>
+        <fullName>fsc_FieldTypeNotSuportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>fsc_FieldTypeNotSuportedMessage</shortDescription>
+        <value>You provided an unsupported value for the DataTypeFilter input on Object and Field Picker. Currently the only supported value is ’picklist’</value>
+    </labels>
+    <labels>
+        <fullName>fsc_For</fullName>
+        <categories>Buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Key_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Key Label</shortDescription>
+        <value>Key</value>
+    </labels>
+    <labels>
+        <fullName>fsc_LackingPermissions</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LackingPermissions</shortDescription>
+        <value>You don\&apos;t have the proper permissions for ths action</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ManagerEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ManagerEmptyMessage</shortDescription>
+        <value>&quot;Manager APEX Class&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Manual_Reference_Allowed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ComboBox Placeholder Txxt</shortDescription>
+        <value>Manual reference allowed</value>
+    </labels>
+    <labels>
+        <fullName>fsc_MultipleGroupsForRole</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MultipleGroupsForRole</shortDescription>
+        <value>There are multiple groups for that role</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Name</fullName>
+        <categories>quicklinks, Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>fsc_NonePicklistValueLabel</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NonePicklistValueLabel</shortDescription>
+        <value>-- None --</value>
+    </labels>
+    <labels>
+        <fullName>fsc_OWDReadWrite</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OWDReadWrite</shortDescription>
+        <value>Sharing Settings must be private or public read/write to enable manual sharing</value>
+    </labels>
+    <labels>
+        <fullName>fsc_OwnerAdminModify</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OwnerAdminModify</shortDescription>
+        <value>Only the record owner or administrators can modify permissions</value>
+    </labels>
+    <labels>
+        <fullName>fsc_PublicGroups</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PublicGroups</shortDescription>
+        <value>Public Groups</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Queues</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Queues</shortDescription>
+        <value>Queues</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Read</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Read</shortDescription>
+        <value>Read</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ReadWrite</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReadWrite</shortDescription>
+        <value>Read / Write</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Reason</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reason</shortDescription>
+        <value>Reason</value>
+    </labels>
+    <labels>
+        <fullName>fsc_RelatedUsers</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RelatedUsers</shortDescription>
+        <value>Related Users</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Roles</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Roles</shortDescription>
+        <value>Roles</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Search</fullName>
+        <categories>Actions,Buttons,quicklinks</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search in</shortDescription>
+        <value>Search in</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SearchFor</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SearchFor</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SetAccessLevel</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SetAccessLevel</shortDescription>
+        <value>Set Access Level</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedAddCapabilitiesEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedAddCapabilitiesEmptyMessage</shortDescription>
+        <value>&quot;Add Capabilities&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedButtonsEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedButtonsEmptyMessage</shortDescription>
+        <value>&quot;Supported Buttons&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedEditCapabilitiesEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedEditCapabilitiesEmptyMessage</shortDescription>
+        <value>&quot;Edit Capabilities&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_TooManyResultsMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TooManyResultsMessage</shortDescription>
+        <value>Your search found more than 200 results.  Keep typing to make it more specific</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Type</fullName>
+        <categories>Buttons,Filters,Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>fsc_UserOrGroup</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserOrGroup</shortDescription>
+        <value>User Or Group</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Users</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Users</shortDescription>
+        <value>Users</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Value_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Value Label</shortDescription>
+        <value>Value</value>
+    </labels>
+</CustomLabels>
