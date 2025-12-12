@@ -19,8 +19,11 @@ import CreateTicket from '@salesforce/label/c.Create_ticket';
 import Domain from '@salesforce/label/c.Domain';
 import RequestDesc from '@salesforce/label/c.Request_description';
 import RequestSummary from '@salesforce/label/c.Request_summary';
-import TicketCreated from '@salesforce/label/c.Ticket_created';
+import TicketCreated from '@salesforce/label/c.Ticket_Created_Title';
 import CaseFormRestrict from '@salesforce/label/c.Case_form_restricted';
+import TicketSuccessMessage from '@salesforce/label/c.Ticket_created';
+import FilesAdded from '@salesforce/label/c.Files_added';
+import CaseFormLoggedOut from '@salesforce/label/c.Case_Form_Logged_out';
 
 import logError from '@salesforce/apex/LWCErrorLogger.logError';
 
@@ -38,7 +41,10 @@ export default class CaseFormLWC extends LightningElement {
         RequestDesc: RequestDesc,
         RequestSummary: RequestSummary,
         TicketCreated: TicketCreated,
-        CaseFormRestrict: CaseFormRestrict
+        CaseFormRestrict: CaseFormRestrict,
+        TicketSuccessMessage: TicketSuccessMessage,
+        FilesAdded: FilesAdded,
+        CaseFormLoggedOut: CaseFormLoggedOut
     }
 
     @api recordId;
@@ -76,41 +82,6 @@ export default class CaseFormLWC extends LightningElement {
 
     accountId;
 
-    visibilityRules = {
-        "General Inquiry": {
-            "Feature Request": { domain: true, module: true },
-            "Information on Platform Features": { domain: true, module: true },
-            "Other": { domain: true, module: false }
-        },
-        "Technical Issues": {
-            "Contract Signing Issue": { domain: true, module: true },
-            "Platform Slowness": { domain: true, module: true },
-            "Platform Anomaly": { domain: true, module: true },
-            "Integration Issues": { domain: true, module: false },
-            "Platform Unavailability": { domain: true, module: false }
-        },
-        "Document and Contract Management": {
-            "Document Management": { domain: true, module: true },
-            "Report a missing document": { domain: true, module: true },
-            "Management of Signature Certificates": { domain: false, module: false }
-        },
-        "Account Issues": {
-            "Repository management / List of values": { domain: true, module: true },
-            "Entity Management": { domain: true, module: false },
-            "Partnership Management / Agencies Network": { domain: true, module: false },
-            "User account access": { domain: true, module: false },
-            "User Management": { domain: true, module: false },
-            "PPE partner administration": { domain: false, module: false },
-            "Reconciliation resource sheets": { domain: false, module: false },
-            "Retail / VSE customers": { domain: false, module: false }
-        },
-        "Compliance & Security": {
-            "SFTP connection management": { domain: false, module: false },
-            "Retention period": { domain: false, module: false },
-            "User rights": { domain: false, module: false }
-        }
-    };
-
     @wire(getObjectInfo, { objectApiName: CASE_OBJECT })
     objectInfo;
 
@@ -126,22 +97,28 @@ export default class CaseFormLWC extends LightningElement {
         if (data) {
             try {
                 this.reasonOptions = data.picklistFieldValues.Reason.values;
+
+                // Subreason dependent on Reason
                 this.fullSubreasonMap = data.picklistFieldValues.Subreason__c.controllerValues;
                 this.subreasonDependencyMap = data.picklistFieldValues.Subreason__c.values;
-                // If Language is French, filter out 'Pixid VMS' from Domain options
-                this.domainOptions = this.userLanguage === 'fr' ? data.picklistFieldValues.Domain__c.values.filter(option => option.value !== 'Pixid VMS') : data.picklistFieldValues.Domain__c.values;
-                this.moduleOptions = data.picklistFieldValues.Module__c.values;
+
+                // Domain - load all values and filter out 'Pixid VMS' for French users
+                let allDomainOptions = data.picklistFieldValues.Domain__c.values;
+                // Filter out 'Pixid VMS' from Domain options for French users
+                this.domainOptions = allDomainOptions.filter(option => option.value !== 'Pixid VMS');
+
+                // Module dependent on Domain
                 this.fullModuleMap = data.picklistFieldValues.Module__c.controllerValues;
                 this.moduleDependencyMap = data.picklistFieldValues.Module__c.values;
             } catch (e) {
                 console.error('[Picklist Wire] Erreur parsing picklists :', e);
                 this.logClientError(e, 'wiredPicklists.parsing');
             }
-            
+
         } else if (error) {
             console.error('[Picklist Wire] Erreur chargement picklists:', error);
         }
-        
+
     }
 
     connectedCallback() {
@@ -182,40 +159,60 @@ export default class CaseFormLWC extends LightningElement {
     
 
     get showDomain() {
-        // Si l'utilisateur n'est pas français, ne pas afficher le champ Domain
-        if (this.userLanguage && this.userLanguage !== 'fr') {
-            return false;
-        }
-        return this.getVisibilityRule('domain');
+        // Show Domain field only for French users
+        return this.userLanguage === 'fr';
     }
+
     get showModule() {
-        return this.getVisibilityRule('module');
-    }
-    getVisibilityRule(field) {
-        const rule = this.visibilityRules[this.selectedReason]?.[this.selectedSubreason];
-        return rule ? rule[field] : false;
+        // Show Module if there are available options based on the selected Domain
+        return this.moduleOptions.length > 0;
     }
 
     handleReasonChange(event) {
         this.selectedReason = event.detail.value;
         this.selectedSubreason = null;
+        this.selectedDomain = null;
+        this.selectedModule = null;
+
+        // Filter Subreason based on Reason
         const controllerKey = this.fullSubreasonMap[this.selectedReason];
         this.subreasonOptions = this.subreasonDependencyMap
             .filter(opt => opt.validFor.includes(controllerKey))
             .map(opt => ({ label: opt.label, value: opt.value }));
+
+        // Reset Module options
+        this.moduleOptions = [];
     }
 
     handleSubreasonChange(event) {
         this.selectedSubreason = event.detail.value;
+        this.selectedModule = null;
+
+        // If user is not French, automatically set Domain to 'Pixid VMS'
+        if (this.userLanguage && this.userLanguage !== 'fr') {
+            this.selectedDomain = 'Pixid VMS';
+        } else {
+            // For French users, reset Domain selection
+            this.selectedDomain = null;
+        }
+
+        // Reset Module options (will be populated when Domain is selected)
+        this.moduleOptions = [];
     }
 
     handleDomainChange(event) {
         this.selectedDomain = event.detail.value;
-        const controllerKey = this.fullModuleMap[this.selectedDomain];
-        this.moduleOptions = this.moduleDependencyMap
-            .filter(opt => opt.validFor.includes(controllerKey))
-            .map(opt => ({ label: opt.label, value: opt.value }));
         this.selectedModule = null;
+
+        // Filter Module based on Domain
+        const controllerKey = this.fullModuleMap[this.selectedDomain];
+        if (controllerKey !== undefined) {
+            this.moduleOptions = this.moduleDependencyMap
+                .filter(opt => opt.validFor.includes(controllerKey))
+                .map(opt => ({ label: opt.label, value: opt.value }));
+        } else {
+            this.moduleOptions = [];
+        }
     }
 
     handleModuleChange(event) {
@@ -288,10 +285,8 @@ export default class CaseFormLWC extends LightningElement {
             OwnerId:'00GIV00000A8Vx62AF'
         };
     
-        // Si l'utilisateur n'est pas français, forcer Domain__c = "Pixid VMS"
-        if (this.userLanguage && this.userLanguage !== 'fr') {
-            fields.Domain__c = 'Pixid VMS';
-        } else if (this.showDomain && this.selectedDomain) {
+        // Add Domain__c if selected (automatically set to 'Pixid VMS' for non-French users)
+        if (this.selectedDomain) {
             fields.Domain__c = this.selectedDomain;
         }
 
