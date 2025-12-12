@@ -1,342 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>Registration_Number</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Registration Number label</shortDescription>
-        <value>Registration Number</value>
-    </labels>
-    <labels>
-        <fullName>Registration_Number</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Numéro d'enregistrement</shortDescription>
-        <value>Numéro d’enregistrement</value>
-    </labels>
-    <labels>
-        <fullName>Registration_Number</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Handelsregisternummer</shortDescription>
-        <value>Handelsregisternummer</value>
-    </labels>
-    <labels>
-        <fullName>Registration_Number</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Número de registro</shortDescription>
-        <value>Número de registro</value>
-    </labels>
-    <labels>
-        <fullName>VAT_Number</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>VAT Number label</shortDescription>
-        <value>VAT Number</value>
-    </labels>
-    <labels>
-        <fullName>VAT_Number</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Numéro de TVA</shortDescription>
-        <value>Numéro de TVA</value>
-    </labels>
-    <labels>
-        <fullName>VAT_Number</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>USt-IdNr.</shortDescription>
-        <value>USt-IdNr.</value>
-    </labels>
-    <labels>
-        <fullName>VAT_Number</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Número de IVA</shortDescription>
-        <value>Número de IVA</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Contact</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Billing Contact label</shortDescription>
-        <value>Billing Contact</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Contact</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Contact de facturation</shortDescription>
-        <value>Contact de facturation</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Contact</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Rechnungskontakt</shortDescription>
-        <value>Rechnungskontakt</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Contact</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Contacto de facturación</shortDescription>
-        <value>Contacto de facturación</value>
-    </labels>
-    <labels>
-        <fullName>Cash_Collection_Contact</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Cash Collection Contact label</shortDescription>
-        <value>Cash Collection Contact</value>
-    </labels>
-    <labels>
-        <fullName>Cash_Collection_Contact</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Contact recouvrement</shortDescription>
-        <value>Contact recouvrement</value>
-    </labels>
-    <labels>
-        <fullName>Cash_Collection_Contact</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Inkasso-Kontakt</shortDescription>
-        <value>Inkasso-Kontakt</value>
-    </labels>
-    <labels>
-        <fullName>Cash_Collection_Contact</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Contacto de cobros</shortDescription>
-        <value>Contacto de cobros</value>
-    </labels>
-    <labels>
-        <fullName>Payment_Method</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Payment Method label</shortDescription>
-        <value>Payment Method</value>
-    </labels>
-    <labels>
-        <fullName>Payment_Method</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Mode de paiement</shortDescription>
-        <value>Mode de paiement</value>
-    </labels>
-    <labels>
-        <fullName>Payment_Method</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Zahlungsmethode</shortDescription>
-        <value>Zahlungsmethode</value>
-    </labels>
-    <labels>
-        <fullName>Payment_Method</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Método de pago</shortDescription>
-        <value>Método de pago</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Conditions</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Billing Conditions label</shortDescription>
-        <value>Billing Conditions</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Conditions</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Conditions de facturation</shortDescription>
-        <value>Conditions de facturation</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Conditions</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Rechnungsbedingungen</shortDescription>
-        <value>Rechnungsbedingungen</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Conditions</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Condiciones de facturación</shortDescription>
-        <value>Condiciones de facturación</value>
-    </labels>
-    <labels>
-        <fullName>Invoice_Sending_Method</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Invoice Sending Method label</shortDescription>
-        <value>Invoice Sending Method</value>
-    </labels>
-    <labels>
-        <fullName>Invoice_Sending_Method</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Méthode d'envoi de la facture</shortDescription>
-        <value>Méthode d’envoi de la facture</value>
-    </labels>
-    <labels>
-        <fullName>Invoice_Sending_Method</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Rechnungsübermittlungsmethode</shortDescription>
-        <value>Rechnungsübermittlungsmethode</value>
-    </labels>
-    <labels>
-        <fullName>Invoice_Sending_Method</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Método de envío de factura</shortDescription>
-        <value>Método de envío de factura</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Instructions</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Billing Instructions label</shortDescription>
-        <value>Billing Instructions</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Instructions</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Instructions de facturation</shortDescription>
-        <value>Instructions de facturation</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Instructions</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Rechnungsanweisungen</shortDescription>
-        <value>Rechnungsanweisungen</value>
-    </labels>
-    <labels>
-        <fullName>Billing_Instructions</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Instrucciones de facturación</shortDescription>
-        <value>Instrucciones de facturación</value>
-    </labels>
-    <labels>
-        <fullName>Contract_Duration_Years</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Contract Duration (Years) label</shortDescription>
-        <value>Contract Duration (Years)</value>
-    </labels>
-    <labels>
-        <fullName>Contract_Duration_Years</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Durée du contrat (années)</shortDescription>
-        <value>Durée du contrat (années)</value>
-    </labels>
-    <labels>
-        <fullName>Contract_Duration_Years</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Vertragslaufzeit (Jahre)</shortDescription>
-        <value>Vertragslaufzeit (Jahre)</value>
-    </labels>
-    <labels>
-        <fullName>Contract_Duration_Years</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Duración del contrato (años)</shortDescription>
-        <value>Duración del contrato (años)</value>
-    </labels>
-    <labels>
-        <fullName>Send_Invoice_To</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Send Invoice To label</shortDescription>
-        <value>Send Invoice To</value>
-    </labels>
-    <labels>
-        <fullName>Send_Invoice_To</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Envoyer la facture à</shortDescription>
-        <value>Envoyer la facture à</value>
-    </labels>
-    <labels>
-        <fullName>Send_Invoice_To</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Rechnung senden an</shortDescription>
-        <value>Rechnung senden an</value>
-    </labels>
-    <labels>
-        <fullName>Send_Invoice_To</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Enviar factura a</shortDescription>
-        <value>Enviar factura a</value>
-    </labels>
-    <labels>
-        <fullName>Platform_Link</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Platform Link label</shortDescription>
-        <value>Platform Link</value>
-    </labels>
-    <labels>
-        <fullName>Platform_Link</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Lien plateforme</shortDescription>
-        <value>Lien plateforme</value>
-    </labels>
-    <labels>
-        <fullName>Platform_Link</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>Plattformlink</shortDescription>
-        <value>Plattformlink</value>
-    </labels>
-    <labels>
-        <fullName>Platform_Link</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Enlace de la plataforma</shortDescription>
-        <value>Enlace de la plataforma</value>
-    </labels>
-    <labels>
-        <fullName>PO_Reference_Request_Date_Frequency</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>PO Reference / Request Date / Frequency label</shortDescription>
-        <value>PO Reference / Request Date / Frequency</value>
-    </labels>
-    <labels>
-        <fullName>PO_Reference_Request_Date_Frequency</fullName>
-        <language>fr</language>
-        <protected>false</protected>
-        <shortDescription>Référence/Date de demande/Fréquence du BC</shortDescription>
-        <value>Référence/Date de demande/Fréquence du BC</value>
-    </labels>
-    <labels>
-        <fullName>PO_Reference_Request_Date_Frequency</fullName>
-        <language>de</language>
-        <protected>false</protected>
-        <shortDescription>PO-Referenz/Anfragedatum/Frequenz</shortDescription>
-        <value>PO-Referenz/Anfragedatum/Frequenz</value>
-    </labels>
-    <labels>
-        <fullName>PO_Reference_Request_Date_Frequency</fullName>
-        <language>es</language>
-        <protected>false</protected>
-        <shortDescription>Referencia/Fecha de solicitud/Frecuencia de OC</shortDescription>
-        <value>Referencia/Fecha de solicitud/Frecuencia de OC</value>
-    </labels>
-    <labels>
         <fullName>Account_Production</fullName>
         <categories>Case Lightning Layout</categories>
         <language>en_US</language>
@@ -365,6 +29,27 @@
         <protected>false</protected>
         <shortDescription>Administrator</shortDescription>
         <value>Administrator</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Conditions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Conditions label</shortDescription>
+        <value>Billing Conditions</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Contact label</shortDescription>
+        <value>Billing Contact</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Instructions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Instructions label</shortDescription>
+        <value>Billing Instructions</value>
     </labels>
     <labels>
         <fullName>Case_Form_Logged_out</fullName>
@@ -404,6 +89,13 @@
         <value>Case subreason</value>
     </labels>
     <labels>
+        <fullName>Cash_Collection_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cash Collection Contact label</shortDescription>
+        <value>Cash Collection Contact</value>
+    </labels>
+    <labels>
         <fullName>Channel_Partner</fullName>
         <categories>Case Lightning Layout</categories>
         <language>en_US</language>
@@ -432,6 +124,13 @@
         <protected>false</protected>
         <shortDescription>Context</shortDescription>
         <value>Context</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Duration_Years</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contract Duration (Years) label</shortDescription>
+        <value>Contract Duration (Years)</value>
     </labels>
     <labels>
         <fullName>Create_ticket</fullName>
@@ -507,6 +206,13 @@
         <value>In Progress</value>
     </labels>
     <labels>
+        <fullName>Invoice_Sending_Method</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Sending Method label</shortDescription>
+        <value>Invoice Sending Method</value>
+    </labels>
+    <labels>
         <fullName>Issue_scope</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -542,6 +248,13 @@
         <protected>false</protected>
         <shortDescription>Key Contacts</shortDescription>
         <value>Key Contacts</value>
+    </labels>
+    <labels>
+        <fullName>Legal_Notice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Legal Notice</shortDescription>
+        <value>Legal Notice</value>
     </labels>
     <labels>
         <fullName>New</fullName>
@@ -580,11 +293,46 @@
         <value>Other</value>
     </labels>
     <labels>
+        <fullName>PO_Reference_Request_Date_Frequency</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PO Reference / Request Date / Frequency label</shortDescription>
+        <value>PO Reference / Request Date / Frequency</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Method</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payment Method label</shortDescription>
+        <value>Payment Method</value>
+    </labels>
+    <labels>
+        <fullName>Platform_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Platform Link label</shortDescription>
+        <value>Platform Link</value>
+    </labels>
+    <labels>
         <fullName>Priority</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Priority</shortDescription>
         <value>Priority</value>
+    </labels>
+    <labels>
+        <fullName>Privacy_Policy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Privacy Policy</shortDescription>
+        <value>Privacy Policy</value>
+    </labels>
+    <labels>
+        <fullName>Registration_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Registration Number label</shortDescription>
+        <value>Registration Number</value>
     </labels>
     <labels>
         <fullName>Request_description</fullName>
@@ -632,6 +380,13 @@
         <value>Recommended Articles</value>
     </labels>
     <labels>
+        <fullName>Send_Invoice_To</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send Invoice To label</shortDescription>
+        <value>Send Invoice To</value>
+    </labels>
+    <labels>
         <fullName>Support_Type</fullName>
         <categories>Case Lightning Layout</categories>
         <language>en_US</language>
@@ -652,6 +407,13 @@
         <protected>false</protected>
         <shortDescription>Ticket created</shortDescription>
         <value>Ticket was successfully created :</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT Number label</shortDescription>
+        <value>VAT Number</value>
     </labels>
     <labels>
         <fullName>Waiting_for_Information</fullName>
