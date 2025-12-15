@@ -24,6 +24,18 @@ import CaseFormRestrict from '@salesforce/label/c.Case_form_restricted';
 import TicketSuccessMessage from '@salesforce/label/c.Ticket_created';
 import FilesAdded from '@salesforce/label/c.Files_added';
 import CaseFormLoggedOut from '@salesforce/label/c.Case_Form_Logged_out';
+import Success from '@salesforce/label/c.Success';
+import TicketCreatedMessage from '@salesforce/label/c.Ticket_Created_Message';
+import RequiredFields from '@salesforce/label/c.Required_Fields';
+import PleaseFillIn from '@salesforce/label/c.Please_Fill_In';
+import FileAdded from '@salesforce/label/c.File_Added';
+import FilesUploadedMessage from '@salesforce/label/c.Files_Uploaded_Message';
+import TheReason from '@salesforce/label/c.The_Reason';
+import TheSubreason from '@salesforce/label/c.The_Subreason';
+import TheRequestSubject from '@salesforce/label/c.The_Request_Subject';
+import TheDescription from '@salesforce/label/c.The_Description';
+import TheDomain from '@salesforce/label/c.The_Domain';
+import TheModule from '@salesforce/label/c.The_Module';
 
 import logError from '@salesforce/apex/LWCErrorLogger.logError';
 
@@ -44,7 +56,19 @@ export default class CaseFormLWC extends LightningElement {
         CaseFormRestrict: CaseFormRestrict,
         TicketSuccessMessage: TicketSuccessMessage,
         FilesAdded: FilesAdded,
-        CaseFormLoggedOut: CaseFormLoggedOut
+        CaseFormLoggedOut: CaseFormLoggedOut,
+        Success: Success,
+        TicketCreatedMessage: TicketCreatedMessage,
+        RequiredFields: RequiredFields,
+        PleaseFillIn: PleaseFillIn,
+        FileAdded: FileAdded,
+        FilesUploadedMessage: FilesUploadedMessage,
+        TheReason: TheReason,
+        TheSubreason: TheSubreason,
+        TheRequestSubject: TheRequestSubject,
+        TheDescription: TheDescription,
+        TheDomain: TheDomain,
+        TheModule: TheModule
     }
 
     @api recordId;
@@ -191,21 +215,17 @@ export default class CaseFormLWC extends LightningElement {
         // If user is not French, automatically set Domain to 'Pixid VMS'
         if (this.userLanguage && this.userLanguage !== 'fr') {
             this.selectedDomain = 'Pixid VMS';
+            // Populate Module options based on auto-selected Domain
+            this.populateModuleOptions(this.selectedDomain);
         } else {
             // For French users, reset Domain selection
             this.selectedDomain = null;
+            this.moduleOptions = [];
         }
-
-        // Reset Module options (will be populated when Domain is selected)
-        this.moduleOptions = [];
     }
 
-    handleDomainChange(event) {
-        this.selectedDomain = event.detail.value;
-        this.selectedModule = null;
-
-        // Filter Module based on Domain
-        const controllerKey = this.fullModuleMap[this.selectedDomain];
+    populateModuleOptions(domain) {
+        const controllerKey = this.fullModuleMap[domain];
         if (controllerKey !== undefined) {
             this.moduleOptions = this.moduleDependencyMap
                 .filter(opt => opt.validFor.includes(controllerKey))
@@ -213,6 +233,14 @@ export default class CaseFormLWC extends LightningElement {
         } else {
             this.moduleOptions = [];
         }
+    }
+
+    handleDomainChange(event) {
+        this.selectedDomain = event.detail.value;
+        this.selectedModule = null;
+
+        // Filter Module based on Domain
+        this.populateModuleOptions(this.selectedDomain);
     }
 
     handleModuleChange(event) {
@@ -233,7 +261,7 @@ export default class CaseFormLWC extends LightningElement {
             this.uploadedFileIds.push(file.documentId);
             this.uploadedFiles.push({ name: file.name, documentId: file.documentId });
         });
-        this.showToast('Fichier ajouté', `${uploadedFiles.length} fichier(s) uploadé(s).`, 'success');
+        this.showToast(this.label.FileAdded, this.label.FilesUploadedMessage.replace('{0}', uploadedFiles.length), 'success');
         console.log('✅ handleFileUpload called');
         console.log(JSON.stringify(event.detail.files));
         console.log(JSON.stringify(this.uploadedFiles));
@@ -261,15 +289,15 @@ export default class CaseFormLWC extends LightningElement {
     
         const missingFields = [];
     
-        if (!this.selectedReason) missingFields.push('la raison');
-        if (!this.selectedSubreason) missingFields.push('la sous-raison');
-        if (!this.subject) missingFields.push("l'objet de la demande");
-        if (!this.description) missingFields.push('la description');
-        if (this.showDomain && !this.selectedDomain) missingFields.push('le domaine');
-        if (this.showModule && !this.selectedModule) missingFields.push('le module');
+        if (!this.selectedReason) missingFields.push(this.label.TheReason);
+        if (!this.selectedSubreason) missingFields.push(this.label.TheSubreason);
+        if (!this.subject) missingFields.push(this.label.TheRequestSubject);
+        if (!this.description) missingFields.push(this.label.TheDescription);
+        if (this.showDomain && !this.selectedDomain) missingFields.push(this.label.TheDomain);
+        if (this.showModule && !this.selectedModule) missingFields.push(this.label.TheModule);
     
         if (missingFields.length > 0) {
-            this.showToast('Champs requis', 'Merci de renseigner ' + missingFields.join(', ') + '.', 'error');
+            this.showToast(this.label.RequiredFields, this.label.PleaseFillIn.replace('{0}', missingFields.join(', ')), 'error');
             this.isSubmitting = false;
             return;
         }
@@ -310,7 +338,7 @@ export default class CaseFormLWC extends LightningElement {
             })
             .then(caseNumber => {
                 this.caseNumber = caseNumber || this.caseId; // fallback sur l'ID si problème
-                this.showToast('Succès', `Case ${this.caseNumber} créé.`, 'success');
+                this.showToast(this.label.Success, this.label.TicketCreatedMessage.replace('{0}', this.caseNumber), 'success');
                 this.showConfirmation = true;
     
                 const postCreationTasks = [];

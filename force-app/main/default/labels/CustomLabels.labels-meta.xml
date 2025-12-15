@@ -59,6 +59,70 @@
         <value>This form is strictly restricted to logged-in users. Please log in to continue.</value>
     </labels>
     <labels>
+        <fullName>Required_Fields</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Required Fields</shortDescription>
+        <value>Required fields</value>
+    </labels>
+    <labels>
+        <fullName>Please_Fill_In</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please Fill In</shortDescription>
+        <value>Please fill in {0}.</value>
+    </labels>
+    <labels>
+        <fullName>The_Reason</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The Reason</shortDescription>
+        <value>the reason</value>
+    </labels>
+    <labels>
+        <fullName>The_Subreason</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The Subreason</shortDescription>
+        <value>the subreason</value>
+    </labels>
+    <labels>
+        <fullName>The_Request_Subject</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The Request Subject</shortDescription>
+        <value>the request subject</value>
+    </labels>
+    <labels>
+        <fullName>The_Description</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The Description</shortDescription>
+        <value>the description</value>
+    </labels>
+    <labels>
+        <fullName>The_Domain</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The Domain</shortDescription>
+        <value>the domain</value>
+    </labels>
+    <labels>
+        <fullName>The_Module</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The Module</shortDescription>
+        <value>the module</value>
+    </labels>
+    <labels>
         <fullName>Case_Has_Been_Escalated</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -189,6 +253,22 @@
         <protected>false</protected>
         <shortDescription>Expected behavior</shortDescription>
         <value>Expected Behavior</value>
+    </labels>
+    <labels>
+        <fullName>File_Added</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>File Added</shortDescription>
+        <value>File added</value>
+    </labels>
+    <labels>
+        <fullName>Files_Uploaded_Message</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Files Uploaded Message</shortDescription>
+        <value>{0} file(s) uploaded.</value>
     </labels>
     <labels>
         <fullName>Files_added</fullName>
@@ -393,6 +473,22 @@
         <protected>false</protected>
         <shortDescription>Support Type</shortDescription>
         <value>Support Type</value>
+    </labels>
+    <labels>
+        <fullName>Success</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Success</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>Ticket_Created_Message</fullName>
+        <categories>SELF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ticket Created Message</shortDescription>
+        <value>Case {0} created.</value>
     </labels>
     <labels>
         <fullName>Ticket_Created_Title</fullName>
