@@ -84,16 +84,23 @@ public class CeligoWebhookSender {
 
         Map<String, Object> payload = new Map<String, Object>{'record' => record};
 
-        String username = 'salesforce';
-        String password = 'MotDePasseUltraSecret2025';
-        String basicAuth = 'Basic ' + EncodingUtil.base64Encode(Blob.valueOf(username + ':' + password));
+        // Retrieve credentials from Custom Metadata Type
+        Celigo_Settings__mdt settings = Celigo_Settings__mdt.getInstance('Default');
+        if (settings == null) {
+            System.debug('Error: Celigo_Settings__mdt.Default record not found');
+            return;
+        }
+
+        String basicAuth = 'Basic ' + EncodingUtil.base64Encode(
+            Blob.valueOf(settings.Username__c + ':' + settings.Password__c)
+        );
 
         // Sérialisation puis décodage des entités HTML
         String jsonBody = JSON.serialize(record);
         jsonBody = decodeHtmlEntities(jsonBody);
 
         HttpRequest req = new HttpRequest();
-        req.setEndpoint('https://api.eu.integrator.io/v1/exports/6870c9e411115d8016c8b2ed/data');
+        req.setEndpoint(settings.Endpoint_URL__c);
         req.setMethod('POST');
         req.setHeader('Content-Type', 'application/json');
         req.setHeader('Authorization', basicAuth);
