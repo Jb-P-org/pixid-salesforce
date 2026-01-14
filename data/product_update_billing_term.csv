@@ -1,0 +1,75 @@
+Id,Name,Default_Billing_Schedule__c,Default_Term__c
+01tIV00000BTLnVYAX,"Vendor Management System (% of Spend)",Monthly,In arrears
+01tIV00000GOfPVYA1,"Assignment fees",Monthly,In arrears
+01tIV00000HYLoDYAX,"SOW/Services Procurement - % of Spend",Monthly,In arrears
+01tIV00000H2IDaYAN,"Set up fees",One-off,One-off
+01tIV00000GOfOzYAL,"Annual fees (Fixed Fees)",Annual,In advance
+01tIV00000GOfP9YAL,"Licence BI - Conception",Annual,In advance
+01tIV00000GOfPAYA1,"Licence BI - Consultation",Annual,In advance
+01tIV00000GOfPBYA1,"Licence BI",Annual,In advance
+01tIV00000GOfPCYA1,"Support Gold (25 Tickets)",Annual,In advance
+01tIV00000GOfPDYA1,"Support Siliver",Annual,In advance
+01tIV00000GOfPEYA1,"Support Platinium",Annual,In advance
+01tIV00000GOfPFYA1,"Maintenance SSO",Annual,In advance
+01tIV00000GOfPGYA1,"Maintenance Branding",Annual,In advance
+01tIV00000GOfPHYA1,"Maintenance Connecteur Partenaire",Annual,In advance
+01tIV00000GOfPIYA1,"Application Mobile",Annual,In advance
+01tIV00000GOfPJYA1,"Administration PPE",Annual,In advance
+01tIV00000GOfPOYA1,"Commission / service Partenaire",Annual,In advance
+01tIV00000GOfPPYA1,"Commission / maintenance Connecteur Partenaire",Annual,In advance
+01tIV00000GOfPdYAL,"Licence Utilisateur CARERIX",Monthly,In arrears
+01tIV00000GOgg1YAD,"VMS - Rebates",Annual,In arrears
+01tIV00000GyVCbYAN,"Redevance d'utilisation - Tranche 25 ETP - Cas 2",Annual,In advance
+01tIV00000GyVFpYAN,"Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1",Annual,In advance
+01tIV00000GyVMHYA3,"Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 2",Annual,In advance
+01tIV00000H2VcDYAV,"SSO Maintenance",Annual,In advance
+01tIV00000JJ9HaYAL,"Maintenance API",Annual,In advance
+01tIV00000JkFp7YAF,"Utilisation PPE - Unités de Siret",Annual,In advance
+01tIV00000BTLnYYAX,"VMS - Identity Managment (Fixed Fee)",Annual,In advance
+01tIV00000BUvVZYA1,"Vendor Management System - Overages (Fixed Fee)",Annual,In advance
+01tIV00000BUvgrYAD,"Vendor Management System (Fixed Fee)",Annual,In advance
+01tIV00000H2T8zYAF,"Sisense - User License",Annual,In advance
+01tIV00000HYMqjYAH,"SOW/Services Procurement - Fixed Fee",Annual,In advance
+01tIV00000BTLnlYAH,"VMS - Implementation (Fixed Fee)",One-off,One-off
+01tIV00000BTLnnYAH,"VMS - Professional Services (Fixed Fee)",One-off,One-off
+01tIV00000BTLnoYAH,"VMS - Professional Services (T&M)",One-off,One-off
+01tIV00000BUvIfYAL,"VMS - Implementation (T&M)",One-off,One-off
+01tIV00000GOfPQYA1,"Commission / mise en œuvre Connecteur Partenaire",One-off,One-off
+01tIV00000GOfPRYA1,"Directeur de Projet",One-off,One-off
+01tIV00000GOfPSYA1,"Chef de Projet / Formateur",One-off,One-off
+01tIV00000GOfPTYA1,"Chargé de support",One-off,One-off
+01tIV00000GOfPWYA1,"Dévéloppement",One-off,One-off
+01tIV00000GOfPXYA1,"Expertise",One-off,One-off
+01tIV00000GOfPYYA1,"Connexion SSO",One-off,One-off
+01tIV00000GOfPZYA1,"Mise en œuvre 50% à la signature",One-off,One-off
+01tIV00000GOfPaYAL,"Mise en œuvre 50% à GO live",One-off,One-off
+01tIV00000GOfPbYAL,"Frais de déplacement",One-off,One-off
+01tIV00000GOfPeYAL,"Assistance à la mise en place / Connecteur Partenaire",One-off,One-off
+01tIV00000GOfPiYAL,"Formation BI",One-off,One-off
+01tIV00000GOfPjYAL,"Formation Utilisateur",One-off,One-off
+01tIV00000GOfPkYAL,"Formation Administrateur",One-off,One-off
+01tIV00000GOfPlYAL,"Formation Administrateur RCV",One-off,One-off
+01tIV00000GOfPmYAL,"Formation Formateur",One-off,One-off
+01tIV00000GOfPnYAL,"Manuel utilisateur personnalisé",One-off,One-off
+01tIV00000GOfTpYAL,"Ouverture liaison SFTP",One-off,One-off
+01tIV00000GOfTqYAL,"Ouverture API",One-off,One-off
+01tIV00000GOfTrYAL,"Certification flux",One-off,One-off
+01tIV00000GOfTsYAL,"Interface HR-XML SIDES / API",One-off,One-off
+01tIV00000GyRiVYAV,"Mise en œuvre Rapport ETL - Tranche 3 extractions",One-off,One-off
+01tIV00000GyT5zYAF,"Formation ETT - Utilisateur Gestion - Formation Complémentaire",One-off,One-off
+01tIV00000GyUMzYAN,"Chiffrement des données SFTP",One-off,One-off
+01tIV00000GyUWfYAN,"ETL - Supervision et support de 5 extractions additionnelles",One-off,One-off
+01tIV00000GyUZuYAN,"Formation Administrateur ETT standard",One-off,One-off
+01tIV00000GyUgLYAV,"ETL - Supervision et support des fichiers jusqu'à 5 extractions",One-off,One-off
+01tIV00000GyUhxYAF,"Expert",One-off,One-off
+01tIV00000GyUrdYAF,"Formation Utilisateur et Administrateur ETT standard",One-off,One-off
+01tIV00000GyUurYAF,"Mise en œuvre",One-off,One-off
+01tIV00000GyUy5YAF,"Mise en œuvre Pack ETT",One-off,One-off
+01tIV00000GyV2vYAF,"Mise en œuvre Rapport ETL",One-off,One-off
+01tIV00000H2OviYAF,"Feature Development",One-off,One-off
+01tIV00000H2SuTYAV,"Sisense - Implementation",One-off,One-off
+01tIV00000H2URdYAN,"Extra Training",One-off,One-off
+01tIV00000H2UwHYAV,"Integration API Open",One-off,One-off
+01tIV00000H2VAnYAN,"SSO Connection",One-off,One-off
+01tIV00000H2ZRJYA3,"Customized Integration",One-off,One-off
+01tIV00000H2mYDYAZ,"Professional Services (Fixed Fee)",One-off,One-off
