@@ -263,6 +263,20 @@
                 <elementReference>Get_New_Charge_Map.EndDateRevRec__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varR_CurrentCMItem.BillingSchedule__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopOnOppLineItems.Product2.Default_Billing_Schedule__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varR_CurrentCMItem.Term__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopOnOppLineItems.Product2.Default_Term__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_New_Item_To_List</targetReference>
         </connector>
@@ -302,7 +316,7 @@
             <label>No</label>
         </rules>
     </decisions>
-    <description>Added Unit/Sales price to line items, discount and line desc + product nature + end date</description>
+    <description>Added Unit/Sales price to line items, discount and line desc + product nature + end date + default billing schedule and term from product</description>
     <environments>Default</environments>
     <formulas>
         <name>IsPrimary</name>

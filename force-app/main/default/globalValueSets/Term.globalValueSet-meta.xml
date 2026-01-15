@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>In arrears</fullName>
+        <default>false</default>
+        <label>In arrears</label>
+    </customValue>
+    <customValue>
+        <fullName>In advance</fullName>
+        <default>false</default>
+        <label>In advance</label>
+    </customValue>
+    <customValue>
+        <fullName>One-off</fullName>
+        <default>false</default>
+        <label>One-off</label>
+    </customValue>
+    <description>Billing Term</description>
+    <masterLabel>Term</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
