@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Datei hinzugefügt</label>
+        <name>File_Added</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} Datei(en) hochgeladen.</label>
+        <name>Files_Uploaded_Message</name>
+    </customLabels>
+    <customLabels>
+        <label>Bitte füllen Sie {0} aus.</label>
+        <name>Please_Fill_In</name>
+    </customLabels>
+    <customLabels>
+        <label>Pflichtfelder</label>
+        <name>Required_Fields</name>
+    </customLabels>
+    <customLabels>
+        <label>Erfolg</label>
+        <name>Success</name>
+    </customLabels>
+    <customLabels>
+        <label>die Beschreibung</label>
+        <name>The_Description</name>
+    </customLabels>
+    <customLabels>
+        <label>die Domain</label>
+        <name>The_Domain</name>
+    </customLabels>
+    <customLabels>
+        <label>das Modul</label>
+        <name>The_Module</name>
+    </customLabels>
+    <customLabels>
+        <label>den Grund</label>
+        <name>The_Reason</name>
+    </customLabels>
+    <customLabels>
+        <label>den Betreff der Anfrage</label>
+        <name>The_Request_Subject</name>
+    </customLabels>
+    <customLabels>
+        <label>den Untergrund</label>
+        <name>The_Subreason</name>
+    </customLabels>
+    <customLabels>
+        <label>Fall {0} erstellt.</label>
+        <name>Ticket_Created_Message</name>
+    </customLabels>
+</Translations>

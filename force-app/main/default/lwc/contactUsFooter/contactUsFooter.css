@@ -1,0 +1,20 @@
+.footer-links {
+    text-align: right;
+    font-family: Corbel, Arial, sans-serif;
+    font-size: 13px;
+    padding: 30px 20px 0 0;
+}
+
+.footer-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    margin: 0 5px;
+    color: #333;
+}

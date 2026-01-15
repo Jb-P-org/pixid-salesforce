@@ -13,15 +13,18 @@ import Escalation_reason from '@salesforce/label/c.Escalation_reason';
 import Expected_behavior from '@salesforce/label/c.Expected_behavior';
 import Current_behavior from '@salesforce/label/c.Current_behavior';
 import Context from '@salesforce/label/c.Context';
+import Details from '@salesforce/label/c.Details';
 import Client_request from '@salesforce/label/c.Client_request';
 import Next from '@salesforce/label/c.Next';
 import Issue_scope from '@salesforce/label/c.Issue_scope';
 import Issue_type from '@salesforce/label/c.Issue_type';
 import Jira_Project from '@salesforce/label/c.Jira_Project';
 import Which_team_escalation from '@salesforce/label/c.Which_team_escalation';
+import CaseHasBeenEscalated from '@salesforce/label/c.Case_has_been_escalated';
 import Priority from '@salesforce/label/c.Priority';
 import Add_files from '@salesforce/label/c.Add_files';
 import Actions_requested from '@salesforce/label/c.Actions_requested';
+import FilesAdded from '@salesforce/label/c.Files_added';
 
 export default class EscalateCaseToDevOps extends LightningElement {
     label = {
@@ -38,7 +41,10 @@ export default class EscalateCaseToDevOps extends LightningElement {
         Which_team_escalation,
         Priority,
         Add_files,
-        Actions_requested
+        Actions_requested,
+        CaseHasBeenEscalated,
+        FilesAdded,
+        Details
     };
 
     @api recordId;
