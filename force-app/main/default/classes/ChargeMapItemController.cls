@@ -22,11 +22,12 @@ public without sharing class ChargeMapItemController {
 
         // 2. Items liés
         List<ChargeMapItem__c> items = [
-            SELECT Id, Name, Amount__c, BillingSchedule__c, Term__c,
-                   StartDateRevRec__c, EndDateRevRec__c, ProductNature__c,
-                   Quantity__c, CurrencyIsoCode, Status__c, Spend__c,
-                   PercentageOfSpend__c, ProratedAmount__c, NbOfMonthsProrated__c,
-                   ProratedAmountPerMonth__c, PO_Reference__c, PO_Request_Date__c
+            SELECT Id, Name, Amount__c, Quantity__c, Sales_unit_price__c, DiscountNumber__c,
+                   BillingSchedule__c, Term__c, StartDateRevRec__c, End_date__c,
+                   Status__c, Activated__c, LineDescription__c,
+                   Spend__c, PercentageOfSpend__c, PO_Required__c, PO_Reference__c, PO_Request_Date__c,
+                   SalesOrderID__c, NbOfMonthsProrated__c, ProratedAmount__c,
+                   ProductNature__c, CurrencyIsoCode, ProratedAmountPerMonth__c
             FROM ChargeMapItem__c
             WHERE ChargeMap__c = :chargeMapId
         ];
@@ -37,9 +38,11 @@ public without sharing class ChargeMapItemController {
         Map<String, Schema.SObjectField> fieldMap = dr.fields.getMap();
         // Liste des API names de champs à afficher
         List<String> fieldNames = new List<String>{
-            'Name','Amount__c','BillingSchedule__c','Term__c','StartDateRevRec__c','EndDateRevRec__c',
-            'ProductNature__c','Quantity__c','CurrencyIsoCode','Status__c','Spend__c','PercentageOfSpend__c',
-            'ProratedAmount__c','NbOfMonthsProrated__c','ProratedAmountPerMonth__c','PO_Reference__c','PO_Request_Date__c'
+            'Name','Amount__c','Quantity__c','Sales_unit_price__c','DiscountNumber__c',
+            'BillingSchedule__c','Term__c','StartDateRevRec__c','End_date__c',
+            'Status__c','Activated__c','LineDescription__c',
+            'Spend__c','PercentageOfSpend__c','PO_Required__c','PO_Reference__c','PO_Request_Date__c',
+            'SalesOrderID__c','NbOfMonthsProrated__c','ProratedAmount__c'
         };
         List<Map<String,Object>> fieldsMeta = new List<Map<String,Object>>();
         for (String fn : fieldNames) {
