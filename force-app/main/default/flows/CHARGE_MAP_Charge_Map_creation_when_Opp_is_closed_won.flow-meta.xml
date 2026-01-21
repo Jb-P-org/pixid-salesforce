@@ -19,134 +19,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_Billing_Address</name>
-        <label>Assign Billing Address And Shipping Address</label>
-        <locationX>402</locationX>
-        <locationY>1187</locationY>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.BillingAddress__City__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.BillingCity</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.BillingAddress__Street__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.BillingStreet</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.BillingAddress__PostalCode__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.BillingPostalCode</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.ShippingAddress__City__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.ShippingCity</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.ShippingAddress__Street__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.ShippingStreet</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.ShippingAddress__PostalCode__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.ShippingPostalCode</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.BillingContact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.BillingContact__r.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.CashCollectionContact__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.CashCollectionContact__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.EndUser__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.EndUser__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.ShippingBusinessName__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.ShippingBusinessName__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.ShippingDepartment__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.ShippingDepartment__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.BillingConditions__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.BillingConditions__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.ETT_Price_Catalog__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.ETT_Price_Catalog__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.ETTBillingSchedule__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.ETTBillingSchedule__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.SendInvoiceTo__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.SendInvoiceTo__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.BillingBusinessName__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.BillingBusinessName__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_New_Charge_Map.BillingDepartment__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Paying_Account.BillingDepartment__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Charge_Map_With_Address</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Assign_Charge_Map_Item_Values_From_Opp_Line_Item_Values</name>
         <label>Assign Charge Map Item Values From Opp Line Item Values</label>
         <locationX>490</locationX>
@@ -260,7 +132,7 @@
             <assignToReference>varR_CurrentCMItem.End_date__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_New_Charge_Map.EndDateRevRec__c</elementReference>
+                <elementReference>varF_LastDayOfTheYear</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -297,7 +169,7 @@
         <locationX>226</locationX>
         <locationY>647</locationY>
         <defaultConnector>
-            <targetReference>Get_Existing_Charge_Map</targetReference>
+            <targetReference>Get_Paying_Account</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Yes</defaultConnectorLabel>
         <rules>
@@ -316,16 +188,12 @@
             <label>No</label>
         </rules>
     </decisions>
-    <description>Added Unit/Sales price to line items, discount and line desc + product nature + end date + default billing schedule and term from product</description>
+    <description>Added Offer__c creation when Opportunity is closed won + Unit/Sales price to line items, discount and line desc + product nature + end date + default billing schedule and term from product</description>
     <environments>Default</environments>
     <formulas>
         <name>IsPrimary</name>
         <dataType>Boolean</dataType>
-        <expression>IF(
-  {!varF_TypeOfChargeMap} = &quot;New business&quot;,
-  TRUE,
-  FALSE
-)</expression>
+        <expression>ISBLANK({!Get_Existing_Charge_Map.Id})</expression>
     </formulas>
     <formulas>
         <name>varF_ChargeMapName</name>
@@ -341,6 +209,34 @@
         <name>varF_LastDayOfTheYear</name>
         <dataType>Date</dataType>
         <expression>DATE(YEAR(TODAY()), 12, 31)</expression>
+    </formulas>
+    <formulas>
+        <name>varF_OfferName</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Activity__c}) &amp; &apos;-&apos; &amp; TEXT({!$Record.Offer__c}) &amp; &apos;-&apos; &amp; {!varF_SubTypeTranslated}</expression>
+    </formulas>
+    <formulas>
+        <name>varF_OfferRecordTypeDeveloperName</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.Activity__c},
+    &apos;Pixid FR&apos;, &apos;ApplicationPixid&apos;,
+    &apos;PixidVMSEU&apos;, &apos;ApplicationPixidVMS&apos;,
+    &apos;Pixid VMS US&apos;, &apos;PixidConnect&apos;,
+    &apos;VectorVMS&apos;, &apos;ApplicationVector&apos;,
+    &apos;Carerix&apos;, &apos;ApplicationCarerix&apos;,
+    &apos;ApplicationPixid&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>varF_SubTypeTranslated</name>
+        <dataType>String</dataType>
+        <expression>IF({!Get_Paying_Account.BillingCountry} = &apos;France&apos;,
+    CASE(TEXT({!Get_Paying_Account.Sous_type__c}),
+        &apos;Corporate&apos;, &apos;EU&apos;,
+        &apos;TSC&apos;, &apos;ETT&apos;,
+        &apos;MSP&apos;, &apos;MSP&apos;,
+        &apos;Partner&apos;, &apos;Partenaire&apos;,
+        TEXT({!Get_Paying_Account.Sous_type__c})),
+    TEXT({!Get_Paying_Account.Sous_type__c}))</expression>
     </formulas>
     <formulas>
         <name>varF_Today</name>
@@ -393,7 +289,7 @@
         <locationX>402</locationX>
         <locationY>971</locationY>
         <connector>
-            <targetReference>Get_New_Charge_Map</targetReference>
+            <targetReference>LoopOnOppLineItems</targetReference>
         </connector>
         <inputAssignments>
             <field>Account__c</field>
@@ -461,6 +357,132 @@
                 <elementReference>varF_TypeOfChargeMap</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>BillingAddress__City__s</field>
+            <value>
+                <elementReference>Get_Paying_Account.BillingCity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingAddress__Street__s</field>
+            <value>
+                <elementReference>Get_Paying_Account.BillingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingAddress__PostalCode__s</field>
+            <value>
+                <elementReference>Get_Paying_Account.BillingPostalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingAddress__CountryCode__s</field>
+            <value>
+                <elementReference>Get_Paying_Account.BillingCountryCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingAddress__City__s</field>
+            <value>
+                <elementReference>Get_Paying_Account.ShippingCity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingAddress__Street__s</field>
+            <value>
+                <elementReference>Get_Paying_Account.ShippingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingAddress__PostalCode__s</field>
+            <value>
+                <elementReference>Get_Paying_Account.ShippingPostalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingAddress__CountryCode__s</field>
+            <value>
+                <elementReference>Get_Paying_Account.ShippingCountryCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingBusinessName__c</field>
+            <value>
+                <elementReference>Get_Paying_Account.BillingBusinessName__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingDepartment__c</field>
+            <value>
+                <elementReference>Get_Paying_Account.BillingDepartment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingBusinessName__c</field>
+            <value>
+                <elementReference>Get_Paying_Account.ShippingBusinessName__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingDepartment__c</field>
+            <value>
+                <elementReference>Get_Paying_Account.ShippingDepartment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingContact__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.BillingContact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CashCollectionContact__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.CashCollectionContact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingConditions__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.BillingConditions__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ETT_Price_Catalog__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.ETT_Price_Catalog__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ETTBillingSchedule__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.ETTBillingSchedule__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SendInvoiceTo__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.SendInvoiceTo__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InvoiceSendingMethod__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.InvoiceSendingMethod__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PaymentMethod__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.PaymentMethod__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingInstructions__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.BillingInstructions__c</elementReference>
+            </value>
+        </inputAssignments>
         <object>ChargeMap__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
@@ -469,16 +491,81 @@
         <label>Create Charge Map Items</label>
         <locationX>402</locationX>
         <locationY>1811</locationY>
+        <connector>
+            <targetReference>Get_Offer_Record_Type</targetReference>
+        </connector>
         <inputReference>varCR_CMItemsToCreate</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Offer</name>
+        <label>Create Offer</label>
+        <locationX>402</locationX>
+        <locationY>2028</locationY>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Get_Paying_Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Activity__c</field>
+            <value>
+                <elementReference>$Record.Activity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ChannelPartner__c</field>
+            <value>
+                <elementReference>$Record.PartnerOrigin__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CurrencyIsoCode</field>
+            <value>
+                <elementReference>$Record.CurrencyIsoCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>varF_OfferName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Offer__c</field>
+            <value>
+                <elementReference>$Record.Offer__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Option__c</field>
+            <value>
+                <elementReference>$Record.Option__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Offer_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <name>Get_Existing_Charge_Map</name>
         <label>Get Existing Charge Map</label>
         <locationX>402</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Paying_Account</targetReference>
+            <targetReference>Create_Charge_Map</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -500,24 +587,31 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_New_Charge_Map</name>
-        <label>Get New Charge Map</label>
+        <name>Get_Offer_Record_Type</name>
+        <label>Get Offer Record Type</label>
         <locationX>402</locationX>
-        <locationY>1079</locationY>
+        <locationY>1920</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Billing_Address</targetReference>
+            <targetReference>Create_Offer</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Id</field>
+            <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Create_Charge_Map</elementReference>
+                <stringValue>Offer__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varF_OfferRecordTypeDeveloperName</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>ChargeMap__c</object>
+        <object>RecordType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -566,10 +660,10 @@
         <name>Get_Paying_Account</name>
         <label>Get Paying Account</label>
         <locationX>402</locationX>
-        <locationY>863</locationY>
+        <locationY>755</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_Charge_Map</targetReference>
+            <targetReference>Get_Existing_Charge_Map</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -611,16 +705,6 @@
         <object>RecordType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>Update_Charge_Map_With_Address</name>
-        <label>Update Charge Map With Address</label>
-        <locationX>402</locationX>
-        <locationY>1295</locationY>
-        <connector>
-            <targetReference>LoopOnOppLineItems</targetReference>
-        </connector>
-        <inputReference>Get_New_Charge_Map</inputReference>
-    </recordUpdates>
     <start>
         <locationX>100</locationX>
         <locationY>0</locationY>
