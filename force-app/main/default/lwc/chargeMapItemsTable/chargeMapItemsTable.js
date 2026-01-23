@@ -104,6 +104,38 @@ export default class ChargeMapItemsTable extends LightningElement {
         return this.secondaryColumnsMeta.length > 0;
     }
 
+    // Computed property: Backlog items sorted by StartDateRevRec__c
+    get backlogRows() {
+        return this.rows
+            .filter(row => row.data.Status__c === 'Backlog')
+            .sort((a, b) => {
+                const dateA = a.data.StartDateRevRec__c ? new Date(a.data.StartDateRevRec__c) : new Date(0);
+                const dateB = b.data.StartDateRevRec__c ? new Date(b.data.StartDateRevRec__c) : new Date(0);
+                return dateA - dateB;
+            })
+            .map((row, idx) => ({ ...row, rowNumber: idx + 1 }));
+    }
+
+    get hasBacklogRows() {
+        return this.backlogRows.length > 0;
+    }
+
+    // Computed property: Non-backlog items sorted by StartDateRevRec__c
+    get nonBacklogRows() {
+        return this.rows
+            .filter(row => row.data.Status__c !== 'Backlog')
+            .sort((a, b) => {
+                const dateA = a.data.StartDateRevRec__c ? new Date(a.data.StartDateRevRec__c) : new Date(0);
+                const dateB = b.data.StartDateRevRec__c ? new Date(b.data.StartDateRevRec__c) : new Date(0);
+                return dateA - dateB;
+            })
+            .map((row, idx) => ({ ...row, rowNumber: idx + 1 }));
+    }
+
+    get hasNonBacklogRows() {
+        return this.nonBacklogRows.length > 0;
+    }
+
     /** Initial load (avant wire) */
     connectedCallback() {
         console.log('⚙️ connectedCallback, appel initial loadData()');
