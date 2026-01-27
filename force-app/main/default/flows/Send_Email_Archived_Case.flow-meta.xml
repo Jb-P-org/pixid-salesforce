@@ -11,7 +11,9 @@
         <inputParameters>
             <name>recipientAddresses</name>
             <value>
-                <stringValue>test@test.com</stringValue>
+                <stringCollection>
+                    <value>test@test.com</value>
+                </stringCollection>
             </value>
         </inputParameters>
         <inputParameters>
