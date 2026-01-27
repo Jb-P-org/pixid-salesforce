@@ -13,7 +13,9 @@
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
-            <value/>
+            <value>
+                <stringValue>test@test.com</stringValue>
+            </value>
         </inputParameters>
         <inputParameters>
             <name>senderType</name>
