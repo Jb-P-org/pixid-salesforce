@@ -3,20 +3,33 @@ private class FeedItemPreventOnClosedCaseTest {
 
     @testSetup
     static void setup() {
+        // Get a valid Closed_Reason__c picklist value
+        Schema.DescribeFieldResult closedReasonField = Case.Closed_Reason__c.getDescribe();
+        List<Schema.PicklistEntry> closedReasonValues = closedReasonField.getPicklistValues();
+        String validClosedReason = null;
+        for (Schema.PicklistEntry entry : closedReasonValues) {
+            if (entry.isActive()) {
+                validClosedReason = entry.getValue();
+                break;
+            }
+        }
+
         List<Case> cases = new List<Case>();
 
         // Case 1: Closed and Archived
         cases.add(new Case(
             Subject = 'Closed Archived Case',
             Status = 'Closed',
-            Archived__c = true
+            Archived__c = true,
+            Closed_Reason__c = validClosedReason
         ));
 
         // Case 2: Closed but not Archived
         cases.add(new Case(
             Subject = 'Closed Not Archived Case',
             Status = 'Closed',
-            Archived__c = false
+            Archived__c = false,
+            Closed_Reason__c = validClosedReason
         ));
 
         // Case 3: Open and Archived

@@ -51,14 +51,25 @@ private class EscalationControllerTest {
         // Get test Contact
         Contact contact = [SELECT Id FROM Contact LIMIT 1];
 
-        // Query valid picklist values
+        // Query valid active picklist values for Domain__c
         Schema.DescribeFieldResult domainField = Case.Domain__c.getDescribe();
-        List<Schema.PicklistEntry> domainValues = domainField.getPicklistValues();
-        String validDomain = domainValues.isEmpty() ? null : domainValues[0].getValue();
+        String validDomain = null;
+        for (Schema.PicklistEntry entry : domainField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validDomain = entry.getValue();
+                break;
+            }
+        }
 
+        // Query valid active picklist values for Module__c
         Schema.DescribeFieldResult moduleField = Case.Module__c.getDescribe();
-        List<Schema.PicklistEntry> moduleValues = moduleField.getPicklistValues();
-        String validModule = moduleValues.isEmpty() ? null : moduleValues[0].getValue();
+        String validModule = null;
+        for (Schema.PicklistEntry entry : moduleField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validModule = entry.getValue();
+                break;
+            }
+        }
 
         // Create test Case with required fields
         Case testCase = new Case(
@@ -73,9 +84,24 @@ private class EscalationControllerTest {
         // Get a RecordType that contains 'devops'
         RecordType devopsRT = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Case' LIMIT 1];
 
-        // Use specific valid combination: Bug + Accompagnement
-        String validReason = 'Bug';
-        String validSubReason = 'Accompagnement';
+        // Query valid active escalation reason/subreason values
+        Schema.DescribeFieldResult reasonField = Case.EscalationReason__c.getDescribe();
+        String validReason = null;
+        for (Schema.PicklistEntry entry : reasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validReason = entry.getValue();
+                break;
+            }
+        }
+
+        Schema.DescribeFieldResult subReasonField = Case.Escalation_Subreason__c.getDescribe();
+        String validSubReason = null;
+        for (Schema.PicklistEntry entry : subReasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validSubReason = entry.getValue();
+                break;
+            }
+        }
 
         Test.startTest();
         String jiraId = EscalationController.escalateCase(
@@ -108,14 +134,25 @@ private class EscalationControllerTest {
     static void testEscalateCaseToDevOpsStory() {
         Contact contact = [SELECT Id FROM Contact LIMIT 1];
 
-        // Query valid picklist values
+        // Query valid active picklist values for Domain__c
         Schema.DescribeFieldResult domainField = Case.Domain__c.getDescribe();
-        List<Schema.PicklistEntry> domainValues = domainField.getPicklistValues();
-        String validDomain = domainValues.isEmpty() ? null : domainValues[0].getValue();
+        String validDomain = null;
+        for (Schema.PicklistEntry entry : domainField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validDomain = entry.getValue();
+                break;
+            }
+        }
 
+        // Query valid active picklist values for Module__c
         Schema.DescribeFieldResult moduleField = Case.Module__c.getDescribe();
-        List<Schema.PicklistEntry> moduleValues = moduleField.getPicklistValues();
-        String validModule = moduleValues.isEmpty() ? null : moduleValues[0].getValue();
+        String validModule = null;
+        for (Schema.PicklistEntry entry : moduleField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validModule = entry.getValue();
+                break;
+            }
+        }
 
         Case testCase = new Case(
             Subject = 'Test Story Escalation',
@@ -128,9 +165,24 @@ private class EscalationControllerTest {
 
         RecordType devopsRT = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Case' LIMIT 1];
 
-        // Use specific valid combination: Bug + Accompagnement
-        String validReason = 'Bug';
-        String validSubReason = 'Accompagnement';
+        // Query valid active escalation reason/subreason values
+        Schema.DescribeFieldResult reasonField = Case.EscalationReason__c.getDescribe();
+        String validReason = null;
+        for (Schema.PicklistEntry entry : reasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validReason = entry.getValue();
+                break;
+            }
+        }
+
+        Schema.DescribeFieldResult subReasonField = Case.Escalation_Subreason__c.getDescribe();
+        String validSubReason = null;
+        for (Schema.PicklistEntry entry : subReasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validSubReason = entry.getValue();
+                break;
+            }
+        }
 
         Test.startTest();
         String jiraId = EscalationController.escalateCase(
@@ -160,14 +212,25 @@ private class EscalationControllerTest {
     static void testEscalateCaseToDevOpsTask() {
         Contact contact = [SELECT Id FROM Contact LIMIT 1];
 
-        // Query valid picklist values
+        // Query valid active picklist values for Domain__c
         Schema.DescribeFieldResult domainField = Case.Domain__c.getDescribe();
-        List<Schema.PicklistEntry> domainValues = domainField.getPicklistValues();
-        String validDomain = domainValues.isEmpty() ? null : domainValues[0].getValue();
+        String validDomain = null;
+        for (Schema.PicklistEntry entry : domainField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validDomain = entry.getValue();
+                break;
+            }
+        }
 
+        // Query valid active picklist values for Module__c
         Schema.DescribeFieldResult moduleField = Case.Module__c.getDescribe();
-        List<Schema.PicklistEntry> moduleValues = moduleField.getPicklistValues();
-        String validModule = moduleValues.isEmpty() ? null : moduleValues[0].getValue();
+        String validModule = null;
+        for (Schema.PicklistEntry entry : moduleField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validModule = entry.getValue();
+                break;
+            }
+        }
 
         Case testCase = new Case(
             Subject = 'Test Task Escalation',
@@ -180,9 +243,24 @@ private class EscalationControllerTest {
 
         RecordType devopsRT = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Case' LIMIT 1];
 
-        // Use specific valid combination: Bug + Accompagnement
-        String validReason = 'Bug';
-        String validSubReason = 'Accompagnement';
+        // Query valid active escalation reason/subreason values
+        Schema.DescribeFieldResult reasonField = Case.EscalationReason__c.getDescribe();
+        String validReason = null;
+        for (Schema.PicklistEntry entry : reasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validReason = entry.getValue();
+                break;
+            }
+        }
+
+        Schema.DescribeFieldResult subReasonField = Case.Escalation_Subreason__c.getDescribe();
+        String validSubReason = null;
+        for (Schema.PicklistEntry entry : subReasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validSubReason = entry.getValue();
+                break;
+            }
+        }
 
         Test.startTest();
         String jiraId = EscalationController.escalateCase(
@@ -219,9 +297,24 @@ private class EscalationControllerTest {
         );
         insert testCase;
 
-        // Use specific valid combination: Bug + Accompagnement
-        String validReason = 'Bug';
-        String validSubReason = 'Accompagnement';
+        // Query valid active escalation reason/subreason values
+        Schema.DescribeFieldResult reasonField = Case.EscalationReason__c.getDescribe();
+        String validReason = null;
+        for (Schema.PicklistEntry entry : reasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validReason = entry.getValue();
+                break;
+            }
+        }
+
+        Schema.DescribeFieldResult subReasonField = Case.Escalation_Subreason__c.getDescribe();
+        String validSubReason = null;
+        for (Schema.PicklistEntry entry : subReasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validSubReason = entry.getValue();
+                break;
+            }
+        }
 
         RecordType nonDevopsRT = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Case' LIMIT 1];
 
