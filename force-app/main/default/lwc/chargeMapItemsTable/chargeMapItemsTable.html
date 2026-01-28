@@ -163,22 +163,53 @@
 
                       <!-- Lecture + crayon au hover -->
                       <template if:false={cell.isEditing}>
-                        <template if:true={cell.meta.canEdit}>
-                          <div
-                            class="cell-view-wrapper"
-                            data-id={row.id}
-                            data-field={cell.apiName}
-                            onclick={handleEditIconClick}>
-                            <span class="cell-text">{cell.displayValue}</span>
-                            <lightning-icon
-                              icon-name="utility:edit"
-                              size="x-small"
-                              alternative-text="Edit">
-                            </lightning-icon>
-                          </div>
+                        <!-- Name field: render as clickable link -->
+                        <template if:true={cell.isNameField}>
+                          <a href="#" class="name-link" data-id={row.id} onclick={handleNavigateToRecord}>{cell.displayValue}</a>
                         </template>
-                        <template if:false={cell.meta.canEdit}>
-                          <span>{cell.displayValue}</span>
+                        <!-- Non-Name fields -->
+                        <template if:false={cell.isNameField}>
+                          <!-- Checkbox fields: always show interactive checkbox -->
+                          <template if:true={cell.meta.isCheckbox}>
+                            <template if:true={cell.meta.canEdit}>
+                              <lightning-input
+                                type="checkbox"
+                                data-id={row.id}
+                                data-field={cell.apiName}
+                                checked={cell.value}
+                                onchange={handleFieldChange}
+                                variant="label-hidden">
+                              </lightning-input>
+                            </template>
+                            <template if:false={cell.meta.canEdit}>
+                              <lightning-input
+                                type="checkbox"
+                                checked={cell.value}
+                                disabled
+                                variant="label-hidden">
+                              </lightning-input>
+                            </template>
+                          </template>
+                          <!-- Non-checkbox fields: normal edit behavior -->
+                          <template if:false={cell.meta.isCheckbox}>
+                            <template if:true={cell.meta.canEdit}>
+                              <div
+                                class="cell-view-wrapper"
+                                data-id={row.id}
+                                data-field={cell.apiName}
+                                onclick={handleEditIconClick}>
+                                <span class="cell-text">{cell.displayValue}</span>
+                                <lightning-icon
+                                  icon-name="utility:edit"
+                                  size="x-small"
+                                  alternative-text="Edit">
+                                </lightning-icon>
+                              </div>
+                            </template>
+                            <template if:false={cell.meta.canEdit}>
+                              <span>{cell.displayValue}</span>
+                            </template>
+                          </template>
                         </template>
                       </template>
                     </td>
@@ -246,22 +277,46 @@
 
                                   <!-- Lecture + crayon au hover -->
                                   <template if:false={cell.isEditing}>
-                                    <template if:true={cell.meta.canEdit}>
-                                      <div
-                                        class="cell-view-wrapper detail-value"
-                                        data-id={row.id}
-                                        data-field={cell.apiName}
-                                        onclick={handleEditIconClick}>
-                                        <span class="cell-text">{cell.displayValue}</span>
-                                        <lightning-icon
-                                          icon-name="utility:edit"
-                                          size="x-small"
-                                          alternative-text="Edit">
-                                        </lightning-icon>
-                                      </div>
+                                    <!-- Checkbox fields: always show interactive checkbox -->
+                                    <template if:true={cell.meta.isCheckbox}>
+                                      <template if:true={cell.meta.canEdit}>
+                                        <lightning-input
+                                          type="checkbox"
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          checked={cell.value}
+                                          onchange={handleFieldChange}
+                                          variant="label-hidden">
+                                        </lightning-input>
+                                      </template>
+                                      <template if:false={cell.meta.canEdit}>
+                                        <lightning-input
+                                          type="checkbox"
+                                          checked={cell.value}
+                                          disabled
+                                          variant="label-hidden">
+                                        </lightning-input>
+                                      </template>
                                     </template>
-                                    <template if:false={cell.meta.canEdit}>
-                                      <span class="detail-value-readonly">{cell.displayValue}</span>
+                                    <!-- Non-checkbox fields: normal edit behavior -->
+                                    <template if:false={cell.meta.isCheckbox}>
+                                      <template if:true={cell.meta.canEdit}>
+                                        <div
+                                          class="cell-view-wrapper detail-value"
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          onclick={handleEditIconClick}>
+                                          <span class="cell-text">{cell.displayValue}</span>
+                                          <lightning-icon
+                                            icon-name="utility:edit"
+                                            size="x-small"
+                                            alternative-text="Edit">
+                                          </lightning-icon>
+                                        </div>
+                                      </template>
+                                      <template if:false={cell.meta.canEdit}>
+                                        <span class="detail-value-readonly">{cell.displayValue}</span>
+                                      </template>
                                     </template>
                                   </template>
                                 </div>
@@ -390,22 +445,53 @@
 
                       <!-- Lecture + crayon au hover -->
                       <template if:false={cell.isEditing}>
-                        <template if:true={cell.meta.canEdit}>
-                          <div
-                            class="cell-view-wrapper"
-                            data-id={row.id}
-                            data-field={cell.apiName}
-                            onclick={handleEditIconClick}>
-                            <span class="cell-text">{cell.displayValue}</span>
-                            <lightning-icon
-                              icon-name="utility:edit"
-                              size="x-small"
-                              alternative-text="Edit">
-                            </lightning-icon>
-                          </div>
+                        <!-- Name field: render as clickable link -->
+                        <template if:true={cell.isNameField}>
+                          <a href="#" class="name-link" data-id={row.id} onclick={handleNavigateToRecord}>{cell.displayValue}</a>
                         </template>
-                        <template if:false={cell.meta.canEdit}>
-                          <span>{cell.displayValue}</span>
+                        <!-- Non-Name fields -->
+                        <template if:false={cell.isNameField}>
+                          <!-- Checkbox fields: always show interactive checkbox -->
+                          <template if:true={cell.meta.isCheckbox}>
+                            <template if:true={cell.meta.canEdit}>
+                              <lightning-input
+                                type="checkbox"
+                                data-id={row.id}
+                                data-field={cell.apiName}
+                                checked={cell.value}
+                                onchange={handleFieldChange}
+                                variant="label-hidden">
+                              </lightning-input>
+                            </template>
+                            <template if:false={cell.meta.canEdit}>
+                              <lightning-input
+                                type="checkbox"
+                                checked={cell.value}
+                                disabled
+                                variant="label-hidden">
+                              </lightning-input>
+                            </template>
+                          </template>
+                          <!-- Non-checkbox fields: normal edit behavior -->
+                          <template if:false={cell.meta.isCheckbox}>
+                            <template if:true={cell.meta.canEdit}>
+                              <div
+                                class="cell-view-wrapper"
+                                data-id={row.id}
+                                data-field={cell.apiName}
+                                onclick={handleEditIconClick}>
+                                <span class="cell-text">{cell.displayValue}</span>
+                                <lightning-icon
+                                  icon-name="utility:edit"
+                                  size="x-small"
+                                  alternative-text="Edit">
+                                </lightning-icon>
+                              </div>
+                            </template>
+                            <template if:false={cell.meta.canEdit}>
+                              <span>{cell.displayValue}</span>
+                            </template>
+                          </template>
                         </template>
                       </template>
                     </td>
@@ -473,22 +559,46 @@
 
                                   <!-- Lecture + crayon au hover -->
                                   <template if:false={cell.isEditing}>
-                                    <template if:true={cell.meta.canEdit}>
-                                      <div
-                                        class="cell-view-wrapper detail-value"
-                                        data-id={row.id}
-                                        data-field={cell.apiName}
-                                        onclick={handleEditIconClick}>
-                                        <span class="cell-text">{cell.displayValue}</span>
-                                        <lightning-icon
-                                          icon-name="utility:edit"
-                                          size="x-small"
-                                          alternative-text="Edit">
-                                        </lightning-icon>
-                                      </div>
+                                    <!-- Checkbox fields: always show interactive checkbox -->
+                                    <template if:true={cell.meta.isCheckbox}>
+                                      <template if:true={cell.meta.canEdit}>
+                                        <lightning-input
+                                          type="checkbox"
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          checked={cell.value}
+                                          onchange={handleFieldChange}
+                                          variant="label-hidden">
+                                        </lightning-input>
+                                      </template>
+                                      <template if:false={cell.meta.canEdit}>
+                                        <lightning-input
+                                          type="checkbox"
+                                          checked={cell.value}
+                                          disabled
+                                          variant="label-hidden">
+                                        </lightning-input>
+                                      </template>
                                     </template>
-                                    <template if:false={cell.meta.canEdit}>
-                                      <span class="detail-value-readonly">{cell.displayValue}</span>
+                                    <!-- Non-checkbox fields: normal edit behavior -->
+                                    <template if:false={cell.meta.isCheckbox}>
+                                      <template if:true={cell.meta.canEdit}>
+                                        <div
+                                          class="cell-view-wrapper detail-value"
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          onclick={handleEditIconClick}>
+                                          <span class="cell-text">{cell.displayValue}</span>
+                                          <lightning-icon
+                                            icon-name="utility:edit"
+                                            size="x-small"
+                                            alternative-text="Edit">
+                                          </lightning-icon>
+                                        </div>
+                                      </template>
+                                      <template if:false={cell.meta.canEdit}>
+                                        <span class="detail-value-readonly">{cell.displayValue}</span>
+                                      </template>
                                     </template>
                                   </template>
                                 </div>

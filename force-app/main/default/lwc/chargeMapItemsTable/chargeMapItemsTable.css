@@ -183,3 +183,31 @@
     transform: translateY(0);
   }
 }
+
+/* Checkbox display styles */
+:host .checkbox-checked {
+  --slds-c-icon-color-foreground-default: #2e844a;
+}
+
+:host .checkbox-unchecked {
+  --slds-c-icon-color-foreground-default: #ba0517;
+}
+
+/* Center checkboxes in table cells */
+:host td lightning-input[type="checkbox"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Name link styling */
+:host .name-link {
+  color: var(--lwc-colorTextLink, #0176d3);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+:host .name-link:hover {
+  text-decoration: underline;
+  color: var(--lwc-colorTextLinkHover, #014486);
+}

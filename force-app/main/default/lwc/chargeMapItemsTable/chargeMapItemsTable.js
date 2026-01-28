@@ -1,4 +1,5 @@
 import { LightningElement, track, api, wire } from 'lwc';
+import { NavigationMixin }     from 'lightning/navigation';
 import getChargeMapMetadata    from '@salesforce/apex/ChargeMapItemController.getChargeMapMetadata';
 import updateChargeMapItems    from '@salesforce/apex/ChargeMapItemController.updateChargeMapItems';
 import { ShowToastEvent }      from 'lightning/platformShowToastEvent';
@@ -59,7 +60,7 @@ const COLUMN_ICONS = {
     'ProratedAmount__c': 'standard:custom_component_task'
 };
 
-export default class ChargeMapItemsTable extends LightningElement {
+export default class ChargeMapItemsTable extends NavigationMixin(LightningElement) {
     @api recordId;
     @track columnsMeta = [];
     @track primaryColumnsMeta = [];
@@ -88,9 +89,10 @@ export default class ChargeMapItemsTable extends LightningElement {
             }
         } else if (error) {
             console.error('❌ Erreur wire getRecord:', error);
+            const errorMessage = this.parseErrorMessage(error);
             this.showToast(
-                'Erreur lecture du statut',
-                error.body?.message || error.message,
+                'Erreur de lecture du statut',
+                errorMessage,
                 'error'
             );
         }
@@ -172,8 +174,6 @@ export default class ChargeMapItemsTable extends LightningElement {
                                  && !f.calculated
                                  && ![
                                      'Name',
-                                     'Amount__c',
-                                     'Quantity__c',
                                      'CurrencyIsoCode',
                                      'Status__c',
                                      'Spend__c',
@@ -203,18 +203,28 @@ export default class ChargeMapItemsTable extends LightningElement {
                 // Prépare les lignes avec displayValue
                 const items = res.items || [];
                 this.rows = items.map((rec, idx) => {
+                    const currencyCode = rec.CurrencyIsoCode || 'EUR';
                     const allCells = this.columnsMeta.map(col => {
                         const raw = rec[col.apiName];
-                        const displayValue =
-                            raw === null || raw === undefined || raw === ''
-                            ? '—'
-                            : raw;
+                        let displayValue;
+                        if (raw === null || raw === undefined || raw === '') {
+                            displayValue = '—';
+                        } else if (col.type === 'currency') {
+                            displayValue = this.formatCurrency(raw, currencyCode);
+                        } else {
+                            displayValue = raw;
+                        }
                         return {
                             apiName      : col.apiName,
                             value        : raw,
                             displayValue,
                             meta         : col,
-                            isEditing    : false
+                            isEditing    : false,
+                            // Flag for Name field to render as link
+                            isNameField  : col.apiName === 'Name',
+                            // Computed properties for checkbox display
+                            checkboxIconName : raw ? 'utility:check' : 'utility:close',
+                            checkboxClass    : raw ? 'checkbox-checked' : 'checkbox-unchecked'
                         };
                     });
 
@@ -233,9 +243,10 @@ export default class ChargeMapItemsTable extends LightningElement {
             })
             .catch(err => {
                 console.error('❌ Erreur getChargeMapMetadata:', err);
+                const errorMessage = this.parseErrorMessage(err);
                 this.showToast(
-                    'Erreur chargement',
-                    err.body?.message || err.message,
+                    'Erreur de chargement',
+                    errorMessage,
                     'error'
                 );
             })
@@ -258,6 +269,18 @@ export default class ChargeMapItemsTable extends LightningElement {
             // Force reactivity
             this.rows = [...this.rows];
         }
+    }
+
+    handleNavigateToRecord(evt) {
+        evt.preventDefault();
+        const recordId = evt.currentTarget.dataset.id;
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: recordId,
+                actionName: 'view'
+            }
+        });
     }
 
     handleExpandAll() {
@@ -310,11 +333,21 @@ export default class ChargeMapItemsTable extends LightningElement {
         const row = this.rows.find(r => r.id === rowId);
         if (row) {
             row.data[fld] = val;
+            const currencyCode = row.data.CurrencyIsoCode || 'EUR';
             // recalcule displayValue immédiatement in all cell arrays
             const updateCell = (cell) => {
                 if (cell.apiName === fld) {
                     cell.value = val;
-                    cell.displayValue = (val === null || val === '' ? '—' : val);
+                    if (val === null || val === '') {
+                        cell.displayValue = '—';
+                    } else if (cell.meta.type === 'currency') {
+                        cell.displayValue = this.formatCurrency(val, currencyCode);
+                    } else {
+                        cell.displayValue = val;
+                    }
+                    // Update checkbox computed properties
+                    cell.checkboxIconName = val ? 'utility:check' : 'utility:close';
+                    cell.checkboxClass = val ? 'checkbox-checked' : 'checkbox-unchecked';
                 }
             };
             row.cells.forEach(updateCell);
@@ -326,6 +359,11 @@ export default class ChargeMapItemsTable extends LightningElement {
             [fld]: val
         };
         console.log('   ▶️ draftValues now:', this.draftValues);
+
+        // Auto-save immediately for checkbox fields
+        if (evt.target.type === 'checkbox') {
+            this.handleSave();
+        }
     }
 
     handleInputBlur() {
@@ -336,6 +374,11 @@ export default class ChargeMapItemsTable extends LightningElement {
             r.secondaryCells.forEach(c => c.isEditing = false);
         });
         this.rows = [...this.rows];
+
+        // Auto-save on blur if there are pending changes
+        if (Object.keys(this.draftValues).length > 0) {
+            this.handleSave();
+        }
     }
 
     handleSave() {
@@ -359,9 +402,10 @@ export default class ChargeMapItemsTable extends LightningElement {
             })
             .catch(err => {
                 console.error('❌ saveData error:', err);
+                const errorMessage = this.parseErrorMessage(err);
                 this.showToast(
-                    'Erreur maj',
-                    err.body?.message || err.message,
+                    'Erreur de mise à jour',
+                    errorMessage,
                     'error'
                 );
                 this.isLoading = false;
@@ -384,6 +428,76 @@ export default class ChargeMapItemsTable extends LightningElement {
             default:
                 return 'text';
         }
+    }
+
+    formatCurrency(value, currencyCode = 'EUR') {
+        if (value === null || value === undefined || value === '') {
+            return '—';
+        }
+        // Map currency codes to symbols
+        const currencySymbols = {
+            'EUR': '€',
+            'USD': '$',
+            'GBP': '£',
+            'JPY': '¥',
+            'CHF': 'CHF',
+            'CAD': 'CA$',
+            'AUD': 'A$',
+            'CNY': '¥',
+            'INR': '₹',
+            'BRL': 'R$',
+            'MXN': 'MX$',
+            'PLN': 'zł',
+            'SEK': 'kr',
+            'NOK': 'kr',
+            'DKK': 'kr'
+        };
+        const symbol = currencySymbols[currencyCode] || currencyCode;
+        try {
+            // Format number without currency symbol, then append symbol at end
+            const formattedNumber = new Intl.NumberFormat(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(value);
+            return `${formattedNumber} ${symbol}`;
+        } catch (e) {
+            // Fallback if formatting fails
+            return `${value} ${symbol}`;
+        }
+    }
+
+    parseErrorMessage(err) {
+        // Handle different error formats from Apex
+        if (err.body) {
+            // Check for field-level errors
+            if (err.body.fieldErrors) {
+                const fieldMessages = [];
+                for (const field in err.body.fieldErrors) {
+                    const errors = err.body.fieldErrors[field];
+                    errors.forEach(e => fieldMessages.push(`${field}: ${e.message}`));
+                }
+                if (fieldMessages.length > 0) {
+                    return fieldMessages.join('\n');
+                }
+            }
+            // Check for page-level errors
+            if (err.body.pageErrors && err.body.pageErrors.length > 0) {
+                return err.body.pageErrors.map(e => e.message).join('\n');
+            }
+            // Check for DML errors in output
+            if (err.body.output && err.body.output.errors) {
+                return err.body.output.errors.map(e => e.message).join('\n');
+            }
+            // Standard message
+            if (err.body.message) {
+                return err.body.message;
+            }
+        }
+        // Fallback to generic message
+        if (err.message) {
+            return err.message;
+        }
+        return 'Une erreur inattendue s\'est produite. Veuillez réessayer.';
     }
 
     showToast(title, message, variant = 'info') {
