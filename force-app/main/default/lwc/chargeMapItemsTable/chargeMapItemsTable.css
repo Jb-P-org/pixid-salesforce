@@ -47,7 +47,7 @@
 
 /* Placeholder pour texte vide */
 :host .cell-text {
-  color: #999;
+  color: #181818;
 }
 
 /* Icône crayon cachée par défaut */
@@ -70,4 +70,116 @@
 /* Minimum width pour combobox */
 :host lightning-combobox {
   min-width: 10rem;
+}
+
+/* Column header with icon */
+:host .column-header {
+  display: flex;
+  align-items: center;
+}
+
+:host .column-icon {
+  flex-shrink: 0;
+}
+
+/* Expand column styling */
+:host .expand-col {
+  width: 2.5rem;
+  min-width: 2.5rem;
+  max-width: 2.5rem;
+  text-align: center;
+  padding: 0 !important;
+}
+
+:host .row-number-col {
+  width: 3rem;
+  min-width: 3rem;
+  text-align: center;
+}
+
+/* Detail row styling */
+:host .detail-row {
+  background-color: var(--lwc-colorBackgroundAlt, #f3f3f3);
+}
+
+:host .detail-row:hover {
+  background-color: var(--lwc-colorBackgroundAlt, #f3f3f3) !important;
+}
+
+:host .detail-cell {
+  padding: 0 !important;
+  border-bottom: 2px solid var(--lwc-colorBorder, #d8dde6) !important;
+}
+
+:host .detail-container {
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+:host .detail-header {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--lwc-colorTextWeak, #706e6b);
+  letter-spacing: 0.0625rem;
+}
+
+:host .detail-field {
+  padding: 0.5rem;
+}
+
+:host .detail-field .slds-form-element__label {
+  font-size: 0.75rem;
+  color: var(--lwc-colorTextLabel, #706e6b);
+  font-weight: 400;
+  margin-bottom: 0.125rem;
+}
+
+:host .detail-value {
+  padding: 0.25rem 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  min-height: 1.5rem;
+}
+
+:host .detail-value-readonly {
+  padding: 0.25rem 0;
+  display: inline-block;
+}
+
+:host .detail-value lightning-icon {
+  position: relative;
+  top: auto;
+  right: auto;
+  transform: none;
+  margin-left: 0.5rem;
+}
+
+/* Expand controls styling */
+:host .expand-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Expanded row visual indicator */
+:host tr.true {
+  background-color: var(--lwc-colorBackgroundHighlight, #f4f6fe);
+}
+
+/* Animation for expand/collapse */
+:host .detail-container {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
