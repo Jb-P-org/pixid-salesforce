@@ -43,7 +43,8 @@ private class FeedItemPreventOnClosedCaseTest {
             Status = 'Closed',
             Archived__c = false,
             Closed_Reason__c = validClosedReason,
-            ContactId = contact.Id
+            ContactId = contact.Id,
+            SuppliedEmail = 'testcontact@example.com'
         ));
 
         // Case 3: Open and Archived
