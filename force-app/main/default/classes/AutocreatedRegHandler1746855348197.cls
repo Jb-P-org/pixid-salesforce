@@ -19,4 +19,5 @@ global class AutocreatedRegHandler1746855348197 implements Auth.RegistrationHand
     global void updateUser(Id userId, Id portalId, Auth.UserData data){
     
     }
+    //test
 }

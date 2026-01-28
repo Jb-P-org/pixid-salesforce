@@ -1,0 +1,107 @@
+kind: pipeline
+type: docker
+name: Deployment on staging
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
+  paths:
+    include:
+      - force-app/**
+
+steps:
+  - name: git-checkout
+    image: alpine/git
+    commands:
+      - git fetch --all
+
+  - name: clean-temp
+    image: alpine
+    commands:
+      - rm -rf /tmp/sfdx
+
+  - name: sfdx-setup-and-deploy
+    image: salesforce/cli:latest-full
+    environment:
+      SFDX_AUTH_URL:
+        from_secret: SFDX_URL_UAT
+      SFDX_DISABLE_DNS_CHECK: true
+    commands:
+      - echo $SFDX_AUTH_URL > /tmp/sfdx_auth_url.txt
+      - sf org login sfdx-url --sfdx-url-file /tmp/sfdx_auth_url.txt --set-default --alias uat
+      - rm /tmp/sfdx_auth_url.txt
+      - sf project deploy start --source-dir force-app/main/default -l RunLocalTests -w 90 --ignore-conflicts
+
+---
+kind: pipeline
+type: docker
+name: Validate deployment in staging
+
+trigger:
+  branch:
+    - master
+  event:
+    - pull_request
+  paths:
+    include:
+      - force-app/**
+
+concurrency:
+  limit: 1
+
+steps:
+  - name: git-checkout
+    image: alpine/git
+    commands:
+      - git fetch --all
+
+  - name: clean-temp
+    image: alpine
+    commands:
+      - rm -rf /tmp/sfdx
+
+  - name: sfdx-setup-and-validate
+    image: salesforce/cli:latest-full
+    environment:
+      SFDX_AUTH_URL:
+        from_secret: SFDX_URL_UAT
+      SFDX_DISABLE_DNS_CHECK: true
+    commands:
+      - echo $SFDX_AUTH_URL > /tmp/sfdx_auth_url.txt
+      - sf org login sfdx-url --sfdx-url-file /tmp/sfdx_auth_url.txt --set-default --alias uat
+      - rm /tmp/sfdx_auth_url.txt
+      - sf project deploy validate --source-dir force-app/main/default -l RunLocalTests -w 90
+
+---
+kind: pipeline
+type: docker
+name: Manual deployment
+
+trigger:
+  event:
+    - custom
+
+steps:
+  - name: git-checkout
+    image: alpine/git
+    commands:
+      - git fetch --all
+
+  - name: clean-temp
+    image: alpine
+    commands:
+      - rm -rf /tmp/sfdx
+
+  - name: sfdx-setup-and-deploy
+    image: salesforce/cli:latest-full
+    environment:
+      SFDX_AUTH_URL:
+        from_secret: SFDX_URL_UAT
+      SFDX_DISABLE_DNS_CHECK: true
+    commands:
+      - echo $SFDX_AUTH_URL > /tmp/sfdx_auth_url.txt
+      - sf org login sfdx-url --sfdx-url-file /tmp/sfdx_auth_url.txt --set-default --alias uat
+      - rm /tmp/sfdx_auth_url.txt
+      - sf project deploy start --source-dir force-app/main/default -l RunLocalTests -w 90 --ignore-conflicts
