@@ -14,14 +14,27 @@ private class FeedItemPreventOnClosedCaseTest {
             }
         }
 
+        // Create Account and Contact with email for flow recipient
+        Account acc = new Account(Name = 'Test Account');
+        insert acc;
+
+        Contact contact = new Contact(
+            FirstName = 'Test',
+            LastName = 'Contact',
+            Email = 'testcontact@example.com',
+            AccountId = acc.Id
+        );
+        insert contact;
+
         List<Case> cases = new List<Case>();
 
-        // Case 1: Closed and Archived
+        // Case 1: Closed and Archived - with Contact for email flow
         cases.add(new Case(
             Subject = 'Closed Archived Case',
             Status = 'Closed',
             Archived__c = true,
-            Closed_Reason__c = validClosedReason
+            Closed_Reason__c = validClosedReason,
+            ContactId = contact.Id
         ));
 
         // Case 2: Closed but not Archived
@@ -29,7 +42,8 @@ private class FeedItemPreventOnClosedCaseTest {
             Subject = 'Closed Not Archived Case',
             Status = 'Closed',
             Archived__c = false,
-            Closed_Reason__c = validClosedReason
+            Closed_Reason__c = validClosedReason,
+            ContactId = contact.Id
         ));
 
         // Case 3: Open and Archived
