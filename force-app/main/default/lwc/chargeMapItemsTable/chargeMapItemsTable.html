@@ -16,7 +16,7 @@
   <!-- Instructions -->
   <div class="instructions slds-p-horizontal_medium">
     You can modify the start date, end date, billing schedule and terms of each product by clicking on the pen.
-    After that, click the Save button at the bottom right.
+    Changes are saved automatically.
     <template if:true={hasSecondaryColumns}>
       <strong> Click the expand icon to see additional details.</strong>
     </template>
@@ -32,25 +32,49 @@
   <!-- Tableaux -->
   <template if:false={isLoading}>
     <template if:true={hasRows}>
-      <!-- Expand/Collapse All Buttons -->
-      <template if:true={hasSecondaryColumns}>
-        <div class="slds-m-bottom_x-small slds-p-horizontal_medium expand-controls">
-          <lightning-button-group>
-            <lightning-button
-              label="Expand All"
-              icon-name="utility:chevrondown"
-              onclick={handleExpandAll}
-              disabled={hasExpandedRows}>
-            </lightning-button>
-            <lightning-button
-              label="Collapse All"
-              icon-name="utility:chevronup"
-              onclick={handleCollapseAll}
-              disabled={hasCollapsedRows}>
-            </lightning-button>
-          </lightning-button-group>
+      <!-- Action Buttons Bar -->
+      <div class="slds-m-bottom_x-small slds-p-horizontal_medium action-bar">
+        <!-- Left: Add / Delete buttons (only when editable) -->
+        <div class="action-bar-left">
+          <template if:true={showActionButtons}>
+            <lightning-button-group>
+              <lightning-button
+                label="Add Items"
+                icon-name="utility:add"
+                variant="brand"
+                onclick={handleOpenAddModal}>
+              </lightning-button>
+              <template if:true={showDeleteButton}>
+                <lightning-button
+                  label={deleteButtonLabel}
+                  icon-name="utility:delete"
+                  variant="destructive"
+                  onclick={handleDeleteSelected}>
+                </lightning-button>
+              </template>
+            </lightning-button-group>
+          </template>
         </div>
-      </template>
+        <!-- Right: Expand / Collapse buttons -->
+        <div class="action-bar-right">
+          <template if:true={hasSecondaryColumns}>
+            <lightning-button-group>
+              <lightning-button
+                label="Expand All"
+                icon-name="utility:chevrondown"
+                onclick={handleExpandAll}
+                disabled={hasExpandedRows}>
+              </lightning-button>
+              <lightning-button
+                label="Collapse All"
+                icon-name="utility:chevronup"
+                onclick={handleCollapseAll}
+                disabled={hasCollapsedRows}>
+              </lightning-button>
+            </lightning-button-group>
+          </template>
+        </div>
+      </div>
 
       <!-- ===== BACKLOG ITEMS TABLE ===== -->
       <template if:true={hasBacklogRows}>
@@ -70,9 +94,17 @@
                     <div class="slds-truncate" title="Expand"></div>
                   </th>
                 </template>
-                <!-- Colonne # -->
-                <th scope="col" class="row-number-col">
-                  <div class="slds-truncate" title="#">#</div>
+                <!-- Selection checkbox column -->
+                <th scope="col" class="checkbox-col">
+                  <div class="slds-truncate slds-align_absolute-center">
+                    <lightning-input
+                      type="checkbox"
+                      checked={isAllBacklogSelected}
+                      onchange={handleSelectAllBacklog}
+                      variant="label-hidden"
+                      label="Select all backlog items">
+                    </lightning-input>
+                  </div>
                 </th>
                 <!-- Primary columns only -->
                 <template for:each={primaryColumnsMeta} for:item="col">
@@ -120,8 +152,20 @@
                       </template>
                     </td>
                   </template>
-                  <!-- Cellule numéro -->
-                  <td class="row-number-col">{row.rowNumber}</td>
+                  <!-- Selection checkbox cell -->
+                  <td class="checkbox-col">
+                    <div class="slds-align_absolute-center">
+                      <lightning-input
+                        type="checkbox"
+                        checked={row.isSelected}
+                        data-id={row.id}
+                        data-table="backlog"
+                        onchange={handleRowSelect}
+                        variant="label-hidden"
+                        label="Select row">
+                      </lightning-input>
+                    </div>
+                  </td>
                   <!-- Primary cells -->
                   <template for:each={row.primaryCells} for:item="cell">
                     <td key={cell.apiName}>
@@ -352,9 +396,17 @@
                     <div class="slds-truncate" title="Expand"></div>
                   </th>
                 </template>
-                <!-- Colonne # -->
-                <th scope="col" class="row-number-col">
-                  <div class="slds-truncate" title="#">#</div>
+                <!-- Selection checkbox column -->
+                <th scope="col" class="checkbox-col">
+                  <div class="slds-truncate slds-align_absolute-center">
+                    <lightning-input
+                      type="checkbox"
+                      checked={isAllNonBacklogSelected}
+                      onchange={handleSelectAllNonBacklog}
+                      variant="label-hidden"
+                      label="Select all completed items">
+                    </lightning-input>
+                  </div>
                 </th>
                 <!-- Primary columns only -->
                 <template for:each={primaryColumnsMeta} for:item="col">
@@ -402,8 +454,20 @@
                       </template>
                     </td>
                   </template>
-                  <!-- Cellule numéro -->
-                  <td class="row-number-col">{row.rowNumber}</td>
+                  <!-- Selection checkbox cell -->
+                  <td class="checkbox-col">
+                    <div class="slds-align_absolute-center">
+                      <lightning-input
+                        type="checkbox"
+                        checked={row.isSelected}
+                        data-id={row.id}
+                        data-table="nonbacklog"
+                        onchange={handleRowSelect}
+                        variant="label-hidden"
+                        label="Select row">
+                      </lightning-input>
+                    </div>
+                  </td>
                   <!-- Primary cells -->
                   <template for:each={row.primaryCells} for:item="cell">
                     <td key={cell.apiName}>
@@ -616,20 +680,198 @@
         </div>
       </template>
 
-      <!-- Bouton Enregistrer aligné à droite -->
-      <div class="slds-m-top_medium slds-grid slds-grid_align-end slds-p-horizontal_medium">
-        <lightning-button
-          label="Update items"
-          variant="brand"
-          onclick={handleSave}
-          disabled={isLoading}>
-        </lightning-button>
-      </div>
     </template>
 
     <!-- Aucune ligne -->
     <template if:false={hasRows}>
       <div class="slds-p-around_medium">Aucun item à afficher.</div>
     </template>
+  </template>
+
+  <!-- ===== ADD ITEMS MODAL ===== -->
+  <template if:true={isAddModalOpen}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-modal="true"
+      aria-labelledby="add-modal-heading"
+      class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <!-- Header -->
+        <div class="slds-modal__header">
+          <lightning-button-icon
+            icon-name="utility:close"
+            alternative-text="Close"
+            variant="bare-inverse"
+            class="slds-modal__close"
+            onclick={handleCloseAddModal}>
+          </lightning-button-icon>
+          <h2 id="add-modal-heading" class="slds-modal__title slds-hyphenate">
+            Add Charge Map Items
+          </h2>
+        </div>
+        <!-- Body -->
+        <div class="slds-modal__content slds-p-around_medium" id="add-modal-content">
+          <template for:each={newItemRows} for:item="itemRow">
+            <div key={itemRow.key} class="slds-box slds-m-bottom_small new-item-row">
+              <div class="slds-grid slds-gutters slds-wrap">
+                <!-- Product Lookup -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                  <lightning-record-picker
+                    label="Product"
+                    placeholder="Search for a product..."
+                    object-api-name="Product2"
+                    data-key={itemRow.key}
+                    data-field="Product__c"
+                    required
+                    onchange={handleNewItemFieldChange}>
+                  </lightning-record-picker>
+                </div>
+                <!-- Unit Price -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="number"
+                    label="Unit Price"
+                    value={itemRow.Sales_unit_price__c}
+                    data-key={itemRow.key}
+                    data-field="Sales_unit_price__c"
+                    onchange={handleNewItemFieldChange}
+                    step="0.01"
+                    required>
+                  </lightning-input>
+                </div>
+                <!-- Quantity -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="number"
+                    label="Quantity"
+                    value={itemRow.Quantity__c}
+                    data-key={itemRow.key}
+                    data-field="Quantity__c"
+                    onchange={handleNewItemFieldChange}
+                    step="1"
+                    required>
+                  </lightning-input>
+                </div>
+                <!-- Discount -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="number"
+                    label="Discount (%)"
+                    value={itemRow.DiscountNumber__c}
+                    data-key={itemRow.key}
+                    data-field="DiscountNumber__c"
+                    onchange={handleNewItemFieldChange}
+                    step="0.01"
+                    min="0"
+                    max="100">
+                  </lightning-input>
+                </div>
+                <!-- Start Date -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="date"
+                    label="Start Date"
+                    value={itemRow.StartDateRevRec__c}
+                    data-key={itemRow.key}
+                    data-field="StartDateRevRec__c"
+                    onchange={handleNewItemFieldChange}
+                    required>
+                  </lightning-input>
+                </div>
+                <!-- End Date (read-only, from ChargeMap) -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="date"
+                    label="End Date"
+                    value={chargeMapEndDate}
+                    read-only
+                    disabled>
+                  </lightning-input>
+                </div>
+                <!-- Remove row button -->
+                <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+                  <lightning-button-icon
+                    icon-name="utility:delete"
+                    alternative-text="Remove row"
+                    variant="bare"
+                    data-key={itemRow.key}
+                    onclick={handleRemoveRow}
+                    class="remove-row-btn">
+                  </lightning-button-icon>
+                </div>
+              </div>
+            </div>
+          </template>
+          <!-- Add another row button -->
+          <lightning-button
+            label="Add Another Item"
+            icon-name="utility:add"
+            variant="base"
+            onclick={handleAddAnotherRow}
+            class="slds-m-top_small">
+          </lightning-button>
+        </div>
+        <!-- Footer -->
+        <div class="slds-modal__footer">
+          <lightning-button
+            label="Cancel"
+            onclick={handleCloseAddModal}>
+          </lightning-button>
+          <lightning-button
+            label="Save Items"
+            variant="brand"
+            onclick={handleSaveNewItems}
+            disabled={isSaving}
+            class="slds-m-left_small">
+          </lightning-button>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+
+  <!-- ===== DELETE CONFIRMATION MODAL ===== -->
+  <template if:true={isDeleteConfirmOpen}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-modal="true"
+      aria-labelledby="delete-modal-heading"
+      class="slds-modal slds-fade-in-open slds-modal_small">
+      <div class="slds-modal__container">
+        <div class="slds-modal__header slds-theme_error">
+          <lightning-button-icon
+            icon-name="utility:close"
+            alternative-text="Close"
+            variant="bare-inverse"
+            class="slds-modal__close"
+            onclick={handleCloseDeleteConfirm}>
+          </lightning-button-icon>
+          <h2 id="delete-modal-heading" class="slds-modal__title slds-hyphenate">
+            Confirm Deletion
+          </h2>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium">
+          <p>
+            Are you sure you want to delete <strong>{selectedCount}</strong> selected item(s)?
+            This action cannot be undone.
+          </p>
+        </div>
+        <div class="slds-modal__footer">
+          <lightning-button
+            label="Cancel"
+            onclick={handleCloseDeleteConfirm}>
+          </lightning-button>
+          <lightning-button
+            label="Delete"
+            variant="destructive"
+            onclick={handleConfirmDelete}
+            class="slds-m-left_small">
+          </lightning-button>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
   </template>
 </template>

@@ -91,10 +91,12 @@
   padding: 0 !important;
 }
 
-:host .row-number-col {
+:host .checkbox-col {
   width: 3rem;
   min-width: 3rem;
+  max-width: 3rem;
   text-align: center;
+  padding: 0 !important;
 }
 
 /* Detail row styling */
@@ -157,10 +159,21 @@
   margin-left: 0.5rem;
 }
 
-/* Expand controls styling */
-:host .expand-controls {
+/* Action bar layout */
+:host .action-bar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:host .action-bar-left {
+  display: flex;
+  align-items: center;
+}
+
+:host .action-bar-right {
+  display: flex;
+  align-items: center;
 }
 
 /* Expanded row visual indicator */
@@ -210,4 +223,20 @@
 :host .name-link:hover {
   text-decoration: underline;
   color: var(--lwc-colorTextLinkHover, #014486);
+}
+
+/* New item row in modal */
+:host .new-item-row {
+  background-color: #f3f3f3;
+  border-radius: 0.25rem;
+}
+
+:host .remove-row-btn {
+  color: var(--lwc-colorTextError, #ba0517);
+}
+
+/* Modal scrollable content */
+:host .slds-modal__content {
+  max-height: 60vh;
+  overflow-y: auto;
 }

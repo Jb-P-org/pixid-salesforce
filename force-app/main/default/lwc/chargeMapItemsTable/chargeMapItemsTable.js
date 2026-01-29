@@ -2,9 +2,12 @@ import { LightningElement, track, api, wire } from 'lwc';
 import { NavigationMixin }     from 'lightning/navigation';
 import getChargeMapMetadata    from '@salesforce/apex/ChargeMapItemController.getChargeMapMetadata';
 import updateChargeMapItems    from '@salesforce/apex/ChargeMapItemController.updateChargeMapItems';
+import createChargeMapItems    from '@salesforce/apex/ChargeMapItemController.createChargeMapItems';
+import deleteChargeMapItems    from '@salesforce/apex/ChargeMapItemController.deleteChargeMapItems';
 import { ShowToastEvent }      from 'lightning/platformShowToastEvent';
 import { getRecord }           from 'lightning/uiRecordApi';
 import STATUS_FIELD            from '@salesforce/schema/ChargeMap__c.Status__c';
+import END_DATE_FIELD          from '@salesforce/schema/ChargeMap__c.EndDateRevRec__c';
 
 // Primary columns shown in main table (always visible)
 const PRIMARY_COLUMNS = [
@@ -73,15 +76,32 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
     // Track expanded rows
     @track expandedRowIds = new Set();
 
+    // Selection state
+    @track selectedBacklogIds = new Set();
+    @track selectedNonBacklogIds = new Set();
+
+    // Add Items modal state
+    @track isAddModalOpen = false;
+    @track newItemRows = [];
+    @track isSaving = false;
+
+    // Delete confirmation state
+    @track isDeleteConfirmOpen = false;
+
+    // ChargeMap End Date Rev Rec (read-only, shown in Add modal)
+    @track chargeMapEndDate = null;
+
     // Statut courant pour détecter les changements
     @track status;
 
-    /** Wire sur la Charge Map pour récupérer son Status__c et recharger si ça change */
-    @wire(getRecord, { recordId: '$recordId', fields: [STATUS_FIELD] })
+    /** Wire sur la Charge Map pour récupérer son Status__c et EndDateRevRec__c */
+    @wire(getRecord, { recordId: '$recordId', fields: [STATUS_FIELD, END_DATE_FIELD] })
     wiredChargeMap({ data, error }) {
         if (data) {
             const newStatus = data.fields.Status__c.value;
-            console.log('🔄 Wired status:', newStatus, '(ancien:', this.status, ')');
+            const endDate = data.fields.EndDateRevRec__c.value;
+            console.log('🔄 Wired status:', newStatus, '(ancien:', this.status, '), endDate:', endDate);
+            this.chargeMapEndDate = endDate || null;
             if (newStatus !== this.status) {
                 this.status = newStatus;
                 console.log('▶️ Statut changé, reload loadData()');
@@ -115,7 +135,11 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                 const dateB = b.data.StartDateRevRec__c ? new Date(b.data.StartDateRevRec__c) : new Date(0);
                 return dateA - dateB;
             })
-            .map((row, idx) => ({ ...row, rowNumber: idx + 1 }));
+            .map((row, idx) => ({
+                ...row,
+                rowNumber: idx + 1,
+                isSelected: this.selectedBacklogIds.has(row.id)
+            }));
     }
 
     get hasBacklogRows() {
@@ -131,7 +155,11 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                 const dateB = b.data.StartDateRevRec__c ? new Date(b.data.StartDateRevRec__c) : new Date(0);
                 return dateA - dateB;
             })
-            .map((row, idx) => ({ ...row, rowNumber: idx + 1 }));
+            .map((row, idx) => ({
+                ...row,
+                rowNumber: idx + 1,
+                isSelected: this.selectedNonBacklogIds.has(row.id)
+            }));
     }
 
     get hasNonBacklogRows() {
@@ -159,6 +187,11 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                 console.log('   ▶️ isEditable (Apex) =', res.isEditable);
 
                 this.isEditable = res.isEditable;
+                this.chargeMapEndDate = res.endDateRevRec || null;
+
+                // Clear selections on data reload
+                this.selectedBacklogIds = new Set();
+                this.selectedNonBacklogIds = new Set();
 
                 // Prépare les métadonnées de colonnes
                 const fields = res.metadata.fields || [];
@@ -303,6 +336,38 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
         return this.rows.some(r => !r.isExpanded);
     }
 
+    // --- Selection computed properties ---
+
+    get isAllBacklogSelected() {
+        const rows = this.backlogRows;
+        return rows.length > 0 && rows.every(r => this.selectedBacklogIds.has(r.id));
+    }
+
+    get isAllNonBacklogSelected() {
+        const rows = this.nonBacklogRows;
+        return rows.length > 0 && rows.every(r => this.selectedNonBacklogIds.has(r.id));
+    }
+
+    get hasSelectedItems() {
+        return this.selectedBacklogIds.size > 0 || this.selectedNonBacklogIds.size > 0;
+    }
+
+    get selectedCount() {
+        return this.selectedBacklogIds.size + this.selectedNonBacklogIds.size;
+    }
+
+    get deleteButtonLabel() {
+        return `Delete (${this.selectedCount})`;
+    }
+
+    get showActionButtons() {
+        return this.isEditable;
+    }
+
+    get showDeleteButton() {
+        return this.isEditable && this.hasSelectedItems;
+    }
+
     handleEditIconClick(evt) {
         const rowId     = evt.currentTarget.dataset.id;
         const fieldName = evt.currentTarget.dataset.field;
@@ -408,6 +473,187 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                     errorMessage,
                     'error'
                 );
+                this.isLoading = false;
+            });
+    }
+
+    // --- Selection handlers ---
+
+    handleSelectAllBacklog(evt) {
+        if (evt.target.checked) {
+            this.selectedBacklogIds = new Set(this.backlogRows.map(r => r.id));
+        } else {
+            this.selectedBacklogIds = new Set();
+        }
+    }
+
+    handleSelectAllNonBacklog(evt) {
+        if (evt.target.checked) {
+            this.selectedNonBacklogIds = new Set(this.nonBacklogRows.map(r => r.id));
+        } else {
+            this.selectedNonBacklogIds = new Set();
+        }
+    }
+
+    handleRowSelect(evt) {
+        const rowId = evt.target.dataset.id;
+        const tableType = evt.target.dataset.table;
+        const isChecked = evt.target.checked;
+
+        if (tableType === 'backlog') {
+            const updated = new Set(this.selectedBacklogIds);
+            if (isChecked) {
+                updated.add(rowId);
+            } else {
+                updated.delete(rowId);
+            }
+            this.selectedBacklogIds = updated;
+        } else {
+            const updated = new Set(this.selectedNonBacklogIds);
+            if (isChecked) {
+                updated.add(rowId);
+            } else {
+                updated.delete(rowId);
+            }
+            this.selectedNonBacklogIds = updated;
+        }
+    }
+
+    // --- Add Items Modal ---
+
+    handleOpenAddModal() {
+        this.newItemRows = [this.createEmptyItemRow()];
+        this.isAddModalOpen = true;
+    }
+
+    handleCloseAddModal() {
+        this.isAddModalOpen = false;
+        this.newItemRows = [];
+    }
+
+    createEmptyItemRow() {
+        return {
+            key: Date.now() + '_' + Math.random().toString(36).substring(2, 11),
+            Product__c: null,
+            Sales_unit_price__c: null,
+            Quantity__c: null,
+            DiscountNumber__c: null,
+            StartDateRevRec__c: null
+        };
+    }
+
+    handleAddAnotherRow() {
+        this.newItemRows = [...this.newItemRows, this.createEmptyItemRow()];
+    }
+
+    handleRemoveRow(evt) {
+        const key = evt.currentTarget.dataset.key;
+        this.newItemRows = this.newItemRows.filter(r => r.key !== key);
+        if (this.newItemRows.length === 0) {
+            this.newItemRows = [this.createEmptyItemRow()];
+        }
+    }
+
+    handleNewItemFieldChange(evt) {
+        const key = evt.target.dataset.key;
+        const field = evt.target.dataset.field;
+        let value;
+
+        if (field === 'Product__c') {
+            value = evt.detail.recordId;
+        } else {
+            value = evt.detail?.value ?? evt.target.value;
+        }
+
+        this.newItemRows = this.newItemRows.map(row => {
+            if (row.key === key) {
+                return { ...row, [field]: value };
+            }
+            return row;
+        });
+    }
+
+    handleSaveNewItems() {
+        // Validate all required fields using reportValidity
+        const allInputs = this.template.querySelectorAll(
+            '[id="add-modal-content"] lightning-input, [id="add-modal-content"] lightning-record-picker'
+        );
+        let allValid = true;
+        allInputs.forEach(input => {
+            if (!input.reportValidity()) {
+                allValid = false;
+            }
+        });
+        if (!allValid) {
+            return;
+        }
+
+        const validItems = this.newItemRows.filter(r => r.Product__c);
+        if (validItems.length === 0) {
+            this.showToast('Erreur de validation', 'Veuillez sélectionner au moins un produit.', 'error');
+            return;
+        }
+
+        const itemsToCreate = validItems.map(r => ({
+            Product__c: r.Product__c,
+            Sales_unit_price__c: r.Sales_unit_price__c,
+            Quantity__c: r.Quantity__c,
+            DiscountNumber__c: r.DiscountNumber__c,
+            StartDateRevRec__c: r.StartDateRevRec__c
+        }));
+
+        this.isSaving = true;
+        createChargeMapItems({ chargeMapId: this.recordId, newItems: itemsToCreate })
+            .then(() => {
+                this.showToast('Succès', `${itemsToCreate.length} item(s) créé(s) avec succès.`, 'success');
+                this.handleCloseAddModal();
+                this.loadData();
+            })
+            .catch(err => {
+                const errorMessage = this.parseErrorMessage(err);
+                this.showToast('Erreur de création', errorMessage, 'error');
+            })
+            .finally(() => {
+                this.isSaving = false;
+            });
+    }
+
+    // --- Delete Items ---
+
+    handleDeleteSelected() {
+        this.isDeleteConfirmOpen = true;
+    }
+
+    handleCloseDeleteConfirm() {
+        this.isDeleteConfirmOpen = false;
+    }
+
+    handleConfirmDelete() {
+        const allSelectedIds = [
+            ...this.selectedBacklogIds,
+            ...this.selectedNonBacklogIds
+        ];
+
+        if (allSelectedIds.length === 0) {
+            this.isDeleteConfirmOpen = false;
+            return;
+        }
+
+        this.isLoading = true;
+        this.isDeleteConfirmOpen = false;
+
+        deleteChargeMapItems({ chargeMapId: this.recordId, itemIds: allSelectedIds })
+            .then(() => {
+                this.showToast(
+                    'Succès',
+                    `${allSelectedIds.length} item(s) supprimé(s) avec succès.`,
+                    'success'
+                );
+                this.loadData();
+            })
+            .catch(err => {
+                const errorMessage = this.parseErrorMessage(err);
+                this.showToast('Erreur de suppression', errorMessage, 'error');
                 this.isLoading = false;
             });
     }
