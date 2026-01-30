@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label>Activé</label>
+        <name>Activated__c</name>
+    </fields>
+    <fields>
+        <label>Date de fin</label>
+        <name>End_date__c</name>
+    </fields>
+    <fields>
+        <label>Prix unitaire de vente</label>
+        <name>Sales_unit_price__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <h2 class="guidelines-title slds-text-heading_small slds-m-bottom_small">
+                {label.CMG_Title}
+            </h2>
+            <ul class="slds-list_dotted guidelines-list">
+                <li>{label.CMG_AddDeleteProducts}</li>
+                <li>
+                    <lightning-icon icon-name="standard:marketing_actions" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                    {label.CMG_GreenIcon}
+                </li>
+                <li>
+                    <lightning-icon icon-name="standard:actions_and_buttons" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                    {label.CMG_OrangeIcon}
+                </li>
+                <li>
+                    <lightning-icon icon-name="standard:custom_component_task" size="xx-small" class="slds-m-right_xx-small"></lightning-icon>
+                    {label.CMG_PurpleIcon}
+                </li>
+                <li>{label.CMG_StartDateYear}</li>
+                <li>{label.CMG_ActivateCheckbox}</li>
+            </ul>
+        </div>
+    </lightning-card>
+</template>

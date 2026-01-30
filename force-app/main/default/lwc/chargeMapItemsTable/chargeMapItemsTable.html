@@ -5,20 +5,19 @@
       <lightning-icon
         icon-name="standard:related_list"
         size="small"
-        alternative-text="Charge Map Items">
+        alternative-text={label.CMI_SectionTitle}>
       </lightning-icon>
       <h3 class="slds-section__title-text slds-p-left_x-small">
-        <strong>Charge Map Items</strong>
+        <strong>{label.CMI_SectionTitle}</strong>
       </h3>
     </div>
   </div>
 
   <!-- Instructions -->
   <div class="instructions slds-p-horizontal_medium">
-    You can modify the start date, end date, billing schedule and terms of each product by clicking on the pen.
-    Changes are saved automatically.
+    {label.CMI_Instructions}
     <template if:true={hasSecondaryColumns}>
-      <strong> Click the expand icon to see additional details.</strong>
+      <strong> {label.CMI_InstructionsExpand}</strong>
     </template>
   </div>
 
@@ -39,7 +38,7 @@
           <template if:true={showActionButtons}>
             <lightning-button-group>
               <lightning-button
-                label="Add Items"
+                label={label.CMI_AddItems}
                 icon-name="utility:add"
                 variant="brand"
                 onclick={handleOpenAddModal}>
@@ -60,13 +59,13 @@
           <template if:true={hasSecondaryColumns}>
             <lightning-button-group>
               <lightning-button
-                label="Expand All"
+                label={label.CMI_ExpandAll}
                 icon-name="utility:chevrondown"
                 onclick={handleExpandAll}
                 disabled={hasExpandedRows}>
               </lightning-button>
               <lightning-button
-                label="Collapse All"
+                label={label.CMI_CollapseAll}
                 icon-name="utility:chevronup"
                 onclick={handleCollapseAll}
                 disabled={hasCollapsedRows}>
@@ -81,7 +80,7 @@
         <div class="slds-section slds-m-top_small slds-p-horizontal_medium">
           <h4 class="slds-text-heading_small slds-m-bottom_x-small">
             <lightning-icon icon-name="utility:clock" size="x-small" class="slds-m-right_x-small"></lightning-icon>
-            Backlog Items
+            {label.CMI_BacklogItems}
           </h4>
         </div>
         <div class="slds-scrollable_x">
@@ -266,7 +265,7 @@
                     <td colspan="100" class="detail-cell">
                       <div class="detail-container slds-box slds-theme_shade">
                         <div class="slds-text-title_caps slds-m-bottom_x-small detail-header">
-                          Additional Details
+                          {label.CMI_AdditionalDetails}
                         </div>
                         <div class="slds-grid slds-wrap slds-gutters_small">
                           <template for:each={row.secondaryCells} for:item="cell">
@@ -383,7 +382,7 @@
         <div class="slds-section slds-m-top_medium slds-p-horizontal_medium">
           <h4 class="slds-text-heading_small slds-m-bottom_x-small">
             <lightning-icon icon-name="utility:check" size="x-small" class="slds-m-right_x-small"></lightning-icon>
-            Completed Items
+            {label.CMI_CompletedItems}
           </h4>
         </div>
         <div class="slds-scrollable_x">
@@ -568,7 +567,7 @@
                     <td colspan="100" class="detail-cell">
                       <div class="detail-container slds-box slds-theme_shade">
                         <div class="slds-text-title_caps slds-m-bottom_x-small detail-header">
-                          Additional Details
+                          {label.CMI_AdditionalDetails}
                         </div>
                         <div class="slds-grid slds-wrap slds-gutters_small">
                           <template for:each={row.secondaryCells} for:item="cell">
@@ -684,7 +683,7 @@
 
     <!-- Aucune ligne -->
     <template if:false={hasRows}>
-      <div class="slds-p-around_medium">Aucun item à afficher.</div>
+      <div class="slds-p-around_medium">{label.CMI_NoItemsToDisplay}</div>
     </template>
   </template>
 
@@ -707,7 +706,7 @@
             onclick={handleCloseAddModal}>
           </lightning-button-icon>
           <h2 id="add-modal-heading" class="slds-modal__title slds-hyphenate">
-            Add Charge Map Items
+            {label.CMI_AddChargeMapItems}
           </h2>
         </div>
         <!-- Body -->
@@ -718,8 +717,8 @@
                 <!-- Product Lookup -->
                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
                   <lightning-record-picker
-                    label="Product"
-                    placeholder="Search for a product..."
+                    label={label.CMI_Product}
+                    placeholder={label.CMI_SearchProduct}
                     object-api-name="Product2"
                     data-key={itemRow.key}
                     data-field="Product__c"
@@ -731,7 +730,7 @@
                 <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
                   <lightning-input
                     type="number"
-                    label="Unit Price"
+                    label={label.CMI_UnitPrice}
                     value={itemRow.Sales_unit_price__c}
                     data-key={itemRow.key}
                     data-field="Sales_unit_price__c"
@@ -744,7 +743,7 @@
                 <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
                   <lightning-input
                     type="number"
-                    label="Quantity"
+                    label={label.CMI_Quantity}
                     value={itemRow.Quantity__c}
                     data-key={itemRow.key}
                     data-field="Quantity__c"
@@ -757,7 +756,7 @@
                 <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
                   <lightning-input
                     type="number"
-                    label="Discount (%)"
+                    label={label.CMI_Discount}
                     value={itemRow.DiscountNumber__c}
                     data-key={itemRow.key}
                     data-field="DiscountNumber__c"
@@ -771,7 +770,7 @@
                 <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
                   <lightning-input
                     type="date"
-                    label="Start Date"
+                    label={label.CMI_StartDate}
                     value={itemRow.StartDateRevRec__c}
                     data-key={itemRow.key}
                     data-field="StartDateRevRec__c"
@@ -783,7 +782,7 @@
                 <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
                   <lightning-input
                     type="date"
-                    label="End Date"
+                    label={label.CMI_EndDate}
                     value={chargeMapEndDate}
                     read-only
                     disabled>
@@ -805,7 +804,7 @@
           </template>
           <!-- Add another row button -->
           <lightning-button
-            label="Add Another Item"
+            label={label.CMI_AddAnotherItem}
             icon-name="utility:add"
             variant="base"
             onclick={handleAddAnotherRow}
@@ -815,11 +814,11 @@
         <!-- Footer -->
         <div class="slds-modal__footer">
           <lightning-button
-            label="Cancel"
+            label={label.CMI_Cancel}
             onclick={handleCloseAddModal}>
           </lightning-button>
           <lightning-button
-            label="Save Items"
+            label={label.CMI_SaveItems}
             variant="brand"
             onclick={handleSaveNewItems}
             disabled={isSaving}
@@ -849,22 +848,19 @@
             onclick={handleCloseDeleteConfirm}>
           </lightning-button-icon>
           <h2 id="delete-modal-heading" class="slds-modal__title slds-hyphenate">
-            Confirm Deletion
+            {label.CMI_ConfirmDeletion}
           </h2>
         </div>
         <div class="slds-modal__content slds-p-around_medium">
-          <p>
-            Are you sure you want to delete <strong>{selectedCount}</strong> selected item(s)?
-            This action cannot be undone.
-          </p>
+          <p>{deleteConfirmMessage}</p>
         </div>
         <div class="slds-modal__footer">
           <lightning-button
-            label="Cancel"
+            label={label.CMI_Cancel}
             onclick={handleCloseDeleteConfirm}>
           </lightning-button>
           <lightning-button
-            label="Delete"
+            label={label.CMI_Delete}
             variant="destructive"
             onclick={handleConfirmDelete}
             class="slds-m-left_small">

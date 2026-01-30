@@ -8,6 +8,45 @@ import { ShowToastEvent }      from 'lightning/platformShowToastEvent';
 import { getRecord }           from 'lightning/uiRecordApi';
 import STATUS_FIELD            from '@salesforce/schema/ChargeMap__c.Status__c';
 import END_DATE_FIELD          from '@salesforce/schema/ChargeMap__c.EndDateRevRec__c';
+import PO_REQUIRED_FIELD       from '@salesforce/schema/ChargeMap__c.PO_Required__c';
+
+// Custom Labels
+import CMI_SectionTitle           from '@salesforce/label/c.CMI_SectionTitle';
+import CMI_Instructions           from '@salesforce/label/c.CMI_Instructions';
+import CMI_InstructionsExpand     from '@salesforce/label/c.CMI_InstructionsExpand';
+import CMI_AddItems               from '@salesforce/label/c.CMI_AddItems';
+import CMI_ExpandAll              from '@salesforce/label/c.CMI_ExpandAll';
+import CMI_CollapseAll            from '@salesforce/label/c.CMI_CollapseAll';
+import CMI_BacklogItems           from '@salesforce/label/c.CMI_BacklogItems';
+import CMI_AdditionalDetails      from '@salesforce/label/c.CMI_AdditionalDetails';
+import CMI_CompletedItems         from '@salesforce/label/c.CMI_CompletedItems';
+import CMI_NoItemsToDisplay       from '@salesforce/label/c.CMI_NoItemsToDisplay';
+import CMI_AddChargeMapItems      from '@salesforce/label/c.CMI_AddChargeMapItems';
+import CMI_Product                from '@salesforce/label/c.CMI_Product';
+import CMI_SearchProduct          from '@salesforce/label/c.CMI_SearchProduct';
+import CMI_UnitPrice              from '@salesforce/label/c.CMI_UnitPrice';
+import CMI_Quantity               from '@salesforce/label/c.CMI_Quantity';
+import CMI_Discount               from '@salesforce/label/c.CMI_Discount';
+import CMI_StartDate              from '@salesforce/label/c.CMI_StartDate';
+import CMI_EndDate                from '@salesforce/label/c.CMI_EndDate';
+import CMI_AddAnotherItem         from '@salesforce/label/c.CMI_AddAnotherItem';
+import CMI_Cancel                 from '@salesforce/label/c.CMI_Cancel';
+import CMI_SaveItems              from '@salesforce/label/c.CMI_SaveItems';
+import CMI_ConfirmDeletion        from '@salesforce/label/c.CMI_ConfirmDeletion';
+import CMI_DeleteConfirmMessage   from '@salesforce/label/c.CMI_DeleteConfirmMessage';
+import CMI_Delete                 from '@salesforce/label/c.CMI_Delete';
+import CMI_ErrorReadingStatus     from '@salesforce/label/c.CMI_ErrorReadingStatus';
+import CMI_ErrorLoading           from '@salesforce/label/c.CMI_ErrorLoading';
+import CMI_UpdateSuccess          from '@salesforce/label/c.CMI_UpdateSuccess';
+import CMI_ErrorUpdating          from '@salesforce/label/c.CMI_ErrorUpdating';
+import CMI_ValidationError        from '@salesforce/label/c.CMI_ValidationError';
+import CMI_SelectAtLeastOneProduct from '@salesforce/label/c.CMI_SelectAtLeastOneProduct';
+import CMI_ItemsCreatedSuccess    from '@salesforce/label/c.CMI_ItemsCreatedSuccess';
+import CMI_ErrorCreating          from '@salesforce/label/c.CMI_ErrorCreating';
+import CMI_ItemsDeletedSuccess    from '@salesforce/label/c.CMI_ItemsDeletedSuccess';
+import CMI_ErrorDeleting          from '@salesforce/label/c.CMI_ErrorDeleting';
+import CMI_UnexpectedError        from '@salesforce/label/c.CMI_UnexpectedError';
+import LBL_Success                from '@salesforce/label/c.Success';
 
 // Primary columns shown in main table (always visible)
 const PRIMARY_COLUMNS = [
@@ -37,6 +76,9 @@ const SECONDARY_COLUMNS = [
     'ProratedAmount__c'
 ];
 
+// PO columns - shown only when ChargeMap__c.PO_Required__c is true
+const PO_COLUMNS = ['PO_Required__c', 'PO_Reference__c', 'PO_Request_Date__c'];
+
 // Column icons mapping based on field type
 // Green (marketing_actions) = Editable
 // Orange (actions_and_buttons) = Mandatory for activation
@@ -64,6 +106,45 @@ const COLUMN_ICONS = {
 };
 
 export default class ChargeMapItemsTable extends NavigationMixin(LightningElement) {
+    label = {
+        CMI_SectionTitle,
+        CMI_Instructions,
+        CMI_InstructionsExpand,
+        CMI_AddItems,
+        CMI_ExpandAll,
+        CMI_CollapseAll,
+        CMI_BacklogItems,
+        CMI_AdditionalDetails,
+        CMI_CompletedItems,
+        CMI_NoItemsToDisplay,
+        CMI_AddChargeMapItems,
+        CMI_Product,
+        CMI_SearchProduct,
+        CMI_UnitPrice,
+        CMI_Quantity,
+        CMI_Discount,
+        CMI_StartDate,
+        CMI_EndDate,
+        CMI_AddAnotherItem,
+        CMI_Cancel,
+        CMI_SaveItems,
+        CMI_ConfirmDeletion,
+        CMI_DeleteConfirmMessage,
+        CMI_Delete,
+        CMI_ErrorReadingStatus,
+        CMI_ErrorLoading,
+        CMI_UpdateSuccess,
+        CMI_ErrorUpdating,
+        CMI_ValidationError,
+        CMI_SelectAtLeastOneProduct,
+        CMI_ItemsCreatedSuccess,
+        CMI_ErrorCreating,
+        CMI_ItemsDeletedSuccess,
+        CMI_ErrorDeleting,
+        CMI_UnexpectedError,
+        LBL_Success
+    };
+
     @api recordId;
     @track columnsMeta = [];
     @track primaryColumnsMeta = [];
@@ -91,27 +172,32 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
     // ChargeMap End Date Rev Rec (read-only, shown in Add modal)
     @track chargeMapEndDate = null;
 
+    // PO Required on parent ChargeMap
+    @track poRequired = false;
+
     // Statut courant pour détecter les changements
     @track status;
 
     /** Wire sur la Charge Map pour récupérer son Status__c et EndDateRevRec__c */
-    @wire(getRecord, { recordId: '$recordId', fields: [STATUS_FIELD, END_DATE_FIELD] })
+    @wire(getRecord, { recordId: '$recordId', fields: [STATUS_FIELD, END_DATE_FIELD, PO_REQUIRED_FIELD] })
     wiredChargeMap({ data, error }) {
         if (data) {
             const newStatus = data.fields.Status__c.value;
             const endDate = data.fields.EndDateRevRec__c.value;
-            console.log('🔄 Wired status:', newStatus, '(ancien:', this.status, '), endDate:', endDate);
+            const newPORequired = data.fields.PO_Required__c.value;
+            console.log('🔄 Wired status:', newStatus, '(ancien:', this.status, '), endDate:', endDate, ', PO_Required:', newPORequired);
             this.chargeMapEndDate = endDate || null;
-            if (newStatus !== this.status) {
+            if (newStatus !== this.status || newPORequired !== this._wirePORequired) {
                 this.status = newStatus;
-                console.log('▶️ Statut changé, reload loadData()');
+                this._wirePORequired = newPORequired;
+                console.log('▶️ Statut ou PO_Required changé, reload loadData()');
                 this.loadData();
             }
         } else if (error) {
             console.error('❌ Erreur wire getRecord:', error);
             const errorMessage = this.parseErrorMessage(error);
             this.showToast(
-                'Erreur de lecture du statut',
+                this.label.CMI_ErrorReadingStatus,
                 errorMessage,
                 'error'
             );
@@ -188,6 +274,7 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
 
                 this.isEditable = res.isEditable;
                 this.chargeMapEndDate = res.endDateRevRec || null;
+                this.poRequired = res.poRequired === true;
 
                 // Clear selections on data reload
                 this.selectedBacklogIds = new Set();
@@ -197,6 +284,7 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                 const fields = res.metadata.fields || [];
                 this.columnsMeta = fields.map(f => ({
                     ...f,
+                    label      : f.apiName === 'Name' ? this.label.CMI_Product : f.label,
                     isPicklist : f.type === 'picklist',
                     isCheckbox : f.type === 'boolean',
                     inputType  : this.mapFieldInputType(f),
@@ -230,6 +318,13 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                     PRIMARY_COLUMNS.indexOf(a.apiName) - PRIMARY_COLUMNS.indexOf(b.apiName)
                 );
 
+                // Hide PO columns when ChargeMap PO_Required is false
+                if (!this.poRequired) {
+                    this.primaryColumnsMeta = this.primaryColumnsMeta.filter(
+                        col => !PO_COLUMNS.includes(col.apiName)
+                    );
+                }
+
                 console.log('   ▶️ primaryColumnsMeta:', this.primaryColumnsMeta.map(c => c.apiName));
                 console.log('   ▶️ secondaryColumnsMeta:', this.secondaryColumnsMeta.map(c => c.apiName));
 
@@ -244,6 +339,10 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                             displayValue = '—';
                         } else if (col.type === 'currency') {
                             displayValue = this.formatCurrency(raw, currencyCode);
+                        } else if (col.type === 'date') {
+                            displayValue = this.formatDate(raw);
+                        } else if (col.type === 'picklist' && col.picklistValues) {
+                            displayValue = this.getPicklistLabel(col.picklistValues, raw);
                         } else {
                             displayValue = raw;
                         }
@@ -266,7 +365,9 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                         id       : rec.Id,
                         data     : rec,
                         cells    : allCells,
-                        primaryCells: allCells.filter(c => PRIMARY_COLUMNS.includes(c.apiName))
+                        primaryCells: allCells
+                            .filter(c => PRIMARY_COLUMNS.includes(c.apiName))
+                            .filter(c => this.poRequired || !PO_COLUMNS.includes(c.apiName))
                             .sort((a, b) => PRIMARY_COLUMNS.indexOf(a.apiName) - PRIMARY_COLUMNS.indexOf(b.apiName)),
                         secondaryCells: allCells.filter(c => SECONDARY_COLUMNS.includes(c.apiName)),
                         isExpanded: this.expandedRowIds.has(rec.Id)
@@ -278,7 +379,7 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                 console.error('❌ Erreur getChargeMapMetadata:', err);
                 const errorMessage = this.parseErrorMessage(err);
                 this.showToast(
-                    'Erreur de chargement',
+                    this.label.CMI_ErrorLoading,
                     errorMessage,
                     'error'
                 );
@@ -357,7 +458,11 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
     }
 
     get deleteButtonLabel() {
-        return `Delete (${this.selectedCount})`;
+        return `${this.label.CMI_Delete} (${this.selectedCount})`;
+    }
+
+    get deleteConfirmMessage() {
+        return this.formatLabel(this.label.CMI_DeleteConfirmMessage, this.selectedCount);
     }
 
     get showActionButtons() {
@@ -407,6 +512,10 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                         cell.displayValue = '—';
                     } else if (cell.meta.type === 'currency') {
                         cell.displayValue = this.formatCurrency(val, currencyCode);
+                    } else if (cell.meta.type === 'date') {
+                        cell.displayValue = this.formatDate(val);
+                    } else if (cell.meta.type === 'picklist' && cell.meta.picklistValues) {
+                        cell.displayValue = this.getPicklistLabel(cell.meta.picklistValues, val);
                     } else {
                         cell.displayValue = val;
                     }
@@ -460,7 +569,7 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
         updateChargeMapItems({ updatedItems: updates })
             .then(() => {
                 console.log('✅ saveData succeeded');
-                this.showToast('Succès', 'Mise à jour réussie', 'success');
+                this.showToast(this.label.LBL_Success, this.label.CMI_UpdateSuccess, 'success');
                 this.draftValues = {};
                 this.handleInputBlur();
                 this.loadData();
@@ -469,7 +578,7 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                 console.error('❌ saveData error:', err);
                 const errorMessage = this.parseErrorMessage(err);
                 this.showToast(
-                    'Erreur de mise à jour',
+                    this.label.CMI_ErrorUpdating,
                     errorMessage,
                     'error'
                 );
@@ -590,7 +699,7 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
 
         const validItems = this.newItemRows.filter(r => r.Product__c);
         if (validItems.length === 0) {
-            this.showToast('Erreur de validation', 'Veuillez sélectionner au moins un produit.', 'error');
+            this.showToast(this.label.CMI_ValidationError, this.label.CMI_SelectAtLeastOneProduct, 'error');
             return;
         }
 
@@ -605,13 +714,13 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
         this.isSaving = true;
         createChargeMapItems({ chargeMapId: this.recordId, newItems: itemsToCreate })
             .then(() => {
-                this.showToast('Succès', `${itemsToCreate.length} item(s) créé(s) avec succès.`, 'success');
+                this.showToast(this.label.LBL_Success, this.formatLabel(this.label.CMI_ItemsCreatedSuccess, itemsToCreate.length), 'success');
                 this.handleCloseAddModal();
                 this.loadData();
             })
             .catch(err => {
                 const errorMessage = this.parseErrorMessage(err);
-                this.showToast('Erreur de création', errorMessage, 'error');
+                this.showToast(this.label.CMI_ErrorCreating, errorMessage, 'error');
             })
             .finally(() => {
                 this.isSaving = false;
@@ -645,15 +754,15 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
         deleteChargeMapItems({ chargeMapId: this.recordId, itemIds: allSelectedIds })
             .then(() => {
                 this.showToast(
-                    'Succès',
-                    `${allSelectedIds.length} item(s) supprimé(s) avec succès.`,
+                    this.label.LBL_Success,
+                    this.formatLabel(this.label.CMI_ItemsDeletedSuccess, allSelectedIds.length),
                     'success'
                 );
                 this.loadData();
             })
             .catch(err => {
                 const errorMessage = this.parseErrorMessage(err);
-                this.showToast('Erreur de suppression', errorMessage, 'error');
+                this.showToast(this.label.CMI_ErrorDeleting, errorMessage, 'error');
                 this.isLoading = false;
             });
     }
@@ -712,6 +821,23 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
         }
     }
 
+    getPicklistLabel(picklistValues, value) {
+        const entry = picklistValues.find(pv => pv.value === value);
+        return entry ? entry.label : value;
+    }
+
+    formatDate(value) {
+        if (value === null || value === undefined || value === '') {
+            return '—';
+        }
+        // Convert YYYY-MM-DD to DD-MM-YYYY
+        const parts = String(value).split('-');
+        if (parts.length === 3) {
+            return `${parts[2]}-${parts[1]}-${parts[0]}`;
+        }
+        return value;
+    }
+
     parseErrorMessage(err) {
         // Handle different error formats from Apex
         if (err.body) {
@@ -743,10 +869,14 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
         if (err.message) {
             return err.message;
         }
-        return 'Une erreur inattendue s\'est produite. Veuillez réessayer.';
+        return this.label.CMI_UnexpectedError;
     }
 
     showToast(title, message, variant = 'info') {
         this.dispatchEvent(new ShowToastEvent({ title, message, variant }));
+    }
+
+    formatLabel(label, ...args) {
+        return label.replace(/{(\d+)}/g, (match, index) => args[index] ?? match);
     }
 }

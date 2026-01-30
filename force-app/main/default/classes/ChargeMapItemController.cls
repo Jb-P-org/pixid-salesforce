@@ -12,7 +12,7 @@ public without sharing class ChargeMapItemController {
 
         // 1. Statut et End Date de la Charge Map
         ChargeMap__c cm = [
-            SELECT Status__c, EndDateRevRec__c
+            SELECT Status__c, EndDateRevRec__c, PO_Required__c
             FROM ChargeMap__c
             WHERE Id = :chargeMapId
             LIMIT 1
@@ -20,6 +20,7 @@ public without sharing class ChargeMapItemController {
         Boolean isEditable = (cm.Status__c == 'Backlog');
         result.put('isEditable', isEditable);
         result.put('endDateRevRec', cm.EndDateRevRec__c != null ? String.valueOf(cm.EndDateRevRec__c) : null);
+        result.put('poRequired', cm.PO_Required__c == 'Yes');
 
         // 2. Items liés
         List<ChargeMapItem__c> items = [

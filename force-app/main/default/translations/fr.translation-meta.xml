@@ -48,4 +48,172 @@
         <label>Case {0} créé.</label>
         <name>Ticket_Created_Message</name>
     </customLabels>
+    <customLabels>
+        <label>GUIDE CHARGE MAP 2.0</label>
+        <name>CMG_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Vous pouvez désormais ajouter et supprimer des produits directement dans la Charge Map</label>
+        <name>CMG_AddDeleteProducts</name>
+    </customLabels>
+    <customLabels>
+        <label>Les colonnes avec une icône verte sont modifiables</label>
+        <name>CMG_GreenIcon</name>
+    </customLabels>
+    <customLabels>
+        <label>Les colonnes avec une icône orange sont obligatoires pour pouvoir activer un élément et l&apos;envoyer à Netsuite</label>
+        <name>CMG_OrangeIcon</name>
+    </customLabels>
+    <customLabels>
+        <label>Les colonnes avec une icône violette sont calculées automatiquement</label>
+        <name>CMG_PurpleIcon</name>
+    </customLabels>
+    <customLabels>
+        <label>Si vous déplacez une date de début vers une autre année, la date de fin suivra. Vous pouvez désormais avoir des éléments sur différentes années dans une même Charge Map</label>
+        <name>CMG_StartDateYear</name>
+    </customLabels>
+    <customLabels>
+        <label>Pour envoyer un élément à Netsuite, vous devez cocher la case Activé au niveau de l&apos;élément</label>
+        <name>CMG_ActivateCheckbox</name>
+    </customLabels>
+    <customLabels>
+        <label>Éléments de grille tarifaire</label>
+        <name>CMI_SectionTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Vous pouvez modifier la date de début, la date de fin, le calendrier de facturation et les termes de chaque produit en cliquant sur le stylo. Les modifications sont enregistrées automatiquement.</label>
+        <name>CMI_Instructions</name>
+    </customLabels>
+    <customLabels>
+        <label>Cliquez sur l&apos;icône de développement pour voir les détails supplémentaires.</label>
+        <name>CMI_InstructionsExpand</name>
+    </customLabels>
+    <customLabels>
+        <label>Ajouter des éléments</label>
+        <name>CMI_AddItems</name>
+    </customLabels>
+    <customLabels>
+        <label>Tout développer</label>
+        <name>CMI_ExpandAll</name>
+    </customLabels>
+    <customLabels>
+        <label>Tout réduire</label>
+        <name>CMI_CollapseAll</name>
+    </customLabels>
+    <customLabels>
+        <label>Éléments en attente</label>
+        <name>CMI_BacklogItems</name>
+    </customLabels>
+    <customLabels>
+        <label>Détails supplémentaires</label>
+        <name>CMI_AdditionalDetails</name>
+    </customLabels>
+    <customLabels>
+        <label>Éléments terminés</label>
+        <name>CMI_CompletedItems</name>
+    </customLabels>
+    <customLabels>
+        <label>Aucun élément à afficher.</label>
+        <name>CMI_NoItemsToDisplay</name>
+    </customLabels>
+    <customLabels>
+        <label>Ajouter des éléments de grille tarifaire</label>
+        <name>CMI_AddChargeMapItems</name>
+    </customLabels>
+    <customLabels>
+        <label>Produit</label>
+        <name>CMI_Product</name>
+    </customLabels>
+    <customLabels>
+        <label>Rechercher un produit...</label>
+        <name>CMI_SearchProduct</name>
+    </customLabels>
+    <customLabels>
+        <label>Prix unitaire</label>
+        <name>CMI_UnitPrice</name>
+    </customLabels>
+    <customLabels>
+        <label>Quantité</label>
+        <name>CMI_Quantity</name>
+    </customLabels>
+    <customLabels>
+        <label>Remise (%)</label>
+        <name>CMI_Discount</name>
+    </customLabels>
+    <customLabels>
+        <label>Date de début</label>
+        <name>CMI_StartDate</name>
+    </customLabels>
+    <customLabels>
+        <label>Date de fin</label>
+        <name>CMI_EndDate</name>
+    </customLabels>
+    <customLabels>
+        <label>Ajouter un autre élément</label>
+        <name>CMI_AddAnotherItem</name>
+    </customLabels>
+    <customLabels>
+        <label>Annuler</label>
+        <name>CMI_Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label>Enregistrer les éléments</label>
+        <name>CMI_SaveItems</name>
+    </customLabels>
+    <customLabels>
+        <label>Confirmer la suppression</label>
+        <name>CMI_ConfirmDeletion</name>
+    </customLabels>
+    <customLabels>
+        <label>Êtes-vous sûr de vouloir supprimer {0} élément(s) sélectionné(s) ? Cette action est irréversible.</label>
+        <name>CMI_DeleteConfirmMessage</name>
+    </customLabels>
+    <customLabels>
+        <label>Supprimer</label>
+        <name>CMI_Delete</name>
+    </customLabels>
+    <customLabels>
+        <label>Erreur de lecture du statut</label>
+        <name>CMI_ErrorReadingStatus</name>
+    </customLabels>
+    <customLabels>
+        <label>Erreur de chargement</label>
+        <name>CMI_ErrorLoading</name>
+    </customLabels>
+    <customLabels>
+        <label>Mise à jour réussie</label>
+        <name>CMI_UpdateSuccess</name>
+    </customLabels>
+    <customLabels>
+        <label>Erreur de mise à jour</label>
+        <name>CMI_ErrorUpdating</name>
+    </customLabels>
+    <customLabels>
+        <label>Erreur de validation</label>
+        <name>CMI_ValidationError</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez sélectionner au moins un produit.</label>
+        <name>CMI_SelectAtLeastOneProduct</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} élément(s) créé(s) avec succès.</label>
+        <name>CMI_ItemsCreatedSuccess</name>
+    </customLabels>
+    <customLabels>
+        <label>Erreur de création</label>
+        <name>CMI_ErrorCreating</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} élément(s) supprimé(s) avec succès.</label>
+        <name>CMI_ItemsDeletedSuccess</name>
+    </customLabels>
+    <customLabels>
+        <label>Erreur de suppression</label>
+        <name>CMI_ErrorDeleting</name>
+    </customLabels>
+    <customLabels>
+        <label>Une erreur inattendue s&apos;est produite. Veuillez réessayer.</label>
+        <name>CMI_UnexpectedError</name>
+    </customLabels>
 </Translations>
