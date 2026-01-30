@@ -3,20 +3,48 @@ private class FeedItemPreventOnClosedCaseTest {
 
     @testSetup
     static void setup() {
+        // Get a valid Closed_Reason__c picklist value
+        Schema.DescribeFieldResult closedReasonField = Case.Closed_Reason__c.getDescribe();
+        List<Schema.PicklistEntry> closedReasonValues = closedReasonField.getPicklistValues();
+        String validClosedReason = null;
+        for (Schema.PicklistEntry entry : closedReasonValues) {
+            if (entry.isActive()) {
+                validClosedReason = entry.getValue();
+                break;
+            }
+        }
+
+        // Create Account and Contact with email for flow recipient
+        Account acc = new Account(Name = 'Test Account');
+        insert acc;
+
+        Contact contact = new Contact(
+            FirstName = 'Test',
+            LastName = 'Contact',
+            Email = 'testcontact@example.com',
+            AccountId = acc.Id
+        );
+        insert contact;
+
         List<Case> cases = new List<Case>();
 
-        // Case 1: Closed and Archived
+        // Case 1: Closed and Archived - with Contact for email flow
         cases.add(new Case(
             Subject = 'Closed Archived Case',
             Status = 'Closed',
-            Archived__c = true
+            Archived__c = true,
+            Closed_Reason__c = validClosedReason,
+            ContactId = contact.Id
         ));
 
         // Case 2: Closed but not Archived
         cases.add(new Case(
             Subject = 'Closed Not Archived Case',
             Status = 'Closed',
-            Archived__c = false
+            Archived__c = false,
+            Closed_Reason__c = validClosedReason,
+            ContactId = contact.Id,
+            SuppliedEmail = 'testcontact@example.com'
         ));
 
         // Case 3: Open and Archived
