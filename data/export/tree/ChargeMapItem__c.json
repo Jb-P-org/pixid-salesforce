@@ -1,0 +1,716 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef1"
+            },
+            "Name": "Maintenance API",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef10",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef2"
+            },
+            "Name": "Licence BI",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef3",
+            "Quantity__c": 35,
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef3"
+            },
+            "Name": "Licence BI",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef7",
+            "Quantity__c": 3.4,
+            "StartDateRevRec__c": "2026-02-02",
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef4"
+            },
+            "Name": "Formation Utilisateur",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef11",
+            "Quantity__c": 2,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef5"
+            },
+            "Name": "Support Gold (25 Tickets)",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef10",
+            "Quantity__c": 4,
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef6"
+            },
+            "Name": "Ouverture API",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef14",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef7"
+            },
+            "Name": "Support Gold (25 Tickets)",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef7",
+            "Quantity__c": 6,
+            "StartDateRevRec__c": "2026-03-02",
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef8"
+            },
+            "Name": "Maintenance SSO",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef3",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef9"
+            },
+            "Name": "Interface HR-XML SIDES / API",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef4",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef10"
+            },
+            "Name": "Mise en œuvre",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef2",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef11"
+            },
+            "Name": "Expertise",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef5",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef12"
+            },
+            "Name": "Interface HR-XML SIDES / API",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef13",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef13"
+            },
+            "Name": "Formation Utilisateur",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef6",
+            "Quantity__c": 21,
+            "Status__c": "Backlog",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef14"
+            },
+            "Name": "Licence BI",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef10",
+            "Quantity__c": 2,
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef15"
+            },
+            "Name": "Mise en œuvre",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef1",
+            "Quantity__c": 0.5,
+            "Status__c": "Backlog",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef16"
+            },
+            "Name": "Expertise",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef4",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef17"
+            },
+            "Name": "Mise en œuvre",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef11",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef18"
+            },
+            "Name": "Expertise",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef8",
+            "Quantity__c": 5,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef19"
+            },
+            "Name": "Mise en œuvre",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef12",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef20"
+            },
+            "Name": "Maintenance SSO",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef10",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "Activated__c": false,
+            "PO_Required__c": false
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef21"
+            },
+            "Name": "Application Mobile",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef15",
+            "Amount__c": 138000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfPIYA1",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 138000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef22"
+            },
+            "Name": "Licence BI - Conception",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef15",
+            "Amount__c": 2000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfP9YAL",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 2000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef23"
+            },
+            "Name": "Application Mobile",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef18",
+            "Amount__c": 138000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfPIYA1",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 138000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef24"
+            },
+            "Name": "Licence BI - Conception",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef18",
+            "Amount__c": 2000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfP9YAL",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 2000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef25"
+            },
+            "Name": "Application Mobile",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef17",
+            "Amount__c": 138000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfPIYA1",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 138000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef26"
+            },
+            "Name": "Licence BI - Conception",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef17",
+            "Amount__c": 2000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfP9YAL",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 2000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef27"
+            },
+            "Name": "Application Mobile",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef16",
+            "Amount__c": 138000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfPIYA1",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 138000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef28"
+            },
+            "Name": "Licence BI - Conception",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef16",
+            "Amount__c": 2000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfP9YAL",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 2000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef29"
+            },
+            "Name": "Application Mobile",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef19",
+            "Amount__c": 138000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfPIYA1",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 138000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef30"
+            },
+            "Name": "Licence BI - Conception",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef19",
+            "Amount__c": 2000,
+            "SourceOpportunity__c": "@OpportunityRef1",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfP9YAL",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 2000,
+            "LineDescription__c": "Test"
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef31"
+            },
+            "Name": "Application Mobile",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef21",
+            "Amount__c": 138000,
+            "SourceOpportunity__c": "@OpportunityRef3",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfPIYA1",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 138000
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef32"
+            },
+            "Name": "Certification flux",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef21",
+            "Amount__c": 2000,
+            "SourceOpportunity__c": "@OpportunityRef3",
+            "BillingSchedule__c": "One-off",
+            "Product__c": "01tIV00000GOfTrYAL",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "One-off",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Service",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 2000
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef33"
+            },
+            "Name": "Commission / maintenance Connecteur Partenaire",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef21",
+            "Amount__c": 0,
+            "SourceOpportunity__c": "@OpportunityRef3",
+            "BillingSchedule__c": "Annual",
+            "Product__c": "01tIV00000GOfPPYA1",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 0
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef34"
+            },
+            "Name": "Support Platinium",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef20",
+            "Amount__c": 9700,
+            "SourceOpportunity__c": "@OpportunityRef2",
+            "BillableStatusDate__c": "2026-01-21",
+            "BillingSchedule__c": "Annual",
+            "NbOfMonthsProrated__c": 12,
+            "Product__c": "01tIV00000GOfPEYA1",
+            "ProratedAmount__c": 9700,
+            "Quantity__c": 1,
+            "StartDateRevRec__c": "2026-01-01",
+            "Status__c": "Billable",
+            "Term__c": "In advance",
+            "SalesOrderID__c": "248781",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Usage",
+            "Activated__c": true,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 9700
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef35"
+            },
+            "Name": "Chargé de support",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef22",
+            "Amount__c": 740,
+            "SourceOpportunity__c": "@OpportunityRef4",
+            "BillingSchedule__c": "One-off",
+            "Product__c": "01tIV00000GOfPTYA1",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "One-off",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Service",
+            "Activated__c": false,
+            "DiscountNumber__c": 10,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 740
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef36"
+            },
+            "Name": "Connexion SSO",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef22",
+            "Amount__c": 4000,
+            "SourceOpportunity__c": "@OpportunityRef4",
+            "BillingSchedule__c": "One-off",
+            "Product__c": "01tIV00000GOfPYYA1",
+            "Quantity__c": 1,
+            "Status__c": "Backlog",
+            "Term__c": "One-off",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Service",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 4000
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef37"
+            },
+            "Name": "ETL - Supervision et support des fichiers jusqu'à 5 extractions",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef22",
+            "Amount__c": 1000,
+            "SourceOpportunity__c": "@OpportunityRef4",
+            "BillingSchedule__c": "One-off",
+            "Product__c": "01tIV00000GyUgLYAV",
+            "Quantity__c": 1,
+            "Status__c": "Billable",
+            "Term__c": "One-off",
+            "End_date__c": "2026-12-31",
+            "Nature__c": "Service",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 1000
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef38"
+            },
+            "Name": "ETL - Supervision et support de 5 extractions additionnelles",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef22",
+            "Amount__c": 100,
+            "BillingSchedule__c": "One-off",
+            "Product__c": "01tIV00000GyUWfYAN",
+            "Quantity__c": 1,
+            "StartDateRevRec__c": "2026-01-30",
+            "Status__c": "Backlog",
+            "Term__c": "In arrears",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 100
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef39"
+            },
+            "Name": "VMS - Shared Managed Services (% of Spend)",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef22",
+            "Amount__c": 300,
+            "BillingSchedule__c": "One-off",
+            "Product__c": "01tIV00000BTLnWYAX",
+            "Quantity__c": 3,
+            "StartDateRevRec__c": "2026-01-16",
+            "Status__c": "Backlog",
+            "Term__c": "One-off",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 100
+        },
+        {
+            "attributes": {
+                "type": "ChargeMapItem__c",
+                "referenceId": "ChargeMapItem__cRef40"
+            },
+            "Name": "VMS (% of spend) - Solution",
+            "CurrencyIsoCode": "EUR",
+            "ChargeMap__c": "@ChargeMap__cRef22",
+            "Amount__c": 100,
+            "BillingSchedule__c": "Biannual",
+            "Product__c": "01tIV00000BTLnbYAH",
+            "Quantity__c": 1,
+            "StartDateRevRec__c": "2026-01-21",
+            "Status__c": "Backlog",
+            "Term__c": "In arrears",
+            "Activated__c": false,
+            "PO_Required__c": false,
+            "Sales_unit_price__c": 100
+        }
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Opportunity",
+                "referenceId": "OpportunityRef1"
+            },
+            "AccountId": "@AccountRef3",
+            "RecordTypeId": "012IV000001jKjZYAU",
+            "Name": "Pixid FR-Pack-EU-2026",
+            "StageName": "Closed - Won",
+            "Amount": 140000,
+            "Probability": 100,
+            "TotalOpportunityQuantity": 2,
+            "CloseDate": "2026-01-14",
+            "LeadSource": "Prospecting",
+            "CurrencyIsoCode": "EUR",
+            "Budget_Confirmed__c": false,
+            "Discovery_Completed__c": false,
+            "ROI_Analysis_Completed__c": false,
+            "PartnerOrigin__c": "@AccountRef1",
+            "PartnerDirect__c": false,
+            "Activity__c": "Pixid FR",
+            "ChannelType__c": "Direct",
+            "Offer__c": "GC",
+            "PreviousStage__c": "Closing",
+            "RDD__c": false,
+            "FCSTWtdARR__c": 140000
+        },
+        {
+            "attributes": {
+                "type": "Opportunity",
+                "referenceId": "OpportunityRef2"
+            },
+            "AccountId": "@AccountRef4",
+            "RecordTypeId": "012IV000001jKhxYAE",
+            "Name": "Test Upsell",
+            "StageName": "Closed - Won",
+            "Amount": 9700,
+            "Probability": 100,
+            "TotalOpportunityQuantity": 1,
+            "CloseDate": "2026-01-21",
+            "LeadSource": "Prospecting",
+            "CurrencyIsoCode": "EUR",
+            "Budget_Confirmed__c": false,
+            "Discovery_Completed__c": false,
+            "ROI_Analysis_Completed__c": false,
+            "PartnerDirect__c": false,
+            "Activity__c": "Pixid FR",
+            "ChannelType__c": "Direct",
+            "Offer__c": "Pack",
+            "PreviousStage__c": "Closing",
+            "RDD__c": false,
+            "FCSTWtdARR__c": 9700,
+            "Proxy_Docusign_Option__c": "Standard"
+        },
+        {
+            "attributes": {
+                "type": "Opportunity",
+                "referenceId": "OpportunityRef3"
+            },
+            "AccountId": "@AccountRef4",
+            "RecordTypeId": "012IV000001jKjZYAU",
+            "Name": "Test Charge Map",
+            "StageName": "Closed - Won",
+            "Amount": 140000,
+            "Probability": 100,
+            "TotalOpportunityQuantity": 3,
+            "CloseDate": "2026-01-21",
+            "LeadSource": "Prospecting",
+            "CurrencyIsoCode": "EUR",
+            "Budget_Confirmed__c": false,
+            "Discovery_Completed__c": false,
+            "ROI_Analysis_Completed__c": false,
+            "PartnerDirect__c": false,
+            "Activity__c": "Pixid FR",
+            "ChannelType__c": "Direct",
+            "Offer__c": "GC",
+            "PreviousStage__c": "Closing",
+            "RDD__c": false,
+            "FCSTWtdARR__c": 138000
+        },
+        {
+            "attributes": {
+                "type": "Opportunity",
+                "referenceId": "OpportunityRef4"
+            },
+            "AccountId": "@AccountRef6",
+            "RecordTypeId": "012IV000001jKjZYAU",
+            "Name": "Test Charge Map",
+            "StageName": "Closed - Won",
+            "Amount": 5730,
+            "Probability": 100,
+            "TotalOpportunityQuantity": 3,
+            "CloseDate": "2026-01-28",
+            "LeadSource": "Prospecting",
+            "CurrencyIsoCode": "EUR",
+            "Budget_Confirmed__c": false,
+            "Discovery_Completed__c": false,
+            "ROI_Analysis_Completed__c": false,
+            "PartnerDirect__c": false,
+            "Activity__c": "Pixid FR",
+            "ChannelType__c": "Direct",
+            "Offer__c": "Pack",
+            "PreviousStage__c": "Closing",
+            "RDD__c": false,
+            "FCSTWtdARR__c": 0
+        }
+    ]
+}
