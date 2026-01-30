@@ -77,7 +77,7 @@
         <name>CMG_ActivateCheckbox</name>
     </customLabels>
     <customLabels>
-        <label>Éléments de grille tarifaire</label>
+        <label>Éléments de facturation</label>
         <name>CMI_SectionTitle</name>
     </customLabels>
     <customLabels>
@@ -117,7 +117,7 @@
         <name>CMI_NoItemsToDisplay</name>
     </customLabels>
     <customLabels>
-        <label>Ajouter des éléments de grille tarifaire</label>
+        <label>Ajouter des éléments de facturation</label>
         <name>CMI_AddChargeMapItems</name>
     </customLabels>
     <customLabels>
