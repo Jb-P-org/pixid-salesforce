@@ -296,12 +296,14 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
                                  && ![
                                      'Name',
                                      'CurrencyIsoCode',
+                                     'Amount__c',
                                      'Status__c',
                                      'Spend__c',
                                      'PercentageOfSpend__c',
                                      'ProratedAmount__c',
                                      'NbOfMonthsProrated__c',
-                                     'ProratedAmountPerMonth__c'
+                                     'ProratedAmountPerMonth__c',
+                                     'SalesOrderID__c'
                                    ].includes(f.apiName)
                 }));
 
