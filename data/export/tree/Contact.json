@@ -1,0 +1,25 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef1"
+            },
+            "AccountId": "@AccountRef3",
+            "LastName": "Test",
+            "FirstName": "JBP",
+            "Salutation": "Mr.",
+            "Phone": "0145454545",
+            "MobilePhone": "0745454545",
+            "Email": "clients@jb-p.fr",
+            "Title": "CEO",
+            "LeadSource": "Prospecting",
+            "CurrencyIsoCode": "EUR",
+            "HasOptedOutOfEmail": false,
+            "DoNotCall": false,
+            "A_quitt_la_soci_t__c": false,
+            "Newsletter__c": false,
+            "SourceEverReady__c": false
+        }
+    ]
+}
