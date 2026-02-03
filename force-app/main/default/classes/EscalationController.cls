@@ -3,10 +3,29 @@ public without sharing class EscalationController {
     @AuraEnabled(cacheable=true)
     public static Map<String, Object> getCaseAndRecordTypes(Id caseId) {
         Case c = [SELECT Id, RecordTypeId FROM Case WHERE Id = :caseId LIMIT 1];
-        List<RecordType> recordTypes = [
-            SELECT Id, Name FROM RecordType
-            WHERE SObjectType = 'Case'
-        ];
+
+        // Check if user has the "BU Pixid VMS USA" role
+        Boolean isVmsUsaRole = false;
+        String userRoleId = UserInfo.getUserRoleId();
+        if (String.isNotBlank(userRoleId)) {
+            UserRole currentRole = [SELECT Name FROM UserRole WHERE Id = :userRoleId LIMIT 1];
+            isVmsUsaRole = currentRole.Name == 'BU Pixid VMS USA';
+        }
+
+        List<RecordType> recordTypes;
+        if (isVmsUsaRole) {
+            // Only return DevOps record type for VMS USA users
+            recordTypes = [
+                SELECT Id, Name FROM RecordType
+                WHERE SObjectType = 'Case' AND Name LIKE '%DevOps%'
+            ];
+        } else {
+            recordTypes = [
+                SELECT Id, Name FROM RecordType
+                WHERE SObjectType = 'Case'
+            ];
+        }
+
         List<Map<String, String>> options = new List<Map<String, String>>();
         for (RecordType rt : recordTypes) {
             options.add(new Map<String, String>{
