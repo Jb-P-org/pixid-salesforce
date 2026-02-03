@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="chargeMapItemsTable">
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="chargeMapGuidelines">
     <apiVersion>64.0</apiVersion>
     <isExposed>true</isExposed>
     <targets>
@@ -8,7 +8,7 @@
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
             <objects>
-                <object>ChargeMap__c</object> <!-- adapte selon ton objet parent -->
+                <object>ChargeMap__c</object>
             </objects>
         </targetConfig>
     </targetConfigs>
