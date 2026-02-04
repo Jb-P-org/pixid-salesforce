@@ -144,13 +144,12 @@
     <formulas>
         <name>varB_MissingInfoAccount</name>
         <dataType>Boolean</dataType>
-        <expression>ISBLANK({!Get_Account.RegistrationNumber__c}) || 
-ISBLANK({!Get_Account.VATNumber__c}) || 
-ISBLANK(TEXT({!Get_Account.Activity_Country__c})) || 
+        <expression>ISBLANK({!Get_Account.RegistrationNumber__c}) ||
+ISBLANK({!Get_Account.VATNumber__c}) ||
+ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
 (
    ISBLANK({!Get_Account.ID_interne_TdG__c}) &amp;&amp;
    TEXT({!Get_Account.Sous_type__c}) = &apos;TSC&apos; &amp;&amp;
-   TEXT({!Get_Account.Activity_Country__c}) = &apos;France&apos; &amp;&amp;
    TEXT({!Get_Charge_Map.SourceOpportunity__r.Activity__c}) = &apos;Pixid FR&apos; &amp;&amp;
    TEXT({!Get_Charge_Map.SourceOpportunity__r.Offer__c}) = &apos;Pack&apos;
 )</expression>
