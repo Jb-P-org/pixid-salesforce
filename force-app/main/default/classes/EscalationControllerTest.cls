@@ -34,6 +34,56 @@ private class EscalationControllerTest {
     }
 
     @isTest
+    static void testGetCaseAndRecordTypesWithVmsUsaRole() {
+        // Try to find or create the VMS USA role and user first (setup objects)
+        UserRole vmsUsaRole;
+        List<UserRole> existingRoles = [SELECT Id, Name FROM UserRole WHERE Name = 'BU Pixid VMS USA' LIMIT 1];
+        if (existingRoles.isEmpty()) {
+            vmsUsaRole = new UserRole(Name = 'BU Pixid VMS USA', DeveloperName = 'BU_Pixid_VMS_USA');
+            insert vmsUsaRole;
+        } else {
+            vmsUsaRole = existingRoles[0];
+        }
+
+        // Create a test user with the VMS USA role
+        Profile p = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
+        User testUser = new User(
+            FirstName = 'Test',
+            LastName = 'VmsUser',
+            Email = 'testvmsuser@test.com',
+            Username = 'testvmsuser' + DateTime.now().getTime() + '@test.com',
+            Alias = 'tvms',
+            TimeZoneSidKey = 'America/New_York',
+            LocaleSidKey = 'en_US',
+            EmailEncodingKey = 'UTF-8',
+            ProfileId = p.Id,
+            LanguageLocaleKey = 'en_US',
+            UserRoleId = vmsUsaRole.Id
+        );
+        insert testUser;
+
+        // Use System.runAs to avoid mixed DML issues
+        System.runAs(testUser) {
+            // Create test Case inside runAs block
+            Case testCase = new Case(Subject = 'Test Case VMS', Status = 'New');
+            insert testCase;
+
+            Test.startTest();
+            Map<String, Object> result = EscalationController.getCaseAndRecordTypes(testCase.Id);
+            Test.stopTest();
+
+            System.assertNotEquals(null, result);
+            System.assert(result.containsKey('recordTypes'));
+            List<Map<String, String>> recordTypes = (List<Map<String, String>>) result.get('recordTypes');
+            // VMS USA users should only see DevOps record types
+            for (Map<String, String> rt : recordTypes) {
+                System.assert(rt.get('value').containsIgnoreCase('DevOps'),
+                    'VMS USA users should only see DevOps record types, but got: ' + rt.get('value'));
+            }
+        }
+    }
+
+    @isTest
     static void testGetJiraPicklists() {
         Test.startTest();
         Map<String, List<Map<String, String>>> result = EscalationController.getJiraPicklists();
