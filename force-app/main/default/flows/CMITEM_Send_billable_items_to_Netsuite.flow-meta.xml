@@ -144,7 +144,16 @@
     <formulas>
         <name>varB_MissingInfoAccount</name>
         <dataType>Boolean</dataType>
-        <expression>ISBLANK({!Get_Account.RegistrationNumber__c}) || ISBLANK({!Get_Account.VATNumber__c})</expression>
+        <expression>ISBLANK({!Get_Account.RegistrationNumber__c}) || 
+ISBLANK({!Get_Account.VATNumber__c}) || 
+ISBLANK(TEXT({!Get_Account.Activity_Country__c})) || 
+(
+   ISBLANK({!Get_Account.ID_interne_TdG__c}) &amp;&amp;
+   TEXT({!Get_Account.Sous_type__c}) = &apos;TSC&apos; &amp;&amp;
+   TEXT({!Get_Account.Activity_Country__c}) = &apos;France&apos; &amp;&amp;
+   TEXT({!Get_Charge_Map.SourceOpportunity__r.Activity__c}) = &apos;Pixid FR&apos; &amp;&amp;
+   TEXT({!Get_Charge_Map.SourceOpportunity__r.Offer__c}) = &apos;Pack&apos;
+)</expression>
     </formulas>
     <formulas>
         <name>varB_MissingInfoChargeMap</name>
@@ -161,7 +170,7 @@
     &amp;&amp; ISBLANK({!Get_Charge_Map.SendInvoiceTo__c})
 ) 
 || (
-    TEXT({!Get_Charge_Map.InvoiceSendingMethod__c}) = &quot;Platform&quot; 
+    TEXT({!Get_Charge_Map.InvoiceSendingMethod__c}) = &quot;Platform&quot;
     &amp;&amp; ISBLANK({!Get_Charge_Map.PlatformLink__c})
 )</expression>
     </formulas>
@@ -169,6 +178,26 @@
         <name>varF_TodaysDate</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <name>varT_AccountActivityCountry</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!Get_Account.Activity_Country__c})</expression>
+    </formulas>
+    <formulas>
+        <name>varT_AccountSousType</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!Get_Account.Sous_type__c})</expression>
+    </formulas>
+    <formulas>
+        <name>varT_SourceOpportunityActivity</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!Get_Charge_Map.SourceOpportunity__r.Activity__c})</expression>
+    </formulas>
+    <formulas>
+        <name>varT_SourceOpportunityOffer</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!Get_Charge_Map.SourceOpportunity__r.Offer__c})</expression>
     </formulas>
     <interviewLabel>CMITEM - Send billable items to Netsuite {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CMITEM - Send billable items to Netsuite</label>
@@ -423,6 +452,36 @@
                 <name>accountVATNumber</name>
                 <value>
                     <elementReference>Get_Account.VATNumber__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>accountActivityCountry</name>
+                <value>
+                    <elementReference>varT_AccountActivityCountry</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>accountIdInterneTdG</name>
+                <value>
+                    <elementReference>Get_Account.ID_interne_TdG__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>accountSousType</name>
+                <value>
+                    <elementReference>varT_AccountSousType</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>sourceOpportunityActivity</name>
+                <value>
+                    <elementReference>varT_SourceOpportunityActivity</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>sourceOpportunityOffer</name>
+                <value>
+                    <elementReference>varT_SourceOpportunityOffer</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
