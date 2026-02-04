@@ -77,11 +77,10 @@ export default class MissingFieldsScreenChargeMap extends LightningElement {
         if (!this.accountActivityCountry) {
             this.missingAccountFields.push(this.label.ActivityCountry);
         }
-        // ID_interne_TdG is required only for TSC + France + Pixid FR + Pack
+        // ID_interne_TdG is required only for TSC + Pixid FR + Pack
         if (
             !this.accountIdInterneTdG &&
             this.accountSousType === 'TSC' &&
-            this.accountActivityCountry === 'France' &&
             this.sourceOpportunityActivity === 'Pixid FR' &&
             this.sourceOpportunityOffer === 'Pack'
         ) {
