@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label>Demande d'oubli</label>
+        <name>Asked_To_Forget__c</name>
+    </fields>
+    <fields>
+        <label>Contact inactif</label>
+        <name>Inactive_Contact__c</name>
+    </fields>
+</CustomObjectTranslation>
