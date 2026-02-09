@@ -993,4 +993,340 @@
         <shortDescription>Value Label</shortDescription>
         <value>Value</value>
     </labels>
+    <labels>
+        <fullName>CMG_Title</fullName>
+        <categories>ChargeMapGuidelines</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Charge Map Guidelines title</shortDescription>
+        <value>CHARGE MAP 2.0 GUIDELINES</value>
+    </labels>
+    <labels>
+        <fullName>CMG_AddDeleteProducts</fullName>
+        <categories>ChargeMapGuidelines</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add and delete products guideline</shortDescription>
+        <value>You are now able to add and delete products directly in the Charge Map</value>
+    </labels>
+    <labels>
+        <fullName>CMG_GreenIcon</fullName>
+        <categories>ChargeMapGuidelines</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Green icon guideline</shortDescription>
+        <value>Columns with a green icon are editable</value>
+    </labels>
+    <labels>
+        <fullName>CMG_OrangeIcon</fullName>
+        <categories>ChargeMapGuidelines</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Orange icon guideline</shortDescription>
+        <value>Columns with an orange icon are mandatory to be able to activate a line item and send it to Netsuite</value>
+    </labels>
+    <labels>
+        <fullName>CMG_PurpleIcon</fullName>
+        <categories>ChargeMapGuidelines</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Purple icon guideline</shortDescription>
+        <value>Columns with a purple icon are auto-calculated</value>
+    </labels>
+    <labels>
+        <fullName>CMG_StartDateYear</fullName>
+        <categories>ChargeMapGuidelines</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Start date year guideline</shortDescription>
+        <value>If you move a start date to a different year, the end date will follow. You can now have items on different years in a single Charge Map</value>
+    </labels>
+    <labels>
+        <fullName>CMG_ActivateCheckbox</fullName>
+        <categories>ChargeMapGuidelines</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activate checkbox guideline</shortDescription>
+        <value>To send a line item to Netsuite, you need to check the Activated checkbox at the line item level</value>
+    </labels>
+    <labels>
+        <fullName>CMI_SectionTitle</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Charge Map Items section title</shortDescription>
+        <value>Charge Map Items</value>
+    </labels>
+    <labels>
+        <fullName>CMI_Instructions</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Instructions for editing items</shortDescription>
+        <value>You can modify the start date, end date, billing schedule and terms of each product by clicking on the pen. Changes are saved automatically.</value>
+    </labels>
+    <labels>
+        <fullName>CMI_InstructionsExpand</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expand instruction</shortDescription>
+        <value>Click the expand icon to see additional details.</value>
+    </labels>
+    <labels>
+        <fullName>CMI_AddItems</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Items button</shortDescription>
+        <value>Add Items</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ExpandAll</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expand All button</shortDescription>
+        <value>Expand All</value>
+    </labels>
+    <labels>
+        <fullName>CMI_CollapseAll</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Collapse All button</shortDescription>
+        <value>Collapse All</value>
+    </labels>
+    <labels>
+        <fullName>CMI_BacklogItems</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Backlog Items heading</shortDescription>
+        <value>Backlog Items</value>
+    </labels>
+    <labels>
+        <fullName>CMI_AdditionalDetails</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Additional Details heading</shortDescription>
+        <value>Additional Details</value>
+    </labels>
+    <labels>
+        <fullName>CMI_CompletedItems</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Completed Items heading</shortDescription>
+        <value>Completed Items</value>
+    </labels>
+    <labels>
+        <fullName>CMI_NoItemsToDisplay</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No items to display</shortDescription>
+        <value>No items to display.</value>
+    </labels>
+    <labels>
+        <fullName>CMI_AddChargeMapItems</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Charge Map Items modal title</shortDescription>
+        <value>Add Charge Map Items</value>
+    </labels>
+    <labels>
+        <fullName>CMI_Product</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product label</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
+        <fullName>CMI_SearchProduct</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search for a product placeholder</shortDescription>
+        <value>Search for a product...</value>
+    </labels>
+    <labels>
+        <fullName>CMI_UnitPrice</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unit Price label</shortDescription>
+        <value>Unit Price</value>
+    </labels>
+    <labels>
+        <fullName>CMI_Quantity</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quantity label</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>CMI_Discount</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Discount label</shortDescription>
+        <value>Discount (%)</value>
+    </labels>
+    <labels>
+        <fullName>CMI_StartDate</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Start Date label</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>CMI_EndDate</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>End Date label</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>CMI_AddAnotherItem</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Another Item button</shortDescription>
+        <value>Add Another Item</value>
+    </labels>
+    <labels>
+        <fullName>CMI_Cancel</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>CMI_SaveItems</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save Items button</shortDescription>
+        <value>Save Items</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ConfirmDeletion</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm Deletion modal title</shortDescription>
+        <value>Confirm Deletion</value>
+    </labels>
+    <labels>
+        <fullName>CMI_DeleteConfirmMessage</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete confirmation message</shortDescription>
+        <value>Are you sure you want to delete {0} selected item(s)? This action cannot be undone.</value>
+    </labels>
+    <labels>
+        <fullName>CMI_Delete</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete button</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ErrorReadingStatus</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error reading status toast</shortDescription>
+        <value>Error reading status</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ErrorLoading</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error loading toast</shortDescription>
+        <value>Error loading</value>
+    </labels>
+    <labels>
+        <fullName>CMI_UpdateSuccess</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update successful toast</shortDescription>
+        <value>Update successful</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ErrorUpdating</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error updating toast</shortDescription>
+        <value>Error updating</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ValidationError</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Validation error toast</shortDescription>
+        <value>Validation error</value>
+    </labels>
+    <labels>
+        <fullName>CMI_SelectAtLeastOneProduct</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select at least one product validation</shortDescription>
+        <value>Please select at least one product.</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ItemsCreatedSuccess</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Items created success toast</shortDescription>
+        <value>{0} item(s) created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ErrorCreating</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error creating toast</shortDescription>
+        <value>Error creating</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ItemsDeletedSuccess</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Items deleted success toast</shortDescription>
+        <value>{0} item(s) deleted successfully.</value>
+    </labels>
+    <labels>
+        <fullName>CMI_ErrorDeleting</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error deleting toast</shortDescription>
+        <value>Error deleting</value>
+    </labels>
+    <labels>
+        <fullName>CMI_UnexpectedError</fullName>
+        <categories>ChargeMapItemsTable</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unexpected error fallback</shortDescription>
+        <value>An unexpected error occurred. Please try again.</value>
+    </labels>
 </CustomLabels>
