@@ -9,6 +9,13 @@
         <value>Account Production</value>
     </labels>
     <labels>
+        <fullName>Activity_Country</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activity Country label</shortDescription>
+        <value>Activity Country</value>
+    </labels>
+    <labels>
         <fullName>Actions_requested</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -276,6 +283,13 @@
         <protected>false</protected>
         <shortDescription>Files added</shortDescription>
         <value>file(s) added</value>
+    </labels>
+    <labels>
+        <fullName>Id_Interne_TdG</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ID Interne TdG label</shortDescription>
+        <value>ID Interne TdG</value>
     </labels>
     <labels>
         <fullName>In_Progress</fullName>

@@ -6,7 +6,14 @@
         <name>Assign_Product_Values</name>
         <label>Assign Product Values</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SourceOpportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Charge_Map.SourceOpportunity__c</elementReference>
+            </value>
+        </assignmentItems>
         <assignmentItems>
             <assignToReference>$Record.Name</assignToReference>
             <operator>Assign</operator>
@@ -36,7 +43,7 @@
             </value>
         </assignmentItems>
     </assignments>
-    <description>When a Charge Map Item is created with a Product, automatically populate product-derived fields: Name, Nature, BillingSchedule, and Term. ProductNature and ProductNetsuiteId are formula fields and auto-compute from the Product relationship.</description>
+    <description>When a Charge Map Item is created with a Product, automatically populate product-derived fields: Name, Nature, BillingSchedule, and Term. Also copies the SourceOpportunity from the parent Charge Map. ProductNature and ProductNetsuiteId are formula fields and auto-compute from the Product relationship.</description>
     <environments>Default</environments>
     <interviewLabel>CMITEM - Default values from product {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CMITEM - Default values from product</label>
@@ -66,7 +73,7 @@
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Product_Values</targetReference>
+            <targetReference>Get_Charge_Map</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -78,6 +85,27 @@
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Product2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Charge_Map</name>
+        <label>Get Charge Map</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Product_Values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ChargeMap__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ChargeMap__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>

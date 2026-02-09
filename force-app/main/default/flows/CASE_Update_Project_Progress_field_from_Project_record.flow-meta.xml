@@ -2,6 +2,28 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Decision_1</name>
+        <label>Decision 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Record_Type_is_Projet_PPE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Projet PPE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Related_Cases</targetReference>
+            </connector>
+            <label>Record Type is Projet PPE</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>CASE - Update Project Progress field from Project record {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CASE - Update Project Progress field from Project record</label>
@@ -25,50 +47,15 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Case_Record_Type_ETT</name>
-        <label>Get Case Record Type ETT</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Related_Cases</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>SobjectType</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Case</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Name</field>
-            <operator>Contains</operator>
-            <value>
-                <stringValue>ETT</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>RecordType</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Related_Cases</name>
         <label>Get Related Cases</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_Avancement_Projet</targetReference>
+            <targetReference>Enrich_Cases_with_Anvancement</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
-        <filters>
-            <field>RecordTypeId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Case_Record_Type_ETT.Id</elementReference>
-            </value>
-        </filters>
         <filters>
             <field>Projet_client__c</field>
             <operator>EqualTo</operator>
@@ -81,23 +68,17 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_Avancement_Projet</name>
-        <label>Update Avancement Projet</label>
+        <name>Update_Cases_with_Avancement</name>
+        <label>Update Cases with Avancement</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <inputAssignments>
-            <field>ProjectProgress__c</field>
-            <value>
-                <elementReference>$Record.Avancement__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record.Cases__r</inputReference>
+        <inputReference>Enrich_Cases_with_Anvancement</inputReference>
     </recordUpdates>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Case_Record_Type_ETT</targetReference>
+            <targetReference>Decision_1</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -112,4 +93,34 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <transforms>
+        <name>Enrich_Cases_with_Anvancement</name>
+        <label>Enrich Cases with Anvancement</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Cases_with_Avancement</targetReference>
+        </connector>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <objectType>Case</objectType>
+        <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <transformValues>
+            <transformValueActions>
+                <outputFieldApiName>Id</outputFieldApiName>
+                <transformType>Map</transformType>
+                <value>
+                    <elementReference>Get_Related_Cases[$EachItem].Id</elementReference>
+                </value>
+            </transformValueActions>
+            <transformValueActions>
+                <outputFieldApiName>ProjectProgress__c</outputFieldApiName>
+                <transformType>Map</transformType>
+                <value>
+                    <elementReference>$Record.Avancement__c</elementReference>
+                </value>
+            </transformValueActions>
+        </transformValues>
+    </transforms>
 </Flow>
