@@ -1,22 +1,24 @@
 <template>
-  <!-- En‑tête SLDS “Related List” -->
+  <!-- En-tête SLDS "Related List" -->
   <div class="slds-section slds-m-top_medium">
     <div class="slds-section__title slds-grid slds-grid_vertical-align-center">
-      <lightning-icon 
-        icon-name="standard:related_list" 
-        size="small" 
-        alternative-text="Charge Map Items">
+      <lightning-icon
+        icon-name="standard:related_list"
+        size="small"
+        alternative-text={label.CMI_SectionTitle}>
       </lightning-icon>
       <h3 class="slds-section__title-text slds-p-left_x-small">
-        <strong>Charge Map Items</strong>
+        <strong>{label.CMI_SectionTitle}</strong>
       </h3>
     </div>
   </div>
 
   <!-- Instructions -->
   <div class="instructions slds-p-horizontal_medium">
-    You can modify the start date, end date, billing schedule and terms of each product by clicking on the pen.  
-    After that, click the Save button at the bottom right.
+    {label.CMI_Instructions}
+    <template if:true={hasSecondaryColumns}>
+      <strong> {label.CMI_InstructionsExpand}</strong>
+    </template>
   </div>
 
   <!-- Spinner -->
@@ -26,109 +28,846 @@
     </div>
   </template>
 
-  <!-- Tableau -->
+  <!-- Tableaux -->
   <template if:false={isLoading}>
     <template if:true={hasRows}>
-      <div class="slds-scrollable_x">
-        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
-          <thead>
-            <tr>
-              <!-- Colonne # -->
-              <th scope="col" style="width: 3rem">
-                <div class="slds-truncate" title="#">#</div>
-              </th>
-              <template for:each={columnsMeta} for:item="col">
-                <th key={col.apiName} scope="col">
-                  <div class="slds-truncate" title={col.label}>{col.label}</div>
-                </th>
+      <!-- Action Buttons Bar -->
+      <div class="slds-m-bottom_x-small slds-p-horizontal_medium action-bar">
+        <!-- Left: Add / Delete buttons (only when editable) -->
+        <div class="action-bar-left">
+          <template if:true={showActionButtons}>
+            <lightning-button-group>
+              <lightning-button
+                label={label.CMI_AddItems}
+                icon-name="utility:add"
+                variant="brand"
+                onclick={handleOpenAddModal}>
+              </lightning-button>
+              <template if:true={showDeleteButton}>
+                <lightning-button
+                  label={deleteButtonLabel}
+                  icon-name="utility:delete"
+                  variant="destructive"
+                  onclick={handleDeleteSelected}>
+                </lightning-button>
               </template>
-            </tr>
-          </thead>
-          <tbody>
-            <template for:each={rows} for:item="row">
-              <tr key={row.id}>
-                <!-- Cellule numéro -->
-                <td>{row.rowNumber}</td>
-                <template for:each={row.cells} for:item="cell">
-                  <td key={cell.apiName}>
-                    <!-- Édition -->
-                    <template if:true={cell.isEditing}>
-                      <template if:true={cell.meta.isPicklist}>
-                        <lightning-combobox
-                          data-id={row.id}
-                          data-field={cell.apiName}
-                          value={cell.value}
-                          options={cell.meta.picklistValues}
-                          onchange={handleFieldChange}
-                          onblur={handleInputBlur}>
-                        </lightning-combobox>
+            </lightning-button-group>
+          </template>
+        </div>
+        <!-- Right: Expand / Collapse buttons -->
+        <div class="action-bar-right">
+          <template if:true={hasSecondaryColumns}>
+            <lightning-button-group>
+              <lightning-button
+                label={label.CMI_ExpandAll}
+                icon-name="utility:chevrondown"
+                onclick={handleExpandAll}
+                disabled={hasExpandedRows}>
+              </lightning-button>
+              <lightning-button
+                label={label.CMI_CollapseAll}
+                icon-name="utility:chevronup"
+                onclick={handleCollapseAll}
+                disabled={hasCollapsedRows}>
+              </lightning-button>
+            </lightning-button-group>
+          </template>
+        </div>
+      </div>
+
+      <!-- ===== BACKLOG ITEMS TABLE ===== -->
+      <template if:true={hasBacklogRows}>
+        <div class="slds-section slds-m-top_small slds-p-horizontal_medium">
+          <h4 class="slds-text-heading_small slds-m-bottom_x-small">
+            <lightning-icon icon-name="utility:clock" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+            {label.CMI_BacklogItems}
+          </h4>
+        </div>
+        <div class="slds-scrollable_x">
+          <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <thead>
+              <tr>
+                <!-- Expand column -->
+                <template if:true={hasSecondaryColumns}>
+                  <th scope="col" class="expand-col">
+                    <div class="slds-truncate" title="Expand"></div>
+                  </th>
+                </template>
+                <!-- Selection checkbox column -->
+                <th scope="col" class="checkbox-col">
+                  <div class="slds-truncate slds-align_absolute-center">
+                    <lightning-input
+                      type="checkbox"
+                      checked={isAllBacklogSelected}
+                      onchange={handleSelectAllBacklog}
+                      variant="label-hidden"
+                      label="Select all backlog items">
+                    </lightning-input>
+                  </div>
+                </th>
+                <!-- Primary columns only -->
+                <template for:each={primaryColumnsMeta} for:item="col">
+                  <th key={col.apiName} scope="col">
+                    <div class="slds-truncate column-header" title={col.label}>
+                      <template if:true={col.hasIcon}>
+                        <lightning-icon
+                          icon-name={col.icon}
+                          size="x-small"
+                          class="slds-m-right_xx-small column-icon">
+                        </lightning-icon>
                       </template>
-                      <template if:true={cell.meta.isCheckbox}>
-                        <lightning-input
-                          type="checkbox"
+                      {col.label}
+                    </div>
+                  </th>
+                </template>
+              </tr>
+            </thead>
+            <tbody>
+              <template for:each={backlogRows} for:item="row">
+                <!-- Main row with primary columns -->
+                <tr key={row.id} class={row.isExpanded}>
+                  <!-- Expand button -->
+                  <template if:true={hasSecondaryColumns}>
+                    <td class="expand-col">
+                      <template if:true={row.isExpanded}>
+                        <lightning-button-icon
+                          icon-name="utility:chevrondown"
+                          alternative-text="Collapse details"
+                          variant="bare"
+                          size="small"
                           data-id={row.id}
-                          data-field={cell.apiName}
-                          checked={cell.value}
-                          onchange={handleFieldChange}
-                          onblur={handleInputBlur}>
-                        </lightning-input>
+                          onclick={handleToggleExpand}>
+                        </lightning-button-icon>
                       </template>
-                      <template if:false={cell.meta.isPicklist}>
-                        <template if:false={cell.meta.isCheckbox}>
-                          <lightning-input
-                            type={cell.meta.inputType}
+                      <template if:false={row.isExpanded}>
+                        <lightning-button-icon
+                          icon-name="utility:chevronright"
+                          alternative-text="Expand details"
+                          variant="bare"
+                          size="small"
+                          data-id={row.id}
+                          onclick={handleToggleExpand}>
+                        </lightning-button-icon>
+                      </template>
+                    </td>
+                  </template>
+                  <!-- Selection checkbox cell -->
+                  <td class="checkbox-col">
+                    <div class="slds-align_absolute-center">
+                      <lightning-input
+                        type="checkbox"
+                        checked={row.isSelected}
+                        data-id={row.id}
+                        data-table="backlog"
+                        onchange={handleRowSelect}
+                        variant="label-hidden"
+                        label="Select row">
+                      </lightning-input>
+                    </div>
+                  </td>
+                  <!-- Primary cells -->
+                  <template for:each={row.primaryCells} for:item="cell">
+                    <td key={cell.apiName}>
+                      <!-- Édition -->
+                      <template if:true={cell.isEditing}>
+                        <template if:true={cell.meta.isPicklist}>
+                          <lightning-combobox
                             data-id={row.id}
                             data-field={cell.apiName}
                             value={cell.value}
+                            options={cell.meta.picklistValues}
+                            onchange={handleFieldChange}
+                            onblur={handleInputBlur}>
+                          </lightning-combobox>
+                        </template>
+                        <template if:true={cell.meta.isCheckbox}>
+                          <lightning-input
+                            type="checkbox"
+                            data-id={row.id}
+                            data-field={cell.apiName}
+                            checked={cell.value}
                             onchange={handleFieldChange}
                             onblur={handleInputBlur}>
                           </lightning-input>
                         </template>
+                        <template if:false={cell.meta.isPicklist}>
+                          <template if:false={cell.meta.isCheckbox}>
+                            <lightning-input
+                              type={cell.meta.inputType}
+                              data-id={row.id}
+                              data-field={cell.apiName}
+                              value={cell.value}
+                              onchange={handleFieldChange}
+                              onblur={handleInputBlur}>
+                            </lightning-input>
+                          </template>
+                        </template>
                       </template>
-                    </template>
 
-                    <!-- Lecture + crayon au hover -->
-                    <template if:false={cell.isEditing}>
-                      <template if:true={cell.meta.canEdit}>
-                        <div
-                          class="cell-view-wrapper"
-                          data-id={row.id}
-                          data-field={cell.apiName}
-                          onclick={handleEditIconClick}>
-                          <span class="cell-text">{cell.displayValue}</span>
-                          <lightning-icon
-                            icon-name="utility:edit"
-                            size="x-small"
-                            alternative-text="Éditer">
-                          </lightning-icon>
+                      <!-- Lecture + crayon au hover -->
+                      <template if:false={cell.isEditing}>
+                        <!-- Name field: render as clickable link -->
+                        <template if:true={cell.isNameField}>
+                          <a href="#" class="name-link" data-id={row.id} onclick={handleNavigateToRecord}>{cell.displayValue}</a>
+                        </template>
+                        <!-- Non-Name fields -->
+                        <template if:false={cell.isNameField}>
+                          <!-- Checkbox fields: always show interactive checkbox -->
+                          <template if:true={cell.meta.isCheckbox}>
+                            <template if:true={cell.meta.canEdit}>
+                              <lightning-input
+                                type="checkbox"
+                                data-id={row.id}
+                                data-field={cell.apiName}
+                                checked={cell.value}
+                                onchange={handleFieldChange}
+                                variant="label-hidden">
+                              </lightning-input>
+                            </template>
+                            <template if:false={cell.meta.canEdit}>
+                              <lightning-input
+                                type="checkbox"
+                                checked={cell.value}
+                                disabled
+                                variant="label-hidden">
+                              </lightning-input>
+                            </template>
+                          </template>
+                          <!-- Non-checkbox fields: normal edit behavior -->
+                          <template if:false={cell.meta.isCheckbox}>
+                            <template if:true={cell.meta.canEdit}>
+                              <div
+                                class="cell-view-wrapper"
+                                data-id={row.id}
+                                data-field={cell.apiName}
+                                onclick={handleEditIconClick}>
+                                <span class="cell-text">{cell.displayValue}</span>
+                                <lightning-icon
+                                  icon-name="utility:edit"
+                                  size="x-small"
+                                  alternative-text="Edit">
+                                </lightning-icon>
+                              </div>
+                            </template>
+                            <template if:false={cell.meta.canEdit}>
+                              <span>{cell.displayValue}</span>
+                            </template>
+                          </template>
+                        </template>
+                      </template>
+                    </td>
+                  </template>
+                </tr>
+
+                <!-- Expandable detail row -->
+                <template if:true={row.isExpanded}>
+                  <tr key={row.id} class="detail-row">
+                    <td colspan="100" class="detail-cell">
+                      <div class="detail-container slds-box slds-theme_shade">
+                        <div class="slds-text-title_caps slds-m-bottom_x-small detail-header">
+                          {label.CMI_AdditionalDetails}
                         </div>
+                        <div class="slds-grid slds-wrap slds-gutters_small">
+                          <template for:each={row.secondaryCells} for:item="cell">
+                            <div key={cell.apiName} class="slds-col slds-size_1-of-2 slds-medium-size_1-of-3 slds-large-size_1-of-4 detail-field">
+                              <div class="slds-form-element">
+                                <label class="slds-form-element__label">
+                                  <template if:true={cell.meta.hasIcon}>
+                                    <lightning-icon
+                                      icon-name={cell.meta.icon}
+                                      size="xx-small"
+                                      class="slds-m-right_xx-small column-icon">
+                                    </lightning-icon>
+                                  </template>
+                                  {cell.meta.label}
+                                </label>
+                                <div class="slds-form-element__control">
+                                  <!-- Édition -->
+                                  <template if:true={cell.isEditing}>
+                                    <template if:true={cell.meta.isPicklist}>
+                                      <lightning-combobox
+                                        data-id={row.id}
+                                        data-field={cell.apiName}
+                                        value={cell.value}
+                                        options={cell.meta.picklistValues}
+                                        onchange={handleFieldChange}
+                                        onblur={handleInputBlur}>
+                                      </lightning-combobox>
+                                    </template>
+                                    <template if:true={cell.meta.isCheckbox}>
+                                      <lightning-input
+                                        type="checkbox"
+                                        data-id={row.id}
+                                        data-field={cell.apiName}
+                                        checked={cell.value}
+                                        onchange={handleFieldChange}
+                                        onblur={handleInputBlur}>
+                                      </lightning-input>
+                                    </template>
+                                    <template if:false={cell.meta.isPicklist}>
+                                      <template if:false={cell.meta.isCheckbox}>
+                                        <lightning-input
+                                          type={cell.meta.inputType}
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          value={cell.value}
+                                          onchange={handleFieldChange}
+                                          onblur={handleInputBlur}>
+                                        </lightning-input>
+                                      </template>
+                                    </template>
+                                  </template>
+
+                                  <!-- Lecture + crayon au hover -->
+                                  <template if:false={cell.isEditing}>
+                                    <!-- Checkbox fields: always show interactive checkbox -->
+                                    <template if:true={cell.meta.isCheckbox}>
+                                      <template if:true={cell.meta.canEdit}>
+                                        <lightning-input
+                                          type="checkbox"
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          checked={cell.value}
+                                          onchange={handleFieldChange}
+                                          variant="label-hidden">
+                                        </lightning-input>
+                                      </template>
+                                      <template if:false={cell.meta.canEdit}>
+                                        <lightning-input
+                                          type="checkbox"
+                                          checked={cell.value}
+                                          disabled
+                                          variant="label-hidden">
+                                        </lightning-input>
+                                      </template>
+                                    </template>
+                                    <!-- Non-checkbox fields: normal edit behavior -->
+                                    <template if:false={cell.meta.isCheckbox}>
+                                      <template if:true={cell.meta.canEdit}>
+                                        <div
+                                          class="cell-view-wrapper detail-value"
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          onclick={handleEditIconClick}>
+                                          <span class="cell-text">{cell.displayValue}</span>
+                                          <lightning-icon
+                                            icon-name="utility:edit"
+                                            size="x-small"
+                                            alternative-text="Edit">
+                                          </lightning-icon>
+                                        </div>
+                                      </template>
+                                      <template if:false={cell.meta.canEdit}>
+                                        <span class="detail-value-readonly">{cell.displayValue}</span>
+                                      </template>
+                                    </template>
+                                  </template>
+                                </div>
+                              </div>
+                            </div>
+                          </template>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </template>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </template>
+
+      <!-- ===== COMPLETED ITEMS TABLE (Non-Backlog) ===== -->
+      <template if:true={hasNonBacklogRows}>
+        <div class="slds-section slds-m-top_medium slds-p-horizontal_medium">
+          <h4 class="slds-text-heading_small slds-m-bottom_x-small">
+            <lightning-icon icon-name="utility:check" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+            {label.CMI_CompletedItems}
+          </h4>
+        </div>
+        <div class="slds-scrollable_x">
+          <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <thead>
+              <tr>
+                <!-- Expand column -->
+                <template if:true={hasSecondaryColumns}>
+                  <th scope="col" class="expand-col">
+                    <div class="slds-truncate" title="Expand"></div>
+                  </th>
+                </template>
+                <!-- Selection checkbox column -->
+                <th scope="col" class="checkbox-col">
+                  <div class="slds-truncate slds-align_absolute-center">
+                    <lightning-input
+                      type="checkbox"
+                      checked={isAllNonBacklogSelected}
+                      onchange={handleSelectAllNonBacklog}
+                      variant="label-hidden"
+                      label="Select all completed items">
+                    </lightning-input>
+                  </div>
+                </th>
+                <!-- Primary columns only -->
+                <template for:each={primaryColumnsMeta} for:item="col">
+                  <th key={col.apiName} scope="col">
+                    <div class="slds-truncate column-header" title={col.label}>
+                      <template if:true={col.hasIcon}>
+                        <lightning-icon
+                          icon-name={col.icon}
+                          size="x-small"
+                          class="slds-m-right_xx-small column-icon">
+                        </lightning-icon>
                       </template>
-                      <template if:false={cell.meta.canEdit}>
-                        <span>{cell.displayValue}</span>
-                      </template>
-                    </template>
-                  </td>
+                      {col.label}
+                    </div>
+                  </th>
                 </template>
               </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              <template for:each={nonBacklogRows} for:item="row">
+                <!-- Main row with primary columns -->
+                <tr key={row.id} class={row.isExpanded}>
+                  <!-- Expand button -->
+                  <template if:true={hasSecondaryColumns}>
+                    <td class="expand-col">
+                      <template if:true={row.isExpanded}>
+                        <lightning-button-icon
+                          icon-name="utility:chevrondown"
+                          alternative-text="Collapse details"
+                          variant="bare"
+                          size="small"
+                          data-id={row.id}
+                          onclick={handleToggleExpand}>
+                        </lightning-button-icon>
+                      </template>
+                      <template if:false={row.isExpanded}>
+                        <lightning-button-icon
+                          icon-name="utility:chevronright"
+                          alternative-text="Expand details"
+                          variant="bare"
+                          size="small"
+                          data-id={row.id}
+                          onclick={handleToggleExpand}>
+                        </lightning-button-icon>
+                      </template>
+                    </td>
+                  </template>
+                  <!-- Selection checkbox cell -->
+                  <td class="checkbox-col">
+                    <div class="slds-align_absolute-center">
+                      <lightning-input
+                        type="checkbox"
+                        checked={row.isSelected}
+                        data-id={row.id}
+                        data-table="nonbacklog"
+                        onchange={handleRowSelect}
+                        variant="label-hidden"
+                        label="Select row">
+                      </lightning-input>
+                    </div>
+                  </td>
+                  <!-- Primary cells -->
+                  <template for:each={row.primaryCells} for:item="cell">
+                    <td key={cell.apiName}>
+                      <!-- Édition -->
+                      <template if:true={cell.isEditing}>
+                        <template if:true={cell.meta.isPicklist}>
+                          <lightning-combobox
+                            data-id={row.id}
+                            data-field={cell.apiName}
+                            value={cell.value}
+                            options={cell.meta.picklistValues}
+                            onchange={handleFieldChange}
+                            onblur={handleInputBlur}>
+                          </lightning-combobox>
+                        </template>
+                        <template if:true={cell.meta.isCheckbox}>
+                          <lightning-input
+                            type="checkbox"
+                            data-id={row.id}
+                            data-field={cell.apiName}
+                            checked={cell.value}
+                            onchange={handleFieldChange}
+                            onblur={handleInputBlur}>
+                          </lightning-input>
+                        </template>
+                        <template if:false={cell.meta.isPicklist}>
+                          <template if:false={cell.meta.isCheckbox}>
+                            <lightning-input
+                              type={cell.meta.inputType}
+                              data-id={row.id}
+                              data-field={cell.apiName}
+                              value={cell.value}
+                              onchange={handleFieldChange}
+                              onblur={handleInputBlur}>
+                            </lightning-input>
+                          </template>
+                        </template>
+                      </template>
 
-      <!-- Bouton Enregistrer aligné à droite -->
-      <div class="slds-m-top_medium slds-grid slds-grid_align-end slds-p-horizontal_medium">
-        <lightning-button
-          label="Update items"
-          variant="brand"
-          onclick={handleSave}
-          disabled={isLoading}>
-        </lightning-button>
-      </div>
+                      <!-- Lecture + crayon au hover -->
+                      <template if:false={cell.isEditing}>
+                        <!-- Name field: render as clickable link -->
+                        <template if:true={cell.isNameField}>
+                          <a href="#" class="name-link" data-id={row.id} onclick={handleNavigateToRecord}>{cell.displayValue}</a>
+                        </template>
+                        <!-- Non-Name fields -->
+                        <template if:false={cell.isNameField}>
+                          <!-- Checkbox fields: always show interactive checkbox -->
+                          <template if:true={cell.meta.isCheckbox}>
+                            <template if:true={cell.meta.canEdit}>
+                              <lightning-input
+                                type="checkbox"
+                                data-id={row.id}
+                                data-field={cell.apiName}
+                                checked={cell.value}
+                                onchange={handleFieldChange}
+                                variant="label-hidden">
+                              </lightning-input>
+                            </template>
+                            <template if:false={cell.meta.canEdit}>
+                              <lightning-input
+                                type="checkbox"
+                                checked={cell.value}
+                                disabled
+                                variant="label-hidden">
+                              </lightning-input>
+                            </template>
+                          </template>
+                          <!-- Non-checkbox fields: normal edit behavior -->
+                          <template if:false={cell.meta.isCheckbox}>
+                            <template if:true={cell.meta.canEdit}>
+                              <div
+                                class="cell-view-wrapper"
+                                data-id={row.id}
+                                data-field={cell.apiName}
+                                onclick={handleEditIconClick}>
+                                <span class="cell-text">{cell.displayValue}</span>
+                                <lightning-icon
+                                  icon-name="utility:edit"
+                                  size="x-small"
+                                  alternative-text="Edit">
+                                </lightning-icon>
+                              </div>
+                            </template>
+                            <template if:false={cell.meta.canEdit}>
+                              <span>{cell.displayValue}</span>
+                            </template>
+                          </template>
+                        </template>
+                      </template>
+                    </td>
+                  </template>
+                </tr>
+
+                <!-- Expandable detail row -->
+                <template if:true={row.isExpanded}>
+                  <tr key={row.id} class="detail-row">
+                    <td colspan="100" class="detail-cell">
+                      <div class="detail-container slds-box slds-theme_shade">
+                        <div class="slds-text-title_caps slds-m-bottom_x-small detail-header">
+                          {label.CMI_AdditionalDetails}
+                        </div>
+                        <div class="slds-grid slds-wrap slds-gutters_small">
+                          <template for:each={row.secondaryCells} for:item="cell">
+                            <div key={cell.apiName} class="slds-col slds-size_1-of-2 slds-medium-size_1-of-3 slds-large-size_1-of-4 detail-field">
+                              <div class="slds-form-element">
+                                <label class="slds-form-element__label">
+                                  <template if:true={cell.meta.hasIcon}>
+                                    <lightning-icon
+                                      icon-name={cell.meta.icon}
+                                      size="xx-small"
+                                      class="slds-m-right_xx-small column-icon">
+                                    </lightning-icon>
+                                  </template>
+                                  {cell.meta.label}
+                                </label>
+                                <div class="slds-form-element__control">
+                                  <!-- Édition -->
+                                  <template if:true={cell.isEditing}>
+                                    <template if:true={cell.meta.isPicklist}>
+                                      <lightning-combobox
+                                        data-id={row.id}
+                                        data-field={cell.apiName}
+                                        value={cell.value}
+                                        options={cell.meta.picklistValues}
+                                        onchange={handleFieldChange}
+                                        onblur={handleInputBlur}>
+                                      </lightning-combobox>
+                                    </template>
+                                    <template if:true={cell.meta.isCheckbox}>
+                                      <lightning-input
+                                        type="checkbox"
+                                        data-id={row.id}
+                                        data-field={cell.apiName}
+                                        checked={cell.value}
+                                        onchange={handleFieldChange}
+                                        onblur={handleInputBlur}>
+                                      </lightning-input>
+                                    </template>
+                                    <template if:false={cell.meta.isPicklist}>
+                                      <template if:false={cell.meta.isCheckbox}>
+                                        <lightning-input
+                                          type={cell.meta.inputType}
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          value={cell.value}
+                                          onchange={handleFieldChange}
+                                          onblur={handleInputBlur}>
+                                        </lightning-input>
+                                      </template>
+                                    </template>
+                                  </template>
+
+                                  <!-- Lecture + crayon au hover -->
+                                  <template if:false={cell.isEditing}>
+                                    <!-- Checkbox fields: always show interactive checkbox -->
+                                    <template if:true={cell.meta.isCheckbox}>
+                                      <template if:true={cell.meta.canEdit}>
+                                        <lightning-input
+                                          type="checkbox"
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          checked={cell.value}
+                                          onchange={handleFieldChange}
+                                          variant="label-hidden">
+                                        </lightning-input>
+                                      </template>
+                                      <template if:false={cell.meta.canEdit}>
+                                        <lightning-input
+                                          type="checkbox"
+                                          checked={cell.value}
+                                          disabled
+                                          variant="label-hidden">
+                                        </lightning-input>
+                                      </template>
+                                    </template>
+                                    <!-- Non-checkbox fields: normal edit behavior -->
+                                    <template if:false={cell.meta.isCheckbox}>
+                                      <template if:true={cell.meta.canEdit}>
+                                        <div
+                                          class="cell-view-wrapper detail-value"
+                                          data-id={row.id}
+                                          data-field={cell.apiName}
+                                          onclick={handleEditIconClick}>
+                                          <span class="cell-text">{cell.displayValue}</span>
+                                          <lightning-icon
+                                            icon-name="utility:edit"
+                                            size="x-small"
+                                            alternative-text="Edit">
+                                          </lightning-icon>
+                                        </div>
+                                      </template>
+                                      <template if:false={cell.meta.canEdit}>
+                                        <span class="detail-value-readonly">{cell.displayValue}</span>
+                                      </template>
+                                    </template>
+                                  </template>
+                                </div>
+                              </div>
+                            </div>
+                          </template>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </template>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </template>
+
     </template>
 
     <!-- Aucune ligne -->
     <template if:false={hasRows}>
-      <div class="slds-p-around_medium">Aucun item à afficher.</div>
+      <div class="slds-p-around_medium">{label.CMI_NoItemsToDisplay}</div>
     </template>
+  </template>
+
+  <!-- ===== ADD ITEMS MODAL ===== -->
+  <template if:true={isAddModalOpen}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-modal="true"
+      aria-labelledby="add-modal-heading"
+      class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <!-- Header -->
+        <div class="slds-modal__header">
+          <lightning-button-icon
+            icon-name="utility:close"
+            alternative-text="Close"
+            variant="bare-inverse"
+            class="slds-modal__close"
+            onclick={handleCloseAddModal}>
+          </lightning-button-icon>
+          <h2 id="add-modal-heading" class="slds-modal__title slds-hyphenate">
+            {label.CMI_AddChargeMapItems}
+          </h2>
+        </div>
+        <!-- Body -->
+        <div class="slds-modal__content slds-p-around_medium" id="add-modal-content">
+          <template for:each={newItemRows} for:item="itemRow">
+            <div key={itemRow.key} class="slds-box slds-m-bottom_small new-item-row">
+              <div class="slds-grid slds-gutters slds-wrap">
+                <!-- Product Lookup -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                  <lightning-record-picker
+                    label={label.CMI_Product}
+                    placeholder={label.CMI_SearchProduct}
+                    object-api-name="Product2"
+                    data-key={itemRow.key}
+                    data-field="Product__c"
+                    required
+                    onchange={handleNewItemFieldChange}>
+                  </lightning-record-picker>
+                </div>
+                <!-- Unit Price -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="number"
+                    label={label.CMI_UnitPrice}
+                    value={itemRow.Sales_unit_price__c}
+                    data-key={itemRow.key}
+                    data-field="Sales_unit_price__c"
+                    onchange={handleNewItemFieldChange}
+                    step="0.01"
+                    required>
+                  </lightning-input>
+                </div>
+                <!-- Quantity -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="number"
+                    label={label.CMI_Quantity}
+                    value={itemRow.Quantity__c}
+                    data-key={itemRow.key}
+                    data-field="Quantity__c"
+                    onchange={handleNewItemFieldChange}
+                    step="1"
+                    required>
+                  </lightning-input>
+                </div>
+                <!-- Discount -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="number"
+                    label={label.CMI_Discount}
+                    value={itemRow.DiscountNumber__c}
+                    data-key={itemRow.key}
+                    data-field="DiscountNumber__c"
+                    onchange={handleNewItemFieldChange}
+                    step="0.01"
+                    min="0"
+                    max="100">
+                  </lightning-input>
+                </div>
+                <!-- Start Date -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="date"
+                    label={label.CMI_StartDate}
+                    value={itemRow.StartDateRevRec__c}
+                    data-key={itemRow.key}
+                    data-field="StartDateRevRec__c"
+                    onchange={handleNewItemFieldChange}
+                    required>
+                  </lightning-input>
+                </div>
+                <!-- End Date (read-only, from ChargeMap) -->
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-p-bottom_small">
+                  <lightning-input
+                    type="date"
+                    label={label.CMI_EndDate}
+                    value={chargeMapEndDate}
+                    read-only
+                    disabled>
+                  </lightning-input>
+                </div>
+                <!-- Remove row button -->
+                <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+                  <lightning-button-icon
+                    icon-name="utility:delete"
+                    alternative-text="Remove row"
+                    variant="bare"
+                    data-key={itemRow.key}
+                    onclick={handleRemoveRow}
+                    class="remove-row-btn">
+                  </lightning-button-icon>
+                </div>
+              </div>
+            </div>
+          </template>
+          <!-- Add another row button -->
+          <lightning-button
+            label={label.CMI_AddAnotherItem}
+            icon-name="utility:add"
+            variant="base"
+            onclick={handleAddAnotherRow}
+            class="slds-m-top_small">
+          </lightning-button>
+        </div>
+        <!-- Footer -->
+        <div class="slds-modal__footer">
+          <lightning-button
+            label={label.CMI_Cancel}
+            onclick={handleCloseAddModal}>
+          </lightning-button>
+          <lightning-button
+            label={label.CMI_SaveItems}
+            variant="brand"
+            onclick={handleSaveNewItems}
+            disabled={isSaving}
+            class="slds-m-left_small">
+          </lightning-button>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+
+  <!-- ===== DELETE CONFIRMATION MODAL ===== -->
+  <template if:true={isDeleteConfirmOpen}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-modal="true"
+      aria-labelledby="delete-modal-heading"
+      class="slds-modal slds-fade-in-open slds-modal_small">
+      <div class="slds-modal__container">
+        <div class="slds-modal__header slds-theme_error">
+          <lightning-button-icon
+            icon-name="utility:close"
+            alternative-text="Close"
+            variant="bare-inverse"
+            class="slds-modal__close"
+            onclick={handleCloseDeleteConfirm}>
+          </lightning-button-icon>
+          <h2 id="delete-modal-heading" class="slds-modal__title slds-hyphenate">
+            {label.CMI_ConfirmDeletion}
+          </h2>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium">
+          <p>{deleteConfirmMessage}</p>
+        </div>
+        <div class="slds-modal__footer">
+          <lightning-button
+            label={label.CMI_Cancel}
+            onclick={handleCloseDeleteConfirm}>
+          </lightning-button>
+          <lightning-button
+            label={label.CMI_Delete}
+            variant="destructive"
+            onclick={handleConfirmDelete}
+            class="slds-m-left_small">
+          </lightning-button>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
   </template>
 </template>
