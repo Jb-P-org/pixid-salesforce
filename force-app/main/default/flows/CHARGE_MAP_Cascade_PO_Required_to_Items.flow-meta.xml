@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>PO_Required_Changed</name>
+        <label>PO Required Changed?</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Not Changed</defaultConnectorLabel>
+        <rules>
+            <name>Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_PO_Required_Changed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Charge_Map_Items</targetReference>
+            </connector>
+            <label>Changed</label>
+        </rules>
+    </decisions>
+    <description>When PO Required is updated on a Charge Map, cascade the new value to all related Charge Map Items.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula_PO_Required_Changed</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.PO_Required__c})</expression>
+    </formulas>
+    <formulas>
+        <name>formula_PO_Required_Boolean</name>
+        <dataType>Boolean</dataType>
+        <expression>TEXT({!$Record.PO_Required__c}) = "Yes"</expression>
+    </formulas>
+    <interviewLabel>CHARGE_MAP - Cascade PO Required to Items {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CHARGE_MAP - Cascade PO Required to Items</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Charge_Map_Items</name>
+        <label>Update Charge Map Items</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ChargeMap__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>PO_Required__c</field>
+            <value>
+                <elementReference>formula_PO_Required_Boolean</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ChargeMapItem__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>PO_Required_Changed</targetReference>
+        </connector>
+        <object>ChargeMap__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
