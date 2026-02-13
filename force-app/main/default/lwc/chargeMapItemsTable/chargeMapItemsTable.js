@@ -503,6 +503,16 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
 
         // Met à jour la data et le draft
         const row = this.rows.find(r => r.id === rowId);
+
+        // For number inputs, defer value capture to blur handler
+        // to prevent re-rendering mid-typing which strips decimal separators
+        if (row) {
+            const cellMeta = row.cells.find(c => c.apiName === fld)?.meta;
+            if (cellMeta && ['currency', 'double', 'percent', 'int'].includes(cellMeta.type)) {
+                return;
+            }
+        }
+
         if (row) {
             row.data[fld] = val;
             const currencyCode = row.data.CurrencyIsoCode || 'EUR';
@@ -542,7 +552,47 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
         }
     }
 
-    handleInputBlur() {
+    handleInputBlur(evt) {
+        // For number inputs, capture the final value on blur to preserve decimals
+        const rowId = evt?.target?.dataset?.id;
+        const fld = evt?.target?.dataset?.field;
+        if (rowId && fld) {
+            const row = this.rows.find(r => r.id === rowId);
+            if (row) {
+                const cell = row.cells.find(c => c.apiName === fld);
+                if (cell && ['currency', 'double', 'percent', 'int'].includes(cell.meta.type)) {
+                    const rawVal = evt?.target?.value;
+                    const numVal = rawVal !== '' && rawVal != null ? Number(rawVal) : null;
+                    const finalVal = numVal !== null && !isNaN(numVal) ? numVal : null;
+
+                    // Only update if value actually changed
+                    if (finalVal !== cell.value) {
+                        this.draftValues[rowId] = {
+                            ...this.draftValues[rowId],
+                            [fld]: finalVal
+                        };
+                        row.data[fld] = finalVal;
+                        const currencyCode = row.data.CurrencyIsoCode || 'EUR';
+                        const updateCellDisplay = (c) => {
+                            if (c.apiName === fld) {
+                                c.value = finalVal;
+                                if (finalVal === null) {
+                                    c.displayValue = '—';
+                                } else if (c.meta.type === 'currency') {
+                                    c.displayValue = this.formatCurrency(finalVal, currencyCode);
+                                } else {
+                                    c.displayValue = finalVal;
+                                }
+                            }
+                        };
+                        row.cells.forEach(updateCellDisplay);
+                        row.primaryCells.forEach(updateCellDisplay);
+                        row.secondaryCells.forEach(updateCellDisplay);
+                    }
+                }
+            }
+        }
+
         console.log('🔒 InputBlur, sortie mode édition');
         this.rows.forEach(r => {
             r.cells.forEach(c => c.isEditing = false);
