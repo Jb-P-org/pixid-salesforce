@@ -51,12 +51,12 @@
         </assignmentItems>
     </assignments>
     <description>When a Charge Map Item is created with a Product, automatically populate product-derived fields: Name, Nature, BillingSchedule, and Term. Also copies the SourceOpportunity from the parent Charge Map. ProductNature and ProductNetsuiteId are formula fields and auto-compute from the Product relationship.</description>
+    <environments>Default</environments>
     <formulas>
         <name>TruncatedProductName</name>
         <dataType>String</dataType>
         <expression>LEFT({!Get_Product.Name}, 80)</expression>
     </formulas>
-    <environments>Default</environments>
     <formulas>
         <name>formula_PO_Required_Boolean</name>
         <dataType>Boolean</dataType>
