@@ -410,6 +410,12 @@
                 <identifier>RecordAccount_rVATNumber_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Account__r.ID_interne_TdG__c</fieldItem>
+                <identifier>RecordAccount_rID_interne_TdG_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-500b8f47-f6ac-4a9f-9cc7-499cefc01dd9</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -738,61 +744,10 @@
                 <identifier>RecordPO_Required_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.PO_Frequency__c</fieldItem>
-                <identifier>RecordPO_Frequency__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.PO_Required__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Yes</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-e0c31f6b-8d3c-4bd8-8199-9108893b27d7</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.PurchaseOrderReference__c</fieldItem>
-                <identifier>RecordPurchaseOrderReference_cField2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.PO_Required__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Yes</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.PurchaseOrderRequestDate__c</fieldItem>
-                <identifier>RecordPurchaseOrderRequestDate_cField2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.PO_Required__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Yes</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-714a7c1d-21d4-445a-a87e-51975c0e1dbb</name>
         <type>Facet</type>
     </flexiPageRegions>
