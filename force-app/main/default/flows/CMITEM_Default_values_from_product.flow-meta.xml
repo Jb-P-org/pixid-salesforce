@@ -42,9 +42,21 @@
                 <elementReference>Get_Product.Default_Term__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.PO_Required__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_PO_Required_Boolean</elementReference>
+            </value>
+        </assignmentItems>
     </assignments>
-    <description>When a Charge Map Item is created with a Product, automatically populate product-derived fields: Name, Nature, BillingSchedule, and Term. Also copies the SourceOpportunity from the parent Charge Map. ProductNature and ProductNetsuiteId are formula fields and auto-compute from the Product relationship.</description>
+    <description>When a Charge Map Item is created with a Product, automatically populate product-derived fields: Name, Nature, BillingSchedule, Term, and PO Required (from parent Charge Map). Also copies the SourceOpportunity from the parent Charge Map. ProductNature and ProductNetsuiteId are formula fields and auto-compute from the Product relationship.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>formula_PO_Required_Boolean</name>
+        <dataType>Boolean</dataType>
+        <expression>TEXT({!Get_Charge_Map.PO_Required__c}) = "Yes"</expression>
+    </formulas>
     <interviewLabel>CMITEM - Default values from product {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CMITEM - Default values from product</label>
     <processMetadataValues>
