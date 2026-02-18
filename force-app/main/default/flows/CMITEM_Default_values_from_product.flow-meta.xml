@@ -18,7 +18,7 @@
             <assignToReference>$Record.Name</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Product.Name</elementReference>
+                <elementReference>TruncatedProductName</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -50,8 +50,13 @@
             </value>
         </assignmentItems>
     </assignments>
-    <description>When a Charge Map Item is created with a Product, automatically populate product-derived fields: Name, Nature, BillingSchedule, Term, and PO Required (from parent Charge Map). Also copies the SourceOpportunity from the parent Charge Map. ProductNature and ProductNetsuiteId are formula fields and auto-compute from the Product relationship.</description>
+    <description>When a Charge Map Item is created with a Product, automatically populate product-derived fields: Name, Nature, BillingSchedule, and Term. Also copies the SourceOpportunity from the parent Charge Map. ProductNature and ProductNetsuiteId are formula fields and auto-compute from the Product relationship.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>TruncatedProductName</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!Get_Product.Name}, 80)</expression>
+    </formulas>
     <formulas>
         <name>formula_PO_Required_Boolean</name>
         <dataType>Boolean</dataType>
@@ -79,27 +84,6 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Product</name>
-        <label>Get Product</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Charge_Map</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Product__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Product2</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Charge_Map</name>
         <label>Get Charge Map</label>
         <locationX>176</locationX>
@@ -118,6 +102,27 @@
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>ChargeMap__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Product</name>
+        <label>Get Product</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Charge_Map</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Product__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Product2</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>

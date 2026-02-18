@@ -1,0 +1,14 @@
+ChargeMap__c,Product__c,Name,LineDescription__c,BillingSchedule__c,Term__c,Quantity__c,Sales_unit_price__c,Amount__c,Status__c,StartDateRevRec__c,End_date__c,CurrencyIsoCode,PO_Required__c,Activated__c
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),CONSTELLIUM MONTREUIL JUIGNE,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),LECTRA,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),TYCO ELECTRONICS,Annual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),DEVILLE GROUPE,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),FLANDRIA,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),GROUPE MARINE HARVEST KRITSEN - MOWI,Annual,In advance,1,4500,4500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),MC CAIN,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),DELPHARM (GAILLARD),Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),LATECOERE (Clic),Annual,In advance,1,5000,5000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),B BRAUN MEDICAL,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),PROCTER & GAMBLE AMIENS,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),PROCTER & GAMBLE BLOIS,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+a02ci00000MobAFAAZ,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT),ARCO,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
