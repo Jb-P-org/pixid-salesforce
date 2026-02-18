@@ -220,4 +220,8 @@
         <label>Une erreur inattendue s&apos;est produite. Veuillez réessayer.</label>
         <name>CMI_UnexpectedError</name>
     </customLabels>
+    <customLabels>
+        <label>Au moins un produit a le PO requis mais la Référence PO ou la Date de demande PO n&apos;est pas renseignée</label>
+        <name>PO_Missing_On_Items</name>
+    </customLabels>
 </Translations>
