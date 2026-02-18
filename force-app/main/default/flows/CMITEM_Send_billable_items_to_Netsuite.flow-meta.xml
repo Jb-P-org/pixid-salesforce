@@ -61,6 +61,22 @@
             </value>
         </assignmentItems>
         <connector>
+            <targetReference>Get_Items_With_PO_Issues</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_PO_Issues</name>
+        <label>Count PO Issues</label>
+        <locationX>402</locationX>
+        <locationY>530</locationY>
+        <assignmentItems>
+            <assignToReference>NbOfItemsWithPOIssues</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Items_With_PO_Issues</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
             <targetReference>Get_Account</targetReference>
         </connector>
     </assignments>
@@ -91,6 +107,13 @@
             </conditions>
             <conditions>
                 <leftValueReference>varB_MissingInfoChargeMap</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varB_HasPOIssuesOnItems</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -177,6 +200,11 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
         <name>varF_TodaysDate</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <name>varB_HasPOIssuesOnItems</name>
+        <dataType>Boolean</dataType>
+        <expression>{!NbOfItemsWithPOIssues} &gt; 0</expression>
     </formulas>
     <formulas>
         <name>varT_AccountActivityCountry</name>
@@ -304,6 +332,62 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ChargeMapItem__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Items_With_PO_Issues</name>
+        <label>Get Items With PO Issues</label>
+        <locationX>402</locationX>
+        <locationY>494</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Count_PO_Issues</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND (5 OR 6)</filterLogic>
+        <filters>
+            <field>ChargeMap__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Backlog</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Activated__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>PO_Required__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>PO_Reference__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>PO_Request_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -486,7 +570,7 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
             <inputParameters>
                 <name>pbOnItemsPO</name>
                 <value>
-                    <elementReference>Get_Charge_Map.Pb_On_Items_PO__c</elementReference>
+                    <elementReference>varB_HasPOIssuesOnItems</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -811,6 +895,17 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>ChargeMapItem__c</objectType>
+    </variables>
+    <variables>
+        <name>NbOfItemsWithPOIssues</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
     </variables>
     <variables>
         <name>NbOfItemsReady</name>

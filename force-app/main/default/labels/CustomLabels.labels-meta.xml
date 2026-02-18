@@ -394,6 +394,13 @@
         <value>PO Reference / Request Date / Frequency</value>
     </labels>
     <labels>
+        <fullName>PO_Missing_On_Items</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PO missing on items warning</shortDescription>
+        <value>At least one item has PO Required but PO Reference or PO Request Date is missing</value>
+    </labels>
+    <labels>
         <fullName>Payment_Method</fullName>
         <language>en_US</language>
         <protected>false</protected>

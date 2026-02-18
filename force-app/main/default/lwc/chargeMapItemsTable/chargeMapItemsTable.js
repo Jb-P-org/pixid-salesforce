@@ -498,7 +498,7 @@ export default class ChargeMapItemsTable extends NavigationMixin(LightningElemen
     handleFieldChange(evt) {
         const rowId = evt.target.dataset.id;
         const fld   = evt.target.dataset.field;
-        const val   = evt.detail?.value ?? evt.target.checked;
+        const val   = evt.target.type === 'checkbox' ? evt.target.checked : (evt.detail?.value ?? null);
         console.log(`🖊️ FieldChange row ${rowId}, field ${fld} =`, val);
 
         // Met à jour la data et le draft

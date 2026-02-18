@@ -15,6 +15,7 @@ import ContractDurationYears from '@salesforce/label/c.Contract_Duration_Years';
 import SendInvoiceTo from '@salesforce/label/c.Send_Invoice_To';
 import PlatformLink from '@salesforce/label/c.Platform_Link';
 import POReferenceRequestDateFrequency from '@salesforce/label/c.PO_Reference_Request_Date_Frequency';
+import POMissingOnItems from '@salesforce/label/c.PO_Missing_On_Items';
 
 export default class MissingFieldsScreenChargeMap extends LightningElement {
     label = {
@@ -31,7 +32,8 @@ export default class MissingFieldsScreenChargeMap extends LightningElement {
         ContractDurationYears,
         SendInvoiceTo,
         PlatformLink,
-        POReferenceRequestDateFrequency
+        POReferenceRequestDateFrequency,
+        POMissingOnItems
     };
     @api accountRegistrationNumber;
     @api accountVATNumber;
@@ -117,15 +119,8 @@ export default class MissingFieldsScreenChargeMap extends LightningElement {
             this.missingChargeMapFields.push(this.label.PlatformLink);
         }
 
-        if (this.chargeMapPORequired === 'Yes') {
-            if (!this.chargeMapPOReference || !this.chargeMapPORequestDate || !this.chargeMapPOFrequency) {
-                this.missingChargeMapFields.push(this.label.POReferenceRequestDateFrequency);
-            }
+        if (this.pbOnItemsPO === true) {
+            this.missingChargeMapFields.push(this.label.POMissingOnItems);
         }
-
-        // 💥 Nouveau test sur la variable boolean
-        //if (this.pbOnItemsPO === true) {
-        //    this.missingChargeMapFields.push('At least one PO is missing on a Charge Map Item');
-       // }
     }
 }

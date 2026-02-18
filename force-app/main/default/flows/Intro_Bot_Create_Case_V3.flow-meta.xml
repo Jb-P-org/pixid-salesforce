@@ -370,7 +370,7 @@
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>myPixid_Chatbot</stringValue>
+                <stringValue>SupportFR</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -437,6 +437,7 @@
         </inputAssignments>
         <object>MessagingSession</object>
     </recordUpdates>
+    <sourceTemplate>setup_bot__IntroBotCreateCase</sourceTemplate>
     <start>
         <locationX>56</locationX>
         <locationY>0</locationY>
