@@ -1,0 +1,460 @@
+_,Id,AccountId,FirstName,LastName,Email,Title,ContactSource,HomePhone,Langue__c,Linkedin_ID__c,OtherPhone,Phone,Role_pour_Pixid__c
+[Contact],00320000002FrcfAAC,00120000001bHtnAAE,Catherine,Bellanger,catherine.bellanger@socgen.com,Responsable missions TT,,,,,,01 42 14 46 63,Manager
+[Contact],00320000002IOmjAAG,00120000001cvkdAAA,Etienne,COLELLA,e.colella@pixid.fr,Président,,,,,,33 1 41 16 34 10,Manager
+[Contact],003200000031fM6AAI,00120000009OfcxAAC,Tina,LING,tina.ling@hays.fr,DG - Managing Director France and Benelux,,,French,,,01 71 76 77 00,Manager
+[Contact],00320000006OpPmAAK,00120000004PW2FAAW,Guy,AUGUSTIN,guy.augustin@kellyservices.fr,DAF,,,French,,,01 58 74 67 61,Manager
+[Contact],00320000006OpRfAAK,00120000004PW2dAAG,Georges,BENAYM,georges.benaym@geac.com,Product Manager IT,,,French,,,(01) 47 95 90 00,Manager
+[Contact],00320000006OxCRAA0,00120000001cvkdAAA,Patrick,FOUBERT,p.foubert@pixid.fr,CTO & RSSI,,,French,,,01 41 16 34 18,Manager
+[Contact],00320000006RhVsAAK,00120000002jF4eAAE,,Simon Emmanuel,emmanuel.simon@groupe-heppner.com,DAF,,,French,,,33 3 88 31 99 10,Manager
+[Contact],00320000007GY2dAAG,00120000004PW0TAAW,Anne-Sophie,FRANCOIS,asfrancois@sos-interim.fr,Directrice Commerciale,,,French,,,02 32 33 03 35,Manager
+[Contact],00320000007GYgBAAW,00120000004xpbnAAA,Franck,Peyron,f.peyron@aprr.fr,Chef APRR,,,French,,,01 64 45 58 01,Manager
+[Contact],00320000007TkuHAAS,00120000004PFrvAAG,Sylvie,PERRIN,sperrin@groupeleader.com,Directrice Commerciale,,,French,,,01 30 10 64 64,Manager
+[Contact],00320000007UPsYAAW,00120000001cvkdAAA,Youssef,ATMANI,y.atmani@pixid.fr,Chef de Projets,,,French,,,01 41 16 34 09,Manager
+[Contact],00320000007UqO4AAK,00120000004PW0TAAW,William,OUVRY,wouvry@sos-interim.fr,Directeur du développement,,,French,,,02 32 33 39 45,Manager
+[Contact],00320000007xDsXAAU,00120000005GLmiAAG,Philippe,GUICHARD,philippe.guichard@adequatinterim.fr,Directeur General / Président du directoire,,,,,,04 78 14 34 90,Manager
+[Contact],00320000007zJKfAAM,00120000003kREvAAM,Francine,Sebire,f.sebire@sdv.com,Achat TT,,,French,,,,Interlocuteur Sponsor
+[Contact],00320000008JCgRAAW,00120000005WmXPAA0,Gilles,BERNON,g.bernon@ergalis.fr,DSI,,,French,,,03 20 66 17 69,Manager
+[Contact],0032000000ApikfAAB,00120000001X5O2AAK,Isabelle,SAUCEY,isabelle.saucey@nexans.com,RRH,,,French,,,03 24 41 51 40,Manager
+[Contact],0032000000BzflYAAR,001200000027VZKAA2,Joel,Gavazzi,gavazzij@essilor.fr,DRH,,,French,,,01 49 7742 35,Manager
+[Contact],0032000000DC30xAAD,00120000004znLZAAY,Frédérique,LESPINE,frederique.lespine@derichebourg.com,Signataire Agence Tarbes / Responsable d'agence,,,,,,05 62 32 77 50,Manager
+[Contact],0032000000DJdFXAA1,00120000004PcqyAAC,,GRIMALDI,ic.thionville5@wanadoo.fr,Responsable d'Agence,,,French,,,03 82 83 33,Manager
+[Contact],0032000000EptAWAAZ,0012000000CNSd3AAH,Alain,Alvarez,alain.alvarez@aurajob.com,Directeur General,,,French,,,01 53 23 25 50,Manager
+[Contact],0032000000EptU9AAJ,0012000000CNSoXAAX,Pascal,Bourdinaud,pascal.bourdinaud@me.com,Directeur Général,,06 85 45 84 65,,,,01 40 64 44 48,Manager
+[Contact],0032000000HAJhQAAX,0012000000GW2uaAAD,Jean-Baptiste,Labouche,jblabouche@dominointerim.com,Directeur Délégué,,,,,,06 61 91 82 58,Manager
+[Contact],0032000000HS3D0AAL,00120000004xpbnAAA,Brigitte,CAMPAGNE,brigitte.campagne@area.aprr.fr,Conductrice d'opérations,,,,,,04 26 68 46 22,Manager
+[Contact],0032000000Io6KjAAJ,00120000004xpbnAAA,Henri,BREMONT,henri.bremont@aprr.fr,Responsable Département ASP,,,,,,33 3 80 77 65 86,Manager
+[Contact],0032000000KmHU4AAN,0012000000JcUqsAAF,Bruno,Hirtz,bruno.hirtz@cpm-int.com,DG,,,,,,01 49 09 80 35,Manager
+[Contact],0032000000LzhNzAAJ,0012000000L7TIXAA3,Celia,VAGNOT,cvagnot@enthalpia.fr,Agency Director,,,,,,05 57 19 80 82,Manager
+[Contact],0032000000V8LeAAAV,001D000000fiubWIAQ,Arnaud,WECKONSKI,a.weckonski@alphyr.com,Directeur Associé,,04 82 74 02 32,French,,,,Manager
+[Contact],0032000000bMBdqAAG,00120000005GLmiAAG,Damien,PAUL,solutions.clients@groupeadequat.fr,,,,,,damien.paul@groupeadequat.fr,04 26 23 13 29,Manager
+[Contact],0032000000cicqnAAA,00120000004PW2BAAW,Didier,PAREL,d_parel@samsic-emploi.fr,Responsable de Secteur,,,French,,,,Manager
+[Contact],0032000000cjQrUAAU,00120000004PW2BAAW,Vincent,BOURDIN,b_vincent@samsic-emploi.fr,Directeur régional Auvergne Rhône Alpes,,,,,,,Manager
+[Contact],0032000000e7qoiAAA,0012000000dGBxzAAG,Eric,BALLIF,eric.ballif@xerox.com,Directeur du recrutement,,,French,,,01 44 65 46 02,Manager
+[Contact],0032p00002SPCuWAAX,0015700002GUoKeAAL,Mehdi,TARHI,mehdi.tahri@iziwork.com,CEO,,,,,,06 33 30 98 71,Manager
+[Contact],0032p00002SPD4rAAH,0015700002GUoKeAAL,Martin,PANNIER,martin.pannier@iziwork.com,Head of Product Management,,,,,,06 15 97 00 07,Manager
+[Contact],0032p00002SPD5kAAH,0015700002GUoKeAAL,Camille,MABIL,marion.mabil@iziwork.com,Business Owner,,,French,,,,Manager
+[Contact],0032p00002SaRnXAAV,00120000004yaCJAAY,Pierre,KOPP,pierre.kopp@knauf.fr,DAF,,,,,,03 89 72 12 08,Manager
+[Contact],0032p00002Sc8LTAAZ,00120000004PW2BAAW,Bruno,TREBOUVILLE,b.trebouville@samsic-emploi.fr,Directeur régional,,,French,,,,Manager
+[Contact],0032p00002SvTcXAAV,001D000000qd7tqIAA,Jérôme,BIZOUARD (Grp),j.bizouard@fayatit.fayat.com,Responsable MCO Applications - Fayat IT,,(int. 400.5805),,,,05 56 38 58 05,Manager
+[Contact],0032p00002T0kziAAB,001D000000en9FCIAY,Orianne,NEIL,orianne.neil@interaction-interim.com,Responsable Système d'Information,,,French,,,02 99 86 74 01,Manager
+[Contact],0032p00002TXbJ8AAL,0012p00002JPzFaAAL,Houde,KHALIL MIMOUNI,hkhalil@phone-regie.fr,responsable sourcing,,,French,,,,Interlocuteur Sponsor
+[Contact],0032p00002TrtmCAAR,001D000001eOA8qIAG,Arnaud,DESSAIN,arnaud.dessain@williamsinclair.com,Dirigeant associé,,,,,,140291931,Manager
+[Contact],0032p00002TsJaGAAV,0012000000L7TIXAA3,Magali,GOSALVES,mgosalves@menway.com,Responsable d'agence,,,,,,,Manager
+[Contact],0032p00002W9W4cAAF,001D000000ndRmuIAE,Stephanie,LAURENT,stephanie.laurent@isadev.com,DIRECTRICE RH,,,,,,,Manager
+[Contact],0032p00002WVPblAAH,001D000001N43sqIAB,Isabelle,JAUDEAU,isabelle.jaudeau@aldautomotive.com,DRH,,,,,,,Manager
+[Contact],0032p00002Xh9YyAAJ,00120000001bjQ8AAI,Stéphane,RUEL,s.ruel@spie.com,Chef de projet Intérim,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00002ZnxzFAAR,00120000004PG05AAG,Didier,GAILLARD,didier.gaillard@randstad.fr,Directeur Général Commerce Groupe,,,French,,,01 49 46 56 74,Manager
+[Contact],0032p00002Zny24AAB,00120000004PG05AAG,Eugénie,BIZAC,eugenie.bizac@randstad.fr,,,,French,,,,Manager
+[Contact],0032p00002ZoLnLAAV,0012p00002QGCalAAH,Christophe,THOMAS,c.thomas@penelope.fr,Président,,,,,,,Manager
+[Contact],0032p00002c3xQiAAI,0015700001r8O5lAAE,Evelyne,NOULEAU,evelyne.nouleau@showroomprive.net,DRH,,,,,,01 85 76 33 71,Manager
+[Contact],0032p00002dULMJAA4,00120000001cvkdAAA,Charles-Henri,BERNARD,ch.bernard@pixid.fr,Chief Financial Officer,,,,,,33 1 41 16 39 41,Manager
+[Contact],0032p00002dVqoQAAS,0012p00002gVoTKAA0,Laurent,VACELET,laurent.vacelet@manpower.ch,Directeur Régional,,,French,,,,Manager
+[Contact],0032p00002dWRUrAAO,001D000001GzQgsIAF,David,MERETTO,david.merotto@abalone-interim.com,Responsable régional nord est bourgogne,,,,,,,Manager
+[Contact],0032p00002gF75eAAC,00120000004znLZAAY,Mélanie,GRAUX,melanie.graux@derichebourg.com,Responsable Ressources Humaines,,,,,,,Manager
+[Contact],0032p00002krxJXAAY,0012p00002mZuSbAAK,Claudio,SUTER,c.suter@team.jobs,CEO,,,French,,,,Manager
+[Contact],0032p00002krxSAAAY,0012p00002Y0ktGAAR,Sylvie,ROLLIN,rollin@oneplacement.com,Directrice Générale,,,French,,,00 41 78 759 62 70,Manager
+[Contact],0032p00002kuG6jAAE,0012p00002pdGRRAA2,Brice,GATTACIECA,b.gattacieca@pgn.ch,Directeur du Développement,,,French,,,4122 906 4000,Manager
+[Contact],0032p00002lcxzkAAA,0012p00002pfjj8AAA,Béatrice,CHABRIER,chabrier@po-c.com,,,,,,,145877053,Interlocuteur Sponsor
+[Contact],0032p00002nUK8jAAG,0012p00002swY0IAAU,Elizabeth,TROUCHE-BRUGGER,etbrugger@crit.ch,Directrice,,,French,,,,Manager
+[Contact],0032p00002nhrSmAAI,0012p00002SErb7AAD,Valerie,TOURET,valerie.touret@innothera.com,RRH,,,,,,,Manager
+[Contact],0032p00002oTRs7AAG,001D000001JzO82IAF,Philippe,CASTAIGNET,pcastaignet@glarieslafayette.com,Directeur Administration & Systèmes RH,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00002oUPxEAAW,00120000001jAhbAAE,Carole,DUPUTEL,carole.duputel@fnacdarty.com,RRH,,,,,,,Manager
+[Contact],0032p00002pGZLuAAO,001D000001gABrSIAW,Sandra,COUTURIER,sandra.couturier@sncf.fr,Adjointe RH,,,,,,06 14 02 98 68,Manager
+[Contact],0032p00002pH5tgAAC,0012p00002maWlKAAU,Eric,GERINI,eric.gerini@pemsa.com,Directeur Général,,,French,,#ERROR!,41588228090,Manager
+[Contact],0032p00002pHKz7AAG,001200000027VYDAA2,LAURENT,RODRIGUEZ,lrodriguez@soufflet.com,Resp.dvpmt RH,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00002s3HD0AAM,001D000001JzODBIA3,Olivia,PARTRAT,olivia.partrat@belambra.fr,Chargée de recrutement,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00002sRRkPAAW,0012p00002bybPQAAY,Bruno,PIZZONI,direction@conceptinterim.fr,Gérant,,,,,patrick@conceptinterim.fr,492923799,Manager
+[Contact],0032p00002tIi2QAAS,0012p000034EcdOAAS,David,LOPEZ,david.lopez@gigroup.com,Managing Division Director,,,English,,,0034 91 327 26 10,Manager
+[Contact],0032p00002vrlkQAAQ,00120000009MqsFAAS,Wilfried,MERAFINA,wilfried.merafina@groupejm.fr,Président Directeur Général,,,French,,,,Manager
+[Contact],0032p00002x8pXaAAI,0012000000L7TIXAA3,Pauline,MAZUY,pmazuy@menway.com,Responsable d'agence,,,,,,,Manager
+[Contact],0032p00002yPxyCAAS,0012p00003BaKQBAA3,Anais,ALBIGNAC,aalbignac@dynamic-emploi.org,DIRECTRICE ADJOINTE,,,,,,02.32.54.39.21,Manager
+[Contact],0032p00002yQRpbAAG,0012p00002bwngGAAQ,Andrew,Bamford,andrew.bamford@trsstaffing.com,Regional Director (USA),,,English,,,,Manager
+[Contact],0032p00002z4qyxAAA,00157000023D7QDAA0,Alix,BARNOUIN,abarnouin@monoprix.fr,Service Méthodes SAMADA,,,,,,01 60 92 78 32,Interlocuteur Sponsor
+[Contact],0032p000031qYmVAAU,001D000001JzOCxIAN,Cécilia,Collet,cecilia.collet@smac-sa.com,Responsable Achat Groupe,,,,,,,Interlocuteur Sponsor
+[Contact],0032p000032WybfAAC,001D000000fiubWIAQ,Jean-Loup,WIROTIUS,jl.wirotius@mistertemp-group.com,Chief Marketing Officer,,,,,,,Manager
+[Contact],0032p000032tDS0AAM,00120000004znLZAAY,Sonia,TOUABI,sonia.touabi@derichebourg.com,Responsable Développement Grands Comptes,,,,,,06.23.59.22.34,Manager
+[Contact],0032p000033McfcAAC,0015700001p49iNAAQ,Marie,FREDELISI,m.fredelisi@easys.fr,,,,,,,01 44 63 00 00,Interlocuteur Sponsor
+[Contact],0032p0000340pHRAAY,0012p00003QBdmQAAT,Pavla,Kamencová,pavla.kamencova@gigroup.com,International Solution Design Manager,,,English,Phone number country code +420,,00420 604 371 446,Manager
+[Contact],0032p0000349VmHAAU,0012p00002vMVlkAAG,Annalisa,von Grünigen,annalisa.vongruenigen@synergiesuisse.ch,Directrice commerciale Synergie et S&you,,,,,,079 808 49 21,Manager
+[Contact],0032p000034uhYKAAY,001D000001Z27rbIAB,Sébastien,Graff,sebastien.graff@invivo-group.com,DRH,,,,,,,Interlocuteur Sponsor
+[Contact],0032p000035SkeIAAS,0012p00002tgQxIAAU,Trys,Harrison,trys.harrison@txmgroup.com,,,,,,,,Manager
+[Contact],0032p000035TMFkAAO,001D000000en9FCIAY,Vincent,POUSSIER,vincent.poussier@interaction-interim.com,Secrétaire Général,,,,,,,Manager
+[Contact],0032p000037D2nbAAC,0015700002B9LJhAAN,Emmanuel,ROUYER,e.rouyer@razel-bec.fayat.com,Responsable Informatique,,,,,,,Manager
+[Contact],0032p000037D96uAAC,0012000000SiY5lAAF,Anne-Marie,ROHR,anne-marie.rohr@groupedlsi.com,DAF,,,,,,03 87 88 12 80,Manager
+[Contact],0032p000037WG7DAAW,0012000000SiY5lAAF,Daniel,ELBAZ,daniel@tbc.com,Directeur - Direction MOA & CRM,,,,,,,Manager
+[Contact],0032p000037WGOzAAO,0012000000SiY5lAAF,Raymond,BIRCHEN,raymond.birchen@groupedlsi.com,Directeur des accords nationaux,,,,,,,Manager
+[Contact],0032p000037WGeRAAW,00120000005WmXPAA0,Vincent,PUNELLE,v.punelle@ergalis.fr,Directeur Général,,,,,,,Manager
+[Contact],0032p000037WGiKAAW,00120000004b8MnAAI,Sébastien,HELAINE,,Directeur général,,,,,,,Manager
+[Contact],0032p000037WGlZAAW,0012000000L7TIXAA3,Christophe,BAILLY MAITRE,christophe@tbc.com,DSI de transition,,,,,,,Manager
+[Contact],0032p000037WGnKAAW,00120000005WmXPAA0,Chantal,DONJON,chantal@tbc.com,Directrice opérationnelle,,,,,,,Manager
+[Contact],0032p000037WH5pAAG,00120000006vwMXAAY,Catherine,PETITJEAN,catherine@tbc.com,Directrice Opérationnelle - Directeur de secteur,,,,,,,Manager
+[Contact],0032p000037WH77AAG,00120000006vwMXAAY,Xavier,BELLAIS,xbellais@supinterim.fr,Directeur regional,,,,,,,Manager
+[Contact],0032p000037WH8LAAW,001D000000zbp2tIAA,Mathieu,GAUTIER,mathieu@tbc.com,Directeur financier,,,,,,,Manager
+[Contact],0032p000037WH8zAAG,001D000000zbp2tIAA,Jérôme,CAEN,jerome.caen@gigroup.com,Directeur international des ventes,,,,,,,Manager
+[Contact],0032p000037WHC7AAO,0012000000L7TIXAA3,Christophe,MARTIN,cmartin@menway.com,Directeur commercial,,,,,,,Manager
+[Contact],0032p000037WHE0AAO,0012000000L7TIXAA3,Laure,NOIROT,laure@tbc.com,Directrice developpement support et performance,,,,,,,Manager
+[Contact],0032p000037WHG6AAO,0012000000L7TIXAA3,Samuel,PICARDAT,spicardat@menway.com,Directeur des Finances et des Risques,,03 87 16 28 28,,,,,Manager
+[Contact],0032p000037WP8DAAW,001D000000zbp2tIAA,Frederic,MARIE,frederic.marie@gigroup.com,Directeur des Opérations,,,,,,,Manager
+[Contact],0032p000037WRkPAAW,001D000000ndLzdIAE,Nicolas,CUYNAT,ncuynat@mare-nostrum.eu,Président - Directeur général,,,,,,04 38 12 33 50,Manager
+[Contact],0032p000037WRrdAAG,001D000000ndLzdIAE,Sébastien,DECHELETTE,sdechelette@mare-nostrum.eu,Responsable Grands Comptes,,,,,,,Manager
+[Contact],0032p000037WRuJAAW,001D000000ndLzdIAE,Thierry,DE VIGNEMONT,tdevignemont@mare-nostrum.eu,Directeur général délégué // Conseil d'administration,,,,,,,Manager
+[Contact],0032p000037WTAKAA4,001D000000ndLzdIAE,Rudy,BRAUX,rudy@tbc.com,Responsable Achats,,,,,,06 86 64 72 38,Manager
+[Contact],0032p000037WU2dAAG,001D000000ndLzdIAE,Olivier,Bani,olivier@tbc.com,Deputy CEO,,,,,,,Manager
+[Contact],0032p000038F4z4AAC,00120000004PW0TAAW,Isabelle,MINEZ,iminez@sos-interim.fr,Responsable d'agence,,,,,,,Manager
+[Contact],0032p00003A1LTiAAN,00120000004b8MnAAI,Yann,LACHANCE,y.lachance@morganservices.fr,Directeur des Systèmes d'Information,,,,,01 40 75 09 30,,Manager
+[Contact],0032p00003CQM7wAAH,00120000004PFrvAAG,Christian,NICOLINO,cnicolino@groupeleader.com,DAF,,,,,,,Manager
+[Contact],0032p00003Cg5owAAB,0015700001nt6kiAAA,Aubin,POIGNAVENT,aubin.poignavent@segula.fr,Responsable Achats Prestations Intellectuelles,,,French,,,626437776,Manager
+[Contact],0032p00003ESfkWAAT,001D000001GzQgsIAF,Nadège,LIGNON,nadege.lignon@abalone-interim.com,Directrice Générale Adjointe,,,,,,,Manager
+[Contact],0032p00003FLznNAAT,001D000000ndLhAIAU,Pierre,POULAIN,pierre.poulain@regionalinterim.fr,Directeur du développement commercial,,,,,,,Manager
+[Contact],0032p00003G9EneAAF,0012p00003ogFV3AAM,Serge,MATHIEU,,PDG,,,,,,,Manager
+[Contact],0032p00003HC6OLAA1,001D0000018d4RYIAY,Cécile,COLLIER,cecile.collier@allianz.fr,Head of Talent Acquisition,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00003HEyTWAA1,00120000004PW2OAAW,Thierry,TALON,thierry.talon@startpeople.fr,Directeur Régional,,,,,,,Manager
+[Contact],0032p00003HEyaMAAT,00120000004PW2OAAW,Pierre,HYVERNAT,pierre.hyvernat@startpeople.fr,Responsable Grands Comptes,,,,,,,Manager
+[Contact],0032p00003HEyg9AAD,00120000004PW2OAAW,Catherine,LE TROADEC,catherine.letroadec@startpeople.fr,Responsable de Secteur,,,,,,,Manager
+[Contact],0032p00003HEyrzAAD,00120000004PW2OAAW,Aurore,GOBERT,aurore.gobert@startpeople.fr,Responsable de Secteur,,,,,,,Manager
+[Contact],0032p00003HEyvRAAT,00120000004PW2OAAW,Olivier,DAHERON,olivier.daheron@startpeople.fr,Directeur Régional,,,,,,,Manager
+[Contact],0032p00003HZDccAAH,0012000000BgGJaAAN,Nathalie,MARUSINSKI-SAVY,nathalie.marusinski-savy@supplay.fr,Directrice Régionale,,,,,,,Manager
+[Contact],0032p00003HZE5aAAH,0012000000BgGJaAAN,Anne-Sophie,COPPE,anne-sophie.coppe@supplay.fr,Directrice Régionale,,,,,,,Manager
+[Contact],0032p00003HZE5bAAH,0012000000BgGJaAAN,Sandrine,PALLUET,sandrine.palluet@supplay.fr,Directrice Régionale,,,,,,,Manager
+[Contact],0032p00003HZE8VAAX,0012000000BgGJaAAN,Marie-Pierre,COLLADO,marie-pierre.collado@supplay.fr,Directrice Régionale,,,,,,,Manager
+[Contact],0032p00003HZELgAAP,0012000000BgGJaAAN,Christelle,DESFORET,christelle.desforet@supplay.fr,Directrice Régionale,,,,,,,Manager
+[Contact],0032p00003HZEm5AAH,00120000004PFrvAAG,Frédéric,LEMOINE,flemoine@groupeleader.com,Directeur du développement,,,,,,,Manager
+[Contact],0032p00003HZEyQAAX,00120000004PFrvAAG,Stéphane,SAVALLI,ssavalli@groupeleader.com,Responsable Grands Comptes,,,,,,07 57 08 41 27,Manager
+[Contact],0032p00003HZXY9AAP,00120000004PFrvAAG,Christophe,DUCRET,cducret@groupeleader.com,Directeur de Secteur,,,,,,,Manager
+[Contact],0032p00003HZp96AAD,00120000005GLmiAAG,Arnaud,BRUN,arnaud.brun@groupeadequat.fr,Directeur Général- ADSEARCH & Vice-Président Conseil Surveillance,,,,,,,Manager
+[Contact],0032p00003HaMBuAAN,00120000004PW2BAAW,Caroline,SAVRY,c_savry@samsic-emploi.fr,Directrice Regionale,,,,,,,Manager
+[Contact],0032p00003HaMqyAAF,00120000004PW2BAAW,Grégory,VOISIN,g_voisin@samsic-emploi.fr,Directeur Régional,,,,,,,Manager
+[Contact],0032p00003HawutAAB,0015700002GUoKeAAL,Matthieu,CAMBOURNAC,matthieu.cambournac@iziwork.com,COO,,,,,,,Manager
+[Contact],0032p00003HaxxFAAR,00120000005WmXPAA0,Richard,SEON,r.seon@ergalis.fr,Diretceur de secteur,,,,,,,Manager
+[Contact],0032p00003HaxyOAAR,00120000005WmXPAA0,Jerome,MOREL,j.morel@ergalis.fr,Directeur de secteur,,,,,,,Manager
+[Contact],0032p00003Hay2NAAR,00120000005WmXPAA0,Anne-France,SPILLEMAECKER,anne-france.spillemaecker@ergalis.fr,Directrice du développement,,,,,,,Manager
+[Contact],0032p00003Hay5UAAR,00120000005WmXPAA0,Olivier,STRICHER,o.stricher@ergalis.fr,Directeur des Opérations,,,,,,,Manager
+[Contact],0032p00003HayLcAAJ,00120000005WmXPAA0,Laurent,REYNAUD,l.reynaud@ergalis.fr,Directeur du developpement Technologies industrielles,,,,,,,Manager
+[Contact],0032p00003HayLdAAJ,00120000005WmXPAA0,Arnaud,HERSART de la VILLEMARQUE,tbc@ergalis.fr,Directeur de secteur,,,,,,,Manager
+[Contact],0032p00003HayT6AAJ,00120000005WmXPAA0,Maria-Candida,CORREIA,maria-candida.correia@ergalis.fr,Directrice Grands Comptes,,,,,,,Manager
+[Contact],0032p00003HazKIAAZ,00120000004b8MnAAI,Olivier,BRIEND,olivier.briend@groupe-morgan-services.fr,Directeur du developpement,,,,,,,Manager
+[Contact],0032p00003Hb0HrAAJ,001D000000ndLhAIAU,Emmanuelle,GRIANDORGE,emmanuelle.graindorge@regionalinterim.fr,Responsable de secteur,,,,,,,Manager
+[Contact],0032p00003Hb0HsAAJ,001D000000ndLhAIAU,Philippe,CHARRIER,philippe.charrier@regionalinterim.fr,Coordinateur Réseau,,,,,,,Manager
+[Contact],0032p00003Hb0LPAAZ,001D000000ndLhAIAU,Stéphanie,GRIMARDIAS,stephanie.grimardais@regionalinterim.fr,Responsable de secteur,,,,,,,Manager
+[Contact],0032p00003Hb0LQAAZ,001D000000ndLhAIAU,Vesna,MILOSAVLJEVIC,vesna.milosavljevic@regionalinterim.fr,Responsable de secteur,,,,,,,Manager
+[Contact],0032p00003Hb0OhAAJ,001D000000ndLhAIAU,Mikael,LIJOUR,mikael.lijour@regionalinterim.fr,Responsable de secteur,,,,,,,Manager
+[Contact],0032p00003HsDzJAAV,0012000000SiY5lAAF,Xavier,CHARCOSSET,xavier.charcosset@groupedlsi.com,Directeur de Secteur,,,,,,,Manager
+[Contact],0032p00003HsE07AAF,0012000000SiY5lAAF,Laure,COLOMBEL,laure.colombel@groupedlsi.com,Directeur de Secteur,,,,,,03.44.03.52.40,Manager
+[Contact],0032p00003HsE22AAF,0012000000SiY5lAAF,Laurent,LUTZ,laurent.lutz@groupedlsi.com,Secrétaire Général,,,,,,,Manager
+[Contact],0032p00003HsE23AAF,0012000000SiY5lAAF,Alexandre,SIOUFFI,alexandre.siouffi@groupedlsi.com,Directeur de Région,,,,,,,Manager
+[Contact],0032p00003HsE24AAF,0012000000SiY5lAAF,Christophe,SIREUDE,christophe.sireude@groupedlsi.com,Directeur de Secteur,,,,,,,Manager
+[Contact],0032p00003HsJcoAAF,001D000001GzQgsIAF,Michael,GENDRON,michael.gendron@abalone-interim.com,Directeur du développement,,,,,,,Manager
+[Contact],0032p00003HsKnqAAF,001D000001GzQgsIAF,Anthony,REMY,anthony.remy@abalone-interim.com,Directeur Régional,,,,,,,Manager
+[Contact],0032p00003HtsWtAAJ,0012000000L7TIXAA3,Maud,BAILLET,mbaillet@menway.com,Chargée Grands Comptes et AO,,,,,,03 87 16 28 28,Manager
+[Contact],0032p00003HuwgMAAR,001D000000en9FCIAY,Laurent,MARECHAL,laurent.marechal@interaction-interim.com,Directeur de secteur,,,,,,,Manager
+[Contact],0032p00003HuwgOAAR,001D000000en9FCIAY,Héléne,MENARD,helene.menard@interaction-interim.com,Responsable Grands Comptes,,,,,,,Manager
+[Contact],0032p00003HuwopAAB,001D000000en9FCIAY,Carine,COZAR,carine.cozar@interaction-interim.com,Responsable de secteur,,,,,,,Manager
+[Contact],0032p00003HuwoqAAB,001D000000en9FCIAY,Sophie,DUFEE,sophie.dufee@interaction-interim.com,Responsable de Secteur,,,,,,,Manager
+[Contact],0032p00003HuworAAB,001D000000en9FCIAY,Jean-Philippe,SMONDACK,jean-philippe.smondack@interaction-interim.com,Directeur Régional,,,,,,,Manager
+[Contact],0032p00003HuwrZAAR,001D000000en9FCIAY,Pierre,BOREAU,pierre.boreau@interaction-interim.com,Responsable de secteur,,,,,,,Manager
+[Contact],0032p00003HuwxdAAB,001D000000en9FCIAY,Catherine,CHOLET,catherine.cholet@interaction-interim.com,Directrice Régionale,,,,,,,Manager
+[Contact],0032p00003Hux4eAAB,001D000000en9FCIAY,Nicolas,GALLARD,nicolas.gallard@interaction-interim.com,Responsable de secteur,,,,,,,Manager
+[Contact],0032p00003Huyt9AAB,00120000004znLZAAY,Valerie,CAMUS JACQUET,valerie.camus-jacquet@derichebourg.com,Directrice des opérations,,,,,,,Manager
+[Contact],0032p00003ISQVnAAP,00120000009OfcxAAC,Laurence,HEHN,l.hehn@hays.fr,Manager TT,,,,,,,Manager
+[Contact],0032p00003J63QEAAZ,00120000006HsvMAAS,Christophe,GONZALEZ,christophe.gonzalez@expectra.fr,Manager,,,,,,,Manager
+[Contact],0032p00003J6wmUAAR,001D000000hEsTkIAK,Emmanuel,ESTEBAN,e.esteban@actua.fr,,,,,,,,Manager
+[Contact],0032p00003J6xUzAAJ,0012p00002SEmABAA1,Laurent,VILLEMAGNE,,,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00003K7W0oAAF,00120000009OfcxAAC,Marie-Agnes,OLIVARD,m.olivard@hays.fr,Directeur du Shared Service Center Finance,,,,,,,Manager
+[Contact],0032p00003LWGX2AAP,0012000000SiY5lAAF,Jean-Guillaume,ROYER,communication@groupedlsi.com,Responsable marketing et communication,,,,,,,Manager
+[Contact],0032p00003LWOo8AAH,0012000000SiY5lAAF,Peggy,PRADIER,p.pradier@tbc.com,Directrice de District,,,,,,,Manager
+[Contact],0032p00003M20kEAAR,00120000004znLZAAY,Jean-Francois,VILLEMAGNE,,,,,,,,05 61 31 30 68,Manager
+[Contact],0032p00003Mr8YvAAJ,00120000004PW2FAAW,Olivier,DEBYTERE,olivier.debytere@kellyservices.fr,,,,,,,,Manager
+[Contact],0032p00003Mr8YwAAJ,00120000004PW2FAAW,Thierry,CHARRIF,thierry.charrif@kellyservices.fr,,,,,,,,Manager
+[Contact],0032p00003Mr8cJAAR,00120000004PW2FAAW,Sandrine,MARTOT,sandrine.martot@kellyservices.fr,CMO,,,,,,,Manager
+[Contact],0032p00003Mr8rCAAR,00120000004PW2FAAW,Sylvie,POINTREAU,sylvie.pointreau@kellyservices.fr,,,,,,,,Manager
+[Contact],0032p00003NnIbyAAF,0012p000043DxQ4AAK,HOUYAM,DA COSTA,houyam.dacosta@ampvisualtv.tv,Chargé de dvpmt RH et Responsable Recrutement,,,French,,,,Interlocuteur Sponsor
+[Contact],0032p00003P3NZsAAN,001D000000fiubWIAQ,Hugues,BERLY,h.berly@mistertemp-group.com,,,,,,,,Manager
+[Contact],0032p00003RYzClAAL,001D000000zbp2tIAA,Julie,GRIFFOULIERE,julie.griffouliere@gigroup.com,Directrice Marketing & Communication,,,,,,,Manager
+[Contact],0032p00003Ra7eBAAR,001D000000zbp2tIAA,Yann,NADEL,,DG GRAFTON (Executive Search de GI Group),,,,,,,Manager
+[Contact],0032p00003RbKR9AAN,0012p00002eAMY6AAO,Marins,Lesbre,m.lesbre@creajobservices.ch,,,,,,,22048448,Manager
+[Contact],0032p00003SBHptAAH,0012p00002VXxygAAD,Valéry,SAURAT,valery.saurat@colas.ch,Responsable Transports et Logistique,,,French,,,,Manager
+[Contact],0032p00003SUcuqAAD,00120000004PW21AAG,Victorien,VANEY,victorien.vaney@synergie.com,,,,,,,,Manager
+[Contact],0032p00003SUfNdAAL,00120000004PW21AAG,Delphine,LEIGNEL,delphine.leignel@synergie.fr,Directrice des solutions clients,,,French,,,,Manager
+[Contact],0032p00003UMT8qAAH,0012p00004BUYKSAA5,David,Barrett,david@theairlinepilotclub.com,,,,,,,,Manager
+[Contact],0032p00003VNIIQAA5,0012p00002tgQxIAAU,Chloe,HARDING,chloe.harding@txmrecruit.co.uk,Compliance Manager,,,English,Country code +44,,,Manager
+[Contact],0032p00003Vhk9xAAB,0012p00004CuKB4AAN,Robin,Gordon,robin.gordon@interiman-group.ch,CEO,,,,,,215526500,Manager
+[Contact],0032p00003Wpbv6AAB,0012p00002Y0ktGAAR,Matthew,BLANCO,blanco@oneplacement.com,,,,French,,,,Manager
+[Contact],0032p00003XfoYRAAZ,0012p00004EV6G8AAL,Sophie,PILLON,s.pillon@lis.lesaffre.com,Responsable Administration Ressources Humaines,,,French,,,02.33.68.67.95,Interlocuteur Sponsor
+[Contact],0032p00003YSV1eAAH,0012p00004ERSFKAA5,Erwan,DAVIGNON,erwan.davignon@newcold.com,DRH France,,,,,,661391283,Interlocuteur Sponsor
+[Contact],0032p00003aio69AAA,0012p00004DnNBuAAN,Catherine,MARIE,catherine.marie@greta-0726.fr,Directrice Adjointe,,,,,,06 70 00 25 25,Interlocuteur Sponsor
+[Contact],0032p00003b0gP0AAI,0012p00004CvGpWAAV,Sebastien,Ahumedo,sahumedo@sgfglobal.com,,,,,,,00 57 4204 1604 ext 1116,Manager
+[Contact],0032p00003e8lfJAAQ,00120000001bjAcAAI,Chetan,SWAMI,chetan.swami@valeo.com,,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00003eI7abAAC,0012p00002gVoTKAA0,Xavier,WECXSTEEN,xavier.wecxsteen@manpower.ch,,,,French,,,,Manager
+[Contact],0032p00003fc2S0AAI,0012p00002gVoTKAA0,Charline,Hoynant,charline.hoynant@manpower.ch,,,,French,,,,Manager
+[Contact],0032p00003hEk6SAAS,00120000001bjA7AAI,Jennifer,SEGUIN,jennifer.seguin@michelin.com,Acheteur,,,,,,33 6 13 94 87 19,Interlocuteur Sponsor
+[Contact],0032p00003hf3aBAAQ,001D000000hSceAIAS,Hélène,WEINBERG,helene.weinberg@labeyrie-fine-foods.com,Responsable Paie & SIRH France,,,,,,06 42 95 21 02,Interlocuteur Sponsor
+[Contact],0032p00003hhPijAAE,0012p00004JpfbCAAR,Laetitia,DENOUAL,ldenoual@assohh.org,,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00003huF8FAAU,00120000002jF4eAAE,Stéphanie,BERTHET,stephanie.berthet@heppner-group.com,Head of Purchasing,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00003jxvbqAAA,0012p00004QwgkXAAR,Patrick,Samsom,patrick.samsom@kellyocg.com,Central Service Delivery Manager - EMEA,,,English,,,,Manager
+[Contact],0032p00003k4HuVAAU,0012p00004PlZUJAA3,Raphael,Schmid,raphael.schmid@global-personal.ch,Directeur General,,,,,,,Manager
+[Contact],0032p00003kP2w3AAC,00120000004PW2OAAW,Cathleen,FANJAT,cathleen.fanjat@rgfstaffing.fr,Responsable Supports Fonctionnels,,,,,,,Manager
+[Contact],0032p00003kPxMbAAK,0012p00002vMUI9AAO,Jos,Milissen,jos.milissen@manpowergroup.be,Finance Director,,,,,,,Manager
+[Contact],0032p00003l2sLMAAY,00120000004PG05AAG,Yves,BERDAH,yves.berdah@randstad.fr,Digital Product Manager,,,,,,06 10 78 24 69,Manager
+[Contact],0032p00003l3hW5AAI,0012p00004Ns9S7AAJ,Christian,Schillig,schillig@personal-kolin.ch,Geschäftsführer/Inhaber,,,German,,,041 710 45 77,Manager
+[Contact],0032p00003lnQbKAAU,0012p00004NfH3eAAF,Nathalie,LEMESLE,,,,,,,,,Interlocuteur Sponsor
+[Contact],0032p00003lo5TIAAY,0012p00004EecGKAAZ,Renan,Alcântara,renan.alcantara@gigroup.com,Branch Coordinator,,,,,,55(19) 9 9344-9800,Manager
+[Contact],0032p00003lqeJXAAY,0012p000048GvDsAAK,Beverley,Bie,beverly.bie@programmed.com.au,Invoice Contact,,,,,,,Manager
+[Contact],0032p00003mBl8IAAS,0012p00004N08ZzAAJ,Brenna,Lalonde,brennalalonde@michaelpage.com,Legal & Contracts Associate Director,,,,,,001 416-306-3942,Manager
+[Contact],0032p00003mVkoAAAS,0012p00004N1CqaAAF,Arne,Wallstrom,arne.wallstrom@helenius.se,,,,,,,46 8625 22 19,Manager
+[Contact],0032p00003mWfoCAAS,0012p00004SN179AAD,Vincent,SEGALAS,vsegalas@roval.fr,DG,,,,,,640274169,Manager
+[Contact],0032p00003nQBKWAA4,0012p00004FdD9pAAF,Eric,PICOUX,ericpicoux@sofitex.lu,Directeur commercial,,,French,,,621371575,Manager
+[Contact],0032p00003o0do3AAA,0015700001wPk7IAAS,Tom,Vanoirbeek,tom.vanoirbeek@synergiejobs.be,Country Head,,,,,,,Manager
+[Contact],0032p00003oH2hhAAC,0012p00004CuKB4AAN,Anaïs,Borrajo,anais.borrajo@interiman-group.ch,Customer Success manager,,,French,,,41565254219,Manager
+[Contact],0032p00003p3HvpAAE,0012p00002VXxygAAD,Imane,Kandy,imane.kandy@colas.ch,Responsable achat – Puchasing Manager,,,French,,,,Manager
+[Contact],0032p00003p3JBbAAM,001570000298z6pAAA,Aude,Riet,aude.riet@transalliance.eu,Responsable Ressources Humaines,,,French,,,,Manager
+[Contact],0032p00003p3JhKAAU,0012p00002pg7P6AAI,Sandrine,Tainturier,sandrine.tainturier@adecco.ch,,,,French,,,,Manager
+[Contact],0032p00003p3KOxAAM,0012p00002pg7P6AAI,Emilie,Richard,emilie.richard@adecco.ch,Branch Manager,,,French,,,41 58 233 30 00,Manager
+[Contact],0035700001tpBwiAAE,001200000027VD7AAM,Vincent,FERRE,vincent.ferre@adecco-groupe.fr,,,,,,,02 78 46 82 01,Manager
+[Contact],0035700001uVBtpAAG,00120000004PW2OAAW,Cédric,PERBET,cedric.perbet@startpeople.fr,Directeur Commercial,,,,,,01 47 10 14 23,Manager
+[Contact],0035700001vh17dAAA,0015700001m1AvKAAU,Vincent,MUGNIER,vincent.mugnier@vinci-construction.fr,,,,French,,,,Manager
+[Contact],0035700001vj95QAAQ,00120000004PW2FAAW,Didier,MOLINS,didier.molins@kellyservices.fr,Directeur des opérations,,,,,,01 58 74 68 47,Manager
+[Contact],0035700001wbk5bAAA,00120000004znLZAAY,Leslie,AUCANT,leslie.aucant@derichebourg.com,Responsable Administrative et Comptable,,,,,01 42 85 17 76,01 42 85 56 98,Manager
+[Contact],0035700001wcMf4AAE,001200000027V6GAAU,Benoit,DERIGNY,benoit.derigny@manpower.fr,Président,,,,,,03 26 48 43 70,Manager
+[Contact],0035700001wcMg7AAE,00120000005GLmiAAG,Jean Marc,BRUN,jm.brun@adequatinterim.fr,PDG,,,French,,,,Manager
+[Contact],0035700001wcMjLAAU,00120000004PW2BAAW,Thierry,GEFFROY,thierry.geffroy@samsic.fr,PDG / Président,,,French,,,,Manager
+[Contact],0035700001wcMokAAE,00120000004PW20AAG,Nathalie,JAOUI,nathalie.jaoui@groupe-crit.com,Présidente,,,French,,,,Manager
+[Contact],0035700001wcNtEAAU,00120000004PG05AAG,Laurent,Morestain,laurent.morestain@randstad.fr,,,,French,,,,Manager
+[Contact],0035700001xQdUUAA0,0012000000SiY5lAAF,Anne,REBOISSON,anne.reboisson@groupedlsi.com,Responsable d'agence,,,,,,06 80 88 13 29,Manager
+[Contact],0035700001y7ol3AAA,00120000001gusOAAQ,Arnaud,DE HEER,arnaud.de_heer@novartis.com,interlocuteur achats,,,,,,155477710,Manager
+[Contact],0035700001ycNucAAE,0012000000L7TIXAA3,PASCAL-SUISSE,Martine,mpascalsuisse@menway.com,Directrice regionale Nord Ouest,,,,,,06 77 06 95 72,Manager
+[Contact],0035700001z1q0TAAQ,001D0000018cWjpIAE,Christophe,BLAQUIERES,c.blaquieres@fayattp.fayat.com,Responsable Administratif et Financier,,,,,,05 57 55 29 90,Manager
+[Contact],0035700001z6YsQAAU,0015700001m1lxiAAA,Christophe,Thumarin,christophe.thumarin@ocea-smart-building.fr,DAF,,,,,,01 55 50 12 01,Manager
+[Contact],0035700001z6YtOAAU,0015700001m1lxiAAA,Philippe,VONTRAT,philippe.vontrat@ocea-smart-building.fr,Directeur Régional Est,,,French,,,,Manager
+[Contact],00357000021mYvlAAE,001D000000jdDcwIAE,Didier,DEMUYTER,didier.demuyter@arhm.fr,,,,,,,04 37 90 10 16,Manager
+[Contact],00357000021mqbDAAQ,001D0000011j583IAA,Violaine,BOUYER PICON,violaine.bouyer-picon@ing.fr,Procurement Officer,,,,,,01 57 22 57 95,Manager
+[Contact],00357000021n9WtAAI,0015700001s04PCAAY,Yannick,BERTOMEU,logiciel@valorisdev.fr,Juriste,,,,,,05.62.79.86.08,Manager
+[Contact],00357000021pNWiAAM,0012000000AEfdHAAT,Carole,GRADEL,carole.gradel@atoll.fr,Responsable Administrative et Financière,,,,,,04 76 12 18 83,Manager
+[Contact],00357000023bZ7zAAE,00120000005GoTaAAK,Véronique,BERTHELIN,vberthelin@mdlz.com,"Business Partner, HR MEU, Information Systems",,,,,,183113475,Manager
+[Contact],003570000251muMAAQ,0015700001wPk0fAAC,Jean Baptiste,Demonte,jb@gojob.com,,,,,,,06 26 21 60 32,Manager
+[Contact],003570000254RKJAA2,00120000004QrVOAA0,Pascal,DESOUTTER,pascal.desoutter@brefservice.com,Président,,,,,,01 40 40 40 10,Manager
+[Contact],003570000254zIMAAY,00120000004Qwm8AAC,Christine,CAPRON,cleon@reseaualliance.fr,Responsable de secteur,,,,,,02 32 09 00 69,Manager
+[Contact],00357000026JWiDAAW,0012p00003ydKtlAAE,Jean-Claude,CHAUSSARD,jean-claude.chaussard@jacquetbrossard.com,Coordinateur Amélioration Continue BU JB,,,,,,04.73.33.07.07,Interlocuteur Sponsor
+[Contact],00357000026Jrg9AAC,0015700001wPzs9AAC,Sébastien,POULLEAU,s.poulleau@fci.fayat.com,,,,,,,,Manager
+[Contact],00357000026KqlJAAS,00120000008NZVBAA4,Stéphan,GARROS,s.garros@proman-interim.com,Directeur des Opérations Sud-Ouest,,,,,,04 92 73 46 23,Manager
+[Contact],00357000028TEP1AAO,001200000027VD7AAM,Vincent,Ferre,vincent.ferre@adeccogroup.com,Chef de Projets,,,,,,06 70 75 90 16,Manager
+[Contact],00357000029tOvIAAU,00120000005WmXPAA0,Sandrine,ODOUARD,stlaurent.selpro@ergalis.fr,Directrice Secteur,,,,,,,Manager
+[Contact],0035700002AqLY0AAN,00120000008NZVBAA4,Bruno,NIOLLET,b.niollet@proman-interim.com,Responsable Grands Comptes / Directeur operationnel,,,,,,,Manager
+[Contact],0035700002AtYXHAA3,001D000000nbrghIAA,Julien,ARTIGUE,j.artigue@sovitrat.fr,Directeur des opérations,,,French,,,,Manager
+[Contact],0035700002C17aaAAB,001570000244fVfAAI,Carlos,GONCALVES,goncalves@ppg.com,,,,,,,344776100,Manager
+[Contact],0035700002CIC0JAAX,00157000024XXpxAAG,ALVES,Ludovic,lalves@senagral.com,DRH,,,,,,03 86 97 40 40,Manager
+[Contact],0035700002DRvdCAAT,00120000005WmXPAA0,Fréderic,NOYER,f.noyer@ergalis.fr,Président,,,,,,03 20 66 17 63,Manager
+[Contact],0035700002DRxAqAAL,00120000009OfcxAAC,Oualid,HATHROUBI,oualid.hathroubi@hays.fr,Directeur,,,,,,,Manager
+[Contact],0035700002DRxlmAAD,00120000008iJ42AAE,Oualid,QUERFANI,o.querfani@ras-interim.fr,Secrétaire Général,,,,,,,Manager
+[Contact],0035700002DRxvcAAD,00120000004PW2BAAW,Pascal,PECCATTE,pascal.peccatte@samsic.fr,Directeur Général,,,,,,,Manager
+[Contact],0035700002DRz1YAAT,00120000008NZVBAA4,Laurent,ROBERT,laurent.robert@proman-interim.com,Directeur général adjoint,,,,,,06 86 57 13 17,Manager
+[Contact],0035700002DswuvAAB,001570000269FIgAAM,Philippe,CAVROT,p.cavrot@groupe-seche.com,DSI,,,,,,02 43 59 37 72,Manager
+[Contact],0035700002FBvoQAAT,00157000023CJmZAAW,Isabelle,MAUJEAN,isabelle.maujean@aftral.com,DRH,,,,,,01 42 12 52 23,Manager
+[Contact],0035700002FCNbCAAX,00157000026Z2JKAA0,Matt,Crawcour,matt.crawcour@kellyocg.com,Vice President Sales EMEA,,,English,,,2030401900,Manager
+[Contact],0035700002FE9t9AAD,001D000000en9FCIAY,Jonas,PLUVINAGE,jonas.pluvinage@interaction-interim.com,Directeur opérationnel,,,,,,,Manager
+[Contact],0035700002FEGRkAAP,00120000009OfcxAAC,Mickael,AUGEREAU,mickael.augereau@hays.com,DSI Hays France & Luxembourg,,,,,,,Manager
+[Contact],0035700002FEPVAAA5,00157000026ajLYAAY,Sylvain,BRILLAND,sb@mc3i.fr,Gérant,,,,,,01 55 48 03 00,Manager
+[Contact],0035700002GkMckAAF,0012000000L7TIXAA3,Christine,ROBERT,crobert@menway.com,Responsable Agence Metz,,,,,,03 87 62 95 13,Manager
+[Contact],0035700002HeNSoAAN,00120000004SPKCAA4,Stève,CHEILAN,scheilan@onet.fr,DSI,,,,,#ERROR!,04 91 23 22 21,Manager
+[Contact],0035700002I5vHlAAJ,00120000008iJ42AAE,Léonie,BOULART,leonie.boulart@ras-interim.fr,ADV,,,,,,06 66 36 11 94,Manager
+[Contact],0035700002I5vIKAAZ,0012000000L7TIXAA3,Philippe,HENRY,phenry@menway.com,Directeur National Branche ETT,,,,,,,Manager
+[Contact],0035700002I5vKkAAJ,00120000008iJ42AAE,Nicolas,JACQUEMET,nicolas.jacquemet@ras-interim.fr,Directeur Commercial,,,,,,04 81 65 57 84,Manager
+[Contact],0035700002I7GUVAA3,001D000001JzO22IAF,Annick,BOURRAT,annick.bourrat@sva-jeanroze.fr,RRH,,,,,,02 99 47 03 81,Manager
+[Contact],0035700002I7rqdAAB,0012000000L7TIXAA3,Delphine,GALIZZI,lacotesaintandre.mi@menway.com,Responsable d'agence,,,,,,,Manager
+[Contact],0035700002JPOvkAAH,0012p00002NsFw8AAF,Vincent,GUINARD,vguinard@deret.fr,Responsable Achats,,06 31 09 43 13,,,02 38 65 01 91,02 38 65 01 91,Manager
+[Contact],0035700002Jth96AAB,001D000000ndRmuIAE,Sophie,GAMBINI,sophie.gambini@best-interim.fr,Responsable développement commercial,,,,,,,Manager
+[Contact],0035700002LfCUWAA3,0015700001zX4KtAAK,Charlene,MALGAT,charlene.malgat@vinci-construction.fr,,,,,,,mal,Manager
+[Contact],0035700002NVkriAAD,0015700002EV7F5AAL,Pascal,BIERLING,p.bierling@groupeuropa.fr,DG Groupe Europa / signataire back up,,,,,,01 42 89 09 89,Manager
+[Contact],0035700002ODkqkAAD,001D000001GzQgsIAF,Fabrice,COUPRIE,support@impro-solutions.fr,DSI,,,,,,02 44 76 03 39,Manager
+[Contact],0035700002ODo1HAAT,0015700002GUoKeAAL,Pierre,MARIN,pierre.marin@iziwork.com,Directeur Commercial,,,,,,06 32 02 14 31,Manager
+[Contact],0035700002Ogt2VAAR,00120000004PG05AAG,Nicolas,BAYSSETTE,nicolas.bayssette@randstad.fr,Responsable Solutions Externes,,,French,,,33 (0)5 56 00 51 69,Manager
+[Contact],0035700002Otsb0AAB,00120000001jAhbAAE,Géraldine,OLIVIER,geraldine.olivier@fnacdarty.com,Directrice des achats indirects et de l'amélioration de la performance,,,,,,,Interlocuteur Sponsor
+[Contact],0035700002PgyKTAAZ,00120000004xpbnAAA,Benoit,CLERC,benoit.clerc@aprr.fr,Acheteur prestations intellectuelles,,,,,,03 80 77 67 78,Interlocuteur Sponsor
+[Contact],003D000000iJbj7IAC,0012000000BgGJaAAN,Aurélie,PADOY,aurelie.padoyderobertis@supplay.fr,Directrice Régionale,,,,,,03 23 59 22 23,Manager
+[Contact],003D000000iLDYuIAO,001D000000en9FCIAY,Loic,GALLERAND,loic.gallerand@interaction-interim.com,PDG,,,,,,,Manager
+[Contact],003D000000iLMsYIAW,001200000027V6GAAU,Xavier,EPPE,xavier.eppe@manpower.fr,Chef de projet,,,,,,01 57 66 16 57,Manager
+[Contact],003D000000kAf4FIAS,00120000004PW2BAAW,Frank,LALOS,f.lalos@samsic-emploi.fr,Directeur du développement commercial,,,,,,02 99 86 93 02,Manager
+[Contact],003D000000kdwtDIAQ,00120000004PW2VAAW,Véronique,Benzaïm,veronique.benzaim@groupeidees.fr,DAF,,,,,,02 23 40 17 55,Manager
+[Contact],003D000000pcBQ1IAM,00120000001wzBaAAI,Virginie,KRETZ,virginie.kretz@fr.issworld.com,,,,,,,03 83 97 40 11,Manager
+[Contact],003D000000pexrxIAA,00120000001cvkdAAA,Jivane,KARMALY,j.karmaly@pixid.fr,,,,,,,,Manager
+[Contact],003D000000qEKsvIAG,0012000000YxPLvAAN,François,Marcourt,,Membre du Directoire,,,,,,,Manager
+[Contact],003D000000qGk16IAC,001D000000mgAk3IAE,Yves,RUELLAN,yruellan@wibemploi.com,PDG / Gérant de Dév'RH et Wib Emploi,,,,,,786250441,Manager
+[Contact],003D000000rwDfhIAE,001D000000ndRmuIAE,Sébastien,DEVEZEAUD,sebastien.devezeaud@isadev.com,Directeur Opérationnel France,,,,,,04 92 10 97 97,Manager
+[Contact],003D000000rx7KXIAY,00120000006vwMXAAY,Christopher,AUBRY,caubry@supinterim.fr,,,,,,329311717,06 74 78 96 09,Manager
+[Contact],003D000000sabt2IAA,001D000000lVJQuIAO,Nicolas,FLEURIOT,nicolas.fleuriot@cosea.com,DIRECTEUR DE CHANTIERS,,,,,,,Manager
+[Contact],003D000000sabu0IAA,001D000000lVJQuIAO,Jean-François,PERROD,jean-francois.perrod@cosea.com,DIRECTEUR DE CHANTIERS,,,,,,,Manager
+[Contact],003D000000sbG1IIAU,001D000000nbrghIAA,Franck,THENOUX,f.thenoux@sovitrat.fr,Responsable agence,,,,,,01 40 34 97 97,Manager
+[Contact],003D000000tjkJBIAY,001D000000mew00IAA,Corinne,BARREAU,corinne.barreau@arcelormittal.com,Head,,,French,,,03 44 28 44 00,Manager
+[Contact],003D000000tnEX5IAM,00120000004PW2OAAW,Olivier,GUIRAUD,olivier.guiraud@usgpeople.fr,Directeur Général,,,,,,,Manager
+[Contact],003D000000udAjoIAE,001D000000lVJQuIAO,Stéphane,BARBIERI,stephane.barbieri@cosea.com,DIRECTEUR DE CHANTIERS,,,French,,,,Manager
+[Contact],003D000000vrwOoIAI,001D000000oYSkcIAG,Bruno,Burdy,bruno.burdy@fr.nestle.com,,,,,,,,Manager
+[Contact],003D000000wAXZ1IAO,001D000000oYSvvIAG,Solene,SABA,solene.saba@fr.nestle.com,Assistante RH,,,,,,02 31 29 46 13,Manager
+[Contact],003D000000wEIiBIAW,001D000000nbrghIAA,Thierry,TRUCHOT,t.truchot@sovitrat.fr,Directeur d'agence,,,,,,01 30 13 12 61,Manager
+[Contact],003D000000wuHv5IAE,00120000001bJE7AAM,Vanessa,THIRION,vanessa.thirion@vinci-construction-terrassement.com,,,,,,,,Manager
+[Contact],003D000000ybYQ5IAM,0012000000L7TIXAA3,Pascale,MARCHETTI,pmarchetti@enthalpia.fr,Pascale MARCHETTI,,,,,,,Manager
+[Contact],003D0000013Ax5wIAC,00120000001wylQAAQ,Yves,CHANIER,yves.chanier@groupeherve.com,,,,,,,02 47 68 36 00,Manager
+[Contact],003D0000014fTKuIAM,001D000000u0lZSIAY,Pascal,MURAT,pascal.murat@cmcic.com,Responsable RH,,,,,,01 53 48 61 44,Manager
+[Contact],003D0000014fvDiIAI,001D000000ndLhAIAU,Noëlle,VIROT,noelle.virot@rinterim.fr,Responsable commerciale Grands Comptes,,,,,,02 99 14 07 07,Manager
+[Contact],003D0000018OPvLIAW,001D000000qd7tqIAA,Pierre,Bergon,p.bergon@fayat.com,DSI du groupe FAYAT,,,,,,07 88 18 51 85,Manager
+[Contact],003D000001B0Ih8IAF,00120000004PFrvAAG,Nathalie,MANIEL,nmaniel@groupeleader.com,Directeur de secteur,,,,,,,Manager
+[Contact],003D000001B1gfVIAR,001200000027VD7AAM,Pascal,BIDON,pascal.bidon@adecco.fr,,,,,,,06 70 06 06 89,Manager
+[Contact],003D000001GCwBtIAL,001D000000ndRmuIAE,Jean-Luc,SPADACCINI,jeanluc.spadaccini@isadev.com,DAF adjoint,,,,,,04 92 10 97 98,Manager
+[Contact],003D000001GEwzPIAT,001D000001A2LluIAF,Martine,ROBIN,m.robin@bouchers-services.fr,Président,,,,,,03.24.26.80.55,Manager
+[Contact],003D000001JrJswIAF,001D000000ndRmuIAE,Marina,LEBLANC,marina.leblanc@isa-interim.com,Responsable d'agence,,,,,,04 94 02 39 01,Manager
+[Contact],003D000001JrK1fIAF,001D000000ndRmuIAE,Christian,GASQUET,christian.gasquet@best-interim.fr,Responsable d'agence,,,,,,04 94 39 54 20,Manager
+[Contact],003D000001JrKArIAN,001D000000ndRmuIAE,Rachel,ZITOUNE,rachel.zitoune@best-interim.fr,Responsable d’agence,,,,,,05 62 05 55 55,Manager
+[Contact],003D000001JruYuIAJ,001D000000nbrghIAA,Sophie,RABBE,s.rabbe@sovitrat.fr,Directrice d'agence,,,,,,05 57 83 64 25,Manager
+[Contact],003D000001JtcZuIAJ,00120000001bjAcAAI,Joel,weber,joel.weber@valeo.com,Achats TT,,,,,,01 49 45 34 90,Manager
+[Contact],003D000001KeyH8IAJ,0012000000JH7XFAA1,Christophe,SATIN,csatin@id-logistics.com,Directeur Général,,,,,,,Manager
+[Contact],003D000001LiE6EIAV,00120000004PW2OAAW,Benjamin,GRILLET,benjamin.grillet@usgpeople.fr,Responsable Equipes support,,,,,,,Manager
+[Contact],003D000001MpEE4IAN,001D000001GzQgsIAF,Emmanuelle,MILLE,lemans@abalone-interim.com,Responsable d'agence,,,French,,,02 43 24 62 29,Manager
+[Contact],003D000001ObigLIAR,001D000001GzQgsIAF,François-Xavier,MOUTEL,moutelfx@abalone-interim.fr,,,,French,,,02 43 24 62 29,Manager
+[Contact],003D000001QKxq7IAD,00120000009OfcxAAC,Pierre,DE PASTORS,p.depastors@hays.fr,Directeur Middle Office,,,,,,01 53 04 94 80,Manager
+[Contact],003D000001QxKVEIA3,001D000001JzODSIA3,Valerie,BEVALOT,valerie.bevalot@sogetrel.fr,DRH,,,,,,01 41 17 42 52,Manager
+[Contact],003D000001Qy9CmIAJ,00120000003AGetAAG,Bruno,BOULOGNE,bruno.boulogne@mecachromegroup.com,,,,,,,02 47 30 68 10,Manager
+[Contact],003D000001QyFjSIAV,001D000001L2VrJIAV,Patrick,LECOQ,plecoq@laita.fr,RRH,,,,,,02 96 85 66 00,Manager
+[Contact],003D000001QyoZOIAZ,00120000001bYjUAAU,Bernard,RIEUSSET,bernard.rieusset@cofelyineo-gdfsuez.com,DSI,,,,,,,Manager
+[Contact],003D000001S0CyKIAV,001D0000017tirGIAQ,Emanuele,Camera,camerae@amazon.com,Achat TT Europe,,,,,,,Manager
+[Contact],003D000001SRnN2IAL,00120000001rdpHAAQ,Dominique,Bellos,hutchinson.marketing@paris.hutchinson.fr,Directeur Ressources Humaines,,,,,,01 40 74 83 00,Manager
+[Contact],003D000001SRnTxIAL,00120000001rdpHAAQ,Claire,Villoteau,hutchinson.marketing@paris.hutchinson.fr,RH TT,,,,,,01 40 74 83 36 LD,Manager
+[Contact],003D000001SRnasIAD,00120000001rdpHAAQ,Serge,Perret,hutchinson.marketing@paris.hutchinson.fr,Directeur des Achats,,,,,,01 40 74 83 00,Manager
+[Contact],003D000001STZuqIAH,001D000001JzOJYIA3,Jerome,Schick-Dormart,jschick@staci.com,Directeur Achats,,,,,,01 34 40 29 00,Manager
+[Contact],003D000001TczpYIAR,001D000001JzEmUIAV,Sylvie,SIDOU,agenceprofil@orange.fr,,,,,,,03.86.83.29.60,Manager
+[Contact],003D000001UC21LIAT,001D000000mAuUeIAK,Virginie,FEYBESSE,virginie.feybesse@fr.nestle.com,Acheteur Opérationnel / Operationnal Buyer,,,,,,01 60 53 54 59,Manager
+[Contact],003D000001Ut2voIAB,001D000000rY6xAIAS,Virginie,DUTHIL,virginie.duthil@socgen.com,Resp Dev RH,,,,,,,Manager
+[Contact],003D000001UvHiyIAF,001D000000m98hUIAQ,Pascal,PUSSIOT,pascal.pussiot@valtourainehabitat.fr,Directeur des Systèmes d'Information,,,,,,02 47 87 14 70,Manager
+[Contact],003D000001X3ucyIAB,001D000001A0xHjIAJ,Célia,DIGIULIO,celia.digiulio@siege.spac.fr,Acheteur,,,,,,05 57 30 03 09,Manager
+[Contact],003D000001Y4JQlIAN,001200000027V6GAAU,Damien,BOUR,damien.bour@manpower.fr,Directeur Service Clients,,,,,,,Manager
+[Contact],003D000001bELMYIA4,001D000001Uif4uIAB,Delphine,DEROEUX,dderoeux@plasticomnium.com,Corporate Buyer,,,,,,04 74 40 62 54 LD,Manager
+[Contact],003D000001cOv0qIAC,00120000004eTT3AAM,Nadia,TUSAR,tusar.nadia@recticel.com,DRH,,,,,,01 45 19 22 20,Manager
+[Contact],003D000001cPbaZIAS,00120000009OfcxAAC,Catherine,BARRE,c.barre@hays.fr,Responsable de l'administration et de la formation,,,French,,,,Manager
+[Contact],003D000001cQOgjIAG,00120000001wzBaAAI,Marc,DE OLIVEIRA,marc.de_oliveira@fr.issworld.com,Regional Procurement Director Americas (USA & LATAM Countries),,,,,,144044416,Manager
+[Contact],003D000001dTo04IAC,001200000027VXQAA2,Marie-Claude,Numa,marieclaude.numa@gdfsuez.com,Achats Prestations Intellectuelles,,,,,,01 56 65 70 84,Manager
+[Contact],003D000001g2IYcIAM,001D000001Zzu0DIAR,Philippe,BAZIN,groupe50etplus@orange-business.fr,Directeur,,,French,,,04 37 28 80 34,Manager
+[Contact],003D000001jldP9IAI,001D000001eOA8qIAG,Olivier,DEZE,olivier.deze@williamsinclair.com,Dirigeant associé,,,,,,140291931,Manager
+[Contact],003D000001oDU7vIAG,001D000000zbp2tIAA,Delphine,BERTRAN,delphine.bertran@gigroup.com,"Responsable Administrative (factures,paies, contrôle de gestion)",,,,,,03 59 36 00 00,Manager
+[Contact],003D000001pDCZ6IAO,001D000001GzYNuIAN,JESSICA,DOMONT,jdomont@atac.fr,RRH,,,,,,03 22 67 59 89,Manager
+[Contact],003D000001qPQ50IAG,00120000001cvkdAAA,Joelle,JAKUBOWICZ,j.jakubowicz@pixid.fr,,,,,,141162593,,Manager
+[Contact],003D000001r5FQIIA2,00120000004b8MnAAI,Sonia,DOUCENE,sonia.doucene@eurostrategie.fr,Responsable Formation et Développement des Talents,,,,,01 40 75 08 19,01 40 75 08 00,Manager
+[Contact],003D000001rntivIAA,0012000000JFqRJAA1,Chris,MEDARD,chrismedard@michaelpage.fr,Hiérarchique de S BELAHOUA,,,,,,01 46 67 65 41,Manager
+[Contact],003D000001smfGNIAY,001D000000ndLhAIAU,Céline,BOURSIER,celine.boursier@regionalinterim.fr,Responsable Administratif et Financier,,,,,,02 99 14 60 10,Manager
+[Contact],003D000001snJjOIAU,00120000006vwMXAAY,Yannick,VALSESIA,yvalsesia@supinterim.fr,Président,,,,,,03 29 31 17 17,Manager
+[Contact],003SZ000000motpYAA,001SZ000000uicjYAA,Rainer,Rossmanith,rainer.rossmanith@4-b.ch,,,,German,,,,Manager
+[Contact],003SZ000000mqAtYAI,001SZ000000uijBYAQ,Janine,Waldis,janine.waldis@hug-familie.ch,,,,German,,,,Manager
+[Contact],003SZ000000mqpGYAQ,001SZ000000ulCZYAY,Julie,Lionello,julie.lionello@givaudan.com,,,,French,,,,Manager
+[Contact],003SZ000000mub2YAA,0012p00002gTjYOAA0,Emilie,Devigne,emilie.devigne@sigma.tech,,,,French,,,,Manager
+[Contact],003SZ000000mvoqYAA,0012p00004QwgkXAAR,Jack,Lovatt,jack.lovatt@kellyocg.com,,,,English,,,,Manager
+[Contact],003SZ000000mwmUYAQ,001SZ000000umgMYAQ,Daniel,Bucher,daniel.bucher@stellentreff.ch,,,,German,,,,Manager
+[Contact],003SZ000000mwwAYAQ,0012p00002vMUI9AAO,Kurt,Van Praet,kurt.vanpraet@manpowergroup.be,IT Service Delivery Manager,,,French,,,,Manager
+[Contact],003SZ000000mxImYAI,0012p00002vMUI9AAO,Guy,Coget,guy.coget@manpowergroup.be,,,,French,,,,Manager
+[Contact],003SZ000000myEnYAI,001SZ000000uijBYAQ,Vanessa,Schwarz,vanessa.schwarz@hug-familie.ch,,,,German,,,,Manager
+[Contact],003SZ000000mzlxYAA,001SZ000000umgMYAQ,Patrick,Fiore,patrick.fiore@stellentreff.ch,Verkaufskoordinator FA,,,German,,,041 922 24 24,Manager
+[Contact],003SZ000000n0RtYAI,0012p00004QwgkXAAR,Sasha,Ralph,sasha.ralph@kellyocg.com,,,,English,,,,Manager
+[Contact],003SZ000000n1cTYAQ,001SZ000000ut55YAA,Florent,PERROCHEAU,florent.perrocheau@galderma.com,,,,French,,,,Manager
+[Contact],003SZ000000n2YXYAY,0012p00004OZsBjAAL,Thierry,Cardoso,thierry.cardoso@newwork-hr.ch,,,,French,,,,Manager
+[Contact],003SZ000001uKNhYAM,001SZ000001wmwaYAA,Séverine,LECAMPION,severine.lecampion@hamelinbrands.com,Coordinatrice RH et Contrôle de gestion,,,,,,02 14 40 63 83,Interlocuteur Sponsor
+[Contact],003SZ0000026PYrYAM,0015700001p2aNkAAI,Sophat,BUN,sophat.bun@transdev.com,Responsable Achat IDF,,,,,,33 1 74 34 20 00,Interlocuteur Sponsor
+[Contact],003SZ000002NQf1YAG,001SZ000002PnVsYAK,Christian,Butty,christian.butty@bm-emploi.ch,COO,,,French,,,0041 24 424 24 40,Manager
+[Contact],003SZ000002xzERYAY,0012p00004THAraAAH,Anne,DELMAS,anne.delmas@sncf.fr,DRH ADJOINTE - RESPONSABLE DU POLE RESSOURCES HUMAINES,,,,,,,Interlocuteur Sponsor
+[Contact],003SZ000003mmlNYAQ,001SZ000006pfldYAA,Clemence,MACEDO,clemence.macedo@cera.caisse-epargne.fr,Chargée emploi carrières,,,,,,04.72.60.19.44,Interlocuteur Sponsor
+[Contact],003SZ000004XOXXYA4,00120000004Qwm8AAC,Virginie,BEKAERT,virginie.bekaert@reseaualliance.fr,DG,,612816871,,,,02 32 09 00 69,Manager
+[Contact],003SZ000004aCoLYAU,0012p00004I5NYDAA3,Pete,Taylor,pete.taylor@gigroup.com,Managing Director GI Group Staffing UK & Ireland,,,English,,,,Manager
+[Contact],003SZ000004aDxJYAU,001SZ000004bTbpYAE,Remi,FOURNERAUT,remi.fourneraut@hutchinson.com,,,,,,,676314751,Interlocuteur Sponsor
+[Contact],003SZ000004c8AMYAY,001SZ000004dLyMYAU,Anna,Rydell,anna.rydell@manpower.se,Director OnSite Solutions Europe,,,,,,46703789383,Manager
+[Contact],003SZ0000056cnnYAA,0012p00004MzTMSAA3,Anthony,Mungiovi,amungiov@aerotek.com,Chef de division/Practice Leader,,,English,,,514.798.7154,Manager
+[Contact],003SZ000005VUjhYAG,0012p00004PZslCAAT,Marc,Passamard,marc.passamard@alten.ch,Business Manager,,,,,,41794601826,Manager
+[Contact],003SZ000005Y0AnYAK,0012p00004RIre4AAD,Greg,Storey,gstorey@astutetechnical.co.uk,Team Leader - EPC,,,English,,2392221600,2392222966,Manager
+[Contact],003SZ000006ZmERYA0,001SZ000006Tvp7YAC,Mike,Wolfram,m.wolfram@jobnowag.ch,Directeur Général,,,,,,,Manager
+[Contact],003SZ000006aNdlYAE,001SZ000006Tvp7YAC,Francesco,Santa Barbara,f.santabarbara@jobnowag.ch,Directeur régional,,,,,,,Manager
+[Contact],003SZ000006aiyLYAQ,001SZ000006UF1kYAG,Marco,Steiner,m.steiner@steinerjobs.ch,,,,,,,,Manager
+[Contact],003SZ000006ajuPYAQ,001SZ000006UF1kYAG,Aline,Steiner,a.steiner@steinerjobs.ch,,,,German,,,,Manager
+[Contact],003SZ000007AV9sYAG,001SZ0000073GvRYAU,Michael,Krafek,m.krafek@synergie.de,Vertriebsleiter/Prokurist,,,German,,,,Manager
+[Contact],003SZ000007AoMAYA0,001SZ0000073EIYYA2,Krzysztof,Czajkowski,k.czajkowski@interkadra.pl,Sales Director,,,English,,,,Manager
+[Contact],003SZ000007B0AQYA0,001SZ00000737fHYAQ,Jakub,Sedláček,sedlacek@syn.cz,Division manager,,,English,,,,Manager
+[Contact],003SZ000007B1chYAC,001SZ0000073GvRYAU,David,Beier,david.beier@runtime.de,Managing Direcor,,,German,,,,Manager
+[Contact],003SZ000007BDtxYAG,001SZ0000073GvRYAU,Bastian,Woeste,bastian.woeste@runtime.de,Managing Direcor,,,German,,,,Manager
+[Contact],003SZ000007BEQEYA4,001SZ00000724BeYAI,Ronald,Bednar,bednar.ronald@synergiejobs.at,Sales Manager,,,German,,,43274226839,Manager
+[Contact],003SZ000007c44KYAQ,001SZ000007M1nrYAC,Mike,Fitzpatrick,mikefitzpatrick@ism.ie,General Manager,,,English,,087 328 6666,35318912330,Manager
+[Contact],003SZ000007k6j9YAA,001SZ000007UZFdYAO,James,Fitzpatrick,james@boden-group.co.uk,CEO,,,English,,,0121 702 1464,Manager
+[Contact],003SZ0000080lX8YAI,0012p00002mZuSbAAK,Martin,Rutschi,m.rutschi@team.jobs,Verantwortlicher Strategische Partnerschaften,,,,,,41 76 425 24 51,Manager
+[Contact],003SZ0000081LKPYA2,0012p00002mZuSbAAK,Joel,Portmann,j.portmann@team.jobs,Processus digitaux,,,German,,,41 31 561 61 41,Manager
+[Contact],003SZ00000975YwYAI,001SZ000008utYTYAY,Jean-Baptiste,Nisset,jean-baptiste@locanor.com,Responsable des opérations,,,,,,,Interlocuteur Sponsor
+[Contact],003SZ00000BNPIjYAP,0012p00002vMUI9AAO,Olivier,Plaitin,olivier.plaitin@manpowergroup.be,IT Director at Manpower Group Belgium & Luxembourg,,,French,,,,Manager
+[Contact],003SZ00000BOwm9YAD,0012p00004Rm52FAAR,Danielle,Khan,danielle.khan@tapfin.com,"Director, Engagement EMEA",,,English,,,,Manager
+[Contact],003SZ00000Bek5uYAB,001SZ00000Bdv3TYAR,Lukas,Limacher,lukas.limacher@coopers.ch,Operation manager,,,,,,,Manager
+[Contact],003SZ00000BekXHYAZ,001SZ00000Bdv3TYAR,Benjamin,Wenk,benjamin.wenk@coopers.ch,Teamleader Process & IT,,,,,,,Manager
+[Contact],003SZ00000BfGTvYAN,001SZ00000BeWSkYAN,Nicolai,Herzog,nicolai.herzog@acces-personnel.ch,Managing Director,,,French,,,41 22 310 50 40,Manager
+[Contact],003SZ00000BjICyYAN,001SZ00000BjJMjYAN,Luca,Severgnini,luca.severgnini@job-contact.ch,,,,English,,,,Manager
+[Contact],003SZ00000BksyQYAR,001SZ000007Tdi3YAC,David,Bryant,david.bryant@iziwork.com,Commercial Director @ Iziwork,,,English,,,,Manager
+[Contact],003SZ00000E4QqKYAV,001SZ00000E5zQzYAJ,Enric,Oliveras,eoliveras@imancorp.es,Gestor de aplicaciones,,,Spanish,,,34 937 809 577,Manager
+[Contact],003SZ00000E4YshYAF,001SZ00000E5zQzYAJ,Miriam,Albacete,malbacete@imancorp.es,"Responsable de Selección, Formación y Desarrollo",,,Spanish,,,,Manager
+[Contact],003SZ00000GW8ajYAD,00157000028cJQdAAM,Lucy,Anandappa,lucy.anandappa@robertwalters.com,Sr Product Owner,,,English,,,,Manager
+[Contact],003SZ00000GlJitYAF,001SZ00000DfxO4YAJ,Erik,Bergqvist,erik.bergqvist@realtest.se,Affärsutvecklare,,,English,,,021-12 96 01,Manager
+[Contact],003SZ00000J5yQQYAZ,00157000027gi9EAAQ,Ria,Newham,ria.newham@impellam.com,Bid Director,,,,,,,Manager
+[Contact],003SZ00000JjPNWYA3,001SZ00000JPfZnYAL,Martin,Westerhof,martin.westerhof@circle8.nl,,,,,,,,Manager
+[Contact],003SZ00000KBpjdYAD,00120000004PW21AAG,Benoit,PRADIER,benoit.pradier@synergie.fr,,,,,,01 55 60 30 67,,Manager
+[Contact],003SZ00000KMuUhYAL,0012p00002IRGBaAAP,Celinne,BURBAN,celinne.burban@taa-services.com,,,,,,,,Manager
+[Contact],003SZ00000Kr0jEYAR,001SZ00000KWqxiYAD,Alexander,Beauchamp,alexander.beauchamp@swedtrac.eu,COO,,,English,,,,Manager
+[Contact],003SZ00000L6E7RYAV,001SZ00000KmsqdYAB,Melissa,Quanten,melissa.quanten@solfina.eu,,,,,,,0498/97.16.31,Manager
+[Contact],003SZ00000Lh8RIYAZ,001SZ00000KFOPyYAP,Oscar,Silversparf,oscar.silversparf@sigma.se,CEO,,,English,,,46702092226,Manager
+[Contact],003SZ00000LhqaMYAR,001SZ00000LN1SOYA1,Thomas,Tydal,thomas@tydalsystems.se,CEO,,,English,,,,Manager
+[Contact],003SZ00000MnXuqYAF,001SZ00000MSVVdYAP,Niklas,Rådberg,niklas.radberg@sigma.se,CEO,,,German,,,,Manager
+[Contact],003SZ00000Mtc1gYAB,001SZ000003vXOyYAM,Lionel,RULLE,lionel.rulle@mymoneygroup.com,HRIS,,,,,,,Interlocuteur Sponsor
+[Contact],003SZ00000N2SW6YAN,001SZ00000MhZqiYAF,Christophe,MONTAGNON,christophe.montagnon38540@gmail.com,,,,,,06 03 48 76 23,,Interlocuteur Sponsor
+[Contact],003SZ00000OKGnZYAX,001SZ00000NsbDSYAZ,Jessica,Herzog,jessica.herzog@ebicube.se,CEO,,,English,,,,Manager
+[Contact],003SZ00000Ozs7OYAR,001SZ00000OXEHkYAP,Alexander,Lanthemann,alexander.lanthemann@micarna.ch,Chef de recrutement & Systèmes RH,,,German,,,,Manager
+[Contact],003SZ00000P094yYAB,001SZ00000OXLxZYAX,Sandrine,Canal,sandrine.canal@matisa.ch,,,,French,,,,Manager
+[Contact],003SZ00000P0FtVYAV,001SZ00000OXEHkYAP,Lea,Brander,lea.brander@micarna.ch,,,,German,,,,Manager
+[Contact],003SZ00000P9oaJYAR,001SZ00000OfbhHYAR,Jan,van Helden,jan.van.helden@yacht.nl,Director Operations,,,Dutch,,,,Manager
+[Contact],003SZ00000PXO5CYAX,00120000001gCurAAE,Sabine,Clouet,sclouet@ramery.fr,,,,,,,,Interlocuteur Sponsor
+[Contact],003SZ00000PXdYuYAL,00120000001gCurAAE,Julien,Zebiri,jzebiri@ramery.fr,,,,,,,,Interlocuteur Sponsor
+[Contact],003SZ00000PcIYdYAN,001D000000ndLxTIAU,Rui,HENRIQUES FERREIRA,rhenriquesferreira@groupe-pleiades.com,,,,,,,01 53 25 19 70,Manager
+[Contact],003SZ00000PcIjvYAF,001D000001RdwSSIAZ,Sylvie,RIBAUT,sylvie.ribaut@interima.com,,,,,,,,Manager
+[Contact],003SZ00000PcRVUYA3,001D000000en9FxIAI,Rib,ZANDBERGEN,r.zandbergen@planet-inter.fr,,,,,,,,Manager
+[Contact],003SZ00000PcTXGYA3,00120000004PW2KAAW,Sandrine,MATHIEU,jpinterim.s.mathieu@wanadoo.fr,,,,,,,,Manager
+[Contact],003SZ00000PcYiDYAV,001D000000en9FxIAI,Olivier,GUIRAUD,o.guiraud@planet-inter.fr,,,,,,,,Manager
+[Contact],003SZ00000PcfTZYAZ,0015700002F6Fk2AAF,Sabrina,VENNEVIER,s.vennevier@scope37.com,,,,,,,02.47.58.07.29,Manager
+[Contact],003SZ00000Pdqd9YAB,001SZ00000P8peLYAR,Olivier,Hemar,olivier.hemar@groupeadequat.fr,Chief International Operations Officer,,,French,,,33 6 18 27 89 22,Manager
+[Contact],003SZ00000PsblmYAB,001SZ00000LBbTEYA1,MASSIMILIANO,PELLEGRINO,m.pellegrino@logi-service.it,Legal Representative,,,English,,,3207913142,Manager
+[Contact],003SZ00000QAk10YAD,001570000242onBAAQ,Laurent,Vanparys,laurent.vanparys@aliaxis.com,EMEA Regional Project Manager,,,,,,,Interlocuteur Sponsor
+[Contact],003SZ00000QH6zuYAD,001SZ00000Og3WmYAJ,Dennis,van Langen,dennis.van.langen@enhrsolutions.com,Manager Flex en Interim,,,,,,,Manager
+[Contact],003SZ00000QHUAnYAP,001SZ00000Og3WmYAJ,Ellen,van Buiten,ellen.van.buiten@enhrsolutions.com,Director RPO,,,Dutch,,,,Manager
+[Contact],003SZ00000QIpRlYAL,001SZ00000PltabYAB,Hendrik,Spiekermann,hendrik.spiekermann@arvato.com,Director Procurement,,,German,,,0049 511 9366 1201,Manager
+[Contact],003SZ00000QJVFfYAP,001SZ000007Jy4XYAS,Thomas,Glatzel,thomas.glatzel@adecco.com,Head of Sales,,,German,,#ERROR!,,Manager
+[Contact],003SZ00000Qe6SnYAJ,001SZ00000RrSt5YAF,Mayte,Galeano,mayte.galeano@xpo.com,Human Resources Director - SEM,,,Spanish,,,34 608 752 267,Manager
+[Contact],003SZ00000QptgGYAR,001SZ000007J4ByYAK,Perry,Muijsers,perry.muijsers@adeccogroup.com,Global Strategic Accounts,,,,,,31 6 82904870,Manager
+[Contact],003SZ00000QqD2EYAV,001SZ000007J4ByYAK,Jeroen,Jongenelen,jeroen.jongenelen@adeccogroup.com,National Sales Manager,,,,,,31 418784000,Manager
+[Contact],003SZ00000Qz2m0YAB,001SZ00000QS2UZYA1,Wouter,Arts,warts@recruitin.nl,CEO,,,,,0313 - 410 507,06-14314593,Manager
+[Contact],003SZ00000R4armYAB,001SZ00000QX38OYAT,Rocio,Millan Trujillo,rocio.millan@adecco.com,Directora Nacional Permanent Placement,,,Spanish,,,,Manager
+[Contact],003SZ00000RX3ahYAD,001SZ00000QzO9iYAF,Michiel,Vliek,michiel.vliek@pdpersoneel.nl,Commercial Director,,,Dutch,,,033-4656602,Manager
+[Contact],003SZ00000SB0ixYAD,001SZ00000PwRBDYA3,Fabian,Eisenträger,fabian.eisentraeger@ferchau.com,Business Manager - Fahrzeugtechnik / IT Kassel,,,German,,,49 561 310273-14,Manager
+[Contact],003SZ00000SsPSjYAN,001SZ00000SHe7OYAT,caroline,Michotte,caroline.michotte@qjobs.be,Manager Operations,,,,,011/66.62.43,477727494,Manager
+[Contact],003SZ00000T3aERYAZ,001SZ00000P8sEXYAZ,Luca,Rota,luca.rota@aperelle.it,Direttore commerciale,,,,,,,Manager
+[Contact],003SZ00000UoN6eYAF,001SZ00000U6g6ZYAR,Raphael,Vessaz,raphael.vessaz@drv-emplois.ch,Co-Fondateur,,,French,,#ERROR!,,Manager
+[Contact],003SZ00000V0jjFYAR,001SZ00000UIP3YYAX,Daniel,Monnerat,daniel.monnerat@synergiesuisse.ch,Responsable d’agence,,,,,#ERROR!,0041 79 808 49 16,Manager
+[Contact],003SZ00000VRpvpYAD,001SZ00000U6uMUYAZ,Sylvain,Hostettler,sylvain.hostettler@letsgojob.ch,,,,,,,004126 660 82 52,Manager
+[Contact],003SZ00000VULqQYAX,001SZ00000Uk8CeYAJ,Elif,Bilecek,elifb@smart-jobs.ch,Geschäftsführerin / Directrice,,,German,,,0041 32 385 37 38,Manager
+[Contact],003SZ00000VjaIvYAJ,001SZ00000U78h7YAB,Daniel,DE Nicola,daniel.de.nicola@jobmysoft.ch,Gérant,,,French,,,41269121416,Manager
+[Contact],003SZ00000VwvjJYAR,0012p00004PZslCAAT,Alberto,De Luca,alberto.deluca@alten.ch,Head of Enterprise Services and Engineering Division,,,English,,,,Manager
+[Contact],003SZ00000WP1rNYAT,0012p00004PZslCAAT,Xavier,Kordus,xavier.kordus@alten.ch,Business Manager - Engineering & IT,,,English,,,,Manager
+[Contact],003SZ00000WpX7dYAF,00157000028bQTKAA2,Mark,Korevaar,mark.korevaar@markssattin.com,Country Manager,,,Dutch,,,,Manager
+[Contact],003SZ00000WqEE9YAN,00157000028bQTKAA2,Marco,Buttolo,buttolo@gmail.com,Sales Director Germany and Benelux,,,English,,,44 (0) 1246 267 000,Manager
+[Contact],003SZ00000XGU2LYAX,001SZ00000UyunhYAB,Benoit,Yann,yann@whyness.ch,Administrateur,,,French,,#ERROR!,,Manager
+[Contact],003SZ00000Xcl2yYAB,001SZ00000Og3WmYAJ,Marc,Bruin,marc.bruin@enhrsolutions.com,Programmamanager MSP,,,,,,0031 683 277 210,Manager
+[Contact],003SZ00000XqJ1xYAF,001SZ00000V9gV6YAJ,Giuseppe,Martinelli,giuseppe.martinelli@adeccogroup.ch,Director Adecco Operations H&C and Adia Switzerland,,,German,,,41582339720,Manager
+[Contact],003SZ00000YYNMnYAP,0012p00004M3O0EAAV,Patricia,Yamamoto,patricia.yamamoto@alten.se,Division Director Industry,,,English,,,,Manager
+[Contact],003SZ00000YjsXqYAJ,001SZ00000XlwGrYAJ,Maja,Trikson Almevi,maja.almevi@qlue.se,CEO,,,English,,,,Manager
+[Contact],003SZ00000ZgCgbYAF,001SZ00000WE64mYAD,Jonas,Hasselgren,jonas.hasselgren@tactel.se,CEO,,,English,,,70 656 66 52,Manager
+[Contact],003SZ00000a1ueYYAQ,001SZ00000NXZoBYAX,Ulf,Strand,ulf.strand@arrowconsulting.se,VD,,,English,,,46761397663,Manager
+[Contact],003SZ00000aVuAtYAK,001SZ000007J4ByYAK,Leontine,Bezemer,leontine.bezemer@adeccogroup.com,CCO,,,Dutch,,,,Manager
+[Contact],003SZ00000amyTXYAY,001SZ00000Yl3lVYAR,Matilde,da Silva Neves E Reis Carrola,matildecarrola@safeguardglobal.com,International Operations Manager & Local Director,,,French,,,004143 888 70 00,Manager
+[Contact],003SZ00000ao8FXYAY,001SZ00000Zhb6dYAB,Julien,Gibert,julien.gibert@sigma.tech,CEO,,,French,,#ERROR!,004122 920 30 00,Manager
+[Contact],003SZ00000ap3gfYAA,001SZ00000UDLOkYAP,Dimitri,Bader,dimitri.bader@fve.ch,Administrateur,,,French,,,,Manager
+[Contact],003SZ00000asT5EYAU,001SZ00000Yl4ZQYAZ,Sébastien,Besse,sebasian.besse@abalone-emploi.ch,Country Director,,,French,,,004179 814 23 43,Manager
+[Contact],003SZ00000bLMjQYAW,001SZ00000VXeCvYAL,Wim,Van Den Berge,wimvdb@skillflex.be,CEO,,,,,,,Manager
+[Contact],003SZ00000bOCxDYAW,001D000001JzOIxIAN,Virginie,Kaak Manac’h,virginie.kaakmanach@ocp.fr,Directrice organisation et méthode chez Phoenix OCP,,,,,,,Interlocuteur Sponsor
+[Contact],003SZ00000cbos9YAA,001SZ00000bHZvJYAW,Åsa,Broomé,asa.broome@sweco.se,Regional manager,,,English,,,46739737912,Manager
+[Contact],003SZ00000ccFbGYAU,001SZ00000bHY83YAG,Andreas,Gustafsson,ante@eatec.se,Sälj / Ägare,,,English,,,703112889,Manager
+[Contact],003SZ00000coi4nYAA,001SZ00000bXXfpYAG,Achim,Fuchs,a.fuchs@foxjobs.ch,Geschäftsführer,,,German,,#ERROR!,41791795844,Manager
+[Contact],003SZ00000d0p8vYAA,0012p00002eAMY6AAO,Rose-Marie,Vesuvio,rose.vesuvio@creajobservices.ch,Director,,,French,,,,Manager
+[Contact],003SZ00000eRc0YYAS,001SZ00000d1okJYAQ,Katrien,Bex,katrien.bex@rgfstaffing.be,Head Tenderdesk RGF,,,Dutch,,,32 (0)3 800 68 92,Manager
+[Contact],003SZ00000jGiZUYA0,001SZ000003eHfDYAU,Solveig,Kvastad,solveig.kvastad@manpowergroup.se,,,,English,,,,Manager
