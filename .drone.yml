@@ -159,7 +159,7 @@ steps:
       - mkdir -p .delta
       - sf sgd source delta --from origin/master --to HEAD --output .delta/
       - |
-        DEPLOY_CMD="sf project deploy validate --manifest .delta/package/package.xml --source-dir force-app/main/default -l RunLocalTests -w 90"
+        DEPLOY_CMD="sf project deploy validate --manifest .delta/package/package.xml -l RunLocalTests -w 90"
         if [ -f .delta/destructiveChanges/destructiveChanges.xml ]; then
           DEPLOY_CMD="$DEPLOY_CMD --post-destructive-changes .delta/destructiveChanges/destructiveChanges.xml"
         fi
@@ -204,7 +204,7 @@ steps:
       - mkdir -p .delta
       - sf sgd source delta --from origin/master --to HEAD --output .delta/
       - |
-        DEPLOY_CMD="sf project deploy start --manifest .delta/package/package.xml --source-dir force-app/main/default -l RunLocalTests -w 90 --ignore-conflicts"
+        DEPLOY_CMD="sf project deploy start --manifest .delta/package/package.xml -l RunLocalTests -w 90 --ignore-conflicts"
         if [ -f .delta/destructiveChanges/destructiveChanges.xml ]; then
           DEPLOY_CMD="$DEPLOY_CMD --post-destructive-changes .delta/destructiveChanges/destructiveChanges.xml"
         fi
