@@ -1,4 +1,4 @@
-public class InvoiceChargeMapItemStatusHandler {
+public without sharing class InvoiceChargeMapItemStatusHandler {
 
     private static final Set<String> SETTLED_STATUSES = new Set<String>{
         'Paid', 'Paid In Full', 'Rejected', 'Canceled'
