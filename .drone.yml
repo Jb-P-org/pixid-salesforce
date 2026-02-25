@@ -151,7 +151,7 @@ steps:
       - apk add --no-cache git
       - git fetch origin master
       - mkdir -p .delta
-      - npx sfdx-git-delta --from origin/master --to HEAD --repo . --output .delta/
+      - npx -y -p sfdx-git-delta sgd --from origin/master --to HEAD --repo . --output .delta/
 
   - name: sfdx-validate-promotion
     image: salesforce/cli:latest-full
@@ -201,7 +201,7 @@ steps:
       - apk add --no-cache git
       - git fetch origin master
       - mkdir -p .delta
-      - npx sfdx-git-delta --from origin/master --to HEAD --repo . --output .delta/
+      - npx -y -p sfdx-git-delta sgd --from origin/master --to HEAD --repo . --output .delta/
 
   - name: deploy-to-production
     image: salesforce/cli:latest-full
