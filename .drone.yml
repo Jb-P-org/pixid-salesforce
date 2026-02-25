@@ -202,7 +202,7 @@ steps:
       - rm /tmp/sfdx_auth_url.txt
       - echo y | sf plugins install sfdx-git-delta
       - mkdir -p .delta
-      - sf sgd source delta --from origin/master --to HEAD --output .delta/
+      - sf sgd source delta --from $DRONE_COMMIT_BEFORE --to HEAD --output .delta/
       - |
         DEPLOY_CMD="sf project deploy start --manifest .delta/package/package.xml -l RunLocalTests -w 90 --ignore-conflicts"
         if [ -f .delta/destructiveChanges/destructiveChanges.xml ]; then
