@@ -5,8 +5,8 @@
     <decisions>
         <name>PO_Required_Changed</name>
         <label>PO Required Changed?</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnectorLabel>Not Changed</defaultConnectorLabel>
         <rules>
             <name>Changed</name>
@@ -27,14 +27,14 @@
     <description>When PO Required is updated on a Charge Map, cascade the new value to all related Charge Map Items.</description>
     <environments>Default</environments>
     <formulas>
+        <name>formula_PO_Required_Boolean</name>
+        <dataType>Boolean</dataType>
+        <expression>TEXT({!$Record.PO_Required__c}) = &quot;Yes&quot;</expression>
+    </formulas>
+    <formulas>
         <name>formula_PO_Required_Changed</name>
         <dataType>Boolean</dataType>
         <expression>ISCHANGED({!$Record.PO_Required__c})</expression>
-    </formulas>
-    <formulas>
-        <name>formula_PO_Required_Boolean</name>
-        <dataType>Boolean</dataType>
-        <expression>TEXT({!$Record.PO_Required__c}) = "Yes"</expression>
     </formulas>
     <interviewLabel>CHARGE_MAP - Cascade PO Required to Items {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CHARGE_MAP - Cascade PO Required to Items</label>
@@ -60,8 +60,8 @@
     <recordUpdates>
         <name>Update_Charge_Map_Items</name>
         <label>Update Charge Map Items</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>ChargeMap__c</field>
@@ -79,7 +79,7 @@
         <object>ChargeMapItem__c</object>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>PO_Required_Changed</targetReference>

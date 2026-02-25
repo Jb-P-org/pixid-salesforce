@@ -4,7 +4,7 @@
         <name>ALLCaseCreated</name>
         <label>ALLCaseCreated</label>
         <locationX>578</locationX>
-        <locationY>1055</locationY>
+        <locationY>1163</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -163,7 +163,7 @@
         <name>DefaultCaseCreated</name>
         <label>DefaultCaseCreated</label>
         <locationX>1370</locationX>
-        <locationY>1055</locationY>
+        <locationY>1163</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -269,7 +269,7 @@
         <name>ENCaseCreated</name>
         <label>ENCaseCreated</label>
         <locationX>50</locationX>
-        <locationY>1055</locationY>
+        <locationY>1163</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -375,7 +375,7 @@
         <name>ESPCaseCreated</name>
         <label>ESPCaseCreated</label>
         <locationX>842</locationX>
-        <locationY>1055</locationY>
+        <locationY>1163</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -481,7 +481,7 @@
         <name>FRCaseCreated</name>
         <label>FRCaseCreated</label>
         <locationX>314</locationX>
-        <locationY>1055</locationY>
+        <locationY>1163</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -587,7 +587,7 @@
         <name>UKCaseCreated</name>
         <label>UKCaseCreated</label>
         <locationX>1106</locationX>
-        <locationY>1055</locationY>
+        <locationY>1163</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -649,20 +649,20 @@
         <name>SenderEN_US</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>admin_tools_sf@pixid.com</stringValue>
+            <stringValue>pixidsupport@pixid.com</stringValue>
         </value>
     </constants>
     <constants>
         <name>SenderFR</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>support.mypixid@pixid.fr</stringValue>
+            <stringValue>support@pixid.fr</stringValue>
         </value>
     </constants>
     <decisions>
         <name>Check_if_email_address_contact_is_bounced</name>
         <label>Check if email address contact is bounced</label>
-        <locationX>875</locationX>
+        <locationX>627</locationX>
         <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Origin</targetReference>
@@ -684,7 +684,7 @@
     <decisions>
         <name>CreatedorClosed</name>
         <label>CreatedorClosed</label>
-        <locationX>1964</locationX>
+        <locationX>1733</locationX>
         <locationY>839</locationY>
         <defaultConnectorLabel>Else</defaultConnectorLabel>
         <rules>
@@ -698,7 +698,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>LanguageforCreated</targetReference>
+                <targetReference>Email_or_SELF</targetReference>
             </connector>
             <label>Created</label>
         </rules>
@@ -723,6 +723,29 @@
                 <targetReference>LanguageforClosed</targetReference>
             </connector>
             <label>Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>si email géré dans un autre flow trigger sur l&apos;email car sinon dans le case on a pas les infos sur l&apos;email ayant créé le case à sa création</description>
+        <name>Email_or_SELF</name>
+        <label>Email or SELF ?</label>
+        <locationX>248</locationX>
+        <locationY>947</locationY>
+        <defaultConnector>
+            <targetReference>LanguageforCreated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>SELF</defaultConnectorLabel>
+        <rules>
+            <name>Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Origin</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Email</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Email</label>
         </rules>
     </decisions>
     <decisions>
@@ -821,7 +844,7 @@
         <name>LanguageforCreated</name>
         <label>LanguageforCreated</label>
         <locationX>710</locationX>
-        <locationY>947</locationY>
+        <locationY>1055</locationY>
         <defaultConnector>
             <targetReference>DefaultCaseCreated</targetReference>
         </defaultConnector>
@@ -912,7 +935,7 @@
     <decisions>
         <name>Origin</name>
         <label>Origin</label>
-        <locationX>1964</locationX>
+        <locationX>1733</locationX>
         <locationY>539</locationY>
         <defaultConnector>
             <targetReference>CreatedorClosed</targetReference>
@@ -972,7 +995,7 @@
     <recordLookups>
         <name>Get_Contact</name>
         <label>Get Contact</label>
-        <locationX>875</locationX>
+        <locationX>627</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -991,7 +1014,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>749</locationX>
+        <locationX>501</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Contact</targetReference>

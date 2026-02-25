@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Plan de facturation</label>
+    <name>BillingSchedule__c</name>
+    <picklistValues>
+        <masterLabel>Annual</masterLabel>
+        <translation>Annuel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Biannual</masterLabel>
+        <translation>Semestriel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Monthly</masterLabel>
+        <translation>Mensuel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>One-off</masterLabel>
+        <translation>Ponctuel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quarterly</masterLabel>
+        <translation>Trimestriel</translation>
+    </picklistValues>
+</CustomFieldTranslation>
