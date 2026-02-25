@@ -145,14 +145,6 @@ steps:
     commands:
       - rm -rf /tmp/sfdx
 
-  - name: generate-delta
-    image: node:20-alpine
-    commands:
-      - apk add --no-cache git
-      - git fetch origin master
-      - mkdir -p .delta
-      - npx -y -p sfdx-git-delta sgd --from origin/master --to HEAD --repo . --output .delta/
-
   - name: sfdx-validate-promotion
     image: salesforce/cli:latest-full
     environment:
@@ -163,6 +155,9 @@ steps:
       - echo $SFDX_AUTH_URL > /tmp/sfdx_auth_url.txt
       - sf org login sfdx-url --sfdx-url-file /tmp/sfdx_auth_url.txt --set-default --alias prod
       - rm /tmp/sfdx_auth_url.txt
+      - echo y | sf plugins install sfdx-git-delta
+      - mkdir -p .delta
+      - sf sgd source delta --from origin/master --to HEAD --output .delta/
       - |
         DEPLOY_CMD="sf project deploy validate --manifest .delta/package/package.xml --source-dir force-app/main/default -l RunLocalTests -w 90"
         if [ -f .delta/destructiveChanges/destructiveChanges.xml ]; then
@@ -195,14 +190,6 @@ steps:
     commands:
       - rm -rf /tmp/sfdx
 
-  - name: generate-delta
-    image: node:20-alpine
-    commands:
-      - apk add --no-cache git
-      - git fetch origin master
-      - mkdir -p .delta
-      - npx -y -p sfdx-git-delta sgd --from origin/master --to HEAD --repo . --output .delta/
-
   - name: deploy-to-production
     image: salesforce/cli:latest-full
     environment:
@@ -213,6 +200,9 @@ steps:
       - echo $SFDX_AUTH_URL > /tmp/sfdx_auth_url.txt
       - sf org login sfdx-url --sfdx-url-file /tmp/sfdx_auth_url.txt --set-default --alias prod
       - rm /tmp/sfdx_auth_url.txt
+      - echo y | sf plugins install sfdx-git-delta
+      - mkdir -p .delta
+      - sf sgd source delta --from origin/master --to HEAD --output .delta/
       - |
         DEPLOY_CMD="sf project deploy start --manifest .delta/package/package.xml --source-dir force-app/main/default -l RunLocalTests -w 90 --ignore-conflicts"
         if [ -f .delta/destructiveChanges/destructiveChanges.xml ]; then
