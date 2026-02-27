@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_Reference_Required</fullName>
+    <active>true</active>
+    <description>When &quot;Purchase Order Required&quot; is checked, the PO reference and the request date must be provided.</description>
+    <errorConditionFormula>AND(
+    PurchaseOrderRequired__c = TRUE,
+    ISPICKVAL(Status__c, &quot;Billable&quot;),
+    OR(
+        ISBLANK(PurchaseOrderRequestDate__c),
+        ISBLANK(PurchaseOrderReference__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>You must provide the Purchase Order Reference and Purchase Order Request Date</errorMessage>
+</ValidationRule>

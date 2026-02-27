@@ -79,6 +79,10 @@
                 <behavior>Edit</behavior>
                 <field>AccountSource</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Sub_Supplier_Contract__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

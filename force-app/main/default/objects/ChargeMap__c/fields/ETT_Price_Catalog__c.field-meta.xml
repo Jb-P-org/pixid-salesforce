@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ETT_Price_Catalog__c</fullName>
+    <label>ETT Price Catalog</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Catalogue Pack ETT - ETTi Annuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - ETTi Annuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - ETTi Mensuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - ETTi Mensuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Light Annuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Light Annuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Light Mensuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Light Mensuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Light NC Annuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Light NC Annuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Light NC Mensuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Light NC Mensuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Premium Annuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Premium Annuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Premium Mensuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Premium Mensuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Premium NC Annuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Premium NC Annuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Premium NC Mensuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Premium NC Mensuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Standard Annuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Standard Annuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Standard Mensuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Standard Mensuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Standard NC Annuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Standard NC Annuel</label>
+            </value>
+            <value>
+                <fullName>Catalogue Pack ETT - Standard NC Mensuel</fullName>
+                <default>false</default>
+                <label>Catalogue Pack ETT - Standard NC Mensuel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -20,7 +20,7 @@ import Issue_scope from '@salesforce/label/c.Issue_scope';
 import Issue_type from '@salesforce/label/c.Issue_type';
 import Jira_Project from '@salesforce/label/c.Jira_Project';
 import Which_team_escalation from '@salesforce/label/c.Which_team_escalation';
-import CaseHasBeenEscalated from '@salesforce/label/c.Case_has_been_escalated';
+import CaseHasBeenEscalated from '@salesforce/label/c.Case_Has_Been_Escalated';
 import Priority from '@salesforce/label/c.Priority';
 import Add_files from '@salesforce/label/c.Add_files';
 import Actions_requested from '@salesforce/label/c.Actions_requested';

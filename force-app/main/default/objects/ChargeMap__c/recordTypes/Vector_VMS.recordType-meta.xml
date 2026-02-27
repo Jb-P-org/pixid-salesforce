@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vector_VMS</fullName>
+    <active>true</active>
+    <label>Vector VMS</label>
+    <picklistValues>
+        <picklist>BillingConditions__c</picklist>
+        <values>
+            <fullName>30 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 days</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ETTBillingSchedule__c</picklist>
+        <values>
+            <fullName>Annuelle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mensuelle</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ETT_Price_Catalog__c</picklist>
+        <values>
+            <fullName>Catalogue Pack ETT - ETTi Annuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catalogue Pack ETT - ETTi Mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catalogue Pack ETT - Light Annuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catalogue Pack ETT - Light Mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catalogue Pack ETT - Premium Annuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catalogue Pack ETT - Premium Mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catalogue Pack ETT - Standard Annuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catalogue Pack ETT - Standard Mensuel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InvoiceSendingMethod__c</picklist>
+        <values>
+            <fullName>E-Invoice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PO_Frequency__c</picklist>
+        <values>
+            <fullName>Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biannually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PO_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PaymentMethod__c</picklist>
+        <values>
+            <fullName>Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Debit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transfer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Backlog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Cross-sell%2FUpsell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
