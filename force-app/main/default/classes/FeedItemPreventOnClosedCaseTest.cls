@@ -34,7 +34,8 @@ private class FeedItemPreventOnClosedCaseTest {
             Status = 'Closed',
             Archived__c = true,
             Closed_Reason__c = validClosedReason,
-            ContactId = contact.Id
+            ContactId = contact.Id,
+            Do_Not_Notify__c = true
         ));
 
         // Case 2: Closed but not Archived
@@ -44,6 +45,7 @@ private class FeedItemPreventOnClosedCaseTest {
             Archived__c = false,
             Closed_Reason__c = validClosedReason,
             ContactId = contact.Id,
+            Do_Not_Notify__c = true,
             SuppliedEmail = 'testcontact@example.com'
         ));
 
