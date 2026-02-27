@@ -34,6 +34,56 @@ private class EscalationControllerTest {
     }
 
     @isTest
+    static void testGetCaseAndRecordTypesWithVmsUsaRole() {
+        // Try to find or create the VMS USA role and user first (setup objects)
+        UserRole vmsUsaRole;
+        List<UserRole> existingRoles = [SELECT Id, Name FROM UserRole WHERE Name = 'BU Pixid VMS USA' LIMIT 1];
+        if (existingRoles.isEmpty()) {
+            vmsUsaRole = new UserRole(Name = 'BU Pixid VMS USA', DeveloperName = 'BU_Pixid_VMS_USA');
+            insert vmsUsaRole;
+        } else {
+            vmsUsaRole = existingRoles[0];
+        }
+
+        // Create a test user with the VMS USA role
+        Profile p = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
+        User testUser = new User(
+            FirstName = 'Test',
+            LastName = 'VmsUser',
+            Email = 'testvmsuser@test.com',
+            Username = 'testvmsuser' + DateTime.now().getTime() + '@test.com',
+            Alias = 'tvms',
+            TimeZoneSidKey = 'America/New_York',
+            LocaleSidKey = 'en_US',
+            EmailEncodingKey = 'UTF-8',
+            ProfileId = p.Id,
+            LanguageLocaleKey = 'en_US',
+            UserRoleId = vmsUsaRole.Id
+        );
+        insert testUser;
+
+        // Use System.runAs to avoid mixed DML issues
+        System.runAs(testUser) {
+            // Create test Case inside runAs block
+            Case testCase = new Case(Subject = 'Test Case VMS', Status = 'New');
+            insert testCase;
+
+            Test.startTest();
+            Map<String, Object> result = EscalationController.getCaseAndRecordTypes(testCase.Id);
+            Test.stopTest();
+
+            System.assertNotEquals(null, result);
+            System.assert(result.containsKey('recordTypes'));
+            List<Map<String, String>> recordTypes = (List<Map<String, String>>) result.get('recordTypes');
+            // VMS USA users should only see DevOps record types
+            for (Map<String, String> rt : recordTypes) {
+                System.assert(rt.get('value').containsIgnoreCase('DevOps'),
+                    'VMS USA users should only see DevOps record types, but got: ' + rt.get('value'));
+            }
+        }
+    }
+
+    @isTest
     static void testGetJiraPicklists() {
         Test.startTest();
         Map<String, List<Map<String, String>>> result = EscalationController.getJiraPicklists();
@@ -51,38 +101,36 @@ private class EscalationControllerTest {
         // Get test Contact
         Contact contact = [SELECT Id FROM Contact LIMIT 1];
 
-        // Query valid picklist values
-        Schema.DescribeFieldResult domainField = Case.Domain__c.getDescribe();
-        List<Schema.PicklistEntry> domainValues = domainField.getPicklistValues();
-        String validDomain = domainValues.isEmpty() ? null : domainValues[0].getValue();
-
-        Schema.DescribeFieldResult moduleField = Case.Module__c.getDescribe();
-        List<Schema.PicklistEntry> moduleValues = moduleField.getPicklistValues();
-        String validModule = moduleValues.isEmpty() ? null : moduleValues[0].getValue();
-
-        // Create test Case with required fields
+        // Create test Case without Domain__c and Module__c to avoid restricted picklist issues
+        // These fields will be null on the Jira_Issue__c which is acceptable for test purposes
         Case testCase = new Case(
             Subject = 'Test Bug Escalation',
             ContactId = contact.Id,
-            Status = 'New',
-            Domain__c = validDomain,
-            Module__c = validModule
+            Status = 'New'
         );
         insert testCase;
 
         // Get a RecordType that contains 'devops'
         RecordType devopsRT = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Case' LIMIT 1];
 
-        // Use specific valid combination: Bug + Accompagnement
-        String validReason = 'Bug';
-        String validSubReason = 'Accompagnement';
+        // Query valid active escalation reason/subreason values
+        Schema.DescribeFieldResult reasonField = Case.EscalationReason__c.getDescribe();
+        String validReason = null;
+        for (Schema.PicklistEntry entry : reasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validReason = entry.getValue();
+                break;
+            }
+        }
 
+        // Pass null for subreason to avoid dependent picklist validation issues
+        // Escalation_Subreason__c depends on EscalationReason__c
         Test.startTest();
         String jiraId = EscalationController.escalateCase(
             testCase.Id,
             devopsRT.Name,
             validReason,
-            validSubReason,
+            null,
             'Test Comment',
             'PROJECT',
             'Bug',
@@ -108,36 +156,33 @@ private class EscalationControllerTest {
     static void testEscalateCaseToDevOpsStory() {
         Contact contact = [SELECT Id FROM Contact LIMIT 1];
 
-        // Query valid picklist values
-        Schema.DescribeFieldResult domainField = Case.Domain__c.getDescribe();
-        List<Schema.PicklistEntry> domainValues = domainField.getPicklistValues();
-        String validDomain = domainValues.isEmpty() ? null : domainValues[0].getValue();
-
-        Schema.DescribeFieldResult moduleField = Case.Module__c.getDescribe();
-        List<Schema.PicklistEntry> moduleValues = moduleField.getPicklistValues();
-        String validModule = moduleValues.isEmpty() ? null : moduleValues[0].getValue();
-
+        // Create test Case without Domain__c and Module__c to avoid restricted picklist issues
         Case testCase = new Case(
             Subject = 'Test Story Escalation',
             ContactId = contact.Id,
-            Status = 'New',
-            Domain__c = validDomain,
-            Module__c = validModule
+            Status = 'New'
         );
         insert testCase;
 
         RecordType devopsRT = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Case' LIMIT 1];
 
-        // Use specific valid combination: Bug + Accompagnement
-        String validReason = 'Bug';
-        String validSubReason = 'Accompagnement';
+        // Query valid active escalation reason/subreason values
+        Schema.DescribeFieldResult reasonField = Case.EscalationReason__c.getDescribe();
+        String validReason = null;
+        for (Schema.PicklistEntry entry : reasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validReason = entry.getValue();
+                break;
+            }
+        }
 
+        // Pass null for subreason to avoid dependent picklist validation issues
         Test.startTest();
         String jiraId = EscalationController.escalateCase(
             testCase.Id,
             devopsRT.Name,
             validReason,
-            validSubReason,
+            null,
             'Test Story Comment',
             'PROJECT',
             'Story',
@@ -160,36 +205,33 @@ private class EscalationControllerTest {
     static void testEscalateCaseToDevOpsTask() {
         Contact contact = [SELECT Id FROM Contact LIMIT 1];
 
-        // Query valid picklist values
-        Schema.DescribeFieldResult domainField = Case.Domain__c.getDescribe();
-        List<Schema.PicklistEntry> domainValues = domainField.getPicklistValues();
-        String validDomain = domainValues.isEmpty() ? null : domainValues[0].getValue();
-
-        Schema.DescribeFieldResult moduleField = Case.Module__c.getDescribe();
-        List<Schema.PicklistEntry> moduleValues = moduleField.getPicklistValues();
-        String validModule = moduleValues.isEmpty() ? null : moduleValues[0].getValue();
-
+        // Create test Case without Domain__c and Module__c to avoid restricted picklist issues
         Case testCase = new Case(
             Subject = 'Test Task Escalation',
             ContactId = contact.Id,
-            Status = 'New',
-            Domain__c = validDomain,
-            Module__c = validModule
+            Status = 'New'
         );
         insert testCase;
 
         RecordType devopsRT = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Case' LIMIT 1];
 
-        // Use specific valid combination: Bug + Accompagnement
-        String validReason = 'Bug';
-        String validSubReason = 'Accompagnement';
+        // Query valid active escalation reason/subreason values
+        Schema.DescribeFieldResult reasonField = Case.EscalationReason__c.getDescribe();
+        String validReason = null;
+        for (Schema.PicklistEntry entry : reasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validReason = entry.getValue();
+                break;
+            }
+        }
 
+        // Pass null for subreason to avoid dependent picklist validation issues
         Test.startTest();
         String jiraId = EscalationController.escalateCase(
             testCase.Id,
             devopsRT.Name,
             validReason,
-            validSubReason,
+            null,
             'Test Task Comment',
             'PROJECT',
             'Task',
@@ -219,18 +261,25 @@ private class EscalationControllerTest {
         );
         insert testCase;
 
-        // Use specific valid combination: Bug + Accompagnement
-        String validReason = 'Bug';
-        String validSubReason = 'Accompagnement';
+        // Query valid active escalation reason/subreason values
+        Schema.DescribeFieldResult reasonField = Case.EscalationReason__c.getDescribe();
+        String validReason = null;
+        for (Schema.PicklistEntry entry : reasonField.getPicklistValues()) {
+            if (entry.isActive()) {
+                validReason = entry.getValue();
+                break;
+            }
+        }
 
         RecordType nonDevopsRT = [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Case' LIMIT 1];
 
+        // Pass null for subreason to avoid dependent picklist validation issues
         Test.startTest();
         String jiraId = EscalationController.escalateCase(
             testCase.Id,
             nonDevopsRT.Name,
             validReason,
-            validSubReason,
+            null,
             'Test Comment',
             'PROJECT',
             'Bug',

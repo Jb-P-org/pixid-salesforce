@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Note</fullName>
+    <active>true</active>
+    <label>Credit Note</label>
+    <picklistValues>
+        <picklist>Activity__c</picklist>
+        <values>
+            <fullName>Carerix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connecting Expertise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pixid FR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pixid VMS US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PixidVMSEU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TheMatchBox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VectorVMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WorkID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Nature__c</picklist>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Usage</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Offer__c</picklist>
+        <values>
+            <fullName>ATS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optimal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pack C%26S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner VMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VMS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OldOffre__c</picklist>
+        <values>
+            <fullName>App mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bestt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carerix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC ETT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC apporté</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPE GC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPE PACK WEB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pack ETT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pack EU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pack Evolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pack First</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pack apporté</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pixid Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portail Salarié et Sourcing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portail clients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>myPixid</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Source__c</picklist>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Talend</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Late</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid In Full</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

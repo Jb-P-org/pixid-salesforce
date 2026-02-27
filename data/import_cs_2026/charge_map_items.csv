@@ -1,0 +1,344 @@
+AccountId_ref,ChargeMap__c,Product__c,Name,LineDescription__c,BillingSchedule__c,Term__c,Quantity__c,Sales_unit_price__c,Amount__c,Status__c,StartDateRevRec__c,End_date__c,CurrencyIsoCode,PO_Required__c,Activated__c
+001IV000015S8iwYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHsYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI5YAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eCYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S541YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8izYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eOYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S868YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI6YAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyE0YAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFeYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RhU6YAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,9000,9000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDxYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iTYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDjYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,9000,9000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50LYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI9YAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyL0YAK,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50KYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHqYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDiYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SQYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDzYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85hYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S867YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,BERRY BEAUTE MAROLLES,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S867YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,BERRY BRAMLAGE,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50OYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDwYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eKYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j3YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jFYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S862YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SUYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyECYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTQYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,7000,7000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RhU5YAK,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1080,1080,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTcYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SIYA0,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1200,1200,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j2YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jKYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewNYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j9YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a7YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyE5YAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ilYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85zYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8imYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S508YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50QYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j0YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTjYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S86BYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ioYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6ZvYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8nKYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFiYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ipYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADqYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADqYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a6YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHxYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jIYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85lYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eEYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jEYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewKYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2e8YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eZYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SRYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85uYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85wYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eMYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFfYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a4YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S86DYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTeYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eUYAS,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,3120,3120,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8irYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,6500,6500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eFYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eNYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHmYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ifYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyE2YAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTXYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDpYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S864YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6ZyYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewCYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RhU7YAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,7000,7000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SJKeYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S4lJYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDkYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFgYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eHYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85tYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHRYA4,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85iYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S9GIYA0,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,3440,3440,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S4lDYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S865YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jHYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S869YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S869YAC,,01tIV00000GOfPAYA1,Licence BI - Consultation,,Annual,In advance,1,1200,1200,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDoYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDrYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S860YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jGYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewMYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015Rew8YAC,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,2232,2232,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SVYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewGYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iqYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHTYA4,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDlYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eQYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j5YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50HYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ijYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTOYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,6000,6000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50MYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAGoYAO,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,5000,5000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a5YAC,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyL3YAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50FYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85mYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,5000,5000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SWYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHPYA4,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50GYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50AYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S866YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHyYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j4YAC,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,3840,3840,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jBYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADrYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85xYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S507YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADoYAO,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1080,1080,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyE1YAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6VVYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50CYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85sYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8igYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHkYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTMYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTWYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SJXYYA4,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Biannual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHoYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S1XOYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHuYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHuYAO,,01tIV00000GOfPAYA1,Licence BI - Consultation,,Annual,In advance,1,1800,1800,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADsYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S9GHYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,5000,5000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewIYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTgYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eaYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTiYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eWYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewRYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,CONSTELLIUM MONTREUIL JUIGNE,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,LECTRA,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,TYCO ELECTRONICS,Annual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,CONSTELLIUM NEUF BRISACH,Annual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,DEVILLE GROUPE,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,FLANDRIA,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,GROUPE MARINE HARVEST KRITSEN - MOWI,Annual,In advance,1,4500,4500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,MC CAIN,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,DELPHARM (GAILLARD),Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,LATECOERE (Clic),Annual,In advance,1,5000,5000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,B BRAUN MEDICAL,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,PROCTER & GAMBLE AMIENS,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,PROCTER & GAMBLE BLOIS,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GyVFpYAN,Redevance d'utilisation - Tranche 25 ETP / EU canal indirect (facturation ETT) - Cas 1,ARCO,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,GOODYEAR DUNLOP TIRES France,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015MBzIYAW,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,PARAGON WESTERN EUROPE,Annual,In advance,1,8000,8000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewOYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTaYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j6YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewBYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iZYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2STYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDmYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eAYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ixYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jAYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SJYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S86FYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTZYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iRYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8icYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RxtaYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,21000,21000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iVYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,5000,5000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTPYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015Rew7YAC,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1800,1800,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S86CYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTNYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADtYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADtYAO,,01tIV00000GOfPAYA1,Licence BI - Consultation,,Annual,In advance,1,600,600,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADtYAO,,01tIV00000GOfPFYA1,Maintenance SSO,,Annual,In advance,1,750,750,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ikYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jCYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85vYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SSYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDtYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015l3aLYAQ,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4500,4500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015l3aLYAQ,,01tIV00000GOfPAYA1,Licence BI - Consultation,,Annual,In advance,1,1200,1200,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015l3aLYAQ,,01tIV00000GOfPFYA1,Maintenance SSO,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eSYAS,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,2232,2232,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j7YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewDYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHpYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,REMY MARTIN,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHpYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,COINTREAU,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6ZxYAK,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1800,1800,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHtYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S861YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyE9YAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iQYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iQYAS,,01tIV00000GOfPAYA1,Licence BI - Consultation,,Annual,In advance,1,1200,1200,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyE3YAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eGYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFjYAO,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,3600,3600,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTdYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eYYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTLYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzThYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iPYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ibYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI7YAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI7YAO,,01tIV00000GOfPFYA1,Maintenance SSO,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eXYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDgYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8inYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85jYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFhYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFaYAO,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1080,1080,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTRYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S509YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SADpYAO,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1600,1600,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S86AYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S4lCYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S4lCYAS,,01tIV00000GOfPFYA1,Maintenance SSO,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFcYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI8YAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,6000,6000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyL1YAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eDYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iWYAS,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,2232,2232,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iWYAS,,01tIV00000GOfPFYA1,Maintenance SSO,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eLYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eIYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8nNYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6ZzYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ivYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAIAYA4,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SLYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SPYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50NYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewLYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85nYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDsYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eJYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iuYAC,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,10000,10000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S86GYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDyYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j1YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTUYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RhU3YAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewFYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2ePYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50RYAS,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,2232,2232,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHwYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,7000,7000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RuolYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RuolYAC,,01tIV00000GOfPAYA1,Licence BI - Consultation,,Annual,In advance,1,1800,1800,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RuolYAC,,01tIV00000GOfPFYA1,Maintenance SSO,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RuomYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RuomYAC,,01tIV00000GOfPFYA1,Maintenance SSO,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RuomYAC,,01tIV00000GOfPAYA1,Licence BI - Consultation,,Annual,In advance,1,1200,1200,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8idYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85yYAC,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1200,1200,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50BYAS,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,4120,4120,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eBYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyE7YAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyE6YAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50JYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8j8YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a8YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S863YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTbYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTVYA0,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RvVPYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Biannual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyKzYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,5500,5500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewPYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SJXRYA4,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2500,2500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ieYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S4lEYAS,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50EYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8ihYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDnYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015Rew9YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50IYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2e7YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6ZwYAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyDhYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50DYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewJYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewQYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iyYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTfYAK,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,8000,8000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2SOYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S50PYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85qYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHQYA4,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFdYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAFbYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHSYA4,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2e9YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,6000,6000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHnYAO,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewAYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RyL2YAK,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4500,4500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015Rew6YAC,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,2200,2200,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI1YAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHvYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iSYAS,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RzTYYA0,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S86HYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHlYAO,,01tIV00000GOfP6YAL,Redevance d'utilisation - ETP EU,,Annual,In advance,1,4200,4200,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eVYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAHzYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a0YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S2eRYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI2YAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,3500,3500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI3YAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SAI4YAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8jDYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1500,1500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S8iaYAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,6000,6000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewHYAS,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RKNcYAO,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a1YAC,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015RewEYAS,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S85oYAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,2000,2000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a2YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,1000,1000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S6a3YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,500,500,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV00001OqxYmYAJ,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,4000,4000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015S542YAC,,01tIV00000GOfP1YAL,Redevance d'utilisation - Tranche 25 ETP - Cas 1,,Annual,In advance,1,7000,7000,Backlog,2026-01-01,2026-12-31,EUR,false,false
+001IV000015SCZCYA4,,01tIV00000GyVCbYAN,Redevance d'utilisation - Tranche 25 ETP - Cas 2,,Annual,In advance,1,3000,3000,Backlog,2026-01-01,2026-12-31,EUR,false,false

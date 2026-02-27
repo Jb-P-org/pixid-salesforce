@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Charge Map Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Charge Map Items</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- You can&apos;t activate these items because one of these fields is empty : Billing Schedule, Term, Start Date
+If a PO is required on the items, the PO Reference and PO Request date must be filled -->
+        </errorMessage>
+        <name>CantActivateItemMissingInfos</name>
+    </validationRules>
+</CustomObjectTranslation>

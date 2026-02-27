@@ -1,8 +1,47 @@
 import { LightningElement, api } from 'lwc';
 
+// Import custom labels for field names
+import RegistrationNumber from '@salesforce/label/c.Registration_Number';
+import VATNumber from '@salesforce/label/c.VAT_Number';
+import ActivityCountry from '@salesforce/label/c.Activity_Country';
+import IdInterneTdG from '@salesforce/label/c.Id_Interne_TdG';
+import BillingContact from '@salesforce/label/c.Billing_Contact';
+import CashCollectionContact from '@salesforce/label/c.Cash_Collection_Contact';
+import PaymentMethod from '@salesforce/label/c.Payment_Method';
+import BillingConditions from '@salesforce/label/c.Billing_Conditions';
+import InvoiceSendingMethod from '@salesforce/label/c.Invoice_Sending_Method';
+import BillingInstructions from '@salesforce/label/c.Billing_Instructions';
+import ContractDurationYears from '@salesforce/label/c.Contract_Duration_Years';
+import SendInvoiceTo from '@salesforce/label/c.Send_Invoice_To';
+import PlatformLink from '@salesforce/label/c.Platform_Link';
+import POReferenceRequestDateFrequency from '@salesforce/label/c.PO_Reference_Request_Date_Frequency';
+import POMissingOnItems from '@salesforce/label/c.PO_Missing_On_Items';
+
 export default class MissingFieldsScreenChargeMap extends LightningElement {
+    label = {
+        RegistrationNumber,
+        VATNumber,
+        ActivityCountry,
+        IdInterneTdG,
+        BillingContact,
+        CashCollectionContact,
+        PaymentMethod,
+        BillingConditions,
+        InvoiceSendingMethod,
+        BillingInstructions,
+        ContractDurationYears,
+        SendInvoiceTo,
+        PlatformLink,
+        POReferenceRequestDateFrequency,
+        POMissingOnItems
+    };
     @api accountRegistrationNumber;
     @api accountVATNumber;
+    @api accountActivityCountry;
+    @api accountIdInterneTdG;
+    @api accountSousType;
+    @api sourceOpportunityActivity;
+    @api sourceOpportunityOffer;
 
     @api chargeMapBillingContact;
     @api chargeMapCashCollectionContact;
@@ -32,51 +71,56 @@ export default class MissingFieldsScreenChargeMap extends LightningElement {
 
         // Champs Account
         if (!this.accountRegistrationNumber) {
-            this.missingAccountFields.push('Registration Number');
+            this.missingAccountFields.push(this.label.RegistrationNumber);
         }
         if (!this.accountVATNumber) {
-            this.missingAccountFields.push('VAT Number');
+            this.missingAccountFields.push(this.label.VATNumber);
+        }
+        if (!this.accountActivityCountry) {
+            this.missingAccountFields.push(this.label.ActivityCountry);
+        }
+        // ID_interne_TdG is required only for TSC + Pixid FR + Pack
+        if (
+            !this.accountIdInterneTdG &&
+            this.accountSousType === 'TSC' &&
+            this.sourceOpportunityActivity === 'Pixid FR' &&
+            this.sourceOpportunityOffer === 'Pack'
+        ) {
+            this.missingAccountFields.push(this.label.IdInterneTdG);
         }
 
         // Champs Charge Map
         if (!this.chargeMapBillingContact) {
-            this.missingChargeMapFields.push('Billing Contact');
+            this.missingChargeMapFields.push(this.label.BillingContact);
         }
         if (!this.chargeMapCashCollectionContact) {
-            this.missingChargeMapFields.push('Cash Collection Contact');
+            this.missingChargeMapFields.push(this.label.CashCollectionContact);
         }
         if (!this.chargeMapPaymentMethod) {
-            this.missingChargeMapFields.push('Payment Method');
+            this.missingChargeMapFields.push(this.label.PaymentMethod);
         }
         if (!this.chargeMapBillingConditions) {
-            this.missingChargeMapFields.push('Billing Conditions');
+            this.missingChargeMapFields.push(this.label.BillingConditions);
         }
         if (!this.chargeMapInvoiceSendingMethod) {
-            this.missingChargeMapFields.push('Invoice Sending Method');
+            this.missingChargeMapFields.push(this.label.InvoiceSendingMethod);
         }
         if (!this.chargeMapBillingInstructions) {
-            this.missingChargeMapFields.push('Billing Instructions');
+            this.missingChargeMapFields.push(this.label.BillingInstructions);
         }
         if (!this.chargeMapContractDurationInYears) {
-            this.missingChargeMapFields.push('Contract Duration (Years)');
+            this.missingChargeMapFields.push(this.label.ContractDurationYears);
         }
 
         if (this.chargeMapInvoiceSendingMethod === 'Email' && !this.chargeMapSendInvoiceTo) {
-            this.missingChargeMapFields.push('Send Invoice To');
+            this.missingChargeMapFields.push(this.label.SendInvoiceTo);
         }
         if (this.chargeMapInvoiceSendingMethod === 'Platform' && !this.chargeMapPlatformLink) {
-            this.missingChargeMapFields.push('Platform Link');
+            this.missingChargeMapFields.push(this.label.PlatformLink);
         }
 
-        if (this.chargeMapPORequired === 'Yes') {
-            if (!this.chargeMapPOReference || !this.chargeMapPORequestDate || !this.chargeMapPOFrequency) {
-                this.missingChargeMapFields.push('PO Reference / Request Date / Frequency');
-            }
+        if (this.pbOnItemsPO === true) {
+            this.missingChargeMapFields.push(this.label.POMissingOnItems);
         }
-
-        // 💥 Nouveau test sur la variable boolean
-        //if (this.pbOnItemsPO === true) {
-        //    this.missingChargeMapFields.push('At least one PO is missing on a Charge Map Item');
-       // }
     }
 }

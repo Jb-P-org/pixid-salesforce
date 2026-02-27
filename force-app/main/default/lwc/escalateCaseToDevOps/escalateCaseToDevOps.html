@@ -290,7 +290,7 @@
             <!-- OTHER TEAMS -->
             <template if:true={isStepOtherTeamFields}>
                 <div data-step="otherTeamFields">
-                    <div class="slds-form-element__label">Details</div>
+                    <div class="slds-form-element__label">{label.Details}</div>
                     <lightning-input-rich-text
                         label="Details"
                         name="comment"
@@ -341,12 +341,12 @@
             <template if:true={isStepConfirmation}>
                 <div class="slds-text-align_center">
                     <p class="slds-text-heading_medium">
-                        The case has been escalated to the <strong>{selectedRecordTypeName}</strong> team ✅
+                        {label.CaseHasBeenEscalated} <strong>{selectedRecordTypeName}</strong> ✅
                     </p>
 
                     <template if:true={uploadedFiles.length}>
                         <p class="slds-m-top_medium">
-                            🗂️ <strong>Fichiers ajoutés :</strong>
+                            🗂️ <strong>{label.FilesAdded} :</strong>
                         </p>
                         <ul>
                             <template for:each={uploadedFiles} for:item="file">

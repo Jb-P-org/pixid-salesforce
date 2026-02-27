@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_User_Associated_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Account__r.Sous_type__c, &quot;Supplier agency&quot;),
+  ISPICKVAL(SourceOpportunity__r.ChannelType__c, &quot;Indirect&quot;),
+  ISBLANK(EndUser__c)
+)</errorConditionFormula>
+    <errorDisplayField>EndUser__c</errorDisplayField>
+    <errorMessage>End user associated is mandatory</errorMessage>
+</ValidationRule>

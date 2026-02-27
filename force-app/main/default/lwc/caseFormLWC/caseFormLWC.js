@@ -19,8 +19,23 @@ import CreateTicket from '@salesforce/label/c.Create_ticket';
 import Domain from '@salesforce/label/c.Domain';
 import RequestDesc from '@salesforce/label/c.Request_description';
 import RequestSummary from '@salesforce/label/c.Request_summary';
-import TicketCreated from '@salesforce/label/c.Ticket_created';
+import TicketCreated from '@salesforce/label/c.Ticket_Created_Title';
 import CaseFormRestrict from '@salesforce/label/c.Case_form_restricted';
+import TicketSuccessMessage from '@salesforce/label/c.Ticket_created';
+import FilesAdded from '@salesforce/label/c.Files_added';
+import CaseFormLoggedOut from '@salesforce/label/c.Case_Form_Logged_out';
+import Success from '@salesforce/label/c.Success';
+import TicketCreatedMessage from '@salesforce/label/c.Ticket_Created_Message';
+import RequiredFields from '@salesforce/label/c.Required_Fields';
+import PleaseFillIn from '@salesforce/label/c.Please_Fill_In';
+import FileAdded from '@salesforce/label/c.File_Added';
+import FilesUploadedMessage from '@salesforce/label/c.Files_Uploaded_Message';
+import TheReason from '@salesforce/label/c.The_Reason';
+import TheSubreason from '@salesforce/label/c.The_Subreason';
+import TheRequestSubject from '@salesforce/label/c.The_Request_Subject';
+import TheDescription from '@salesforce/label/c.The_Description';
+import TheDomain from '@salesforce/label/c.The_Domain';
+import TheModule from '@salesforce/label/c.The_Module';
 
 import logError from '@salesforce/apex/LWCErrorLogger.logError';
 
@@ -38,7 +53,22 @@ export default class CaseFormLWC extends LightningElement {
         RequestDesc: RequestDesc,
         RequestSummary: RequestSummary,
         TicketCreated: TicketCreated,
-        CaseFormRestrict: CaseFormRestrict
+        CaseFormRestrict: CaseFormRestrict,
+        TicketSuccessMessage: TicketSuccessMessage,
+        FilesAdded: FilesAdded,
+        CaseFormLoggedOut: CaseFormLoggedOut,
+        Success: Success,
+        TicketCreatedMessage: TicketCreatedMessage,
+        RequiredFields: RequiredFields,
+        PleaseFillIn: PleaseFillIn,
+        FileAdded: FileAdded,
+        FilesUploadedMessage: FilesUploadedMessage,
+        TheReason: TheReason,
+        TheSubreason: TheSubreason,
+        TheRequestSubject: TheRequestSubject,
+        TheDescription: TheDescription,
+        TheDomain: TheDomain,
+        TheModule: TheModule
     }
 
     @api recordId;
@@ -76,41 +106,6 @@ export default class CaseFormLWC extends LightningElement {
 
     accountId;
 
-    visibilityRules = {
-        "General Inquiry": {
-            "Feature Request": { domain: true, module: true },
-            "Information on Platform Features": { domain: true, module: true },
-            "Other": { domain: true, module: false }
-        },
-        "Technical Issues": {
-            "Contract Signing Issue": { domain: true, module: true },
-            "Platform Slowness": { domain: true, module: true },
-            "Platform Anomaly": { domain: true, module: true },
-            "Integration Issues": { domain: true, module: false },
-            "Platform Unavailability": { domain: true, module: false }
-        },
-        "Document and Contract Management": {
-            "Document Management": { domain: true, module: true },
-            "Report a missing document": { domain: true, module: true },
-            "Management of Signature Certificates": { domain: false, module: false }
-        },
-        "Account Issues": {
-            "Repository management / List of values": { domain: true, module: true },
-            "Entity Management": { domain: true, module: false },
-            "Partnership Management / Agencies Network": { domain: true, module: false },
-            "User account access": { domain: true, module: false },
-            "User Management": { domain: true, module: false },
-            "PPE partner administration": { domain: false, module: false },
-            "Reconciliation resource sheets": { domain: false, module: false },
-            "Retail / VSE customers": { domain: false, module: false }
-        },
-        "Compliance & Security": {
-            "SFTP connection management": { domain: false, module: false },
-            "Retention period": { domain: false, module: false },
-            "User rights": { domain: false, module: false }
-        }
-    };
-
     @wire(getObjectInfo, { objectApiName: CASE_OBJECT })
     objectInfo;
 
@@ -126,22 +121,28 @@ export default class CaseFormLWC extends LightningElement {
         if (data) {
             try {
                 this.reasonOptions = data.picklistFieldValues.Reason.values;
+
+                // Subreason dependent on Reason
                 this.fullSubreasonMap = data.picklistFieldValues.Subreason__c.controllerValues;
                 this.subreasonDependencyMap = data.picklistFieldValues.Subreason__c.values;
-                // If Language is French, filter out 'Pixid VMS' from Domain options
-                this.domainOptions = this.userLanguage === 'fr' ? data.picklistFieldValues.Domain__c.values.filter(option => option.value !== 'Pixid VMS') : data.picklistFieldValues.Domain__c.values;
-                this.moduleOptions = data.picklistFieldValues.Module__c.values;
+
+                // Domain - load all values and filter out 'Pixid VMS' for French users
+                let allDomainOptions = data.picklistFieldValues.Domain__c.values;
+                // Filter out 'Pixid VMS' from Domain options for French users
+                this.domainOptions = allDomainOptions.filter(option => option.value !== 'Pixid VMS');
+
+                // Module dependent on Domain
                 this.fullModuleMap = data.picklistFieldValues.Module__c.controllerValues;
                 this.moduleDependencyMap = data.picklistFieldValues.Module__c.values;
             } catch (e) {
                 console.error('[Picklist Wire] Erreur parsing picklists :', e);
                 this.logClientError(e, 'wiredPicklists.parsing');
             }
-            
+
         } else if (error) {
             console.error('[Picklist Wire] Erreur chargement picklists:', error);
         }
-        
+
     }
 
     connectedCallback() {
@@ -182,40 +183,64 @@ export default class CaseFormLWC extends LightningElement {
     
 
     get showDomain() {
-        // Si l'utilisateur n'est pas français, ne pas afficher le champ Domain
-        if (this.userLanguage && this.userLanguage !== 'fr') {
-            return false;
-        }
-        return this.getVisibilityRule('domain');
+        // Show Domain field only for French users
+        return this.userLanguage === 'fr';
     }
+
     get showModule() {
-        return this.getVisibilityRule('module');
-    }
-    getVisibilityRule(field) {
-        const rule = this.visibilityRules[this.selectedReason]?.[this.selectedSubreason];
-        return rule ? rule[field] : false;
+        // Show Module if there are available options based on the selected Domain
+        return this.moduleOptions.length > 0;
     }
 
     handleReasonChange(event) {
         this.selectedReason = event.detail.value;
         this.selectedSubreason = null;
+        this.selectedDomain = null;
+        this.selectedModule = null;
+
+        // Filter Subreason based on Reason
         const controllerKey = this.fullSubreasonMap[this.selectedReason];
         this.subreasonOptions = this.subreasonDependencyMap
             .filter(opt => opt.validFor.includes(controllerKey))
             .map(opt => ({ label: opt.label, value: opt.value }));
+
+        // Reset Module options
+        this.moduleOptions = [];
     }
 
     handleSubreasonChange(event) {
         this.selectedSubreason = event.detail.value;
+        this.selectedModule = null;
+
+        // If user is not French, automatically set Domain to 'Pixid VMS'
+        if (this.userLanguage && this.userLanguage !== 'fr') {
+            this.selectedDomain = 'Pixid VMS';
+            // Populate Module options based on auto-selected Domain
+            this.populateModuleOptions(this.selectedDomain);
+        } else {
+            // For French users, reset Domain selection
+            this.selectedDomain = null;
+            this.moduleOptions = [];
+        }
+    }
+
+    populateModuleOptions(domain) {
+        const controllerKey = this.fullModuleMap[domain];
+        if (controllerKey !== undefined) {
+            this.moduleOptions = this.moduleDependencyMap
+                .filter(opt => opt.validFor.includes(controllerKey))
+                .map(opt => ({ label: opt.label, value: opt.value }));
+        } else {
+            this.moduleOptions = [];
+        }
     }
 
     handleDomainChange(event) {
         this.selectedDomain = event.detail.value;
-        const controllerKey = this.fullModuleMap[this.selectedDomain];
-        this.moduleOptions = this.moduleDependencyMap
-            .filter(opt => opt.validFor.includes(controllerKey))
-            .map(opt => ({ label: opt.label, value: opt.value }));
         this.selectedModule = null;
+
+        // Filter Module based on Domain
+        this.populateModuleOptions(this.selectedDomain);
     }
 
     handleModuleChange(event) {
@@ -236,7 +261,7 @@ export default class CaseFormLWC extends LightningElement {
             this.uploadedFileIds.push(file.documentId);
             this.uploadedFiles.push({ name: file.name, documentId: file.documentId });
         });
-        this.showToast('Fichier ajouté', `${uploadedFiles.length} fichier(s) uploadé(s).`, 'success');
+        this.showToast(this.label.FileAdded, this.label.FilesUploadedMessage.replace('{0}', uploadedFiles.length), 'success');
         console.log('✅ handleFileUpload called');
         console.log(JSON.stringify(event.detail.files));
         console.log(JSON.stringify(this.uploadedFiles));
@@ -264,15 +289,15 @@ export default class CaseFormLWC extends LightningElement {
     
         const missingFields = [];
     
-        if (!this.selectedReason) missingFields.push('la raison');
-        if (!this.selectedSubreason) missingFields.push('la sous-raison');
-        if (!this.subject) missingFields.push("l'objet de la demande");
-        if (!this.description) missingFields.push('la description');
-        if (this.showDomain && !this.selectedDomain) missingFields.push('le domaine');
-        if (this.showModule && !this.selectedModule) missingFields.push('le module');
+        if (!this.selectedReason) missingFields.push(this.label.TheReason);
+        if (!this.selectedSubreason) missingFields.push(this.label.TheSubreason);
+        if (!this.subject) missingFields.push(this.label.TheRequestSubject);
+        if (!this.description) missingFields.push(this.label.TheDescription);
+        if (this.showDomain && !this.selectedDomain) missingFields.push(this.label.TheDomain);
+        if (this.showModule && !this.selectedModule) missingFields.push(this.label.TheModule);
     
         if (missingFields.length > 0) {
-            this.showToast('Champs requis', 'Merci de renseigner ' + missingFields.join(', ') + '.', 'error');
+            this.showToast(this.label.RequiredFields, this.label.PleaseFillIn.replace('{0}', missingFields.join(', ')), 'error');
             this.isSubmitting = false;
             return;
         }
@@ -288,10 +313,8 @@ export default class CaseFormLWC extends LightningElement {
             OwnerId:'00GIV00000A8Vx62AF'
         };
     
-        // Si l'utilisateur n'est pas français, forcer Domain__c = "Pixid VMS"
-        if (this.userLanguage && this.userLanguage !== 'fr') {
-            fields.Domain__c = 'Pixid VMS';
-        } else if (this.showDomain && this.selectedDomain) {
+        // Add Domain__c if selected (automatically set to 'Pixid VMS' for non-French users)
+        if (this.selectedDomain) {
             fields.Domain__c = this.selectedDomain;
         }
 
@@ -315,7 +338,7 @@ export default class CaseFormLWC extends LightningElement {
             })
             .then(caseNumber => {
                 this.caseNumber = caseNumber || this.caseId; // fallback sur l'ID si problème
-                this.showToast('Succès', `Case ${this.caseNumber} créé.`, 'success');
+                this.showToast(this.label.Success, this.label.TicketCreatedMessage.replace('{0}', this.caseNumber), 'success');
                 this.showConfirmation = true;
     
                 const postCreationTasks = [];

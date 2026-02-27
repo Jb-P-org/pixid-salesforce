@@ -11,6 +11,11 @@
             <!-- Account Fields -->
             <property name="accountRegistrationNumber" type="String" label="Registration Number" />
             <property name="accountVATNumber" type="String" label="VAT Number" />
+            <property name="accountActivityCountry" type="String" label="Activity Country" />
+            <property name="accountIdInterneTdG" type="String" label="ID Interne TdG" />
+            <property name="accountSousType" type="String" label="Sous Type" />
+            <property name="sourceOpportunityActivity" type="String" label="Source Opportunity Activity" />
+            <property name="sourceOpportunityOffer" type="String" label="Source Opportunity Offer" />
 
             <!-- Charge Map Fields -->
             <property name="chargeMapBillingContact" type="String" label="Billing Contact" />

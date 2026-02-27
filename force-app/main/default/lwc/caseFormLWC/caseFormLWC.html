@@ -3,7 +3,7 @@
     <template if:true={isGuest}>
         <div class="slds-p-around_medium">
             <p style="color: var(--lwc-colorTextError, red); font-weight: bold;">
-                This form is strictly restricted to logged-in users. Please log in to continue.
+                {label.CaseFormLoggedOut}
             </p>
         </div>
     </template>
@@ -88,7 +88,7 @@
                 <!-- Aperçu fichiers uploadés -->
 <template if:true={hasUploadedFiles}>
     
-        <p><strong>{uploadedFileCount} file(s) added :</strong></p>
+        <p><strong>{uploadedFileCount} {label.FilesAdded} :</strong></p>
         
             <template for:each={uploadedFiles} for:item="file" for:index="index">
                 <div key={file.documentId} >
@@ -121,8 +121,8 @@
         </template>
 
         <template if:true={showConfirmation}>
-            <lightning-card title="Ticket created" icon-name="utility:check">
-                <p class="slds-p-around_medium">Ticket {caseNumber} was successfully created.</p>
+            <lightning-card title={label.TicketCreated} icon-name="utility:check">
+                <p class="slds-p-around_medium">{label.TicketSuccessMessage} {caseNumber}</p>
             </lightning-card>
         </template>
     </template>

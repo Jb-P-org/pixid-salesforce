@@ -1,0 +1,10 @@
+.guidelines-title {
+    font-weight: 700;
+    text-align: center;
+}
+
+.guidelines-list li {
+    padding: 0.25rem 0;
+    display: flex;
+    align-items: center;
+}
