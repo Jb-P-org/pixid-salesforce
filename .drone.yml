@@ -89,7 +89,12 @@ steps:
       - apk add --no-cache curl jq
       - git remote set-url origin https://x-access-token:$${GITHUB_TOKEN}@github.com/Jb-P-org/pixid-salesforce.git
       - |
-        BRANCH_NAME="promote/$${DRONE_SOURCE_BRANCH}"
+        # Extract merged branch name from commit message (format: "Merge pull request #XX from org/branch-name")
+        MERGED_BRANCH=$(echo "$${DRONE_COMMIT_MESSAGE}" | sed -n 's|.*from [^/]*/||p')
+        if [ -z "$MERGED_BRANCH" ]; then
+          MERGED_BRANCH="staging"
+        fi
+        BRANCH_NAME="promote/$MERGED_BRANCH"
         PROMOTE_TITLE="promote- $${DRONE_COMMIT_MESSAGE}"
 
         git push --force origin HEAD:$BRANCH_NAME
