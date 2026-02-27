@@ -49,22 +49,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Nb_Of_Items_Ready</name>
-        <label>Nb Of Items Ready</label>
-        <locationX>402</locationX>
-        <locationY>458</locationY>
-        <assignmentItems>
-            <assignToReference>NbOfItemsReady</assignToReference>
-            <operator>AssignCount</operator>
-            <value>
-                <elementReference>Get_Billable_Charge_Map_Items</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_Items_With_PO_Issues</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Count_PO_Issues</name>
         <label>Count PO Issues</label>
         <locationX>402</locationX>
@@ -78,6 +62,22 @@
         </assignmentItems>
         <connector>
             <targetReference>Get_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Nb_Of_Items_Ready</name>
+        <label>Nb Of Items Ready</label>
+        <locationX>402</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>NbOfItemsReady</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Billable_Charge_Map_Items</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Items_With_PO_Issues</targetReference>
         </connector>
     </assignments>
     <customProperties>
@@ -165,6 +165,11 @@
     <description>Refacto</description>
     <environments>Default</environments>
     <formulas>
+        <name>varB_HasPOIssuesOnItems</name>
+        <dataType>Boolean</dataType>
+        <expression>{!NbOfItemsWithPOIssues} &gt; 0</expression>
+    </formulas>
+    <formulas>
         <name>varB_MissingInfoAccount</name>
         <dataType>Boolean</dataType>
         <expression>ISBLANK({!Get_Account.RegistrationNumber__c}) ||
@@ -200,11 +205,6 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
         <name>varF_TodaysDate</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
-    </formulas>
-    <formulas>
-        <name>varB_HasPOIssuesOnItems</name>
-        <dataType>Boolean</dataType>
-        <expression>{!NbOfItemsWithPOIssues} &gt; 0</expression>
     </formulas>
     <formulas>
         <name>varT_AccountActivityCountry</name>
@@ -339,6 +339,27 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Charge_Map</name>
+        <label>Get Charge Map</label>
+        <locationX>402</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Pb</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ChargeMap__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Items_With_PO_Issues</name>
         <label>Get Items With PO Issues</label>
         <locationX>402</locationX>
@@ -392,27 +413,6 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>ChargeMapItem__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Charge_Map</name>
-        <label>Get Charge Map</label>
-        <locationX>402</locationX>
-        <locationY>134</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Pb</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>ChargeMap__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
@@ -897,6 +897,14 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
         <objectType>ChargeMapItem__c</objectType>
     </variables>
     <variables>
+        <name>NbOfItemsReady</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
         <name>NbOfItemsWithPOIssues</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
@@ -906,14 +914,6 @@ ISBLANK(TEXT({!Get_Account.Activity_Country__c})) ||
         <value>
             <numberValue>0.0</numberValue>
         </value>
-    </variables>
-    <variables>
-        <name>NbOfItemsReady</name>
-        <dataType>Number</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <scale>0</scale>
     </variables>
     <variables>
         <name>PbOnItems</name>

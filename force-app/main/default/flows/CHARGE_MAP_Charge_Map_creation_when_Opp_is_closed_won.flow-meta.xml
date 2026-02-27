@@ -6,7 +6,7 @@
         <name>Add_New_Item_To_List</name>
         <label>Add New Item To List</label>
         <locationX>490</locationX>
-        <locationY>1619</locationY>
+        <locationY>1295</locationY>
         <assignmentItems>
             <assignToReference>varCR_CMItemsToCreate</assignToReference>
             <operator>Add</operator>
@@ -22,7 +22,7 @@
         <name>Assign_Charge_Map_Item_Values_From_Opp_Line_Item_Values</name>
         <label>Assign Charge Map Item Values From Opp Line Item Values</label>
         <locationX>490</locationX>
-        <locationY>1511</locationY>
+        <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>varR_CurrentCMItem.ChargeMap__c</assignToReference>
             <operator>Assign</operator>
@@ -196,6 +196,36 @@
         <expression>ISBLANK({!Get_Existing_Charge_Map.Id})</expression>
     </formulas>
     <formulas>
+        <name>varF_BillingBusinessName</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingBusinessName__c}, {!Get_Existing_Charge_Map.BillingBusinessName__c})</expression>
+    </formulas>
+    <formulas>
+        <name>varF_BillingCity</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingCity}, {!Get_Existing_Charge_Map.BillingAddress__City__s})</expression>
+    </formulas>
+    <formulas>
+        <name>varF_BillingCountryCode</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), TEXT({!Get_Paying_Account.BillingCountryCode}), TEXT({!Get_Existing_Charge_Map.BillingAddress__CountryCode__s}))</expression>
+    </formulas>
+    <formulas>
+        <name>varF_BillingDepartment</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingDepartment__c}, {!Get_Existing_Charge_Map.BillingDepartment__c})</expression>
+    </formulas>
+    <formulas>
+        <name>varF_BillingPostalCode</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingPostalCode}, {!Get_Existing_Charge_Map.BillingAddress__PostalCode__s})</expression>
+    </formulas>
+    <formulas>
+        <name>varF_BillingStreet</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingStreet}, {!Get_Existing_Charge_Map.BillingAddress__Street__s})</expression>
+    </formulas>
+    <formulas>
         <name>varF_ChargeMapName</name>
         <dataType>String</dataType>
         <expression>{!Get_Paying_Account.Name} &amp; &quot; - &quot; &amp; TEXT({!$Record.Activity__c}) &amp; &quot; - &quot; &amp; TEXT(YEAR(TODAY()))</expression>
@@ -227,6 +257,36 @@
     &apos;ApplicationPixid&apos;)</expression>
     </formulas>
     <formulas>
+        <name>varF_ShippingBusinessName</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingBusinessName__c}, {!Get_Existing_Charge_Map.ShippingBusinessName__c})</expression>
+    </formulas>
+    <formulas>
+        <name>varF_ShippingCity</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingCity}, {!Get_Existing_Charge_Map.ShippingAddress__City__s})</expression>
+    </formulas>
+    <formulas>
+        <name>varF_ShippingCountryCode</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), TEXT({!Get_Paying_Account.ShippingCountryCode}), TEXT({!Get_Existing_Charge_Map.ShippingAddress__CountryCode__s}))</expression>
+    </formulas>
+    <formulas>
+        <name>varF_ShippingDepartment</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingDepartment__c}, {!Get_Existing_Charge_Map.ShippingDepartment__c})</expression>
+    </formulas>
+    <formulas>
+        <name>varF_ShippingPostalCode</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingPostalCode}, {!Get_Existing_Charge_Map.ShippingAddress__PostalCode__s})</expression>
+    </formulas>
+    <formulas>
+        <name>varF_ShippingStreet</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingStreet}, {!Get_Existing_Charge_Map.ShippingAddress__Street__s})</expression>
+    </formulas>
+    <formulas>
         <name>varF_SubTypeTranslated</name>
         <dataType>String</dataType>
         <expression>IF({!Get_Paying_Account.BillingCountry} = &apos;France&apos;,
@@ -244,66 +304,6 @@
         <expression>TODAY()</expression>
     </formulas>
     <formulas>
-        <name>varF_BillingCity</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingCity}, {!Get_Existing_Charge_Map.BillingAddress__City__s})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_BillingStreet</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingStreet}, {!Get_Existing_Charge_Map.BillingAddress__Street__s})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_BillingPostalCode</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingPostalCode}, {!Get_Existing_Charge_Map.BillingAddress__PostalCode__s})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_BillingCountryCode</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), TEXT({!Get_Paying_Account.BillingCountryCode}), TEXT({!Get_Existing_Charge_Map.BillingAddress__CountryCode__s}))</expression>
-    </formulas>
-    <formulas>
-        <name>varF_ShippingCity</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingCity}, {!Get_Existing_Charge_Map.ShippingAddress__City__s})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_ShippingStreet</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingStreet}, {!Get_Existing_Charge_Map.ShippingAddress__Street__s})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_ShippingPostalCode</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingPostalCode}, {!Get_Existing_Charge_Map.ShippingAddress__PostalCode__s})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_ShippingCountryCode</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), TEXT({!Get_Paying_Account.ShippingCountryCode}), TEXT({!Get_Existing_Charge_Map.ShippingAddress__CountryCode__s}))</expression>
-    </formulas>
-    <formulas>
-        <name>varF_BillingBusinessName</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingBusinessName__c}, {!Get_Existing_Charge_Map.BillingBusinessName__c})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_BillingDepartment</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.BillingDepartment__c}, {!Get_Existing_Charge_Map.BillingDepartment__c})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_ShippingBusinessName</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingBusinessName__c}, {!Get_Existing_Charge_Map.ShippingBusinessName__c})</expression>
-    </formulas>
-    <formulas>
-        <name>varF_ShippingDepartment</name>
-        <dataType>String</dataType>
-        <expression>IF(ISBLANK({!Get_Existing_Charge_Map.Id}), {!Get_Paying_Account.ShippingDepartment__c}, {!Get_Existing_Charge_Map.ShippingDepartment__c})</expression>
-    </formulas>
-    <formulas>
         <name>varF_TypeOfChargeMap</name>
         <dataType>String</dataType>
         <expression>IF({!$Record.RecordTypeName__c} = &apos;New business&apos;, &apos;New business&apos;, &apos;Cross-sell/Upsell&apos;)</expression>
@@ -314,7 +314,7 @@
         <name>LoopOnOppLineItems</name>
         <label>Loop On Opp Line Items</label>
         <locationX>402</locationX>
-        <locationY>1403</locationY>
+        <locationY>1079</locationY>
         <collectionReference>Get_Opp_Line_Items</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -364,9 +364,81 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>BillingAddress__City__s</field>
+            <value>
+                <elementReference>varF_BillingCity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingAddress__CountryCode__s</field>
+            <value>
+                <elementReference>varF_BillingCountryCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingAddress__PostalCode__s</field>
+            <value>
+                <elementReference>varF_BillingPostalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingAddress__Street__s</field>
+            <value>
+                <elementReference>varF_BillingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingBusinessName__c</field>
+            <value>
+                <elementReference>varF_BillingBusinessName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingConditions__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.BillingConditions__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingContact__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.BillingContact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingDepartment__c</field>
+            <value>
+                <elementReference>varF_BillingDepartment</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BillingInstructions__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.BillingInstructions__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CashCollectionContact__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.CashCollectionContact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>CurrencyIsoCode</field>
             <value>
                 <elementReference>$Record.CurrencyIsoCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ETTBillingSchedule__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.ETTBillingSchedule__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ETT_Price_Catalog__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.ETT_Price_Catalog__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -376,9 +448,21 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>InvoiceSendingMethod__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.InvoiceSendingMethod__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Name</field>
             <value>
                 <elementReference>varF_ChargeMapName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PaymentMethod__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.PaymentMethod__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -391,6 +475,48 @@
             <field>RecordTypeId</field>
             <value>
                 <elementReference>Get_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SendInvoiceTo__c</field>
+            <value>
+                <elementReference>Get_Existing_Charge_Map.SendInvoiceTo__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingAddress__City__s</field>
+            <value>
+                <elementReference>varF_ShippingCity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingAddress__CountryCode__s</field>
+            <value>
+                <elementReference>varF_ShippingCountryCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingAddress__PostalCode__s</field>
+            <value>
+                <elementReference>varF_ShippingPostalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingAddress__Street__s</field>
+            <value>
+                <elementReference>varF_ShippingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingBusinessName__c</field>
+            <value>
+                <elementReference>varF_ShippingBusinessName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShippingDepartment__c</field>
+            <value>
+                <elementReference>varF_ShippingDepartment</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -417,132 +543,6 @@
                 <elementReference>varF_TypeOfChargeMap</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <field>BillingAddress__City__s</field>
-            <value>
-                <elementReference>varF_BillingCity</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>BillingAddress__Street__s</field>
-            <value>
-                <elementReference>varF_BillingStreet</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>BillingAddress__PostalCode__s</field>
-            <value>
-                <elementReference>varF_BillingPostalCode</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>BillingAddress__CountryCode__s</field>
-            <value>
-                <elementReference>varF_BillingCountryCode</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ShippingAddress__City__s</field>
-            <value>
-                <elementReference>varF_ShippingCity</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ShippingAddress__Street__s</field>
-            <value>
-                <elementReference>varF_ShippingStreet</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ShippingAddress__PostalCode__s</field>
-            <value>
-                <elementReference>varF_ShippingPostalCode</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ShippingAddress__CountryCode__s</field>
-            <value>
-                <elementReference>varF_ShippingCountryCode</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>BillingBusinessName__c</field>
-            <value>
-                <elementReference>varF_BillingBusinessName</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>BillingDepartment__c</field>
-            <value>
-                <elementReference>varF_BillingDepartment</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ShippingBusinessName__c</field>
-            <value>
-                <elementReference>varF_ShippingBusinessName</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ShippingDepartment__c</field>
-            <value>
-                <elementReference>varF_ShippingDepartment</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>BillingContact__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.BillingContact__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>CashCollectionContact__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.CashCollectionContact__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>BillingConditions__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.BillingConditions__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ETT_Price_Catalog__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.ETT_Price_Catalog__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ETTBillingSchedule__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.ETTBillingSchedule__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>SendInvoiceTo__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.SendInvoiceTo__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>InvoiceSendingMethod__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.InvoiceSendingMethod__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>PaymentMethod__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.PaymentMethod__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>BillingInstructions__c</field>
-            <value>
-                <elementReference>Get_Existing_Charge_Map.BillingInstructions__c</elementReference>
-            </value>
-        </inputAssignments>
         <object>ChargeMap__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
@@ -550,7 +550,7 @@
         <name>Create_Charge_Map_Items</name>
         <label>Create Charge Map Items</label>
         <locationX>402</locationX>
-        <locationY>1811</locationY>
+        <locationY>1487</locationY>
         <connector>
             <targetReference>Get_Offer_Record_Type</targetReference>
         </connector>
@@ -560,7 +560,7 @@
         <name>Create_Offer</name>
         <label>Create Offer</label>
         <locationX>402</locationX>
-        <locationY>2028</locationY>
+        <locationY>1703</locationY>
         <inputAssignments>
             <field>Account__c</field>
             <value>
@@ -650,7 +650,7 @@
         <name>Get_Offer_Record_Type</name>
         <label>Get Offer Record Type</label>
         <locationX>402</locationX>
-        <locationY>1920</locationY>
+        <locationY>1595</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Offer</targetReference>
@@ -787,7 +787,7 @@
             </value>
         </filters>
         <filters>
-            <field>RecordTypeName__c</field>
+            <field>Record_Type_Name_Formula__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Renewal</stringValue>

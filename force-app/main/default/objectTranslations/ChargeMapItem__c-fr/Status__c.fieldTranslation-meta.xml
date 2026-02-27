@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Statut</label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Backlog</masterLabel>
+        <translation><!-- Backlog --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Billable</masterLabel>
+        <translation>Facturable</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Billed</masterLabel>
+        <translation>Emise</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paid</masterLabel>
+        <translation>Payée</translation>
+    </picklistValues>
+</CustomFieldTranslation>
