@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_Infos_Required_NB</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  TEXT(PO_Required__c) = &quot;Yes&quot;,
+  $RecordType.Name = &quot;New Business&quot;,
+  OR(
+    ISBLANK(TEXT(PO_Frequency__c)),
+    ISBLANK(PurchaseOrderReference__c),
+    ISBLANK(PurchaseOrderRequestDate__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>Please enter the PO frequency, request date and reference.</errorMessage>
+</ValidationRule>

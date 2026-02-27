@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Migrated_invoices</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Amount__c</columns>
+    <columns>AmountBeforeTax__c</columns>
+    <columns>PaymentDate__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Migrated invoices</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AutoRenewal__c</fullName>
+    <defaultValue>true</defaultValue>
+    <inlineHelpText>Checked if the customer must be renewed automatically at the end of the Rev Rec period (End date). If so, a new Charge Map will be generated.</inlineHelpText>
+    <label>Auto renewal</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

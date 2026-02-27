@@ -68,7 +68,7 @@ private class InvoiceChargeMapItemStatusHandlerTest {
     @IsTest
     static void testRejectedAndCanceled_CountAsSettled() {
         List<Invoice__c> invoices = [SELECT Id, Status__c FROM Invoice__c ORDER BY CreatedDate];
-        invoices[0].Status__c = 'Paid in full';
+        invoices[0].Status__c = 'Paid In Full';
         invoices[1].Status__c = 'Canceled';
 
         Test.startTest();

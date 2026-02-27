@@ -3,7 +3,6 @@
     <fullName>Sub_Supplier_Contract__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Indicates if the account has a sub-supplier contract. Only visible when Activity Country is not France (and not null) and Sous_type is TSC.</description>
-    <externalId>false</externalId>
     <label>Sub-Supplier Contract</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Charge_map_Billable</fullName>
+    <columns>ChargeMap__c</columns>
+    <columns>NAME</columns>
+    <columns>Quantity__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Term__c</columns>
+    <columns>SalesOrderID__c</columns>
+    <columns>ProratedAmount__c</columns>
+    <columns>NbOfMonthsProrated__c</columns>
+    <columns>Status__c</columns>
+    <columns>BillableStatusDate__c</columns>
+    <columns>StartDateRevRec__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Billable</value>
+    </filters>
+    <label>Charge map Billable</label>
+</ListView>

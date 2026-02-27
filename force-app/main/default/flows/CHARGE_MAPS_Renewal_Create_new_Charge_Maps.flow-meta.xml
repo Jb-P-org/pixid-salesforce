@@ -782,6 +782,20 @@
             </value>
         </filters>
         <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Backlog</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Billable</stringValue>
+            </value>
+        </filters>
+        <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
             <value>

@@ -3,7 +3,6 @@
     <fullName>Inactive_Contact__c</fullName>
     <defaultValue>false</defaultValue>
     <description>Indicates when a contact is inactive.</description>
-    <externalId>false</externalId>
     <label>Inactive Contact</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

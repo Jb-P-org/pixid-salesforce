@@ -1,7 +1,7 @@
-public without sharing class InvoiceChargeMapItemStatusHandler {
+public class InvoiceChargeMapItemStatusHandler {
 
     private static final Set<String> SETTLED_STATUSES = new Set<String>{
-        'PAID', 'PAID IN FULL', 'REJECTED', 'CANCELED'
+        'Paid', 'Paid In Full', 'Rejected', 'Canceled'
     };
 
     public static void recalculateStatus(List<Invoice__c> newInvoices, Map<Id, Invoice__c> oldMap) {
@@ -61,7 +61,7 @@ public without sharing class InvoiceChargeMapItemStatusHandler {
             Boolean allSettled = true;
             for (Id invId : cmItemToInvoiceIds.get(cmItemId)) {
                 Invoice__c inv = invoiceMap.get(invId);
-                if (inv != null && (inv.Status__c == null || !SETTLED_STATUSES.contains(inv.Status__c.toUpperCase()))) {
+                if (inv != null && !SETTLED_STATUSES.contains(inv.Status__c)) {
                     allSettled = false;
                     break;
                 }

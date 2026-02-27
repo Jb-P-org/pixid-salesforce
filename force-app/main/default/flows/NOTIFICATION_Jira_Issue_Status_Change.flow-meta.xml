@@ -70,12 +70,19 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Owner_Match</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>Owner15</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>$User.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>GetOwner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <label>Owner Match</label>
@@ -155,9 +162,6 @@
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>GetOwner</targetReference>
-        </connector>
         <filterLogic>or</filterLogic>
         <filters>
             <field>Status__c</field>
@@ -168,6 +172,12 @@
         </filters>
         <object>Jira_Issue__c</object>
         <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>GetOwner</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

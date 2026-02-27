@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Endpoint_URL__c</field>
-        <value xsi:type="xsd:string">https://api.eu.integrator.io/v1/exports/6870c9e411115d8016c8b2ed/data</value>
+        <value xsi:type="xsd:string">https://api.eu.integrator.io/v1/exports/68d2b7b8218fa57babc8ade6/data</value>
     </values>
     <values>
         <field>Password__c</field>
