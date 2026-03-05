@@ -71,6 +71,11 @@
                 <label>Sponsor Contact</label>
             </value>
             <value>
+                <fullName>Superuser</fullName>
+                <default>false</default>
+                <label>Superuser</label>
+            </value>
+            <value>
                 <fullName>Technical contact</fullName>
                 <default>false</default>
                 <label>Technical contact</label>
