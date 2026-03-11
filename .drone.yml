@@ -97,9 +97,14 @@ steps:
         BRANCH_NAME="promote/$MERGED_BRANCH"
         PROMOTE_TITLE="promote- $${DRONE_COMMIT_MESSAGE}"
 
-        # Get commits from the merged feature branch (between staging's previous HEAD and feature branch tip)
-        # DRONE_COMMIT is the merge commit: ^1 = previous staging HEAD, ^2 = feature branch tip
-        COMMITS=$(git log --reverse --pretty=format:"%H" $${DRONE_COMMIT}^1..$${DRONE_COMMIT}^2)
+        # Determine commits to cherry-pick based on merge strategy:
+        # - Standard merge commit (2 parents): extract feature branch commits via ^1..^2
+        # - Squash merge or direct push (1 parent): cherry-pick the commit itself
+        if git cat-file -e $${DRONE_COMMIT}^2 2>/dev/null; then
+          COMMITS=$(git log --reverse --pretty=format:"%H" $${DRONE_COMMIT}^1..$${DRONE_COMMIT}^2)
+        else
+          COMMITS="$${DRONE_COMMIT}"
+        fi
 
         # Create branch from master and cherry-pick the feature branch commits
         git fetch origin master
