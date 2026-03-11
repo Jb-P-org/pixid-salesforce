@@ -97,7 +97,19 @@ steps:
         BRANCH_NAME="promote/$MERGED_BRANCH"
         PROMOTE_TITLE="promote- $${DRONE_COMMIT_MESSAGE}"
 
-        git push --force origin HEAD:$BRANCH_NAME
+        # Get commits from the merged feature branch (between staging's previous HEAD and feature branch tip)
+        # DRONE_COMMIT is the merge commit: ^1 = previous staging HEAD, ^2 = feature branch tip
+        COMMITS=$(git log --reverse --pretty=format:"%H" $${DRONE_COMMIT}^1..$${DRONE_COMMIT}^2)
+
+        # Create branch from master and cherry-pick the feature branch commits
+        git fetch origin master
+        git checkout -b $BRANCH_NAME origin/master
+        if [ -n "$COMMITS" ]; then
+          git cherry-pick $COMMITS
+        else
+          echo "No commits found to cherry-pick, branch created from master as-is"
+        fi
+        git push --force origin $BRANCH_NAME
 
         JSON_PAYLOAD=$(jq -n \
           --arg title "$PROMOTE_TITLE" \
