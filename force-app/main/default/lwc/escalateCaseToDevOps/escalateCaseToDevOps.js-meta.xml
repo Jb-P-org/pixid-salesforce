@@ -5,6 +5,7 @@
     <targets>
         <target>lightning__RecordAction</target>
         <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordAction">
@@ -17,6 +18,9 @@
             <objects>
                 <object>Case</object>
             </objects>
+        </targetConfig>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
