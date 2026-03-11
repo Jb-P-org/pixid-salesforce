@@ -3,6 +3,8 @@ import { LightningElement, api } from 'lwc';
 // Import custom labels for field names
 import RegistrationNumber from '@salesforce/label/c.Registration_Number';
 import VATNumber from '@salesforce/label/c.VAT_Number';
+import ActivityCountry from '@salesforce/label/c.Activity_Country';
+import IdInterneTdG from '@salesforce/label/c.Id_Interne_TdG';
 import BillingContact from '@salesforce/label/c.Billing_Contact';
 import CashCollectionContact from '@salesforce/label/c.Cash_Collection_Contact';
 import PaymentMethod from '@salesforce/label/c.Payment_Method';
@@ -13,11 +15,14 @@ import ContractDurationYears from '@salesforce/label/c.Contract_Duration_Years';
 import SendInvoiceTo from '@salesforce/label/c.Send_Invoice_To';
 import PlatformLink from '@salesforce/label/c.Platform_Link';
 import POReferenceRequestDateFrequency from '@salesforce/label/c.PO_Reference_Request_Date_Frequency';
+import POMissingOnItems from '@salesforce/label/c.PO_Missing_On_Items';
 
 export default class MissingFieldsScreenChargeMap extends LightningElement {
     label = {
         RegistrationNumber,
         VATNumber,
+        ActivityCountry,
+        IdInterneTdG,
         BillingContact,
         CashCollectionContact,
         PaymentMethod,
@@ -27,10 +32,16 @@ export default class MissingFieldsScreenChargeMap extends LightningElement {
         ContractDurationYears,
         SendInvoiceTo,
         PlatformLink,
-        POReferenceRequestDateFrequency
+        POReferenceRequestDateFrequency,
+        POMissingOnItems
     };
     @api accountRegistrationNumber;
     @api accountVATNumber;
+    @api accountActivityCountry;
+    @api accountIdInterneTdG;
+    @api accountSousType;
+    @api sourceOpportunityActivity;
+    @api sourceOpportunityOffer;
 
     @api chargeMapBillingContact;
     @api chargeMapCashCollectionContact;
@@ -65,6 +76,18 @@ export default class MissingFieldsScreenChargeMap extends LightningElement {
         if (!this.accountVATNumber) {
             this.missingAccountFields.push(this.label.VATNumber);
         }
+        if (!this.accountActivityCountry) {
+            this.missingAccountFields.push(this.label.ActivityCountry);
+        }
+        // ID_interne_TdG is required only for TSC + Pixid FR + Pack
+        if (
+            !this.accountIdInterneTdG &&
+            this.accountSousType === 'TSC' &&
+            this.sourceOpportunityActivity === 'Pixid FR' &&
+            this.sourceOpportunityOffer === 'Pack'
+        ) {
+            this.missingAccountFields.push(this.label.IdInterneTdG);
+        }
 
         // Champs Charge Map
         if (!this.chargeMapBillingContact) {
@@ -96,15 +119,8 @@ export default class MissingFieldsScreenChargeMap extends LightningElement {
             this.missingChargeMapFields.push(this.label.PlatformLink);
         }
 
-        if (this.chargeMapPORequired === 'Yes') {
-            if (!this.chargeMapPOReference || !this.chargeMapPORequestDate || !this.chargeMapPOFrequency) {
-                this.missingChargeMapFields.push(this.label.POReferenceRequestDateFrequency);
-            }
+        if (this.pbOnItemsPO === true) {
+            this.missingChargeMapFields.push(this.label.POMissingOnItems);
         }
-
-        // 💥 Nouveau test sur la variable boolean
-        //if (this.pbOnItemsPO === true) {
-        //    this.missingChargeMapFields.push('At least one PO is missing on a Charge Map Item');
-       // }
     }
 }

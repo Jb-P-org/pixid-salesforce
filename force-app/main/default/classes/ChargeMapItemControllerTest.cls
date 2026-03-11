@@ -142,4 +142,173 @@ private class ChargeMapItemControllerTest {
 
         System.assert(hasPicklist, 'Should include picklist metadata');
     }
+
+    // ===== createChargeMapItems tests =====
+
+    @isTest
+    static void testCreateChargeMapItems() {
+        ChargeMap__c chargeMap = [SELECT Id FROM ChargeMap__c LIMIT 1];
+
+        List<ChargeMapItem__c> newItems = new List<ChargeMapItem__c>{
+            new ChargeMapItem__c(
+                Quantity__c = 5,
+                Sales_unit_price__c = 200.00,
+                StartDateRevRec__c = Date.today()
+            ),
+            new ChargeMapItem__c(
+                Quantity__c = 10,
+                Sales_unit_price__c = 50.00,
+                DiscountNumber__c = 10,
+                StartDateRevRec__c = Date.today().addMonths(1)
+            )
+        };
+
+        Test.startTest();
+        List<ChargeMapItem__c> created = ChargeMapItemController.createChargeMapItems(
+            chargeMap.Id, newItems
+        );
+        Test.stopTest();
+
+        System.assertEquals(2, created.size(), 'Should create 2 items');
+        List<ChargeMapItem__c> items = [
+            SELECT Id, ChargeMap__c, Amount__c
+            FROM ChargeMapItem__c
+            WHERE Id IN :created
+        ];
+        for (ChargeMapItem__c item : items) {
+            System.assertEquals(chargeMap.Id, item.ChargeMap__c,
+                'Items should belong to the specified ChargeMap');
+        }
+    }
+
+    @isTest
+    static void testCreateChargeMapItemsNotBacklog() {
+        ChargeMap__c chargeMap = [SELECT Id FROM ChargeMap__c LIMIT 1];
+
+        Schema.DescribeFieldResult statusField = ChargeMap__c.Status__c.getDescribe();
+        String nonBacklogStatus = 'Backlog';
+        for (Schema.PicklistEntry entry : statusField.getPicklistValues()) {
+            if (entry.getValue() != 'Backlog') {
+                nonBacklogStatus = entry.getValue();
+                break;
+            }
+        }
+        chargeMap.Status__c = nonBacklogStatus;
+        update chargeMap;
+
+        List<ChargeMapItem__c> newItems = new List<ChargeMapItem__c>{
+            new ChargeMapItem__c(Quantity__c = 1, Sales_unit_price__c = 100.00)
+        };
+
+        Test.startTest();
+        try {
+            ChargeMapItemController.createChargeMapItems(chargeMap.Id, newItems);
+            System.assert(false, 'Should throw exception when not in Backlog status');
+        } catch (Exception e) {
+            System.assert(true, 'Exception thrown as expected');
+        }
+        Test.stopTest();
+    }
+
+    @isTest
+    static void testCreateChargeMapItemsNullId() {
+        Test.startTest();
+        try {
+            ChargeMapItemController.createChargeMapItems(null, new List<ChargeMapItem__c>());
+            System.assert(false, 'Should throw exception for null Id');
+        } catch (Exception e) {
+            System.assert(true, 'Exception thrown as expected');
+        }
+        Test.stopTest();
+    }
+
+    @isTest
+    static void testCreateChargeMapItemsEmptyList() {
+        ChargeMap__c chargeMap = [SELECT Id FROM ChargeMap__c LIMIT 1];
+
+        Test.startTest();
+        try {
+            ChargeMapItemController.createChargeMapItems(chargeMap.Id, new List<ChargeMapItem__c>());
+            System.assert(false, 'Should throw exception for empty list');
+        } catch (Exception e) {
+            System.assert(true, 'Exception thrown as expected');
+        }
+        Test.stopTest();
+    }
+
+    // ===== deleteChargeMapItems tests =====
+
+    @isTest
+    static void testDeleteChargeMapItems() {
+        ChargeMap__c chargeMap = [SELECT Id FROM ChargeMap__c LIMIT 1];
+        List<ChargeMapItem__c> items = [SELECT Id FROM ChargeMapItem__c];
+        List<Id> itemIds = new List<Id>();
+        for (ChargeMapItem__c item : items) {
+            itemIds.add(item.Id);
+        }
+
+        Test.startTest();
+        ChargeMapItemController.deleteChargeMapItems(chargeMap.Id, itemIds);
+        Test.stopTest();
+
+        Integer countAfter = [SELECT COUNT() FROM ChargeMapItem__c];
+        System.assertEquals(0, countAfter, 'All items should be deleted');
+    }
+
+    @isTest
+    static void testDeleteChargeMapItemsNotBacklog() {
+        ChargeMap__c chargeMap = [SELECT Id FROM ChargeMap__c LIMIT 1];
+
+        Schema.DescribeFieldResult statusField = ChargeMap__c.Status__c.getDescribe();
+        String nonBacklogStatus = 'Backlog';
+        for (Schema.PicklistEntry entry : statusField.getPicklistValues()) {
+            if (entry.getValue() != 'Backlog') {
+                nonBacklogStatus = entry.getValue();
+                break;
+            }
+        }
+        chargeMap.Status__c = nonBacklogStatus;
+        update chargeMap;
+
+        List<ChargeMapItem__c> items = [SELECT Id FROM ChargeMapItem__c];
+        List<Id> itemIds = new List<Id>();
+        for (ChargeMapItem__c item : items) {
+            itemIds.add(item.Id);
+        }
+
+        Test.startTest();
+        try {
+            ChargeMapItemController.deleteChargeMapItems(chargeMap.Id, itemIds);
+            System.assert(false, 'Should throw exception when not in Backlog status');
+        } catch (Exception e) {
+            System.assert(true, 'Exception thrown as expected');
+        }
+        Test.stopTest();
+    }
+
+    @isTest
+    static void testDeleteChargeMapItemsNullId() {
+        Test.startTest();
+        try {
+            ChargeMapItemController.deleteChargeMapItems(null, new List<Id>());
+            System.assert(false, 'Should throw exception for null Id');
+        } catch (Exception e) {
+            System.assert(true, 'Exception thrown as expected');
+        }
+        Test.stopTest();
+    }
+
+    @isTest
+    static void testDeleteChargeMapItemsEmptyList() {
+        ChargeMap__c chargeMap = [SELECT Id FROM ChargeMap__c LIMIT 1];
+
+        Test.startTest();
+        try {
+            ChargeMapItemController.deleteChargeMapItems(chargeMap.Id, new List<Id>());
+            System.assert(false, 'Should throw exception for empty list');
+        } catch (Exception e) {
+            System.assert(true, 'Exception thrown as expected');
+        }
+        Test.stopTest();
+    }
 }

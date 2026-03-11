@@ -121,6 +121,7 @@
         </inputAssignments>
         <object>LiveChatTranscript</object>
     </recordUpdates>
+    <sourceTemplate>setup_bot__IntroBotCreateCase</sourceTemplate>
     <start>
         <locationX>50</locationX>
         <locationY>50</locationY>

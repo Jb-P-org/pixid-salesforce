@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount__c</fullName>
+    <inlineHelpText>Sum of all Charge Map Items amounts.</inlineHelpText>
+    <label>Amount</label>
+    <summarizedField>ChargeMapItem__c.Amount__c</summarizedField>
+    <summaryForeignKey>ChargeMapItem__c.ChargeMap__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

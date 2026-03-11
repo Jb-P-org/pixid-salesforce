@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billed_ARR__c</fullName>
+    <label>Billed ARR</label>
+    <summarizedField>ChargeMapItem__c.Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>ChargeMapItem__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Facturable</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>ChargeMapItem__c.SalesOrderID__c</field>
+        <operation>notEqual</operation>
+        <value></value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>ChargeMapItem__c.Nature__c</field>
+        <operation>equals</operation>
+        <value>Usage</value>
+    </summaryFilterItems>
+    <summaryForeignKey>ChargeMapItem__c.ChargeMap__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

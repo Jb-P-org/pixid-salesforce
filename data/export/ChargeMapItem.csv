@@ -1,0 +1,41 @@
+Id,Name,CurrencyIsoCode,ChargeMap__c,Amount__c,SourceOpportunity__c,BillableStatusDate__c,BillingSchedule__c,NbOfMonthsProrated__c,PO_Reference__c,PO_Request_Date__c,PercentageOfSpend__c,Product__c,ProratedAmount__c,Quantity__c,Spend__c,StartDateRevRec__c,Status__c,Term__c,SalesOrderID__c,Amount_TTC__c,End_date__c,Nature__c,Activated__c,DiscountNumber__c,EndUser__c,PO_Required__c,Sales_unit_price__c,LineDescription__c
+a01Aa00001c7Kp5IAE,Maintenance API,EUR,a02Aa00000RYakfIAD,,,,,,,,,,,1,,,Billable,In advance,,,,,false,,,false,,
+a01Aa00001c7WDtIAM,Licence BI,EUR,a02Aa00000RYWFmIAP,,,,,,,,,,,35,,,Billable,In advance,,,,,false,,,false,,
+a01Aa00001c7bMbIAI,Licence BI,EUR,a02Aa00000RYahRIAT,,,,,,,,,,,3.4,,2026-02-02,Billable,In advance,,,,,false,,,false,,
+a01Aa00001c7gFAIAY,Formation Utilisateur,EUR,a02Aa00000RYamHIAT,,,,,,,,,,,2,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c7kH0IAI,Support Gold (25 Tickets),EUR,a02Aa00000RYakfIAD,,,,,,,,,,,4,,,Billable,In advance,,,,,false,,,false,,
+a01Aa00001c8m4RIAQ,Ouverture API,EUR,a02Aa00000RYar7IAD,,,,,,,,,,,1,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c8xJYIAY,Support Gold (25 Tickets),EUR,a02Aa00000RYahRIAT,,,,,,,,,,,6,,2026-03-02,Backlog,In advance,,,,,false,,,false,,
+a01Aa00001c9HRmIAM,Maintenance SSO,EUR,a02Aa00000RYWFmIAP,,,,,,,,,,,1,,,Billable,In advance,,,,,false,,,false,,
+a01Aa00001c9KgEIAU,Interface HR-XML SIDES / API,EUR,a02Aa00000RYX8sIAH,,,,,,,,,,,1,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c9UCnIAM,Mise en œuvre,EUR,a02Aa00000RYFBqIAP,,,,,,,,,,,1,,,Backlog,One-off,,,,,false,,,false,,
+a01Aa00001c9UCoIAM,Expertise,EUR,a02Aa00000RYXN3IAP,,,,,,,,,,,1,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c9UEBIA2,Interface HR-XML SIDES / API,EUR,a02Aa00000RYapVIAT,,,,,,,,,,,1,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c9brhIAA,Formation Utilisateur,EUR,a02Aa00000RYaPiIAL,,,,,,,,,,,21,,,Backlog,One-off,,,,,false,,,false,,
+a01Aa00001c9fFgIAI,Licence BI,EUR,a02Aa00000RYakfIAD,,,,,,,,,,,2,,,Billable,In advance,,,,,false,,,false,,
+a01Aa00001c9hCOIAY,Mise en œuvre,EUR,a02Aa00000RYDZoIAP,,,,,,,,,,,0.5,,,Backlog,One-off,,,,,false,,,false,,
+a01Aa00001c9lZGIAY,Expertise,EUR,a02Aa00000RYX8sIAH,,,,,,,,,,,1,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c9lZHIAY,Mise en œuvre,EUR,a02Aa00000RYamHIAT,,,,,,,,,,,1,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c9pZZIAY,Expertise,EUR,a02Aa00000RYahSIAT,,,,,,,,,,,5,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c9pbBIAQ,Mise en œuvre,EUR,a02Aa00000RYantIAD,,,,,,,,,,,1,,,Billable,One-off,,,,,false,,,false,,
+a01Aa00001c9pcnIAA,Maintenance SSO,EUR,a02Aa00000RYakfIAD,,,,,,,,,,,1,,,Billable,In advance,,,,,false,,,false,,
+a01Aa00001cSnprIAC,Application Mobile,EUR,a02Aa00000RbuDbIAJ,138000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfPIYA1,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,138000,Test
+a01Aa00001cSnpsIAC,Licence BI - Conception,EUR,a02Aa00000RbuDbIAJ,2000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfP9YAL,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,2000,Test
+a01Aa00001cTloQIAS,Application Mobile,EUR,a02Aa00000RbyQfIAJ,138000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfPIYA1,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,138000,Test
+a01Aa00001cTloRIAS,Licence BI - Conception,EUR,a02Aa00000RbyQfIAJ,2000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfP9YAL,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,2000,Test
+a01Aa00001cTqT8IAK,Application Mobile,EUR,a02Aa00000Rbuv0IAB,138000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfPIYA1,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,138000,Test
+a01Aa00001cTqT9IAK,Licence BI - Conception,EUR,a02Aa00000Rbuv0IAB,2000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfP9YAL,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,2000,Test
+a01Aa00001cUDWuIAO,Application Mobile,EUR,a02Aa00000RbuaOIAR,138000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfPIYA1,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,138000,Test
+a01Aa00001cUDWvIAO,Licence BI - Conception,EUR,a02Aa00000RbuaOIAR,2000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfP9YAL,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,2000,Test
+a01Aa00001cUJ0PIAW,Application Mobile,EUR,a02Aa00000Rbz4zIAB,138000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfPIYA1,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,138000,Test
+a01Aa00001cUJ0QIAW,Licence BI - Conception,EUR,a02Aa00000Rbz4zIAB,2000,006Aa00000TiRBvIAN,,Annual,,,,,01tIV00000GOfP9YAL,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,2000,Test
+a01Aa00001dKb6FIAS,Application Mobile,EUR,a02Aa00000RmSdZIAV,138000,006Aa00000Tu4Q1IAJ,,Annual,,,,,01tIV00000GOfPIYA1,,1,,,Backlog,In advance,,,2026-12-31,Usage,false,,,false,138000,
+a01Aa00001dKb6GIAS,Certification flux,EUR,a02Aa00000RmSdZIAV,2000,006Aa00000Tu4Q1IAJ,,One-off,,,,,01tIV00000GOfTrYAL,,1,,,Backlog,One-off,,,2026-12-31,Service,false,,,false,2000,
+a01Aa00001dKb6HIAS,Commission / maintenance Connecteur Partenaire,EUR,a02Aa00000RmSdZIAV,0,006Aa00000Tu4Q1IAJ,,Annual,,,,,01tIV00000GOfPPYA1,,1,,,Billable,In advance,,,2026-12-31,Usage,false,,,false,0,
+a01Aa00001dLVmhIAG,Support Platinium,EUR,a02Aa00000RmPcjIAF,9700,006Aa00000TtxjYIAR,2026-01-21,Annual,12,,,,01tIV00000GOfPEYA1,9700,1,,2026-01-01,Billable,In advance,248781,,2026-12-31,Usage,true,,,false,9700,
+a01Aa00001eL2TuIAK,Chargé de support,EUR,a02Aa00000RxSn7IAF,740,006Aa00000U4ycDIAR,,One-off,,,,,01tIV00000GOfPTYA1,,1,,,Backlog,One-off,,,2026-12-31,Service,false,10,,false,740,
+a01Aa00001eL2TvIAK,Connexion SSO,EUR,a02Aa00000RxSn7IAF,4000,006Aa00000U4ycDIAR,,One-off,,,,,01tIV00000GOfPYYA1,,1,,,Backlog,One-off,,,2026-12-31,Service,false,,,false,4000,
+a01Aa00001eL2TwIAK,ETL - Supervision et support des fichiers jusqu'à 5 extractions,EUR,a02Aa00000RxSn7IAF,1000,006Aa00000U4ycDIAR,,One-off,,,,,01tIV00000GyUgLYAV,,1,,,Billable,One-off,,,2026-12-31,Service,false,,,false,1000,
+a01Aa00001eUC54IAG,ETL - Supervision et support de 5 extractions additionnelles,EUR,a02Aa00000RxSn7IAF,100,,,One-off,,,,,01tIV00000GyUWfYAN,,1,,2026-01-30,Backlog,In arrears,,,,,false,,,false,100,
+a01Aa00001eVdImIAK,VMS - Shared Managed Services (% of Spend),EUR,a02Aa00000RxSn7IAF,300,,,One-off,,,,,01tIV00000BTLnWYAX,,3,,2026-01-16,Backlog,One-off,,,,,false,,,false,100,
+a01Aa00001eW0RxIAK,VMS (% of spend) - Solution,EUR,a02Aa00000RxSn7IAF,100,,,Biannual,,,,,01tIV00000BTLnbYAH,,1,,2026-01-21,Backlog,In arrears,,,,,false,,,false,100,

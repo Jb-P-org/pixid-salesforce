@@ -1,0 +1,261 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef1"
+            },
+            "AccountId": "@AccountRef4",
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Origin": "Email",
+            "Subject": "GROUPE SNCF : Blocage sur le calcul RA + obligation au client de repartir en arrière, cliquer sur le RA pour avoir son résultat",
+            "Priority": "P1 - Bloquant",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef2"
+            },
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Subject": "TRANSGOURMET : alerte création ADP KO",
+            "Priority": "P4 - Demande d\\évolution Origin=Email AccountId=001Aa00001c9KgDIAU",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef3"
+            },
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Subject": "APTAR GROUP - Notifs factures - Identification établissement de la facture",
+            "Priority": "P4 - Demande d\\évolution Origin=Email AccountId=001Aa00001c7SjoIAE",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef4"
+            },
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Subject": "TRANSGOURMET :envoi des logs suite chargement RA via CSV",
+            "Priority": "P4 - Demande d\\évolution Origin=Email AccountId=001Aa00001c9KgDIAU",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef5"
+            },
+            "AccountId": "@AccountRef4",
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Origin": "Email",
+            "Subject": "GROUPE SNCF - SDM NG : filtre  Étendre la recherche > prévoir le filtre sur missions en cours plutot que date de début",
+            "Priority": "Medium",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef6"
+            },
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Subject": "APTAR : horaire entretien",
+            "Priority": "P4 - Demande d\\évolution Origin=Email AccountId=001Aa00001c7SjoIAE",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef7"
+            },
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Subject": "VINCI CONSTRUCTION - Avoir cube transverse Commande/contrat",
+            "Priority": "P4 - Demande d\\évolution Origin=Email AccountId=001Aa00001c9f0sIAA",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef8"
+            },
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Subject": "VINCI CONSTRUCTION - avoir une limitation des types de coefficients selectionnables selon les familles de rubriques",
+            "Priority": "P4 - Demande d\\évolution Origin=Email AccountId=001Aa00001c9f0sIAA",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef9"
+            },
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Subject": "TRANSGOURMET : programmation rapport \"apply customers field\"",
+            "Priority": "P4 - Demande d\\évolution Origin=Email AccountId=001Aa00001c9KgDIAU",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef10"
+            },
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Subject": "VINCI CONSTRUCTION - Control des documents",
+            "Priority": "P4 - Demande d\\évolution Origin=Email AccountId=001Aa00001c9f0sIAA",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef11"
+            },
+            "AccountId": "@AccountRef3",
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Origin": "Email",
+            "Subject": "VCF : performance temps de réponses plateforme",
+            "Priority": "P2 - Majeur",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef12"
+            },
+            "AccountId": "@AccountRef3",
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "Closed",
+            "Origin": "Email",
+            "Subject": "VCF : Agence non visible pour désactiver le maillage maillé/non maillé",
+            "Priority": "P1 - Bloquant",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": true,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef13"
+            },
+            "AccountId": "@AccountRef4",
+            "RecordTypeId": "012IV000001ZtPFYA0",
+            "Status": "On Hold",
+            "Origin": "Email",
+            "Subject": "GROUPE SNCF : RA : avoir le numéro de la semaine dans le RA",
+            "Priority": "Medium",
+            "IsEscalated": false,
+            "CurrencyIsoCode": "EUR",
+            "LastWarningSent__c": false,
+            "Archived__c": false,
+            "Rattrapage__c": false,
+            "Do_Not_Notify__c": false,
+            "VisibleOnPortal__c": true,
+            "CommentsMigrated__c": false,
+            "Email_case_creation_send__c": false
+        }
+    ]
+}

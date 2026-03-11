@@ -1,0 +1,126 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Offer__c",
+                "referenceId": "Offer__cRef1"
+            },
+            "Name": "Pixid FR-Pack-EU",
+            "CurrencyIsoCode": "EUR",
+            "RecordTypeId": "012IV000002Opt4YAC",
+            "Account__c": "@AccountRef3",
+            "FiltrageIP__c": false,
+            "Opportunity__c": "@OpportunityRef1",
+            "PartnerPPE__c": false,
+            "SSOConnection__c": false,
+            "Specificconnection__c": false,
+            "VIP__c": false,
+            "VPNProd__c": false,
+            "VPNTEST__c": false,
+            "Activity__c": "Pixid FR",
+            "Offer__c": "Pack",
+            "ChannelPartner__c": "@AccountRef1"
+        },
+        {
+            "attributes": {
+                "type": "Offer__c",
+                "referenceId": "Offer__cRef2"
+            },
+            "Name": "Carerix-Reseller-EU",
+            "CurrencyIsoCode": "EUR",
+            "DeploymentStatus__c": "BUILD",
+            "Account__c": "@AccountRef3",
+            "FiltrageIP__c": false,
+            "Opportunity__c": "@OpportunityRef1",
+            "PartnerPPE__c": false,
+            "SSOConnection__c": false,
+            "Specificconnection__c": false,
+            "VIP__c": false,
+            "VPNProd__c": false,
+            "VPNTEST__c": false,
+            "Activity__c": "Carerix",
+            "Offer__c": "Reseller",
+            "ChannelPartner__c": "@AccountRef1"
+        },
+        {
+            "attributes": {
+                "type": "Offer__c",
+                "referenceId": "Offer__cRef3"
+            },
+            "Name": "Pixid FR-Technical-EU",
+            "CurrencyIsoCode": "EUR",
+            "RecordTypeId": "012IV000002Opt4YAC",
+            "Account__c": "@AccountRef4",
+            "FiltrageIP__c": false,
+            "Opportunity__c": "@OpportunityRef2",
+            "PartnerPPE__c": false,
+            "SSOConnection__c": false,
+            "Specificconnection__c": false,
+            "VIP__c": false,
+            "VPNProd__c": false,
+            "VPNTEST__c": false,
+            "Activity__c": "Pixid FR",
+            "Offer__c": "Technical"
+        },
+        {
+            "attributes": {
+                "type": "Offer__c",
+                "referenceId": "Offer__cRef4"
+            },
+            "Name": "Pixid FR-GC-EU",
+            "CurrencyIsoCode": "EUR",
+            "RecordTypeId": "012IV000002Opt4YAC",
+            "Account__c": "@AccountRef4",
+            "FiltrageIP__c": false,
+            "Opportunity__c": "@OpportunityRef3",
+            "PartnerPPE__c": false,
+            "SSOConnection__c": false,
+            "Specificconnection__c": false,
+            "VIP__c": false,
+            "VPNProd__c": false,
+            "VPNTEST__c": false,
+            "Activity__c": "Pixid FR",
+            "Offer__c": "GC"
+        },
+        {
+            "attributes": {
+                "type": "Offer__c",
+                "referenceId": "Offer__cRef5"
+            },
+            "Name": "Pixid FR-Technical-EU",
+            "CurrencyIsoCode": "EUR",
+            "RecordTypeId": "012IV000002Opt4YAC",
+            "Account__c": "@AccountRef4",
+            "FiltrageIP__c": false,
+            "Opportunity__c": "@OpportunityRef2",
+            "PartnerPPE__c": false,
+            "SSOConnection__c": false,
+            "Specificconnection__c": false,
+            "VIP__c": false,
+            "VPNProd__c": false,
+            "VPNTEST__c": false,
+            "Activity__c": "Pixid FR",
+            "Offer__c": "Technical"
+        },
+        {
+            "attributes": {
+                "type": "Offer__c",
+                "referenceId": "Offer__cRef6"
+            },
+            "Name": "Pixid FR-Pack-EU",
+            "CurrencyIsoCode": "EUR",
+            "RecordTypeId": "012IV000002Opt4YAC",
+            "Account__c": "@AccountRef6",
+            "FiltrageIP__c": false,
+            "Opportunity__c": "@OpportunityRef4",
+            "PartnerPPE__c": false,
+            "SSOConnection__c": false,
+            "Specificconnection__c": false,
+            "VIP__c": false,
+            "VPNProd__c": false,
+            "VPNTEST__c": false,
+            "Activity__c": "Pixid FR",
+            "Offer__c": "Pack"
+        }
+    ]
+}
