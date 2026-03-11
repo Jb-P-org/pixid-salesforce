@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Supplier_Terms_of_Use</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Sub-Supplier Terms of Use</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>{!URLFOR($Site.BaseUrl + &apos;/apex/dfsle__sending&apos;, null, [sId = Account.Id, sendingExperience = &apos;null&apos;, isEmbedded = false, templateId = &apos;a0zci000006La6fAAC&apos;, recordId = Account.Id, title = &apos;Sub-Supplier Terms of Use&apos;])}</url>
+</WebLink>
