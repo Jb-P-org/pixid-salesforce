@@ -101,7 +101,7 @@ steps:
         # - Standard merge commit (2 parents): extract feature branch commits via ^1..^2
         # - Squash merge or direct push (1 parent): cherry-pick the commit itself
         if git cat-file -e $${DRONE_COMMIT}^2 2>/dev/null; then
-          COMMITS=$(git log --reverse --pretty=format:"%H" $${DRONE_COMMIT}^1..$${DRONE_COMMIT}^2)
+          COMMITS=$(git log --no-merges --reverse --pretty=format:"%H" $${DRONE_COMMIT}^1..$${DRONE_COMMIT}^2)
         else
           COMMITS="$${DRONE_COMMIT}"
         fi
