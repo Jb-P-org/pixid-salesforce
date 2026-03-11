@@ -97,7 +97,24 @@ steps:
         BRANCH_NAME="promote/$MERGED_BRANCH"
         PROMOTE_TITLE="promote- $${DRONE_COMMIT_MESSAGE}"
 
-        git push --force origin HEAD:$BRANCH_NAME
+        # Determine commits to cherry-pick based on merge strategy:
+        # - Standard merge commit (2 parents): extract feature branch commits via ^1..^2
+        # - Squash merge or direct push (1 parent): cherry-pick the commit itself
+        if git cat-file -e $${DRONE_COMMIT}^2 2>/dev/null; then
+          COMMITS=$(git log --no-merges --reverse --pretty=format:"%H" $${DRONE_COMMIT}^1..$${DRONE_COMMIT}^2)
+        else
+          COMMITS="$${DRONE_COMMIT}"
+        fi
+
+        # Create branch from master and cherry-pick the feature branch commits
+        git fetch origin master
+        git checkout -b $BRANCH_NAME origin/master
+        if [ -n "$COMMITS" ]; then
+          git cherry-pick $COMMITS
+        else
+          echo "No commits found to cherry-pick, branch created from master as-is"
+        fi
+        git push --force origin $BRANCH_NAME
 
         JSON_PAYLOAD=$(jq -n \
           --arg title "$PROMOTE_TITLE" \
